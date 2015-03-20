@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyText
+  description: MyText
+  registration_url: MyString
+  location_name: MyString
+  registration_deadline: 2015-03-20 14:40:50
+  program_type: MyString
+  logo_url: MyString
+  starts_at: 2015-03-20 14:40:50
+  ends_at: 2015-03-20 14:40:50
+  online_address: MyString
+  zipcode: MyString
+  city: MyString
+  state: MyString
+  is_online: false
+  hide_reason: MyString
+  hide: false
+  contact_name: MyString
+  contact_email: MyString
+  contact_phone: MyString
+  registration_url: MyString
+  price_level: 1
+  min_age: 1
+  max_age: 1
+  extra_data: MyText
+
+two:
+  name: MyString
+  address: MyText
+  description: MyText
+  registration_url: MyString
+  location_name: MyString
+  registration_deadline: 2015-03-20 14:40:50
+  program_type: MyString
+  logo_url: MyString
+  starts_at: 2015-03-20 14:40:50
+  ends_at: 2015-03-20 14:40:50
+  online_address: MyString
+  zipcode: MyString
+  city: MyString
+  state: MyString
+  is_online: false
+  hide_reason: MyString
+  hide: false
+  contact_name: MyString
+  contact_email: MyString
+  contact_phone: MyString
+  registration_url: MyString
+  price_level: 1
+  min_age: 1
+  max_age: 1
+  extra_data: MyText
