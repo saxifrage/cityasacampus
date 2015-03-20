@@ -1,0 +1,117 @@
+<%= form_for(@opportunity_instance) do |f| %>
+  <% if @opportunity_instance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@opportunity_instance.errors.count, "error") %> prohibited this opportunity_instance from being saved:</h2>
+
+      <ul>
+      <% @opportunity_instance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :registration_url %><br>
+    <%= f.text_field :registration_url %>
+  </div>
+  <div class="field">
+    <%= f.label :location_name %><br>
+    <%= f.text_field :location_name %>
+  </div>
+  <div class="field">
+    <%= f.label :registration_deadline %><br>
+    <%= f.datetime_select :registration_deadline %>
+  </div>
+  <div class="field">
+    <%= f.label :program_type %><br>
+    <%= f.text_field :program_type %>
+  </div>
+  <div class="field">
+    <%= f.label :logo_url %><br>
+    <%= f.text_field :logo_url %>
+  </div>
+  <div class="field">
+    <%= f.label :starts_at %><br>
+    <%= f.datetime_select :starts_at %>
+  </div>
+  <div class="field">
+    <%= f.label :ends_at %><br>
+    <%= f.datetime_select :ends_at %>
+  </div>
+  <div class="field">
+    <%= f.label :online_address %><br>
+    <%= f.text_field :online_address %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %><br>
+    <%= f.text_field :zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :is_online %><br>
+    <%= f.check_box :is_online %>
+  </div>
+  <div class="field">
+    <%= f.label :hide_reason %><br>
+    <%= f.text_field :hide_reason %>
+  </div>
+  <div class="field">
+    <%= f.label :hide %><br>
+    <%= f.check_box :hide %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_name %><br>
+    <%= f.text_field :contact_name %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_email %><br>
+    <%= f.text_field :contact_email %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_phone %><br>
+    <%= f.text_field :contact_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :registration_url %><br>
+    <%= f.text_field :registration_url %>
+  </div>
+  <div class="field">
+    <%= f.label :price_level %><br>
+    <%= f.number_field :price_level %>
+  </div>
+  <div class="field">
+    <%= f.label :min_age %><br>
+    <%= f.number_field :min_age %>
+  </div>
+  <div class="field">
+    <%= f.label :max_age %><br>
+    <%= f.number_field :max_age %>
+  </div>
+  <div class="field">
+    <%= f.label :extra_data %><br>
+    <%= f.text_area :extra_data %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

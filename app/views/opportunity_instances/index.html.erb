@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Opportunity Instances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Description</th>
+      <th>Registration url</th>
+      <th>Location name</th>
+      <th>Registration deadline</th>
+      <th>Program type</th>
+      <th>Logo url</th>
+      <th>Starts at</th>
+      <th>Ends at</th>
+      <th>Online address</th>
+      <th>Zipcode</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Is online</th>
+      <th>Hide reason</th>
+      <th>Hide</th>
+      <th>Contact name</th>
+      <th>Contact email</th>
+      <th>Contact phone</th>
+      <th>Registration url</th>
+      <th>Price level</th>
+      <th>Min age</th>
+      <th>Max age</th>
+      <th>Extra data</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opportunity_instances.each do |opportunity_instance| %>
+      <tr>
+        <td><%= opportunity_instance.name %></td>
+        <td><%= opportunity_instance.address %></td>
+        <td><%= opportunity_instance.description %></td>
+        <td><%= opportunity_instance.registration_url %></td>
+        <td><%= opportunity_instance.location_name %></td>
+        <td><%= opportunity_instance.registration_deadline %></td>
+        <td><%= opportunity_instance.program_type %></td>
+        <td><%= opportunity_instance.logo_url %></td>
+        <td><%= opportunity_instance.starts_at %></td>
+        <td><%= opportunity_instance.ends_at %></td>
+        <td><%= opportunity_instance.online_address %></td>
+        <td><%= opportunity_instance.zipcode %></td>
+        <td><%= opportunity_instance.city %></td>
+        <td><%= opportunity_instance.state %></td>
+        <td><%= opportunity_instance.is_online %></td>
+        <td><%= opportunity_instance.hide_reason %></td>
+        <td><%= opportunity_instance.hide %></td>
+        <td><%= opportunity_instance.contact_name %></td>
+        <td><%= opportunity_instance.contact_email %></td>
+        <td><%= opportunity_instance.contact_phone %></td>
+        <td><%= opportunity_instance.registration_url %></td>
+        <td><%= opportunity_instance.price_level %></td>
+        <td><%= opportunity_instance.min_age %></td>
+        <td><%= opportunity_instance.max_age %></td>
+        <td><%= opportunity_instance.extra_data %></td>
+        <td><%= link_to 'Show', opportunity_instance %></td>
+        <td><%= link_to 'Edit', edit_opportunity_instance_path(opportunity_instance) %></td>
+        <td><%= link_to 'Destroy', opportunity_instance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Opportunity instance', new_opportunity_instance_path %>
