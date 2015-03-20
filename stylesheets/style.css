@@ -23,6 +23,10 @@ img {
   margin: 40px 0 0; }
   #go-back-home:hover {
     background-image: none; }
+#go-back-home img {
+    max-width: 600px;
+    width: 100%;
+}
 
 .capitalize {
   text-transform: capitalize; }
