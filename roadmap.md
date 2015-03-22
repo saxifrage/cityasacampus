@@ -5,18 +5,17 @@ title: Roadmap
 ###Areas of Work###
 
 1.  Setup Ruby on Rails back-end with Database
-2.  Connect AngularJS data-binding
-3.  Design and Implement Pages
-4.  Copy-writing and media assets
+2.  Design and Implement Pages
+3.  Copy-writing and media assets
 
 ###Assemble the Team###
 
 *   Chad Whitacre (Open-Source Design, Project Manage, Documention)
-*   Justin Reese (Ruby on Rails and DB)
-*   Matthew Vita (AngularJS and DB)
+*   Justin Reese (Ruby on Rails)
+*   Matthew Vita (AngularJS and Back-End)
 *   Cameron Scott (Front-End)
-*   [Tim Cook](tim@sproutfund.org) (Sprout Fund, Project Lead, Design, Copywriting)
-*   [Ryan Coon](ryan@sproutfund.org) (Sprout Fund, Communications, Copywriting, Media Assets)
+*   [Tim Cook](mailto:tim@sproutfund.org) (Sprout Fund, Project Lead, Design, Copywriting)
+*   [Ryan Coon](mailto:ryan@sproutfund.org) (Sprout Fund, Communications, Copywriting, Media Assets)
 *   Matt Hannigan (Sprout Fund Deputy Director)
 
 ###Build###
@@ -32,16 +31,15 @@ _Below are "Stages" to sort the work into high-level buckets, for actual develop
 1.  Bootstrapping the Application
 2.  Building out the DB and RoR back-end
 3.  Building API onto Rails
-4.  Connecting Angular to Rails
-3.  Creating templates for modifying the resources
-4.  Creating templates to display the resources
-5.  Managing the large dataset problem
-6.  Implementing a design (back-end)
-7.  Implement Explore page functionality with Angular using API.
-8.  Build Explore page functionality as white-label integration
-9.  Test integrated Explore pages with organization users
-10. Test CNAME Explore pages with organization users
-11. Soft public deployment
+4.  Creating templates for modifying the resources
+5.  Creating templates to display the resources
+6.  Managing the large dataset problem
+7.  Implementing a design (back-end)
+8.  Implement Explore page functionality using API
+9.  Build Explore page functionality as native white-label integration
+10. Test integrated Explore pages with organization users
+11. Test CNAME Explore pages with organization users
+12. Soft public deployment
 
 #####Stage Two: Logins and Learner Accounts#####
 
