@@ -11,12 +11,6 @@ title: Roadmap
 
 ###Assemble the Team###
 
-Back-end: RoR (Justin)
-Front-end Data-binding to RoR with Angular (Matthew)
-Front-end Design/Implementation (Cameron)
-Project Design/Management/Documentation/Open-Source (Chad)
-Project Lead, Design, Copywriting and Payer-of-Bills (Tim)
-
 *   Chad Whitacre (Open-Source Design, Project Manage, Documention)
 *   Justin Reese (Ruby on Rails and DB)
 *   Matthew Vita (AngularJS and DB)
@@ -31,64 +25,115 @@ _Create great documentation as we go, both within code and on this site._
 _Below are "Stages" to sort the work into high-level buckets, for actual development we'll define weekly Sprints by using the Milestones tool with Github Issues._
 
 
-#####Stage One####
+#####Stage One: Displaying Opportunities####
+
+*(Sprints 0 - 2, March 23 - April 10)*
 
 1.  Bootstrapping the Application
-2.  Connecting Angular resources to the API - 8 hours
-3.  Creating templates for modifying the resources - 10 hours
-4.  Creating templates to display the resources - 8 hours
-5.  Managing the large dataset problem - 10 hours
-6.  Implementing a design (back-end)- 4 hours
+2.  Building out the DB and RoR back-end
+3.  Building API onto Rails
+4.  Connecting Angular to Rails
+3.  Creating templates for modifying the resources
+4.  Creating templates to display the resources
+5.  Managing the large dataset problem
+6.  Implementing a design (back-end)
+7.  Implement Explore page functionality with Angular using API.
+8.  Build Explore page functionality as white-label integration
+9.  Test integrated Explore pages with organization users
+10. Test CNAME Explore pages with organization users
+11. Soft public deployment
 
-#####Stage Two#####
+#####Stage Two: Logins and Learner Accounts#####
 
-1.  Handling user logins - 4 hours
-2.  Handling admin logins - 2 hours
-3.  Creating permission structure - 4 hours
-4.  Creating a user dashboard - 6 hours
+*(Sprints 3 - 4, April 11 - April 24)*
 
-#####Stage Three#####
+1.  Handling user logins
+2.  Handling admin logins
+3.  Creating permission structure
+4.  Creating templates to display a user dashboard
 
-1.  Creating an admin dashboard - 6 hours
-2.  Implementing Badge creation/issuing tools - ?
+#####Stage Three: Organization Accounts#####
+
+*(Sprints 5 - 6, April 25 - May 8)*
+
+1.  Creating templates to display admin dashboard
+2.  Implementing Badge creation/issuing tools
+
+#####Stage Four: Launch publicly, Test and Improve#####
+
+*(Sprints 7 - 9, May 9 - May 29)*
+
+1. Public Launch
+2. User-testing
+3. Iterating and improving product.
+4. Fixing bugs
+5. Responding to user feedback
+
+#####Stage Five: Digital Resources#####
+
+1. Build out DB for Digital Resources
+2. Build out API for Digital Resources
+3. Connect to Angular
+4. Create templates for modifying and displaying resources
+5. Implement a design
 
 ###Front-End Design###
 
-#####Stage One#####
+#####Stage One: Displaying Opportunities####
 
-1.  Update existing pages as placeholder marketing pages.
-2.  Create design and templates for all static pages and sub-pages:
+*(Sprints 0 - 2, March 23 - April 10)*
 
-    1.  Home
-    2.  About
-    3.  How it Works
-    4.  For Learners/Families/Educators
-    5.  FAQs
-    6.  Footer
-    7.  Contact Page
-    8.  Privacy Policy and Terms of Service
+0. Design and setup pages for Documentation site (cityascampus.org)
+1.  Create and design template for "3-layer cake Explore page"
+  1. Site Navigation bar
+  2. Organization Pages (see existing assets)
+  3. Search/Browse options and Explore Opportunities section (see existing assets)
+2.  Design and implement template for static pages:
+    1. Home
+    2. Sub-pages
+      1.  About
+      2.  How it Works
+      3.  For Learners/Families/Educators
+      4.  FAQs
+      6.  Contact Page
+      7.  Privacy Policy and Terms of Service
+    3. Footer
+3.  Design and implement Badges page and individual Badge pages.
 
-3.  Build on and implement Explore page assets
-4.  Build on and implement Organization page assets from Adjust Creative
-5.  Design and implement Badges page and individual Badge pages.
-6.  Build on and implement "Digital Challenges" pages assets from Adjust Creative
+#####Stage Two: Logins and Learner Accounts#####
 
-#####Stage Two#####
+*(Sprints 3 - 4, April 11 - April 24)*
 
 1.  Design and implement buttons and modal for log-in and Forgot Password/Username process.
 2.  Design and implement Sign-Up form and completion pages
-3.  Design and implement organization account dashboard pages based on assets from Adjust Creative.
-4.  Design and implement badge creation and issuing tools based on assets from Adjust Creative.
-5.  Design and implement learner account dashboard pages based on organization account pages.
-6.  Clean-up and prettify cityascampus.org pages and sub-page templates.
+3.  Design and implement badge creation and issuing tools.
+4.  Design and implement learner account dashboard pages based on organization account pages.
+5.  Clean-up and prettify cityascampus.org pages and sub-page templates.
 
-#####Stage Three#####
+#####Stage Three: Organization Accounts#####
 
-1.  Design and Implement admin dashboard (could utilize a template/theme to make this easy, doesn't need to match existing site design, or could be built with Adjust Creative assets as reference.)
+1.  Design and Implement organization dashboard pages
+
+#####Stage Four: Launch publicly, Test and Improve#####
+
+*(Sprints 7 - 9, May 9 - May 29)*
+
+1. Public Launch
+2. User-testing
+3. Iterating and improving product.
+4. Fixing bugs
+5. Responding to user feedback
+
+
+#####Stage Five: Digital Resources#####
+
+1.  Design and Implement digital resource pages
+2.  Change explore page to include digital resources
+
 
 ###Copy-writing###
 
-1.  Update existing pages as placeholder marketing pages.
+1.  Placeholder pages
 2.  Home page
 3.  About pages
 4.  How it Works pages
@@ -119,93 +164,9 @@ _Below are "Stages" to sort the work into high-level buckets, for actual develop
 
 _Many of these are not immediate priorities, just listing them here for future reference._
 
-1.  Embed tool
-2.  Event import tool
-3.  Resource Map/Pathway Visualization Template
-4.  Explore by Map
-5.  Create Scope of Work for Custom Library Module
-6.  Resource ranking functionality.
-
-####Information Architecture####
-
-_Conversation on this [here](https://github.com/sproutfund/pghcityoflearning.org/issues/1).
-*See [features list](https://docs.google.com/document/d/1r_wGaV0qj2UQPVxGCJv54DlY4ihQDGhidM6-fiQSE4Y/pub) as a reference._
-
-```
-
-    Pgh City of Learning
-      Explore (http://test.explorechi.org/adjust/page-explore.php)
-        Maps (drop-down in Nav from Explore AND link on Explore Page)
-          Map (Visual that maps Opportunities in specific order)
-            Opportunity
-             etc.  
-        Opportunities
-          Digital Challenges
-            Title/Description/Image
-            Location/URL
-            Associated Resources
-            Associated Badges
-            Keep Exploring
-          Opportunity
-            Title/Description/Image
-            Time & Place
-            Registration/Learn More
-            Associated Badges
-            Map
-            Keep Exploring
-        Badges (drop-down in Nav from Explore AND link on Explore Page)
-          Categories
-            Badge
-              Title/Description/Image
-              Who Can Help Me Earn This Badge?
-              How Is This Badge Earned?
-      How It Works
-        General Description
-          Search for Things to Do
-          Connect to a Citywide Campus
-          Earn Badges
-          Level Up
-          Discover Learning Pathways
-          Connect to College and Career
-        For Learners
-        For Families
-          Find Things for Your Kids To Do
-          Discover Personalized Learning Pathways
-          Recognize New Skills & Competencies
-        For Educators
-        F.A.Q.s
-          FAQ (maybe use Explore page UI to categorize FAQs)
-            Question
-            Answer
-      About
-        What is the Pittsburgh City of Learning?
-        Why is Pittsburgh doing this?
-          To Connect Learning (We Learn Everywhere based on our Interests and Relationships)
-          Experience Discovery
-          Workforce Preparedness
-          Learning-Loss Prevention
-          Leveling the Playing Field
-        Partners
-          Cities of Learning
-          Participating Organizations
-          Partners
-          Supporters
-        Questions & Feedback?
-    Join Now
-      Sign-up Form
-    Log In
-      Log-in Modal or Form
-      Forgot password?
-      Forgot username?
-    Footer
-      FAQ (Make this a top-level button and Partner links tertiary)
-      Contribute (http://inside.gratipay.com/) — (Make this a top-level button and Partner links tertiary)
-      Partner Links
-      License (link to Github Repo)
-      Contact
-      Privacy Policy (maybe combine with ToS)
-      Terms of Service (maybe combine with Privacy Policy)
-      Back to the top
-    ——Social Media links. Either in footer or nav?
-
-```
+1.  Event import tool
+2.  Resource Map/Pathway Visualization Template
+3.  Explore by Map
+4.  Create Scope of Work for Custom Library Module
+5.  Resource ranking functionality.
+6.  Embed tool
