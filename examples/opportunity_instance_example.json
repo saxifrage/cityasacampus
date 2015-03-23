@@ -1,0 +1,146 @@
+{
+  "errors": {},
+  "metadata": {},
+  "result": {
+    "id": 957945853,
+    "resource_uri": "https://www.cityasacampus.org/opportunities/957945853/",
+    "name": {
+        "text": "Awesome Event Name", 
+        "html": "Awesome <strong>Styled</strong> Event Name"
+    }, 
+    "description": "This tells you all about the workshop and how cool it's going to be.",
+    "organizer_id": 845309360,
+    "organizer": {
+        "description": {
+            "text": "Carpentry Town wants to teach everyone about Carpentry!", 
+            "html": "<P><SPAN STYLE=\"font-size: small;\"><SPAN STYLE=\"color: black; font-family: 'Verdana','sans-serif';\">Carpentry Town wants to teach everyone about Carpentry!<\/SPAN><SPAN STYLE=\"color: black; font-family: 'Verdana','sans-serif'; mso-bidi-font-family: Verdana;\">.<\/SPAN><\/SPAN><\/P>\r\n<P>\u00a0<\/P>"
+        },
+        "logo": {
+            "id": "151295", 
+            "url": "http://cdn.evbuc.com/images/151295/28467766139/1/logo.jpg"
+        },
+        "resource_uri": "https://www.cityasacampus.org/organizers/845309360/", 
+        "id": "845309360", 
+        "name": "Carpentry Town", 
+        "url": "http://www.cityasacampus.org/organizers/carpentry_town",
+        "external_url": "http://www.carpentrytown.biz",
+        "contact": {
+            "contact_name": "Bill Woodsmith",
+            "contact_email": "bill@carpentrytown.biz",
+            "contact_phone": "4129999999",
+        }
+    },
+    "min_age": 14,
+    "max_age": 99,
+    "venue_name": "Carpentry Town",
+    "venue_id": 1060662062,
+    "venue": {
+        "address": {
+            "address_1": "6587 Butler Street", 
+            "address_2": null, 
+            "city": "Pittsburgh", 
+            "region": "PA", 
+            "postal_code": "15206", 
+            "country": "US", 
+            "latitude": 40.458334999999998, 
+            "longitude": -79.911413999999979
+        },
+        "resource_uri": "https://www.cityasacampus.org/venues/1060662062/", 
+        "id": "1060662062", 
+        "name": "Carpentry Town", 
+        "latitude": "40.458335", 
+        "longitude": "-79.91141399999998",
+        "neighborhood": "Lawrenceville",
+        "neighborhood_id": 12
+    },
+    "online_opportunity": false,
+    "ongoing": false,
+    "price": 0,
+    "url": "https://www.cityasacampus.org/organizers/carpentry_town/opportunities/basic_carpentry",
+    "meeting_format": {
+      "format_id": 2,
+      "language": ["Spanish", "English"],
+      "notes": "Enter through the side door of the building, the front door is broken.",
+    },
+    "registration_deadline": "2015-05-07T02:00:00Z",
+    "registration_url": "http://www.carpentrytown.com/basiccarpentry/march2015",
+    "external_url": "http://www.carpentrytown.com/basic_carpentry/",
+    "start": {
+        "timezone": "America/New_York", 
+        "local": "2015-03-06T19:00:00", 
+        "utc": "2015-03-07T02:00:00Z"
+    }, 
+    "created": "2015-03-27T22:27:04Z", 
+    "changed": "2015-04-20T19:23:14Z",
+    "end": {
+        "timezone": "America/New_York", 
+        "local": "2015-06-06T22:00:00", 
+        "utc": "2015-06-07T05:00:00Z"
+    },
+    "listing_start": {
+        "timezone": "America/New_York", 
+        "local": "2015-03-06T19:00:00", 
+        "utc": "2015-03-07T02:00:00Z"
+    },
+    "listing_end": {
+        "timezone": "America/New_York", 
+        "local": "2015-03-06T19:00:00", 
+        "utc": "2015-03-07T02:00:00Z"
+    },
+    "meeting_times": [
+      {
+        "meeting_id": 1,
+        "meeting_start":{
+            "timezone": "America/New_York", 
+            "local": "2015-03-06T22:00:00", 
+            "utc": "2015-03-07T05:00:00Z"
+        },
+        "meeting_end":{
+            "timezone": "America/New_York", 
+            "local": "2015-03-06T22:00:00", 
+            "utc": "2015-03-07T05:00:00Z"
+        }
+      },
+      {
+        "meeting_id": 2,
+        "meeting_start":{
+            "timezone": "America/New_York", 
+            "local": "2015-04-06T22:00:00", 
+            "utc": "2015-04-07T05:00:00Z"
+        },
+        "meeting_end":{
+            "timezone": "America/New_York", 
+            "local": "2015-04-06T22:00:00", 
+            "utc": "2015-04-07T05:00:00Z"
+        }
+      },
+      {
+        "meeting_id": 3,
+        "meeting_start":{
+            "timezone": "America/New_York", 
+            "local": "2014-05-06T22:00:00", 
+            "utc": "2014-05-07T05:00:00Z"
+        },
+        "meeting_end":{
+            "timezone": "America/New_York", 
+            "local": "2015-06-06T22:00:00", 
+            "utc": "2015-06-07T05:00:00Z"
+        }
+      },
+    ],
+    "listed": true,
+    "category": {
+        "resource_uri": "https://www.cityasacampus.org/v1/categories/102/", 
+        "id": "102",
+        "name": "Fabrication and Building", 
+        "short_name": "Fabrication", 
+    }, 
+    "subcategory": {
+        "resource_uri": "https://www.cityasacampus.org/v1/subcategories/2002/", 
+        "id": "2002", 
+        "name": "Building Trades"
+    },
+    "badges": [],
+  },
+  "status": 201
+}
