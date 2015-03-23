@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Opportunities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Description</th>
+      <th>Registration url</th>
+      <th>Location name</th>
+      <th>Registration deadline</th>
+      <th>Program type</th>
+      <th>Logo url</th>
+      <th>Starts at</th>
+      <th>Ends at</th>
+      <th>Online address</th>
+      <th>Zipcode</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Is online</th>
+      <th>Hide reason</th>
+      <th>Hide</th>
+      <th>Contact name</th>
+      <th>Contact email</th>
+      <th>Contact phone</th>
+      <th>Registration url</th>
+      <th>Price level</th>
+      <th>Min age</th>
+      <th>Max age</th>
+      <th>Extra data</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opportunities.each do |opportunity| %>
+      <tr>
+        <td><%= opportunity.name %></td>
+        <td><%= opportunity.address %></td>
+        <td><%= opportunity.description %></td>
+        <td><%= opportunity.registration_url %></td>
+        <td><%= opportunity.location_name %></td>
+        <td><%= opportunity.registration_deadline %></td>
+        <td><%= opportunity.program_type %></td>
+        <td><%= opportunity.logo_url %></td>
+        <td><%= opportunity.starts_at %></td>
+        <td><%= opportunity.ends_at %></td>
+        <td><%= opportunity.online_address %></td>
+        <td><%= opportunity.zipcode %></td>
+        <td><%= opportunity.city %></td>
+        <td><%= opportunity.state %></td>
+        <td><%= opportunity.is_online %></td>
+        <td><%= opportunity.hide_reason %></td>
+        <td><%= opportunity.hide %></td>
+        <td><%= opportunity.contact_name %></td>
+        <td><%= opportunity.contact_email %></td>
+        <td><%= opportunity.contact_phone %></td>
+        <td><%= opportunity.registration_url %></td>
+        <td><%= opportunity.price_level %></td>
+        <td><%= opportunity.min_age %></td>
+        <td><%= opportunity.max_age %></td>
+        <td><%= opportunity.extra_data %></td>
+        <td><%= link_to 'Show', opportunity %></td>
+        <td><%= link_to 'Edit', edit_opportunity_path(opportunity) %></td>
+        <td><%= link_to 'Destroy', opportunity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Opportunity', new_opportunity_path %>

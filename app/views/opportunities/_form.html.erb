@@ -1,10 +1,10 @@
-<%= form_for(@opportunity_instance) do |f| %>
-  <% if @opportunity_instance.errors.any? %>
+<%= form_for(@opportunity) do |f| %>
+  <% if @opportunity.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@opportunity_instance.errors.count, "error") %> prohibited this opportunity_instance from being saved:</h2>
+      <h2><%= pluralize(@opportunity.errors.count, "error") %> prohibited this opportunity from being saved:</h2>
 
       <ul>
-      <% @opportunity_instance.errors.full_messages.each do |message| %>
+      <% @opportunity.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -112,8 +112,8 @@
     <%= f.text_area :extra_data %>
   </div>
   <div class="field">
-    <%= f.label :opportunity %><br>
-    <%= f.select :opportunity_id, options_from_collection_for_select(Opportunity.all, :id, :name) %>
+    <%= f.label :organization %><br>
+    <%= f.select :organization_id, options_from_collection_for_select(Organization.all, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>

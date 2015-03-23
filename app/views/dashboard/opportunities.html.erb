@@ -1,5 +1,5 @@
 <h1>Learning Opportunities</h1>
-<%= link_to '+ Add a new\'n', new_opportunity_instance_path %>
+<%= link_to '+ Add a new\'n', new_opportunity_path %>
 <br/>
 <% @opportunities.each do |opportunity| %>
   <%= link_to opportunity.name, opportunity %><br/>

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def hello
-    @opportunities = OpportunityInstance.all
+    @opportunities = Opportunity.all
     render 'dashboard/opportunities'
   end
 end
