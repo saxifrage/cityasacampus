@@ -111,6 +111,10 @@
     <%= f.label :extra_data %><br>
     <%= f.text_area :extra_data %>
   </div>
+  <div class="field">
+    <%= f.label :organization %><br>
+    <%= f.select :organization_id, options_from_collection_for_select(Organization.all, :id, :name) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
