@@ -33,3 +33,6 @@ coming soon
 
 ###Mac (using brew)
 coming soon
+
+## License
+MIT
