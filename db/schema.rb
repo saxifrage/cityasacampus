@@ -11,10 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320184050) do
+ActiveRecord::Schema.define(version: 20150323042456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "opportunities", force: :cascade do |t|
+    t.string   "name"
+    t.text     "address"
+    t.text     "description"
+    t.string   "registration_url"
+    t.string   "location_name"
+    t.datetime "registration_deadline"
+    t.string   "program_type"
+    t.string   "logo_url"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.string   "online_address"
+    t.string   "zipcode"
+    t.string   "city"
+    t.string   "state"
+    t.boolean  "is_online"
+    t.string   "hide_reason"
+    t.boolean  "hide"
+    t.string   "contact_name"
+    t.string   "contact_email"
+    t.string   "contact_phone"
+    t.integer  "price_level"
+    t.integer  "min_age"
+    t.integer  "max_age"
+    t.text     "extra_data"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "opportunity_instances", force: :cascade do |t|
     t.string   "name"
