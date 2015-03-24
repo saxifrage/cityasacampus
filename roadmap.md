@@ -35,13 +35,14 @@ _Below are "Stages" to sort the work into high-level buckets, for actual develop
 5.  Creating templates to display the resources
 6.  Managing the large dataset problem
 7.  Implementing a design (back-end)
-8.  Implement Explore page functionality using API
+8.  Implement Explore page functionality using our API
 9.  Build Explore page functionality as native white-label integration
 10. Test integrated Explore pages with organization users
 11. Test CNAME Explore pages with organization users
 12. Soft public deployment
+13. Document our JS wrapper for our API
 
-#####Stage Two: Logins and Learner Accounts#####
+#####Stage Two: Logins and Learner Accounts and External API#####
 
 *(Sprints 3 - 4, April 11 - April 24)*
 
@@ -49,6 +50,8 @@ _Below are "Stages" to sort the work into high-level buckets, for actual develop
 2.  Handling admin logins
 3.  Creating permission structure
 4.  Creating templates to display a user dashboard
+5.  Create version to connect white-label integration tool to City of Learning API
+6.  Document JS wrapper for City of Learning API
 
 #####Stage Three: Organization Accounts#####
 
@@ -63,7 +66,7 @@ _Below are "Stages" to sort the work into high-level buckets, for actual develop
 
 1. Public Launch
 2. User-testing
-3. Iterating and improving product.
+3. Iterating and improving product
 4. Fixing bugs
 5. Responding to user feedback
 
@@ -167,4 +170,4 @@ _Many of these are not immediate priorities, just listing them here for future r
 3.  Explore by Map
 4.  Create Scope of Work for Custom Library Module
 5.  Resource ranking functionality.
-6.  Embed tool
+6.  Code snippet creator/embed tool
