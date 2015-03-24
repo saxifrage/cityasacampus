@@ -1,0 +1,189 @@
+HTTP 200 OK
+
+    Vary: Accept
+    Access-Control-Allow-Origin: *
+    Access-Control-Allow-Headers: Authorization
+    Content-Type: text/html; charset=utf-8
+    Allow: GET, POST, HEAD, OPTIONS
+
+{
+    "resource_uri": "https://www.eventbriteapi.com/v3/events/15167869506/", 
+    "name": {
+        "text": "Mapping with GIS: Instructed by Evaine Sing from GTECH", 
+        "html": "Mapping with GIS: Instructed by Evaine Sing from GTECH"
+    }, 
+    "description": {
+        "text": "A ten-week course to learn the basics of GIS technologies (Geographic Information Systems), with a focus on the industry-standard ArcGIS platform by ESRI.\u00a0 \nAs for course goals, we will be covering: \n- Introduction to GIS \n- Finding, Downloading, Cleaning Data \n- File Geodatabases \n- GIS Outputs \n- Map Design \n- Spatial Data \n- Geoprocessing \n- Spatial Analysis \nWe will utilize lecture, hands on tutorials in the program, readings and application with a Community Project and Partner. \nOur Instructors \nEvaine Sing is a LEED Associated Professional and registered Landscape Architect with a Masters in Public Policy and Management. She has 5 years of project management and design experience in the green building industry. More recently, she has dedicated her time and interests locally, engaging with communities as they develop plans for change. Currently,\u00a0Evaine\u00a0works at Growth Through Energy & Community Health [GTECH] as the Director of Operations and Programming. GTECH is a non-profit that works to help communities take ownership of the challenges of growth and decline and turn them into opportunities to build capacity, make things happen and strengthen their community. \nEmily Voelker is a graduate of the University of Maryland\u2019s Geographical Sciences department, with a focus on environmental science, GIS, and geospatial analysis. Previously, Emily worked at the NASA Goddard Space Flight Center, where she supported the NASA DEVELOP geospatial program and led applied research projects. She is currently an apprentice at the Pittsburgh Botanic Garden through AmeriCorps Public Allies, where she focuses on community development, social justice, and environmental education. \n FAQs\u00a0 \nWhat does it cost? \u00a0The course runs $499. Pay half now ($249) to reserve your spot and we will bill you for the second half later on. \nWhen are courses held? \nClasses are held every Thursday from 7:00 - 9:15 pm at the GTECH offices. The course runs for 10 weeks from March 26th to May 28th. \nIs there an age limit to sign up for this course? \nGenerally, students should be 18+, but mature and interested students 14+ are welcome. \nDo I need to buy any additional materials or software? \n- All students are required to purchase the book/software package: \"GIS Tutorial 1\" by Kurland and Gorr. Be sure to purchase the NEW version, as it comes with a 6-month trial of the software you will need for the course. \n- All students should plan to provide their own\u00a0Laptop\u00a0and ArcGIS\u00a0software\u00a0for the course. This software only working in the Windows Operating System, if you have a Mac, you can run a Windows virtual machine through your Mac or try and borrow a PC. \nIf I don't own a laptop, can I borrow one? \nAdditionally, we have 1 student laptop available free of charge based on need (a Macbook Pro with Windows 8 and ArcGIS installed). Just ask us if you need to borrow it for part or all of the course!\u00a0We will also have 3-4 desktops on location (with ArcGIS installed) for students who cannot provide their own computer. \nWhere does the money go? \nOpen cost analysis: - Instructor wages: 64% - Administrative and Marketing costs: 23% - Classroom costs (contribution to GTECH): 8% - Learning supplies: 6% \n(Open Cost publishing is a new effort in transparency by the Saxifrage School to ensure students know what their money is being spent on when they sign up for courses. The \u201cTuition\u201d moniker implies that funds are spent on instruction, but this is increasingly not the case at many schools. We want to change that.) \n  ", 
+        "html": "<P>A ten-week course to learn the basics of GIS technologies (Geographic Information Systems), with a focus on the industry-standard ArcGIS platform by ESRI.\u00a0<\/P>\r\n<P>As for course goals, we will be covering:<\/P>\r\n<P>- Introduction to GIS<\/P>\r\n<P>- Finding, Downloading, Cleaning Data<\/P>\r\n<P>- File Geodatabases<\/P>\r\n<P>- GIS Outputs<\/P>\r\n<P>- Map Design<\/P>\r\n<P>- Spatial Data<\/P>\r\n<P>- Geoprocessing<\/P>\r\n<P>- Spatial Analysis<\/P>\r\n<P>We will utilize lecture, hands on tutorials in the program, readings and application with a Community Project and Partner.<\/P>\r\n<P><SPAN STYLE=\"line-height: 1.6em;\"><STRONG>Our Instructors<\/STRONG><\/SPAN><\/P>\r\n<P><EM>Evaine Sing<\/EM> is a LEED Associated Professional and registered Landscape Architect with a Masters in Public Policy and Management. She has 5 years of project management and design experience in the green building industry. More recently, she has dedicated her time and interests locally, engaging with communities as they develop plans for change. Currently,\u00a0Evaine\u00a0works at Growth Through Energy &amp; Community Health [GTECH] as the Director of Operations and Programming. GTECH is a non-profit that works to help communities take ownership of the challenges of growth and decline and turn them into opportunities to build capacity, make things happen and strengthen their community.<\/P>\r\n<P><EM>Emily Voelker<\/EM> is a graduate of the University of Maryland\u2019s Geographical Sciences department, with a focus on environmental science, GIS, and geospatial analysis. Previously, Emily worked at the NASA Goddard Space Flight Center, where she supported the NASA DEVELOP geospatial program and led applied research projects. She is currently an apprentice at the Pittsburgh Botanic Garden through AmeriCorps Public Allies, where she focuses on community development, social justice, and environmental education.<\/P>\r\n<P><SPAN STYLE=\"color: #339966;\"><STRONG><BR>FAQs<\/STRONG><SPAN STYLE=\"line-height: 1.6em;\">\u00a0<\/SPAN><\/SPAN><\/P>\r\n<P><STRONG><STRONG STYLE=\"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 20.7999992370605px;\">What does it cost?<BR><\/STRONG><\/STRONG>\u00a0The course runs $499. Pay half now ($249) to reserve your spot and we will bill you for the second half later on.<\/P>\r\n<P><STRONG><STRONG STYLE=\"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 20.7999992370605px;\">When are courses held?<\/STRONG><\/STRONG><\/P>\r\n<P>Classes are held every Thursday from 7:00 - 9:15 pm at the GTECH offices. The course runs for 10 weeks from March 26th to May 28th.<\/P>\r\n<P><STRONG>Is there an age limit to sign up for this course?<\/STRONG><\/P>\r\n<P>Generally, students should be 18+, but mature and interested students 14+ are welcome.<\/P>\r\n<P><STRONG>Do I need to buy any additional materials or software?<\/STRONG><\/P>\r\n<P>- All students are required to purchase the book/software package: \"<A HREF=\"http://www.amazon.com/GIS-Tutorial-Basic-Workbook-10-1/dp/1589483359/ref=sr_1_4?s=books&ie=UTF8&qid=1420580313&sr=1-4&keywords=gis+gorr\" REL=\"nofollow\">GIS Tutorial 1<\/A>\" by Kurland and Gorr. Be sure to purchase the NEW version, as it comes with a 6-month trial of the software you will need for the course.<\/P>\r\n<P>- All students should plan to provide their own\u00a0<SPAN STYLE=\"text-decoration: underline;\"><EM>Laptop<\/EM><\/SPAN>\u00a0and ArcGIS\u00a0<SPAN STYLE=\"text-decoration: underline;\"><EM>software<\/EM><\/SPAN>\u00a0for the course. <EM>This software only working in the Windows Operating System, if you have a Mac, you can run a <A HREF=\"http://www.macworld.com/article/1164817/the_best_way_to_run_windows_on_your_mac.html\" REL=\"nofollow\">Windows virtual machine<\/A> through your Mac or try and borrow a PC.<\/EM><\/P>\r\n<P><STRONG>If I don't own a laptop, can I borrow one?<\/STRONG><\/P>\r\n<P><STRONG><\/STRONG>Additionally, we have 1 student laptop available free of charge based on need (a Macbook Pro with Windows 8 and ArcGIS installed). Just ask us if you need to borrow it for part or all of the course!\u00a0<SPAN STYLE=\"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 20.7999992370605px;\">We will also have 3-4 desktops on location (with ArcGIS installed) for students who cannot provide their own computer.<\/SPAN><\/P>\r\n<P><STRONG>Where does the money go?<\/STRONG><\/P>\r\n<P>Open cost analysis:<SPAN STYLE=\"line-height: 20.7999992370605px;\"><BR><\/SPAN><SPAN STYLE=\"line-height: 1.6em;\">- Instructor wages: 64%<BR><\/SPAN><SPAN STYLE=\"line-height: 20.7999992370605px;\">- Administrative and Marketing costs: 23%<BR><\/SPAN><SPAN STYLE=\"line-height: 1.6em;\">- Classroom costs (contribution to GTECH): 8%<BR><\/SPAN><SPAN STYLE=\"line-height: 1.6em;\">- Learning supplies: 6%<\/SPAN><\/P>\r\n<P><SPAN STYLE=\"line-height: 1.6em;\">(Open Cost publishing is a new effort in transparency by the Saxifrage School to ensure students know what their money is being spent on when they sign up for courses. The \u201cTuition\u201d moniker implies that funds are spent on instruction, but this is increasingly not the case at many schools. We want to change that.)<\/SPAN><\/P>\r\n<P><SPAN STYLE=\"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 20.7999992370605px;\"><BR><\/SPAN><\/P>"
+    }, 
+    "logo": {
+        "id": "12044020", 
+        "url": "http://cdn.evbuc.com/images/12044020/28158478173/1/logo.jpg"
+    }, 
+    "id": "15167869506", 
+    "url": "http://www.eventbrite.com/e/mapping-with-gis-instructed-by-evaine-sing-from-gtech-tickets-15167869506", 
+    "logo_url": "http://cdn.evbuc.com/images/12044020/28158478173/1/logo.jpg", 
+    "start": {
+        "timezone": "America/New_York", 
+        "local": "2015-03-26T19:00:00", 
+        "utc": "2015-03-26T23:00:00Z"
+    }, 
+    "end": {
+        "timezone": "America/New_York", 
+        "local": "2015-05-28T21:15:00", 
+        "utc": "2015-05-29T01:15:00Z"
+    }, 
+    "created": "2015-01-06T21:49:13Z", 
+    "changed": "2015-03-15T20:34:41Z", 
+    "capacity": 12, 
+    "status": "live", 
+    "currency": "USD", 
+    "listed": true, 
+    "shareable": true, 
+    "invite_only": false, 
+    "online_event": false, 
+    "show_remaining": false, 
+    "organizer_id": "6943950767", 
+    "venue_id": "9473161", 
+    "category_id": "102", 
+    "subcategory_id": "2002", 
+    "format_id": "9", 
+    "organizer": {
+        "description": {
+            "text": "The Saxifrage School is a higher education laboratory working to reduce student debt, reconcile theory and practice in the classroom, and rebuild neighborhoods.\u00a0", 
+            "html": "<P>The Saxifrage School is a higher education laboratory working to reduce student debt, reconcile theory and practice in the classroom, and rebuild neighborhoods.\u00a0<\/P>"
+        }, 
+        "logo": null, 
+        "resource_uri": "https://www.eventbriteapi.com/v3/organizers/6943950767/", 
+        "id": "6943950767", 
+        "name": "The Saxifrage School", 
+        "url": "http://www.eventbrite.com/o/the-saxifrage-school-6943950767", 
+        "num_past_events": 3, 
+        "num_future_events": 1
+    }, 
+    "venue": {
+        "address": {
+            "address_1": "6587 Hamilton Avenue", 
+            "address_2": null, 
+            "city": "Pittsburgh", 
+            "region": "PA", 
+            "postal_code": "15206", 
+            "country": "US", 
+            "latitude": 40.458334999999998, 
+            "longitude": -79.911413999999979
+        }, 
+        "resource_uri": "https://www.eventbriteapi.com/v3/venues/9473161/", 
+        "id": "9473161", 
+        "name": "GTECH STRATEGIES", 
+        "latitude": "40.458335", 
+        "longitude": "-79.91141399999998"
+    }, 
+    "category": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/categories/102/", 
+        "id": "102", 
+        "name": "Science & Technology", 
+        "name_localized": "Science & Technology", 
+        "short_name": "Science & Tech", 
+        "short_name_localized": "Science & Tech"
+    }, 
+    "subcategory": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/subcategories/2002/", 
+        "id": "2002", 
+        "name": "Science"
+    }, 
+    "format": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/formats/9/", 
+        "id": "9", 
+        "name": "Class, Training, or Workshop", 
+        "name_localized": "Class, Training, or Workshop", 
+        "short_name": "Class", 
+        "short_name_localized": "Class"
+    }, 
+    "ticket_classes": [
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/15167869506/ticket_classes/32539532/", 
+            "id": "32539532", 
+            "name": "First Half Tuition: pay half now, half later", 
+            "description": null, 
+            "cost": {
+                "currency": "USD", 
+                "display": "$249.00", 
+                "value": 24900
+            }, 
+            "fee": {
+                "currency": "USD", 
+                "display": "$7.22", 
+                "value": 722
+            }, 
+            "actual_cost": {
+                "currency": "USD", 
+                "display": "$249.00", 
+                "value": 24900
+            }, 
+            "actual_fee": {
+                "currency": "USD", 
+                "display": "$7.22", 
+                "value": 722
+            }, 
+            "donation": false, 
+            "free": false, 
+            "minimum_quantity": 1, 
+            "maximum_quantity": null, 
+            "maximum_quantity_per_order": 9, 
+            "on_sale_status": "AVAILABLE", 
+            "quantity_total": 12, 
+            "quantity_sold": 3, 
+            "sales_end": "2015-03-26T22:00:00Z", 
+            "hidden": false, 
+            "include_fee": false, 
+            "split_fee": false, 
+            "hide_description": true, 
+            "auto_hide": false, 
+            "variants": [], 
+            "event_id": "15167869506"
+        }, 
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/15167869506/ticket_classes/32836965/", 
+            "id": "32836965", 
+            "name": "Full Tuition: pay it all now", 
+            "description": null, 
+            "cost": {
+                "currency": "USD", 
+                "display": "$499.00", 
+                "value": 49900
+            }, 
+            "fee": {
+                "currency": "USD", 
+                "display": "$9.95", 
+                "value": 995
+            }, 
+            "actual_cost": {
+                "currency": "USD", 
+                "display": "$499.00", 
+                "value": 49900
+            }, 
+            "actual_fee": {
+                "currency": "USD", 
+                "display": "$9.95", 
+                "value": 995
+            }, 
+            "donation": false, 
+            "free": false, 
+            "minimum_quantity": 1, 
+            "maximum_quantity": null, 
+            "maximum_quantity_per_order": 9, 
+            "on_sale_status": "AVAILABLE", 
+            "quantity_total": 12, 
+            "quantity_sold": 3, 
+            "sales_end": "2015-03-26T22:00:00Z", 
+            "hidden": false, 
+            "include_fee": false, 
+            "split_fee": false, 
+            "hide_description": true, 
+            "auto_hide": false, 
+            "variants": [], 
+            "event_id": "15167869506"
+        }
+    ]
+}
+
