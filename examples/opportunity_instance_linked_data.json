@@ -7,7 +7,7 @@
     "name": "Great Carpentry Workshop", 
     "description": "This tells you all about the workshop and how cool it's going to be.",
     "organizer": {
-        "@type":"Organization"
+        "@type":"Organization",
         "description": "Carpentry Town wants to teach everyone about Carpentry!",
         "address": "999 Pancake Way"
         "logo": "http://cdn.evbuc.com/images/151295/28467766139/1/logo.jpg",
