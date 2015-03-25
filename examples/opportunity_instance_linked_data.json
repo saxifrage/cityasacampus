@@ -24,7 +24,7 @@
     "max_age": 99,
     "venue_name": "Carpentry Town",
     "location": {
-        "@type":"Place"
+        "@type":"Place",
         "address": {
             "streetAddress": "6587 Butler Street", 
             "addressLocality": "Pittsburgh", 
