@@ -15,32 +15,22 @@ To edit documentation or the roadmap, switch to the gh-pages branch.
 
 ## Install
 
-###Linux (using apt-get)
+This project depends on Git, Ruby, Rubygems, and Postgresql, please see instructions for your system to get these dependencies installed.
+
+###Application install
 ```bash
-$ sudo su root
-$ apt-get update
-$ apt-get -y install ruby rubygems-integration
-$ apt-get -y install postgresql postgresql-contrib libpq-dev
-$ gem install rails
-$ vim /etc/postgresql/9.4/main/pg_hba.conf #local dev only!
-# TYPE  DATABASE        USER            ADDRESS                 METHOD
-local   all             all                                     trust
-host    all             all             127.0.0.1/32            trust
-host    all             all             ::1/128                 trust
-$ service postgresql restart
-$ sudo su postgres
-$ createuser your-username
-$ createdb learn_dev
-$ sudo su your-username
+$ git clone git@github.com:saxifrage/learn.git
+$ cd learn
 $ bundle install
-$ rails server #open browser @ localhost:3000
+$ rake db:setup
 ```
 
-###Windows (using choco)
-coming soon
+### Running the app
+```bash
+$ rails s
+```
 
-###Mac (using brew)
-coming soon
+Visit the app in your browser at http://localhost:3000/
 
 ## License
 MIT
