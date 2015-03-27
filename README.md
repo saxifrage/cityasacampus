@@ -42,5 +42,8 @@ coming soon
 ###Mac (using brew)
 coming soon
 
+###Mac (from source)
+See [install log](https://github.com/saxifrage/learn/issues/57).
+
 ## License
 MIT
