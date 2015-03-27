@@ -26,21 +26,24 @@ _Below are "Stages" to sort the work into high-level buckets, for actual develop
 
 #####Stage One: Displaying Opportunities####
 
-*(Sprints 0 - 2, March 23 - April 10)*
+*(Sprints 0, March 20 - 27)*
 
 1.  Bootstrapping the Application
 2.  Building out the DB and RoR back-end
-3.  Building API onto Rails
-4.  Creating templates for modifying the resources
-5.  Creating templates to display the resources
-6.  Managing the large dataset problem
-7.  Implementing a design (back-end)
-8.  Implement Explore page functionality using our API
-9.  Build Explore page functionality as native white-label integration
-10. Test integrated Explore pages with organization users
-11. Test CNAME Explore pages with organization users
-12. Soft public deployment
-13. Document our JS wrapper for our API
+3.  Creating templates for modifying the resources
+4.  Creating templates to display the resources
+5.  Implementing a design (back-end)
+
+*(Sprints 1 - 2, March 23 - April 10)*
+
+1.  Building API onto Rails
+2.  Implement Explore page functionality using our API
+3.  Build Explore page functionality as native white-label integration
+4. Test integrated Explore pages with organization users
+5. Test CNAME Explore pages with organization users
+6. Soft public deployment
+7. Document our JS wrapper for our API
+8. Managing the large dataset problem
 
 #####Stage Two: Logins and Learner Accounts and External API#####
 
