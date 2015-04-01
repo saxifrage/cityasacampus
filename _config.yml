@@ -1,6 +1,11 @@
-# Site title and subtitle. This is used in _includes/header.html
+# Site titles and logo. This is used in _includes/header.html
 title: 'City as a Campus'
 subtitle: 'An open-source platform for organizing learning communities and resources.'
+logo: '/img/logo.png'
+
+# Site Creator #
+creator: 'The Sprout Fund'
+creator_url: 'http://sproutfund.org/'
 
 # Enable/show navigation. There are there options:
 #   0 - always hide
@@ -19,6 +24,11 @@ sections: [
     ['dev', 'Developers'],
     ['post', 'Posts']
 ]
+
+
+
+
+
 
 # Keep as an empty string if served up at the root. If served up at a specific
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
