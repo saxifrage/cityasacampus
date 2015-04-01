@@ -1,6 +1,6 @@
 # Site titles and logo. This is used in _includes/header.html
 title: 'City as a Campus'
-subtitle: 'An open-source platform for organizing learning communities and resources.'
+subtitle: 'An open-source platform for organizing learning communities.'
 logo: '/img/logo.png'
 
 # Site Creator #
