@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def hello
-    @opportunities = Opportunity.all
+    @organizer_id = request.host.split('.')[0]
+    @opportunities = Opportunity.where('organizer_id = ?', @organizer_id.to_i)
     render 'dashboard/opportunities'
   end
 end
