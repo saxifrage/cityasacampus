@@ -117,17 +117,13 @@
       },
     ],
     "listed": true,
-    "category": {
-        "resource_uri": "https://www.cityasacampus.org/v1/categories/102/", 
-        "id": "102",
-        "name": "Fabrication and Building", 
-        "short_name": "Fabrication", 
+    "topic": {
+        "resource_uri": "https://www.cityasacampus.org/v1/categories/carpentry-and-woodworking/", 
+        "id": "carpentry-and-woodworking",
+        "name": "Carpentry and Woodworking", 
+        "short_name": "Carpentry", 
+        "child_of_topic": "fabrication"
     }, 
-    "subcategory": {
-        "resource_uri": "https://www.cityasacampus.org/v1/subcategories/2002/", 
-        "id": "2002", 
-        "name": "Building Trades"
-    },
     "badges": [],
   },
   "status": 201
