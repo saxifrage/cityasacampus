@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Organizers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Url</th>
+      <th>Logo url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @organizers.each do |organizer| %>
+      <tr>
+        <td><%= organizer.name %></td>
+        <td><%= organizer.description %></td>
+        <td><%= organizer.url %></td>
+        <td><%= organizer.logo_url %></td>
+        <td><%= link_to 'Show', organizer %></td>
+        <td><%= link_to 'Edit', edit_organizer_path(organizer) %></td>
+        <td><%= link_to 'Destroy', organizer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Organizer', new_organizer_path %>
