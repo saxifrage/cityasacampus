@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'rails_serve_static_assets'
 gem 'rails_12factor'
+gem "active_model_serializers", "~> 0.8.0"
 
 group :development, :test do
   gem 'byebug'

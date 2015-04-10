@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328163454) do
+ActiveRecord::Schema.define(version: 20150410042336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "neighborhood"
+    t.string   "map_url"
+    t.text     "address"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "opportunities", force: :cascade do |t|
     t.string   "name"
@@ -76,8 +88,10 @@ ActiveRecord::Schema.define(version: 20150328163454) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.integer  "opportunity_id"
+    t.integer  "location_id"
   end
 
+  add_index "opportunity_instances", ["location_id"], name: "index_opportunity_instances_on_location_id", using: :btree
   add_index "opportunity_instances", ["opportunity_id"], name: "index_opportunity_instances_on_opportunity_id", using: :btree
 
   create_table "organizers", force: :cascade do |t|
@@ -89,4 +103,5 @@ ActiveRecord::Schema.define(version: 20150328163454) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "opportunity_instances", "locations"
 end
