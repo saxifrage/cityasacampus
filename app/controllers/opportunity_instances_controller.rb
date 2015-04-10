@@ -1,15 +1,21 @@
 class OpportunityInstancesController < ApplicationController
   before_action :set_opportunity_instance, only: [:show, :edit, :update, :destroy]
 
-  # GET /opportunity_instances
-  # GET /opportunity_instances.json
   def index
     @opportunity_instances = OpportunityInstance.all
+    @paginator = OpenStruct.new(opportunity_instances: @opportunity_instances)
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @opportunity_instances, root: :result }
+    end
   end
 
-  # GET /opportunity_instances/1
-  # GET /opportunity_instances/1.json
   def show
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @opportunity_instance, root: :result }
+    end
   end
 
   # GET /opportunity_instances/new
