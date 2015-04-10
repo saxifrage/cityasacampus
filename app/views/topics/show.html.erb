@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @topic.name %>
+</p>
+
+<p>
+  <strong>Short name:</strong>
+  <%= @topic.short_name %>
+</p>
+
+<p>
+  <strong>Child of topic:</strong>
+  <%= @topic.child_of_topic %>
+</p>
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>

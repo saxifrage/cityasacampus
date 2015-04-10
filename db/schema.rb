@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150410042336) do
+ActiveRecord::Schema.define(version: 20150410044544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,10 +89,17 @@ ActiveRecord::Schema.define(version: 20150410042336) do
     t.datetime "updated_at",            null: false
     t.integer  "opportunity_id"
     t.integer  "location_id"
+    t.boolean  "ongoing"
+    t.integer  "price"
+    t.string   "url"
+    t.string   "external_url"
+    t.boolean  "listed"
+    t.integer  "topic_id"
   end
 
   add_index "opportunity_instances", ["location_id"], name: "index_opportunity_instances_on_location_id", using: :btree
   add_index "opportunity_instances", ["opportunity_id"], name: "index_opportunity_instances_on_opportunity_id", using: :btree
+  add_index "opportunity_instances", ["topic_id"], name: "index_opportunity_instances_on_topic_id", using: :btree
 
   create_table "organizers", force: :cascade do |t|
     t.string   "name"
@@ -103,5 +110,14 @@ ActiveRecord::Schema.define(version: 20150410042336) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "topics", force: :cascade do |t|
+    t.string   "name"
+    t.string   "short_name"
+    t.string   "child_of_topic"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   add_foreign_key "opportunity_instances", "locations"
+  add_foreign_key "opportunity_instances", "topics"
 end
