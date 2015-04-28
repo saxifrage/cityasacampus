@@ -5,6 +5,7 @@
     "@id": "https://cityasacampus.org/opportunities/instances/carpentry_workshop_101",
     "uid": 852309360,
     "name": "Great Carpentry Workshop", 
+    "short_description":"This is short for the banner.",
     "description": "This tells you all about the workshop and how cool it's going to be.",
     "img": {
         "src":"url.com/url.jpg", 
