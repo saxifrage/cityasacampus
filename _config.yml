@@ -1,7 +1,7 @@
 # Site titles and logo. This is used in _includes/header.html
 title: 'City as a Campus'
 subtitle: 'An open-source platform for organizing learning communities.'
-logo: '/img/caac_logo.svg'
+logo: '/img/caac_logo.png'
 
 # Site Creator #
 creator: 'City as a Campus'
