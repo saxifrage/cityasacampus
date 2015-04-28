@@ -9,7 +9,7 @@
     "img": {
         "src":"url.com/url.jpg", 
         "type":"banner"
-        }
+        },
     "organizer": {
         "@type":"Organizer",
         "description": "Carpentry Town wants to teach everyone about Carpentry!",
