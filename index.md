@@ -3,10 +3,32 @@ layout: default
 title: "City as a Campus"
 ---
 
-City as a Campus (CaaC) is an open-source project that implements a community- or organization-wide learning
-hub. Once it is complete, you can setup a CaaC instance on its own domain, as a sub-domain with a CNAME record (e.g. www.learn.example.com), or as a native embed within your existing site (either as a full page or a small widget).
+City as a Campus (CaaC) is an open-source platform for creating connected learning communities. The platform contains sets of tools for learners, organizers, and community anchors:
 
-CaaC lets organizers create and manage learning opportunities with accompanying Open Badges. Opportunities then populate a community-wide database which learners are able to explore. Learners can sign-up for opportunities, earn open badges, and keep track of their learning.
+- Tools for Learners:
+	- Submit opportunities (both digital and local) to the directory
+	- Curate opportunities (up and down voting) to ensure quality
+	- Browse opportunities via search, visual browsing trees, and curated knowledge maps
+	- Queue opportunities and create custom learning plans
+	- Keep track of progress on your personal knowledge map
+	- Keep archive of personal learning data, including open badges and a multimedia portfolio\
+
+- Tools for Organizers:
+	- Submit opportunities
+	- Create and issue open badges
+	- Import opportunity feeds
+	- Embed opportunity feeds in external sites and domains
+	- Roster learners to opportunities
+	- Garner financial support from learners who use your digital resources
+	- Tools to create curated knowledge maps
+
+- Tools for Community Anchors:
+	- Customizable Homepage
+	- Admin tools to control Organizer permissions
+	- Customizable Topic/Community Page administration
+
+Once it is complete, you can setup a CaaC instance on its own domain, as a sub-domain with a CNAME record (e.g. www.learn.example.com), or as a native embed within your existing site (either as a full page or a small widget).
+
 
 <br/>
 <span>Source Code: [![GitHub issues](https://img.shields.io/badge/Github-Repo-brightgreen.svg?style=plastic)](https://github.com/saxifrage/learn) ---- Deploy your own:
