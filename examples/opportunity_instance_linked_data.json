@@ -6,6 +6,10 @@
     "uid": 852309360,
     "name": "Great Carpentry Workshop", 
     "description": "This tells you all about the workshop and how cool it's going to be.",
+    "img": {
+        "src":"url.com/url.jpg", 
+        "type":"banner"
+        }
     "organizer": {
         "@type":"Organizer",
         "description": "Carpentry Town wants to teach everyone about Carpentry!",
