@@ -3,7 +3,7 @@ layout: default
 title: "City as a Campus"
 ---
 
-City as a Campus (CaaC) is an open-source platform for creating connected learning communities. The platform contains sets of tools for learners, organizers, and community anchors:
+City as a Campus (CaaC) is an open-source platform for creating connected learning communities. The platform contains sets of tools for learners, organizers, and community anchors.
 
 - Tools for Learners:
 	- Submit opportunities (both digital and local) to the directory
@@ -11,7 +11,8 @@ City as a Campus (CaaC) is an open-source platform for creating connected learni
 	- Browse opportunities via search, visual browsing trees, and curated knowledge maps
 	- Queue opportunities and create custom learning plans
 	- Keep track of progress on your personal knowledge map
-	- Keep archive of personal learning data, including open badges and a multimedia portfolio\
+	- Keep archive of personal learning data, including open badges and a multimedia portfolio
+
 
 - Tools for Organizers:
 	- Submit opportunities
@@ -22,10 +23,12 @@ City as a Campus (CaaC) is an open-source platform for creating connected learni
 	- Garner financial support from learners who use your digital resources
 	- Tools to create curated knowledge maps
 
+
 - Tools for Community Anchors:
 	- Customizable Homepage
 	- Admin tools to control Organizer permissions
 	- Customizable Topic/Community Page administration
+
 
 Once it is complete, you can setup a CaaC instance on its own domain, as a sub-domain with a CNAME record (e.g. www.learn.example.com), or as a native embed within your existing site (either as a full page or a small widget).
 
