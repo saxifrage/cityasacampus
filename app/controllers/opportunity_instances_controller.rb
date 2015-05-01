@@ -14,7 +14,7 @@ class OpportunityInstancesController < ApplicationController
   def show
     respond_to do |format|
       format.html { render :show }
-      format.json { render json: @opportunity_instance, root: :result }
+      format.json { render json: @opportunity_instance, root: :result, serializer: OpportunityInstanceSerializer }
     end
   end
 
