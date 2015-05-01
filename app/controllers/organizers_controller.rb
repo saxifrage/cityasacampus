@@ -5,6 +5,7 @@ class OrganizersController < ApplicationController
   # GET /organizers.json
   def index
     @organizers = Organizer.all
+    render json: @organizers
   end
 
   # GET /organizers/1

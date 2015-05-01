@@ -1,4 +1,4 @@
-class OpportunityInstanceSerializer < ActiveModel::Serializer
+class OpportunitySerializer < ActiveModel::Serializer
   root :result
   attributes :context, :type, :uid, :id, :name, :description
   has_one :organizer

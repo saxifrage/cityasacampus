@@ -5,11 +5,13 @@ class OpportunitiesController < ApplicationController
   # GET /opportunities.json
   def index
     @opportunities = Opportunity.all
+    render json: @opportunities
   end
 
   # GET /opportunities/1
   # GET /opportunities/1.json
   def show
+    render json: @opportunity
   end
 
   # GET /opportunities/new
