@@ -13,6 +13,8 @@ gem 'puma'
 gem 'rails_serve_static_assets'
 gem 'rails_12factor'
 gem "active_model_serializers", "~> 0.9.3"
+gem 'kaminari'
+gem 'api-pagination'
 
 group :development, :test do
   gem 'byebug'
