@@ -7,7 +7,7 @@ class OpportunityInstancesController < ApplicationController
 
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @opportunity_instances, root: :result }
+      format.json { paginate json: @opportunity_instances, root: :result }
     end
   end
 
@@ -25,7 +25,7 @@ class OpportunityInstancesController < ApplicationController
 
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @opportunity_instances, root: :result }
+      format.json { paginate json: @opportunity_instances, root: :result }
     end
   end
 
