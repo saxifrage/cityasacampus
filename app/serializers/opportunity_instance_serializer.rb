@@ -1,10 +1,10 @@
 class OpportunityInstanceSerializer < ActiveModel::Serializer
   root :result
-  attributes :context, :type, :uid, :id, :name, :description
+  attributes :context, :type, :uid, :id, :name, :description, :img
   has_one :organizer
-  attributes :min_age, :max_age
-  attributes :registration_deadline, :registration_url, :created,
-    :changed, :ends, :starts
+  attributes :min_age, :max_age, :venue_name, :online_opportunity, :ongoing,
+    :price, :registration_deadline, :registration_url, :created, :changed,
+    :ends, :starts
   #has_one :topic
 
   def uid
@@ -37,5 +37,28 @@ class OpportunityInstanceSerializer < ActiveModel::Serializer
 
   def starts
     object.starts_at
+  end
+
+  def img
+    {
+      src: object.logo_url,
+      type: 'banner'
+    }
+  end
+
+  def venue_name
+    object.location_name
+  end
+
+  def online_opportunity
+    object.is_online
+  end
+
+  def ongoing
+    false
+  end
+
+  def price
+    '%.2f' % (object.price.to_i/100.0)
   end
 end
