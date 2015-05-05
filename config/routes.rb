@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   end
   resources :locations
   resources :opportunities
-  resources :opportunity_instances
+  resources :opportunity_instances do
+    collection do
+      get 'topics/:title', action: :topic
+    end
+  end
   root 'application#hello'
 end

@@ -18,6 +18,17 @@ class OpportunityInstancesController < ApplicationController
     end
   end
 
+  def topic
+    @opportunity_instances = OpportunityInstance.includes(:topic).all.select do |o|
+      o.topic.present? && o.topic.name == params[:title]
+    end
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @opportunity_instances, root: :result }
+    end
+  end
+
   # GET /opportunity_instances/new
   def new
     @opportunity_instance = OpportunityInstance.new
