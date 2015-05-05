@@ -5,7 +5,7 @@ class OpportunityInstanceSerializer < ActiveModel::Serializer
   attributes :min_age, :max_age, :venue_name, :online_opportunity, :ongoing,
     :price, :registration_deadline, :registration_url, :created, :changed,
     :ends, :starts
-  #has_one :topic
+  has_one :topic
 
   def uid
     object.id
