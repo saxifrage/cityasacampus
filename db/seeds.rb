@@ -9,4 +9,24 @@ profdev = Opportunity.create(name: 'Professional Development', description: 'Get
 
 Opportunity.create(name: 'Carpentry courses', organizer: saxifrage)
 
-OpportunityInstance.create(name: 'Intro to MVC', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software)
+OpportunityInstance.create(name: 'Software Design Patterns', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software)
+OpportunityInstance.create(name: 'Tools of the Trade', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software)
+OpportunityInstance.create(name: 'Software Testing', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software)
+OpportunityInstance.create(name: 'Programming Principles', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software)
+
+junky_organizer = Organizer.create(name: 'Spam organizer')
+junky_opportunities = []
+10.times do |n|
+  junky_opportunities << Opportunity.create(name: "Opportunity #{n}", description: "This is a class. It'll teach you about #{n}", organizer: codeandsupply)
+end
+
+junky_opportunities.each do |opp|
+  5.times do |n|
+    new_opp = opp.opportunity_instances.build(name: "Opportunity Instance #{n}",
+                                    starts_at: Time.now + 6.months + n.days,
+                                    ends_at: Time.now + 6.months + n.days +
+                                    2.hours, location: cloakroom, topic:
+                                    software)
+    new_opp.save!
+  end
+end
