@@ -3,7 +3,7 @@ class OpportunityInstancesController < ApplicationController
 
   def index
     @opportunity_instances = OpportunityInstance.all
-    @paginator = OpenStruct.new(opportunity_instances: @opportunity_instances)
+    @paginator = OpenStruct.new(opportunity_instances: @opportunity_instances, per_page: 15)
 
     respond_to do |format|
       format.html { render :index }
