@@ -1,0 +1,80 @@
+.opportunities {
+  .banner {
+    min-height: 420px;
+    width: 100%;
+    background: #C3B3B3;
+
+    .brand-container {
+      width: 200px;
+      height: auto;
+      padding-top: 80px;
+      margin: auto;
+      text-align: center;
+
+      > img {
+        height: 170px;
+        width: 170px;
+      }
+    }
+
+    .desc-container {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+    }
+  }
+
+  .sub-banner {
+    height: 80px;
+    width: 100%;
+    background: rgb(152, 178, 152);
+  }
+
+  .content-container {
+    width: 80%;
+    margin: 30px auto 70px;
+
+    .left-area {
+      float: left;
+      width: 20%;
+      height: auto;
+
+      .organizer, .point-of-contact, .badges, .attendees{
+        height: 200px;
+        width: 100%;
+        background: rgb(221, 221, 221);
+        margin-bottom: 20px;
+        border-radius: 14px;
+        padding: 10px;
+      }
+    }
+
+    .right-area {
+      float: right;
+      width: 75%;
+      min-height: 815px;
+      background: rgb(221, 221, 221);
+      border-radius: 14px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media all and (max-width: 700px) {
+  .content-container {
+    width: 100%;
+
+    //TODO: figure out why I have to add
+    //importants...
+    .left-area {
+      float: none !important;
+      width: 100% !important;
+    }
+
+    .right-area {
+      float: none !important;
+      width: 100% !important;
+    }
+  }
+}

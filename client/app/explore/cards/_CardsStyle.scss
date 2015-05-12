@@ -1,0 +1,63 @@
+.opp-card {
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  min-height: 300px;
+}
+
+.opp-card.col-sm-4 {
+  width: 31%;
+  margin: 0 1% 30px; 
+}
+
+.explore {
+  .cards {
+    margin: auto;
+    width: 90%;
+    margin-bottom: 200px;
+
+    .loading-indicator {
+      margin: auto;
+      margin-top: 20px;
+      display: block;
+    }
+
+    .card {
+      margin: 1%;
+      float: left;
+      background: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      min-height: 300px;
+      min-width: 200px;
+      max-width: 300px;
+      width: 31%;
+      
+      img {
+        display: block;
+        margin: auto;
+        padding: 8px;
+        height: 170px;
+        width: 150px;
+      }
+      
+      .name {
+        font-family: Georgia;
+        text-align: center;
+        font-size: 2em;
+        font-width: bold;
+      }
+          
+      .date {
+        font-family: tahoma;
+        text-align: center;
+        font-size: 1em;
+      }
+    }
+  }
+  
+  .lazy-load {
+    margin: auto;
+    display: block;
+  }
+}
