@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505151319) do
+ActiveRecord::Schema.define(version: 20150518215555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,9 +56,11 @@ ActiveRecord::Schema.define(version: 20150505151319) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.integer  "organizer_id"
+    t.integer  "topic_id"
   end
 
   add_index "opportunities", ["organizer_id"], name: "index_opportunities_on_organizer_id", using: :btree
+  add_index "opportunities", ["topic_id"], name: "index_opportunities_on_topic_id", using: :btree
 
   create_table "opportunity_instances", force: :cascade do |t|
     t.string   "name"
@@ -109,7 +111,10 @@ ActiveRecord::Schema.define(version: 20150505151319) do
     t.string   "logo_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "topic_id"
   end
+
+  add_index "organizers", ["topic_id"], name: "index_organizers_on_topic_id", using: :btree
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
@@ -119,6 +124,8 @@ ActiveRecord::Schema.define(version: 20150505151319) do
     t.datetime "updated_at",     null: false
   end
 
+  add_foreign_key "opportunities", "topics"
   add_foreign_key "opportunity_instances", "locations"
   add_foreign_key "opportunity_instances", "topics"
+  add_foreign_key "organizers", "topics"
 end
