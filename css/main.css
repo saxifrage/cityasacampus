@@ -19,7 +19,6 @@ code {
 }
 
 #header {
-    border-bottom: 1px solid #eee;
     margin-bottom: 20px;
 }
 
@@ -58,10 +57,6 @@ code {
 }
 
 
-/* Brand Spec Styling
-=============================== */
 
-h3.section-header{
-    color: #0099FF;
-    margin: 30px 0 10px;
-}
+
+
