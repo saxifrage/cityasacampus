@@ -14,10 +14,10 @@ angular.module('caac.opportunities.controller', [
         },
 
         results: function(res) {
-          self.noResultsErr = !res || res.data.length === 0 ?
+          self.noResultsErr = !res || res.data.result.length === 0 ?
             'No opportunities' : '';
 
-          self.opportunity = res.data;
+          self.opportunity = res.data.result;
 
           return;
         },
