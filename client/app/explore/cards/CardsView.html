@@ -1,0 +1,23 @@
+<div class="cards">
+  <div ng-repeat="o in opportunities" class="card" ng-click="goToOpportunity(o.uid)">
+    <img src="{{o.img.src}}" ng-show="o.img.src"/>
+    <h5 class="name">{{o.name}}</h5>
+    <p class="date">{{o.starts | date:'MM.dd.yyyy'}}</p>
+    <div class="sub">
+      <p class="organizer">{{o.organizer_name}}</p>
+    </div>
+    <div class="desc">{{o.short_description | truncate: 80: '...'}}</div>
+    <div class="type" ng-if="o.price">Event type: Non-free ({{o.price | currency:'$'}})</div>
+    <div class="type" ng-if="!o.price">Event type: free</div>
+  </div>
+
+  <br class="clear"/>
+
+  <button ng-click="seeMore()" ng-show="opportunities.length > 20" class="lazy-load waves-effect waves-light btn">See More...</button>
+
+  <br class="clear"/>
+  
+  <loading-indicator></loading-indicator>
+  
+  <p class="err">{{noResultsErr}}</p>
+</div>
