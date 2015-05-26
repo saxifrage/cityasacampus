@@ -1,0 +1,82 @@
+//
+// Typography
+// --------------------------------------------------
+
+a{
+  color: #0099FF;
+}
+
+//
+// Global Helpers
+// --------------------------------------------------
+
+::selection{
+	background: #0099FF;
+	color: #ffffff;
+}
+
+::-moz-selection{
+	background: #0099FF;
+	color: #ffffff;
+}
+
+.text-right{
+	text-align: right;
+}
+
+.text-left{
+	text-align: left;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.pull-left{
+	float: left !important;
+}
+
+.pull-right{
+	float: right !important;
+}
+
+
+//
+// Buttons
+// --------------------------------------------------
+
+.btn {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #494949;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 7px 15px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background .15s linear;
+  -webkit-transition: background .15s linear;
+  -moz-transition: background .15s linear;
+  -o-transition: background .15s linear;
+  -ms-transition: background .15s linear;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+/* Nav buttons */
+.btn-grey {
+  background: #B9C0C1;
+  color: #ffffff;
+  &:hover{
+  	background: darken(#B9C0C1, 10%);
+  	color: #ffffff;
+  }
+}

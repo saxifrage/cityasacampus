@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :opportunity_instances do
     collection do
       get 'topics/:title', action: :topic
+      get 'search/:term', action: :search
     end
   end
   root 'application#hello'

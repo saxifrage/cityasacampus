@@ -29,6 +29,17 @@ class OpportunityInstancesController < ApplicationController
     end
   end
 
+  def search
+    respond_to do |format|
+      format.json {
+        paginate(json: OpportunityInstance
+          .where(["name ILIKE ?", "%#{params[:term]}%"])
+          .where("ends_at < CURRENT_TIMESTAMP"), root: :result
+        )
+      }
+    end
+  end
+
   # GET /opportunity_instances/new
   def new
     @opportunity_instance = OpportunityInstance.new
