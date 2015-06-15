@@ -16,7 +16,7 @@ angular.module('caac.explore.controller', [
     self.setSearchContext = function() {
       var listenForIncomingSearches = function() {
         $rootScope.$on('explore-search', function(events, term) {
-          self.getOpportunitiesByTopic(term);
+          self.getOpportunitiesByTerm(term);
         });
       };
 
@@ -44,14 +44,14 @@ angular.module('caac.explore.controller', [
       listenForIncomingSearches();
       var term = getRouteSearchParam();
 
-      self.getOpportunitiesByTopic(term);
+      self.getOpportunitiesByTerm(term);
     };
 
-    self.getOpportunitiesByTopic = function(term, options) {
+    self.getOpportunitiesByTerm = function(term, options) {
       var steps = {
         start: function(term, options) {
           self.loadingStatus++;
-          return OpportunitiesService.selectOpportunitiesByTopic(term, options);
+          return OpportunitiesService.selectOpportunitiesByTerm(term, options);
         },
 
         results: function(res) {

@@ -3,7 +3,7 @@ angular.module('caac.opportunities.service', [
   ])
   .factory('OpportunitiesService', ['ConfService', '$http',
     function(ConfService, $http) {
-      var selectOpportunitiesByTopic = function(term, range) {
+      var selectOpportunitiesByTerm = function(term, range) {
         term = term || '';
 
         if (range && !isNaN(range.stop) && !isNaN(range.start)) {
@@ -23,7 +23,7 @@ angular.module('caac.opportunities.service', [
 
       return {
         selectOpportunityByUid: selectOpportunityByUid,
-        selectOpportunitiesByTopic: selectOpportunitiesByTopic
+        selectOpportunitiesByTerm: selectOpportunitiesByTerm
       };
     }
   ]);

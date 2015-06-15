@@ -6,10 +6,12 @@ angular.module('caac.explore.cards.directive', [
       restrict: 'E',
       templateUrl: 'explore/cards/CardsView.html',
       link: function(scope, elem) {
-        scope.seeMore = function() {
-          scope.getOpportunitiesByTerm(jQueryService('.search').val(), {
-            start: scope.opportunities.length,
-            stop: scope.opportunities.length + 20
+        var self = scope;
+
+        self.seeMore = function() {
+          self.getOpportunitiesByTerm(jQueryService('.search').val(), {
+            start: self.opportunities.length,
+            stop: self.opportunities.length + 20
           });
         };
       }

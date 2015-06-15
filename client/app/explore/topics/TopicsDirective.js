@@ -13,7 +13,7 @@ angular.module('caac.explore.topics.directive', [
             scope.$apply();
           }, 10);
 
-          scope.getOpportunitiesByTopic(term);
+          scope.getOpportunitiesByTerm(term);
         };
       }
     };
