@@ -61,7 +61,7 @@ gulp.task('images', function() {
 
 gulp.task('buildToPublic', function() {
   return gulp.src('./build/**/**')
-    .pipe(gulp.dest('../public/client'));
+    .pipe(gulp.dest('../public')); //will eventually be @ `../public/client`
 });
 
 gulp.task('default', function(next) {

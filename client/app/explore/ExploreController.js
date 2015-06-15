@@ -1,60 +1,26 @@
 angular.module('caac.explore.controller', [
-  'caac.shared.jquery.service',
-  'caac.shared.title.service',
-  'caac.shared.conf.service',
   'caac.shared.loader.directive',
   'caac.shared.navbar.directive',
   'caac.shared.copyright.directive',
   'caac.explore.topics.directive',
   'caac.explore.cards.directive',
+  'caac.shared.jquery.service',
+  'caac.shared.title.service',
+  'caac.shared.conf.service',
   'caac.opportunities.service',
   'caac.topics.service'
-]).controller('ExploreController', ['$routeParams', '$rootScope', '$scope', 'jQueryService', 'TitleService', 'ConfService',
-  'OpportunitiesService', 'TopicsService', '$timeout', '$window', '$location',
-  function(
-    $routeParams, $rootScope, $scope, jQueryService, TitleService, ConfService,
-    OpportunitiesService, TopicsService, $timeout, $window, $location) {
+]).controller('ExploreController', ['$log', '$timeout', '$location', '$routeParams', '$scope', 'TitleService', 'ConfService', 'OpportunitiesService', 'TopicsService',
+  function($log, $timeout, $location, $routeParams, $scope, TitleService, ConfService, OpportunitiesService, TopicsService) {
     var self = $scope;
+    var logger = $log.getInstance('ExploreController');
 
-    self.setSearchContext = function() {
-      var listenForIncomingSearches = function() {
-        $rootScope.$on('explore-search', function(events, term) {
-          self.getOpportunitiesByTopic(term);
-        });
-      };
-
-      var updateSearchTermFromParam = function() {
-        var assign = function() {
-          var tmpModel = jQueryService('.search input[type="text"]').attr('ng-model');
-          self[tmpModel] = term;
-          self.$apply();
-        };
-
-        $timeout(function() {
-          assign();
-        }, 10);
-      };
-
-      var getRouteSearchParam = function() {
-        if ($routeParams.term) {
-          updateSearchTermFromParam();
-          return $routeParams.term;
-        }
-
-        return;
-      };
-
-      listenForIncomingSearches();
-      var term = getRouteSearchParam();
-
-      self.getOpportunitiesByTopic(term);
-    };
-
-    self.getOpportunitiesByTopic = function(term, options) {
+    self.getOpportunitiesByTerm = function(term, options) {
       var steps = {
         start: function(term, options) {
+          logger.info('attempting to retrieve opportunities');
+
           self.loadingStatus++;
-          return OpportunitiesService.selectOpportunitiesByTopic(term, options);
+          return OpportunitiesService.selectOpportunitiesByTerm(term, options);
         },
 
         results: function(res) {
@@ -62,10 +28,12 @@ angular.module('caac.explore.controller', [
             'No results' : '';
 
           if (options && options.start && options.stop) {
+            logger.info('appending ' + res.data.result.length + ' more card(s)');
             angular.forEach(res.data.result, function(v) {
               self.opportunities.push(v);
             });
           } else {
+            logger.info('showing ' + res.data.result.length + ' card(s)');
             self.opportunities = res.data.result;
           }
 
@@ -73,6 +41,8 @@ angular.module('caac.explore.controller', [
         },
 
         error: function(e) {
+          logger.error('error retrieving opportunities');
+
           self.opportunities = [];
           self.noResultsErr = e.data.err;
         },
@@ -91,17 +61,20 @@ angular.module('caac.explore.controller', [
     self.setTopicsList = function() {
       var steps = {
         start: function() {
+          logger.info('attempting to retrieve topics');
+
           self.loadingStatus++;
           return TopicsService.selectTopics();
         },
 
         results: function(res) {
           self.topics = res.data.topics || [];
+          logger.info('showing ' + self.topics.length + ' topic(s)');
           return;
         },
 
         error: function(e) {
-          alert(e.data.err);
+          logger.error('error retrieving topics');
         },
 
         done: function() {
@@ -128,7 +101,12 @@ angular.module('caac.explore.controller', [
       self.city = ConfService.get('CITY');
 
       self.setTopicsList();
-      self.setSearchContext();
+
+      if ($routeParams.term) {
+        logger.info('updating navbar search input to say "' + $routeParams.term + '"');
+        self.term = $routeParams.term;
+        self.getOpportunitiesByTerm(self.term);
+      }
     };
 
     self.init();

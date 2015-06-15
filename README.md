@@ -23,6 +23,9 @@ $ git clone git@github.com:saxifrage/learn.git
 $ cd learn
 $ bundle install
 $ rake db:setup
+$ cd client
+$ npm i
+$ gulp
 ```
 
 ### Running the app

@@ -1,36 +1,35 @@
 angular.module('caac.shared.navbar.directive', [
   'caac.shared.jquery.service'
-]).directive('navbar', ['$rootScope', '$location', 'jQueryService', function($rootScope, $location, jQueryService) {
-  return {
-    restrict: 'E',
-    templateUrl: 'shared/navbar/NavbarView.html',
-    link: function(scope, elem) {
-      scope.setActivePage = function() {
+]).directive('navbar', ['$rootScope', '$location', 'jQueryService',
+  function($rootScope, $location, jQueryService) {
+    return {
+      restrict: 'E',
+      templateUrl: 'shared/navbar/NavbarView.html',
+      link: function(scope, elem) {
+        var self = scope;
 
-      };
- 
-      //allows for <navbar search="false"></navbar>
-      var setSearchBarVisibility = function() {
-        var attr = jQueryService(elem[0]).attr('search');
-        if (attr && attr.bool() === false) {
-          jQueryService('.search').hide();
-        }
-      };
+        self.setActivePage = function() {
 
-      scope.textSearch = function(term) {
-        if ($location.path().indexOf('explore') === -1 && term) {
-          $location.path('explore/' + term);
-          return;
-        }
+        };
 
-        $rootScope.$broadcast('explore-search', term || '');
-      };
+        //allows for <navbar search="false"></navbar>
+        var setSearchBarVisibility = function() {
+          var attr = jQueryService(elem[0]).attr('search');
+          if (attr && attr.bool() === false) {
+            jQueryService('.search').hide();
+          }
+        };
 
-      var init = function() {
-        setSearchBarVisibility();
-      };
+        self.textSearch = function(term) {
+          $location.path('explore/' + term || '');
+        };
 
-      init();
-    }
-  };
-}]);
+        var init = function() {
+          setSearchBarVisibility();
+        };
+
+        init();
+      }
+    };
+  }
+]);
