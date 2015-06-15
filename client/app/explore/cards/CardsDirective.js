@@ -1,7 +1,7 @@
 angular.module('caac.explore.cards.directive', [
-  'caac.shared.jquery.service'
-]).directive('exploreCards', ['jQueryService',
-  function(jQueryService) {
+
+]).directive('exploreCards', [
+  function() {
     return {
       restrict: 'E',
       templateUrl: 'explore/cards/CardsView.html',
@@ -9,7 +9,7 @@ angular.module('caac.explore.cards.directive', [
         var self = scope;
 
         self.seeMore = function() {
-          self.getOpportunitiesByTerm(jQueryService('.search').val(), {
+          self.getOpportunitiesByTerm(self.term || '', {
             start: self.opportunities.length,
             stop: self.opportunities.length + 20
           });

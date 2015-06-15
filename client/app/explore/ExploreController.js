@@ -9,43 +9,9 @@ angular.module('caac.explore.controller', [
   'caac.shared.conf.service',
   'caac.opportunities.service',
   'caac.topics.service'
-]).controller('ExploreController', ['$timeout', '$location', '$routeParams', '$rootScope', '$scope', 'jQueryService', 'TitleService', 'ConfService', 'OpportunitiesService', 'TopicsService',
-  function($timeout, $location, $routeParams, $rootScope, $scope, jQueryService, TitleService, ConfService, OpportunitiesService, TopicsService) {
+]).controller('ExploreController', ['$timeout', '$location', '$routeParams', '$scope', 'TitleService', 'ConfService', 'OpportunitiesService', 'TopicsService',
+  function($timeout, $location, $routeParams, $scope, TitleService, ConfService, OpportunitiesService, TopicsService) {
     var self = $scope;
-
-    self.setSearchContext = function() {
-      var listenForIncomingSearches = function() {
-        $rootScope.$on('explore-search', function(events, term) {
-          self.getOpportunitiesByTerm(term);
-        });
-      };
-
-      var updateSearchTermFromParam = function() {
-        var assign = function() {
-          var tmpModel = jQueryService('.search input[type="text"]').attr('ng-model');
-          self[tmpModel] = term;
-          self.$apply();
-        };
-
-        $timeout(function() {
-          assign();
-        }, 10);
-      };
-
-      var getRouteSearchParam = function() {
-        if ($routeParams.term) {
-          updateSearchTermFromParam();
-          return $routeParams.term;
-        }
-
-        return;
-      };
-
-      listenForIncomingSearches();
-      var term = getRouteSearchParam();
-
-      self.getOpportunitiesByTerm(term);
-    };
 
     self.getOpportunitiesByTerm = function(term, options) {
       var steps = {
@@ -125,7 +91,11 @@ angular.module('caac.explore.controller', [
       self.city = ConfService.get('CITY');
 
       self.setTopicsList();
-      self.setSearchContext();
+      
+      if ($routeParams.term) {
+        self.term = $routeParams.term;
+        self.getOpportunitiesByTerm(self.term);
+      }
     };
 
     self.init();

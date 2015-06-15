@@ -21,12 +21,7 @@ angular.module('caac.shared.navbar.directive', [
         };
 
         self.textSearch = function(term) {
-          if ($location.path().indexOf('explore') === -1 && term) {
-            $location.path('explore/' + term);
-            return;
-          }
-
-          $rootScope.$broadcast('explore-search', term || '');
+          $location.path('explore/' + term || '');
         };
 
         var init = function() {
