@@ -1,9 +1,8 @@
 angular.module('caac.home.controller', [
-  'caac.shared.title.service',
   'caac.shared.navbar.directive',
+  'caac.shared.title.service',
 ]).controller('HomeController', ['$scope', 'TitleService',
-  function(
-    $scope, TitleService) {
+  function($scope, TitleService) {
     var self = $scope;
 
     self.init = function() {

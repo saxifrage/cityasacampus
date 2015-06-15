@@ -1,19 +1,16 @@
 angular.module('caac.explore.controller', [
-  'caac.shared.jquery.service',
-  'caac.shared.title.service',
-  'caac.shared.conf.service',
   'caac.shared.loader.directive',
   'caac.shared.navbar.directive',
   'caac.shared.copyright.directive',
   'caac.explore.topics.directive',
   'caac.explore.cards.directive',
+  'caac.shared.jquery.service',
+  'caac.shared.title.service',
+  'caac.shared.conf.service',
   'caac.opportunities.service',
   'caac.topics.service'
-]).controller('ExploreController', ['$routeParams', '$rootScope', '$scope', 'jQueryService', 'TitleService', 'ConfService',
-  'OpportunitiesService', 'TopicsService', '$timeout', '$window', '$location',
-  function(
-    $routeParams, $rootScope, $scope, jQueryService, TitleService, ConfService,
-    OpportunitiesService, TopicsService, $timeout, $window, $location) {
+]).controller('ExploreController', ['$timeout', '$location', '$routeParams', '$rootScope', '$scope', 'jQueryService', 'TitleService', 'ConfService', 'OpportunitiesService', 'TopicsService',
+  function($timeout, $location, $routeParams, $rootScope, $scope, jQueryService, TitleService, ConfService, OpportunitiesService, TopicsService) {
     var self = $scope;
 
     self.setSearchContext = function() {

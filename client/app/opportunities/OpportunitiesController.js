@@ -1,8 +1,7 @@
 angular.module('caac.opportunities.controller', [
   'caac.shared.title.service',
   'caac.opportunities.service'
-]).controller('OpportunitiesController', ['$routeParams', '$scope', 'TitleService',
-  'OpportunitiesService',
+]).controller('OpportunitiesController', ['$routeParams', '$scope', 'TitleService', 'OpportunitiesService',
   function($routeParams, $scope, TitleService, OpportunitiesService) {
     var self = $scope;
 
