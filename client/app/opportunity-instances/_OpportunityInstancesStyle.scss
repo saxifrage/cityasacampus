@@ -1,4 +1,4 @@
-.opportunities {
+.opportunity-instance {
   .banner {
     min-height: 420px;
     width: 100%;
@@ -62,19 +62,21 @@
 }
 
 @media all and (max-width: 700px) {
-  .content-container {
-    width: 100%;
+  .opportunity-instance {
+    .content-container {
+      width: 100%;
 
-    //TODO: figure out why I have to add
-    //importants...
-    .left-area {
-      float: none !important;
-      width: 100% !important;
-    }
+      //TODO: figure out why I have to add
+      //importants...
+      .left-area {
+        float: none !important;
+        width: 100% !important;
+      }
 
-    .right-area {
-      float: none !important;
-      width: 100% !important;
+      .right-area {
+        float: none !important;
+        width: 100% !important;
+      }
     }
   }
 }

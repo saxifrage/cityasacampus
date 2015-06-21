@@ -1,5 +1,5 @@
 <div class="cards">
-  <div ng-repeat="o in opportunities" class="card" ng-click="goToOpportunity(o.uid)">
+  <div ng-repeat="o in opportunityInstances" class="card" ng-click="goToOpportunityInstance(o.uid)">
     <img src="{{o.img.src}}" ng-show="o.img.src"/>
     <h5 class="name">{{o.name}}</h5>
     <p class="date">{{o.starts | date:'MM.dd.yyyy'}}</p>
@@ -13,7 +13,7 @@
 
   <br class="clear"/>
 
-  <button ng-click="seeMore()" ng-show="opportunities.length > 20" class="lazy-load waves-effect waves-light btn">See More...</button>
+  <button ng-click="seeMore()" ng-show="opportunityInstances.length > 20" class="lazy-load waves-effect waves-light btn">See More...</button>
 
   <br class="clear"/>
   
