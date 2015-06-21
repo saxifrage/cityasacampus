@@ -1,7 +1,7 @@
 angular.module('caac', [
   'caac.explore.controller',
   'caac.home.controller',
-  'caac.opportunities.controller',
+  'caac.opportunity-instances.controller',
   'ngRoute',
   'angular.filter'
 ]).config(['$routeProvider', function($routeProvider) {
@@ -11,9 +11,9 @@ angular.module('caac', [
   }).when('/explore/:term', {
     controller: 'ExploreController',
     templateUrl: 'explore/ExploreView.html'
-  }).when('/opportunities/:uid', {
-    controller: 'OpportunitiesController',
-    templateUrl: 'opportunities/OpportunitiesView.html'
+  }).when('/opportunity-instances/:uid', {
+    controller: 'OpportunityInstancesController',
+    templateUrl: 'opportunity-instances/OpportunityInstancesView.html'
   }).when('/', {
     controller: 'HomeController',
     templateUrl: 'home/HomeView.html'

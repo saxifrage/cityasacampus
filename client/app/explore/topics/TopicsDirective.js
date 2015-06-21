@@ -1,5 +1,5 @@
 angular.module('caac.explore.topics.directive', [
-  'caac.shared.jquery.service'
+
 ]).directive('exploreTopics', ['$location',
   function($location) {
     return {

@@ -9,9 +9,9 @@ angular.module('caac.explore.cards.directive', [
         var self = scope;
 
         self.seeMore = function() {
-          self.getOpportunitiesByTerm(self.term || '', {
-            start: self.opportunities.length,
-            stop: self.opportunities.length + 20
+          self.getOpportunityInstancesByTerm(self.term || '', {
+            start: self.opportunityInstances.length,
+            stop: self.opportunityInstances.length + 20
           });
         };
       }

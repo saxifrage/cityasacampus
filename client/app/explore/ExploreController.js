@@ -7,20 +7,20 @@ angular.module('caac.explore.controller', [
   'caac.shared.jquery.service',
   'caac.shared.title.service',
   'caac.shared.conf.service',
-  'caac.opportunities.service',
+  'caac.opportunity-instances.service',
   'caac.topics.service'
-]).controller('ExploreController', ['$log', '$timeout', '$location', '$routeParams', '$scope', 'TitleService', 'ConfService', 'OpportunitiesService', 'TopicsService',
-  function($log, $timeout, $location, $routeParams, $scope, TitleService, ConfService, OpportunitiesService, TopicsService) {
+]).controller('ExploreController', ['$log', '$timeout', '$location', '$routeParams', '$scope', 'TitleService', 'ConfService', 'OpportunityInstancesService', 'TopicsService',
+  function($log, $timeout, $location, $routeParams, $scope, TitleService, ConfService, OpportunityInstancesService, TopicsService) {
     var self = $scope;
     var logger = $log.getInstance('ExploreController');
 
-    self.getOpportunitiesByTerm = function(term, options) {
+    self.getOpportunityInstancesByTerm = function(term, options) {
       var steps = {
         start: function(term, options) {
-          logger.info('attempting to retrieve opportunities');
+          logger.info('attempting to retrieve opportunity instances');
 
           self.loadingStatus++;
-          return OpportunitiesService.selectOpportunitiesByTerm(term, options);
+          return OpportunityInstancesService.selectByTerm(term, options);
         },
 
         results: function(res) {
@@ -30,20 +30,20 @@ angular.module('caac.explore.controller', [
           if (options && options.start && options.stop) {
             logger.info('appending ' + res.data.result.length + ' more card(s)');
             angular.forEach(res.data.result, function(v) {
-              self.opportunities.push(v);
+              self.opportunityInstances.push(v);
             });
           } else {
             logger.info('showing ' + res.data.result.length + ' card(s)');
-            self.opportunities = res.data.result;
+            self.opportunityInstances = res.data.result;
           }
 
           return;
         },
 
         error: function(e) {
-          logger.error('error retrieving opportunities');
+          logger.error('error retrieving opportunity instances');
 
-          self.opportunities = [];
+          self.opportunityInstances = [];
           self.noResultsErr = e.data.err;
         },
 
@@ -88,16 +88,16 @@ angular.module('caac.explore.controller', [
         .finally(steps.done);
     };
 
-    self.goToOpportunity = function(uid) {
+    self.goToOpportunityInstance = function(uid) {
       if (uid) {
-        $location.path('opportunities/' + uid);
+        $location.path('opportunity-instances/' + uid);
       }
     };
 
     self.init = function() {
       TitleService.set('Explore');
       self.loadingStatus = 0;
-      self.opportunities = [];
+      self.opportunityInstances = [];
       self.city = ConfService.get('CITY');
 
       self.setTopicsList();
@@ -105,7 +105,7 @@ angular.module('caac.explore.controller', [
       if ($routeParams.term) {
         logger.info('updating navbar search input to say "' + $routeParams.term + '"');
         self.term = $routeParams.term;
-        self.getOpportunitiesByTerm(self.term);
+        self.getOpportunityInstancesByTerm(self.term);
       }
     };
 

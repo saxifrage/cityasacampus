@@ -1,0 +1,79 @@
+<navbar></navbar>
+<div class="opportunity-instance">
+  <div class="banner">
+    <div class="brand-container">
+      <img src="{{opportunityInstance.img.src}}" ng-show="opportunityInstance.img.type == 'logo'"/>
+      <h1>{{opportunityInstance.name}}</h1>
+    </div>
+    <p class="desc-container">{{opportunityInstance.short_description}}</p>
+  </div>
+
+  <div class="sub-banner">stuff</div>
+
+  <div class="content-container">
+    <div class="right-area">
+      <table>
+        <tbody>
+          <tr>
+            <td>Event Name:</td>
+            <td>{{opportunityInstance.name}}</td>
+          </tr>
+          <tr>
+            <td>Event Date:</td>
+            <td>{{opportunityInstance.starts}}</td>
+          </tr>
+          <tr>
+            <td>Venue:</td>
+            <td>{{opportunityInstance.venue_name}}</td>
+          </tr>
+          <tr>
+            <td>Description:</td>
+            <td>{{opportunityInstance.short_description}}</td>
+          </tr>
+          <tr>
+            <td>Age Range:</td>
+            <td>
+              <span ng-if="opportunityInstance.min_age && opportunityInstance.max_age">
+                {{opportunityInstance.min_age}} - {{opportunityInstance.max_age}}
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>Price:</td>
+            <td>
+              <span ng-if="opportunityInstance.price">
+                {{opportunityInstance.price | currency:'$'}}
+              </span>
+              <span ng-if="!opportunityInstance.price">free</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Online opportunityInstance:</td>
+            <td>{{opportunityInstance.online_opportunityInstance}}</td>
+          </tr>
+          <tr>
+            <td>Ongoing:</td>
+            <td>{{opportunityInstance.ongoing}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="left-area">
+      <div class="organizer">
+        <img src="{{opportunityInstance.organizer.logo}}" ng-show="opportunityInstance.organizer.logo" />
+        {{opportunityInstance.organizer.name}}
+        {{opportunityInstance.organizer.url}}
+        {{opportunityInstance.organizer.description}}
+      </div>
+
+      <div class="point-of-contact"></div>
+      <div class="badges"></div>
+      <div class="attendees"></div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<copyright></copyright>

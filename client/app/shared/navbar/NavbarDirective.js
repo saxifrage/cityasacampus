@@ -8,9 +8,7 @@ angular.module('caac.shared.navbar.directive', [
       link: function(scope, elem) {
         var self = scope;
 
-        self.setActivePage = function() {
-
-        };
+        self.setActivePage = function() {};
 
         //allows for <navbar search="false"></navbar>
         var setSearchBarVisibility = function() {
@@ -21,7 +19,8 @@ angular.module('caac.shared.navbar.directive', [
         };
 
         self.textSearch = function(term) {
-          $location.path('explore/' + term || '');
+          if (!term) return;
+          $location.path('explore/' + term);
         };
 
         var init = function() {
