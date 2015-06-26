@@ -50,7 +50,7 @@
     "ongoing": false,
     "price": 0,
     "url": "https://www.cityasacampus.org/organizers/carpentry_town/opportunities/basic_carpentry",
-    "meeting_format": {
+    "opportunity_format": {
       "format_id": 2,
       "language": ["Spanish", "English"],
       "notes": "Enter through the side door of the building, the front door is broken.",
