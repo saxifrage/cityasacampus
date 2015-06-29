@@ -34,7 +34,7 @@ class OpportunityInstancesController < ApplicationController
       format.json {
         paginate(json: OpportunityInstance
           .where(["name ILIKE ?", "%#{params[:term]}%"])
-          .where("ends_at < CURRENT_TIMESTAMP"), root: :result
+          .where("ends_at > CURRENT_TIMESTAMP"), root: :result
         )
       }
     end

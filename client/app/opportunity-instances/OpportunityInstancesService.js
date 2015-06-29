@@ -4,18 +4,16 @@ angular.module('caac.opportunity-instances.service', [
   .factory('OpportunityInstancesService', ['$log', 'ConfService', '$http',
     function($log, ConfService, $http) {
       var logger = $log.getInstance('OpportunitiesService');
-      var selectByTerm = function(term, range) {
+      var selectByTerm = function(term, page) {
         term = term || '';
 
         logger.info('attempting to retrieve opportunity instances related to "' + term + '" from backend');
 
-        if (range && !isNaN(range.stop) && !isNaN(range.start)) {
-          var rangeFilter = '?start=' + range.start + '&end=' + range.stop;
-          return $http.get(ConfService.get('API') + '/opportunity_instances/search/' + term.toLowerCase() + '.json' + rangeFilter);
+        if (page) {
+          return $http.get(ConfService.get('API') + '/opportunity_instances/search/' + term.toLowerCase() + '.json?page=' + page);
         }
 
-        var defaultRangeFilter = '?start=0&end=19';
-        return $http.get(ConfService.get('API') + '/opportunity_instances/search/' + term.toLowerCase() + '.json' + defaultRangeFilter);
+        return $http.get(ConfService.get('API') + '/opportunity_instances/search/' + term.toLowerCase() + '.json?page=1');
       };
 
       var selectByUid = function(uid) {
