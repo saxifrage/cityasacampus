@@ -8,11 +8,16 @@ angular.module('caac.explore.cards.directive', [
       link: function(scope, elem) {
         var self = scope;
 
+        self.curPage = 1;
+
+        self.$on('REACHED_MAX_RESULTS', function() {
+          self.reachedMaxEntries = true;
+        });
+
+        self.reachedMaxEntries = false;
+
         self.seeMore = function() {
-          self.getOpportunityInstancesByTerm(self.term || '', {
-            start: self.opportunityInstances.length,
-            stop: self.opportunityInstances.length + 20
-          });
+          self.getOpportunityInstancesByTerm(self.term || '', ++self.curPage);
         };
       }
     };

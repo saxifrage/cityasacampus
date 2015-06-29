@@ -9,25 +9,30 @@ angular.module('caac.explore.controller', [
   'caac.shared.conf.service',
   'caac.opportunity-instances.service',
   'caac.topics.service'
-]).controller('ExploreController', ['$log', '$timeout', '$location', '$routeParams', '$scope', 'TitleService', 'ConfService', 'OpportunityInstancesService', 'TopicsService',
-  function($log, $timeout, $location, $routeParams, $scope, TitleService, ConfService, OpportunityInstancesService, TopicsService) {
+]).controller('ExploreController', ['$rootScope', '$log', '$timeout', '$location', '$routeParams', '$scope', 'TitleService', 'ConfService', 'OpportunityInstancesService', 'TopicsService',
+  function($rootScope, $log, $timeout, $location, $routeParams, $scope, TitleService, ConfService, OpportunityInstancesService, TopicsService) {
     var self = $scope;
     var logger = $log.getInstance('ExploreController');
 
-    self.getOpportunityInstancesByTerm = function(term, options) {
+    self.getOpportunityInstancesByTerm = function(term, page) {
       var steps = {
-        start: function(term, options) {
+        start: function(term, page) {
           logger.info('attempting to retrieve opportunity instances');
 
           self.loadingStatus++;
-          return OpportunityInstancesService.selectByTerm(term, options);
+          return OpportunityInstancesService.selectByTerm(term, page);
         },
 
         results: function(res) {
           self.noResultsErr = !res || res.data.length === 0 ?
             'No results' : '';
 
-          if (options && options.start && options.stop) {
+          if (res.data.result.length === 0) {
+            logger.warn('paged to end of resultset');
+            $rootScope.$broadcast('REACHED_MAX_RESULTS');
+          }
+
+          if (page) {
             logger.info('appending ' + res.data.result.length + ' more card(s)');
             angular.forEach(res.data.result, function(v) {
               self.opportunityInstances.push(v);
@@ -52,7 +57,7 @@ angular.module('caac.explore.controller', [
         }
       };
 
-      steps.start(term, options)
+      steps.start(term, page)
         .then(steps.results)
         .catch(steps.error)
         .finally(steps.done);
