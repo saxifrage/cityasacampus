@@ -1,6 +1,5 @@
 class OpportunitiesController < ApplicationController
   before_action :set_opportunity, only: [:show, :edit, :update, :destroy]
-  before_action :require_sign_in
 
   # GET /opportunities
   # GET /opportunities.json
