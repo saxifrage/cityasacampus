@@ -15,6 +15,7 @@ gem 'rails_12factor'
 gem "active_model_serializers", "~> 0.9.3"
 gem 'kaminari'
 gem 'api-pagination'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
