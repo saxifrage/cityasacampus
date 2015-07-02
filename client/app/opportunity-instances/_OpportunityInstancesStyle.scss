@@ -24,60 +24,47 @@
       text-align: center;
     }
   }
+}
 
-  .sub-banner {
-    height: 80px;
-    width: 100%;
-    background: rgb(152, 178, 152);
-  }
+.sub-banner {
+  background-color: $brand-primary;
+}
 
-  .content-container {
-    width: 80%;
-    margin: 30px auto 70px;
+.opportunity-content{
+  margin-top: 40px;
+}
 
-    .left-area {
-      float: left;
-      width: 20%;
-      height: auto;
-
-      .organizer, .point-of-contact, .badges, .attendees{
-        height: 200px;
-        width: 100%;
-        background: rgb(221, 221, 221);
-        margin-bottom: 20px;
-        border-radius: 14px;
-        padding: 10px;
-      }
-    }
-
-    .right-area {
-      float: right;
-      width: 75%;
-      min-height: 815px;
-      background: rgb(221, 221, 221);
-      border-radius: 14px;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
+.opp-section{
+  background: #ffffff;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+  &:last-child{
+    margin-bottom: 0px;
   }
 }
 
-@media all and (max-width: 700px) {
-  .opportunity-instance {
-    .content-container {
-      width: 100%;
+.opp-section-header{
+  background-color: $brand-primary;
+  border-bottom: 1px solid lighten($brand-primary, 20%);
+}
 
-      //TODO: figure out why I have to add
-      //importants...
-      .left-area {
-        float: none !important;
-        width: 100% !important;
-      }
+.opp-section-header h3{
+  color: #ffffff;
+  font-size: 22px;
+  padding: 15px 20px 20px;
+  margin: 0px;
+}
 
-      .right-area {
-        float: none !important;
-        width: 100% !important;
-      }
-    }
+.opp-detail-row{
+  border-bottom: 1px solid #eaeaea;
+  min-height: 75px;
+  &:last-child{
+    border-bottom: 0px;
   }
+}
+
+h4.detail-type{
+  color: #3b4144;
+  margin: 0px;
 }

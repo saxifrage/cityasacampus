@@ -1,6 +1,21 @@
 //
+// CAAC Variables
+// --------------------------------------------------
+
+$brand-primary: #0099ff;
+
+
+//
 // Typography
 // --------------------------------------------------
+
+h1,
+h2,
+h3,
+h4{
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+}
 
 a{
   color: #0099FF;
@@ -38,6 +53,20 @@ a{
 
 .pull-right{
 	float: right !important;
+}
+
+
+/* Responsive Images */
+.img-responsive{
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.center-block{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
