@@ -16,6 +16,7 @@ gem "active_model_serializers", "~> 0.9.3"
 gem 'kaminari'
 gem 'api-pagination'
 gem 'devise'
+gem 'textacular', '~> 3.0'
 
 group :development, :test do
   gem 'byebug'
