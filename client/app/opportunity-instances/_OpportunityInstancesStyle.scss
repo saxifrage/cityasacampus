@@ -1,37 +1,78 @@
-.opportunity-instance {
-  .banner {
+.banner {
     min-height: 420px;
     width: 100%;
     background: #ffffff url(./opportunity-instances/assets/bg_opp-inst.png);
     background-size: cover;
-
-    .brand-container {
-      width: 200px;
-      height: auto;
-      padding-top: 80px;
-      margin: auto;
-      text-align: center;
-
-      > img {
-        height: 170px;
-        width: 170px;
-      }
-    }
-
-    .desc-container {
-      width: 80%;
-      margin: auto;
-      text-align: center;
-    }
-  }
 }
 
+.banner .brand-container{
+  width: 200px;
+  height: auto;
+  padding-top: 80px;
+  margin: auto;
+  text-align: center;
+}
+
+.banner img{
+  height: 170px;
+  width: 170px;
+}
+
+.banner .desc-container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+h1.event-title{
+  line-height: 1.3;
+}
+
+
+// Sub-Banner
+// --------------------------------------------------
 .sub-banner {
   background-color: $brand-primary;
+  padding: 35px 0;
 }
 
+.sub-banner .col-md-2-5{
+  @media screen and (max-width: 992px){
+    margin-bottom: 25px;
+    &:last-child{
+      margin-bottom: 0px;
+    }//last
+  }//media
+}
+
+.sub-banner-type{
+  color: $brand-primary-light;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+h3.sub-banner-heading{
+  color: #ffffff;
+  margin: 3px 0 0;
+  font-size: 28px;
+}
+
+.sub-banner .btn{
+  max-width: 300px;
+}
+
+
+// Opportunity Body
+// --------------------------------------------------
 .opportunity-content{
   margin-top: 40px;
+}
+
+.opp-details{
+  @media screen and (max-width: 992px){
+    margin-bottom: 40px;
+  }//media
 }
 
 .opp-section{
@@ -41,12 +82,13 @@
   box-shadow: 0px 0px 10px rgba(0,0,0,.1);
   &:last-child{
     margin-bottom: 0px;
-  }
+  }//last
 }
 
 .opp-section-header{
   background-color: $brand-primary;
-  border-bottom: 1px solid lighten($brand-primary, 20%);
+  border-bottom: 4px solid $brand-primary-light;
+
 }
 
 .opp-section-header h3{
@@ -61,7 +103,7 @@
   min-height: 75px;
   &:last-child{
     border-bottom: 0px;
-  }
+  }//last
 }
 
 h4.detail-type{
