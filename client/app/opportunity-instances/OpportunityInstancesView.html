@@ -4,21 +4,45 @@
     <div class="brand-container">
       <img src="opportunity-instances/assets/filler-opp-inst-icon.png">
       <!--<img src="{{opportunityInstance.img.src}}" ng-show="opportunityInstance.img.type == 'logo'"/>-->
-      <h1>{{opportunityInstance.name}}</h1>
+      <h1 class="event-title">{{opportunityInstance.name}}</h1>
     </div>
     <p class="desc-container">{{opportunityInstance.short_description}}</p>
   </div>
 
   <section class="sub-banner">
     <div class="container">
-      <div class="row">
+      <div class="row text-center">
+        <div class="col-md-2-5">
+          <small class="sub-banner-type">Event Date</small>
+          <h3 class="sub-banner-heading">{{opportunityInstance.starts |  date:'MM/dd/yyyy'}}</h3>
+        </div><!--/col-md-2-->
+        <div class="col-md-2-5">
+          <small class="sub-banner-type">Event Price</small>
+          <h3 class="sub-banner-heading">
+            <span ng-if="opportunityInstance.price">
+              {{opportunityInstance.price | currency:'$'}}
+            </span>
+            <span ng-if="!opportunityInstance.price">free</span>
+          </h3>
+        </div><!--/col-md-2-->
+        <div class="col-md-2-5">
+          <small class="sub-banner-type">Neighborhood</small>
+          <h3 class="sub-banner-heading">Var Needed</h3>
+        </div><!--/col-md-2-->
+        <div class="col-md-2-5">
+          <small class="sub-banner-type">Register By:</small>
+          <h3 class="sub-banner-heading">Var Needed</h3>
+        </div><!--/col-md-2-->
+        <div class="col-md-2-5">
+          <a class="btn btn-primary btn-block">Register Now</a>
+        </div><!--/col-md-2-->
       </div><!--/row -->
     </div><!-- /container-->
   </section>
 
   <div class="container opportunity-content">
     <div class="row">
-      <section class="opp-content col-sm-8 col-sm-push-4">
+      <section class="opp-details col-md-8 col-md-push-4">
         <header class="opp-section-header">
           <h3>Event Details</h3>
         </header>
@@ -103,7 +127,7 @@
         </div><!-- /opp-section-->
       </section>
 
-      <div class="opp-sidebar col-sm-4 col-sm-pull-8">
+      <div class="opp-sidebar col-md-4 col-md-pull-8">
         <header class="opp-section-header">
           <h3>Organization</h3>
         </header>
