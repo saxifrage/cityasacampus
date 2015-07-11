@@ -2,11 +2,9 @@
 <div class="opportunity-instance">
   <div class="banner">
     <div class="brand-container">
-      <img src="opportunity-instances/assets/filler-opp-inst-icon.png">
-      <!--<img src="{{opportunityInstance.img.src}}" ng-show="opportunityInstance.img.type == 'logo'"/>-->
+      <img src="{{opportunityInstance.img.src}}" ng-if="opportunityInstance.img.type == 'logo'" />
       <h1 class="event-title">{{opportunityInstance.name}}</h1>
     </div>
-    <p class="desc-container">{{opportunityInstance.short_description}}</p>
   </div>
 
   <section class="sub-banner">
@@ -14,7 +12,7 @@
       <div class="row text-center">
         <div class="col-md-2-5">
           <small class="sub-banner-type">Event Date</small>
-          <h3 class="sub-banner-heading">{{opportunityInstance.starts |  date:'MM/dd/yyyy'}}</h3>
+          <h3 class="sub-banner-heading">{{opportunityInstance.starts | date:'MM/dd/yyyy'}}</h3>
         </div><!--/col-md-2-->
         <div class="col-md-2-5">
           <small class="sub-banner-type">Event Price</small>
@@ -27,11 +25,11 @@
         </div><!--/col-md-2-->
         <div class="col-md-2-5">
           <small class="sub-banner-type">Neighborhood</small>
-          <h3 class="sub-banner-heading">Var Needed</h3>
+          <h3 class="sub-banner-heading">{{opportunityInstance.neighborhood}}</h3>
         </div><!--/col-md-2-->
         <div class="col-md-2-5">
           <small class="sub-banner-type">Register By:</small>
-          <h3 class="sub-banner-heading">Var Needed</h3>
+          <h3 class="sub-banner-heading">{{opportunityInstance.registration_deadline | date:'MM/dd/yyyy'}}</h3>
         </div><!--/col-md-2-->
         <div class="col-md-2-5">
           <a class="btn btn-primary btn-block">Register Now</a>
@@ -60,7 +58,7 @@
               <h4 class="detail-type">Event Date:</h4>
             </div>
             <div class="col-sm-7 col-xs-height col-middle">
-              <p>{{opportunityInstance.starts}}</p>
+              <p>{{opportunityInstance.starts | date:'MM/dd/yyyy hh:mm a'}}</p>
             </div>
           </div><!-- /opp-detail-row-->
           <div class="row-same-height opp-detail-row">
@@ -71,33 +69,31 @@
               <p>{{opportunityInstance.venue_name}}</p>
             </div>
           </div><!-- /opp-detail-row-->
-          <div class="row-same-height opp-detail-row">
+          <div class="row-same-height opp-detail-row" ng-if="opportunityInstance.description">
             <div class="col-sm-5 col-xs-height col-middle">
               <h4 class="detail-type">Description:</h4>
             </div>
             <div class="col-sm-7 col-xs-height col-middle">
-              <p>{{opportunityInstance.short_description}}</p>
+              <p>{{opportunityInstance.description}}</p>
             </div>
           </div><!-- /opp-detail-row-->
-          <div class="row-same-height opp-detail-row">
+          <div class="row-same-height opp-detail-row" ng-if="opportunityInstance.min_age && opportunityInstance.max_age">
             <div class="col-sm-5 col-xs-height col-middle">
               <h4 class="detail-type">Age Range:</h4>
             </div>
             <div class="col-sm-7 col-xs-height col-middle">
               <p>
-                <span ng-if="opportunityInstance.min_age && opportunityInstance.max_age">
-                  {{opportunityInstance.min_age}} - {{opportunityInstance.max_age}}
-                </span>
+                {{opportunityInstance.min_age}} - {{opportunityInstance.max_age}}
               </p>
             </div>
           </div><!-- /opp-detail-row-->
-          <div class="row-same-height opp-detail-row">
+          <div class="row-same-height opp-detail-row" ng-if="opportunityInstance.price">
             <div class="col-sm-5 col-xs-height col-middle">
               <h4 class="detail-type">Price:</h4>
             </div>
             <div class="col-sm-7 col-xs-height col-middle">
               <p>
-                <span ng-if="opportunityInstance.price">
+                <span>
                     {{opportunityInstance.price | currency:'$'}}
                 </span>
                 <span ng-if="!opportunityInstance.price">free</span>
@@ -109,9 +105,8 @@
               <h4 class="detail-type">Online?</h4>
             </div>
             <div class="col-sm-7 col-xs-height col-middle">
-              <p>
-                {{opportunityInstance.online_opportunityInstance}}
-              </p>
+              <p ng-if="opportunityInstance.online_opportunity">Yes</p>
+              <p ng-if="!opportunityInstance.online_opportunity">No</p>
             </div>
           </div><!-- /opp-detail-row-->
           <div class="row-same-height opp-detail-row">
@@ -119,9 +114,8 @@
               <h4 class="detail-type">Ongoing?</h4>
             </div>
             <div class="col-sm-7 col-xs-height col-middle">
-              <p>
-                {{opportunityInstance.ongoing}}
-              </p>
+              <p ng-if="opportunityInstance.ongoing">Yes</p>
+              <p ng-if="!opportunityInstance.ongoing">No</p>
             </div>
           </div><!-- /opp-detail-row-->
         </div><!-- /opp-section-->
@@ -149,9 +143,19 @@
         </section>
 
         <header class="opp-section-header">
-              <h3>Badges</h3>
+          <h3>Badges</h3>
         </header>
+        <!-- //TODO: temporary -->
         <section class="opp-section badges">
+          <svg width="75" height="75" title="Badges are coming soon!">
+            <circle cx="40" cy="40" r="30" stroke="grey" stroke-width="5" fill="green"></circle>
+          </svg>
+          <svg width="75" height="75" style="margin-right: 25px;margin-left: 25px;" title="Badges are coming soon!">
+            <circle cx="40" cy="40" r="30" stroke="grey" stroke-width="5" fill="purple"></circle>
+          </svg>
+          <svg width="75" height="75" title="Badges are coming soon!">
+            <circle cx="40" cy="40" r="30" stroke="grey" stroke-width="5" fill="blue"></circle>
+          </svg>
         </section>
 
         <header class="opp-section-header">
