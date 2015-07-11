@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class OrganizersControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @organizer = organizers(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
