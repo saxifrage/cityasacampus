@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class OpportunityInstancesControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @opportunity_instance = opportunity_instances(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
