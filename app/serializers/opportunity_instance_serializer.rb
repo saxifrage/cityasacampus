@@ -4,7 +4,7 @@ class OpportunityInstanceSerializer < ActiveModel::Serializer
   has_one :organizer
   attributes :min_age, :max_age, :venue_name, :online_opportunity, :ongoing,
     :price, :registration_deadline, :registration_url, :created, :changed,
-    :ends, :starts
+    :ends, :starts, :neighborhood
   has_one :topic
 
   def uid
@@ -42,7 +42,7 @@ class OpportunityInstanceSerializer < ActiveModel::Serializer
   def img
     {
       src: object.logo_url,
-      type: 'banner'
+      type: 'logo'
     }
   end
 
@@ -60,5 +60,9 @@ class OpportunityInstanceSerializer < ActiveModel::Serializer
 
   def price
     '%.2f' % (object.price.to_i/100.0)
+  end
+
+  def neighborhood
+    object.neighborhood
   end
 end
