@@ -32,7 +32,7 @@
           <h3 class="sub-banner-heading">{{opportunityInstance.registration_deadline | date:'MM/dd/yyyy'}}</h3>
         </div><!--/col-md-2-->
         <div class="col-md-2-5">
-          <a class="btn btn-primary btn-block">Register Now</a>
+          <a class="btn btn-primary btn-block" ng-class="{'disabled': registrationStatus}" href="{{opportunityInstance.registration_url}}">Register Now</a>
         </div><!--/col-md-2-->
       </div><!--/row -->
     </div><!-- /container-->
@@ -123,7 +123,7 @@
 
       <div class="opp-sidebar col-md-4 col-md-pull-8">
         <header class="opp-section-header">
-          <h3>Organization</h3>
+          <h3>Organizer</h3>
         </header>
         <section class="opp-section organizer">
           <a href="{{opportunityInstance.organizer.url}}" target="_blank">
@@ -135,12 +135,14 @@
           <p>{{opportunityInstance.organizer.description}}</p>
         </section>
 
+        <!--
         <header class="opp-section-header">
           <h3>Contact</h3>
         </header>
 
         <section class="opp-section contact">
         </section>
+        -->
 
         <header class="opp-section-header">
           <h3>Badges</h3>
@@ -158,11 +160,13 @@
           </svg>
         </section>
 
+        <!--
         <header class="opp-section-header">
               <h3>Attendees</h3>
         </header>
         <section class="opp-section attendees">
         </section>
+        -->
       </div><!-- /opp-sidebar-->
   </div><!-- /row-->
 </div><!-- /container-fluid-->

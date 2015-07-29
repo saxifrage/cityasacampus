@@ -20,7 +20,8 @@ angular.module('caac.opportunity-instances.controller', [
 
           logger.info('showing opportunity instance');
           self.opportunityInstance = res.data.result;
-
+          self.determineRegistrationStatus();
+          
           return;
         },
 
@@ -39,6 +40,17 @@ angular.module('caac.opportunity-instances.controller', [
         .then(steps.results)
         .catch(steps.error)
         .finally(steps.done);
+    };
+
+    //this will make register btn gray/inactive
+    self.determineRegistrationStatus = function() {
+      self.registrationStatus = false;
+
+      if (!self.opportunityInstance || !self.opportunityInstance.registration_deadline) return;
+
+      if (moment().unix() >= moment(self.opportunityInstance.registration_deadline).unix()) {
+        self.registrationStatus = true;
+      }
     };
 
     self.init = function() {
