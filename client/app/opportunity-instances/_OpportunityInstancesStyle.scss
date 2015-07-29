@@ -6,7 +6,8 @@
 }
 
 .banner .brand-container{
-  width: 200px;
+  min-width: 200px;
+  max-width: 450px;
   height: auto;
   padding-top: 80px;
   margin: auto;
@@ -62,6 +63,10 @@ h3.sub-banner-heading{
   max-width: 300px;
 }
 
+.sub-banner .btn.disabled {
+  pointer-events: none; /* disables link */
+  background: rgb(211, 208, 208);
+}
 
 // Opportunity Body
 // --------------------------------------------------
