@@ -7,7 +7,7 @@
       <h1 class="event-title">{{opportunityInstance.name}}</h1>
     </div>
     <p class="desc-container">{{opportunityInstance.short_description}}</p>
-  </div>
+  </div>  ~
 
   <section class="sub-banner">
     <div class="container">
@@ -60,7 +60,7 @@
               <h4 class="detail-type">Event Date:</h4>
             </div>
             <div class="col-sm-7 col-xs-height col-middle">
-              <p>{{opportunityInstance.starts}}</p>
+              <p>{{opportunityInstance.starts |  date:'MM/dd/yyyy'}}</p>
             </div>
           </div><!-- /opp-detail-row-->
           <div class="row-same-height opp-detail-row">
