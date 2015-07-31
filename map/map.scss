@@ -1,5 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
+// Vars // --------------------------------------------------
+$brand-primary: #0099FF;
+
 // Global // --------------------------------------------------
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,34 +19,34 @@ p{
 }
 
 a {
-  color: #0099FF;
+  color: $brand-primary;
   text-decoration: none;
   transition: all .15s linear;
   -webkit-transition: all .15s linear;
   &:hover{
-    color: darken(#0099FF, 10%);
+    color: darken($brand-primary, 10%);
   }
 }
 
 a.btn{
-  background: #0099FF;
+  background: $brand-primary;
   color: #ffffff;
   display: block;
   text-align: center;
   font-weight: 700;
   padding: 10px 12px;
   &:hover{
-    background: darken(#0099FF, 5%);
+    background: darken($brand-primary, 5%);
   }
 }
 
 ::selection{
-  background: #0099FF;
+  background: $brand-primary;
   color: #ffffff;
 }
 
 ::moz-selection{
-  background: #0099FF;
+  background: $brand-primary;
   color: #ffffff;
 }
 
@@ -58,35 +61,38 @@ a.btn{
 }
 
 rect {
-    fill: #0099FF;
+    fill: $brand-primary;
     transition: all .15 linear;
     -webkit-transition: all .15 linear;
 }
 
 rect:hover {
-    fill: darken(#0099FF, 10%);
+    fill: darken($brand-primary, 10%);
     cursor: pointer;
 }
 
 rect.selected,
 rect.selected:hover{
-    fill: darken(#0099FF, 20%);
+    fill: darken($brand-primary, 20%);
 }
 
 // Pop-Up // --------------------------------------------------
 .popup {
     display: none;
-    position: fixed;
+    position: absolute;
     top: 20px;
     left: 20px;
     width: 250px;
-    box-shadow: 0px 0px 25px rgba(0,0,0,.15);
+    //box-shadow: 0px 0px 25px rgba(0,0,0,.15);
 }
 
 .popup-header{
     background-size: cover;
+    background-color: transparent;
     position: relative;
-    padding: 20px 20px 25px;
+    padding: 60px 20px 35px;
+    -webkit-clip-path: polygon(75% 20%, 100% 0, 100% 20%, 100% 100%, 0 100%, 0% 60%, 0 20%);
+clip-path: polygon(75% 20%, 100% 0, 100% 20%, 100% 100%, 0 100%, 0% 60%, 0 20%);
 }
 
 .popup-header .overlay {
@@ -113,13 +119,31 @@ rect.selected:hover{
     color: white;
 }
 
-.popup-body {
-    height: 256px;
-    overflow: auto;
+/* Details */
+.popup .details{
+    background-color: #ffffff;
+    padding: 20px 20px 25px;
 }
 
-.popup .details{
-  padding: 20px 20px 25px;
+/* Attributes */
+.popup .attributes{
+padding: 20px 0 0;
+}
+
+h3.attribute{
+    font-weight: 700;
+    color: $brand-primary;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.icon{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
 }
 
 .popup .organization{
@@ -132,9 +156,37 @@ rect.selected:hover{
     margin: 10px 0 10px;
 }
 
-.popup h3 {
+.popup h3.orgHeader {
     font: 700 10px/8px Helvetica, sans-serif;
     text-transform: uppercase;
     margin: 0px 0px 15px;
     color: darken(#ffffff, 30%)
+}
+
+.tooltip {
+    display: none;
+    background: #ffffff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 12px 15px;
+    //width: 250px;
+    box-shadow: 0px 0px 25px rgba(0,0,0,.15);
+}
+
+.tooltip h1{
+    font-size: 12px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.tooltip .arrow {
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid white;
+    border-bottom: 10px solid transparent; 
+    border-left:10px solid transparent;
+    position: absolute;
+    top: 0px;
+    left: -10px; 
 }

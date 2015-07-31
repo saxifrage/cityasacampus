@@ -108,7 +108,16 @@ rect.selected:hover {
 h3.attribute {
   font-weight: 700;
   color: #0099FF;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-bottom: 5px; }
+
+.icon {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  position: relative;
+  top: 2px; }
 
 .popup .organization {
   padding: 25px 20px;
@@ -123,3 +132,27 @@ h3.attribute {
   text-transform: uppercase;
   margin: 0px 0px 15px;
   color: #b3b3b3; }
+
+.tooltip {
+  display: none;
+  background: #ffffff;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 12px 15px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15); }
+
+.tooltip h1 {
+  font-size: 12px;
+  margin: 0;
+  text-transform: uppercase; }
+
+.tooltip .arrow {
+  width: 0;
+  height: 0;
+  border-top: 10px solid white;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  position: absolute;
+  top: 0px;
+  left: -10px; }

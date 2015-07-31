@@ -10,6 +10,12 @@
     </head>
     <body>
         <div id="map"></div>
+            <div class="tooltip">
+            <div class="arrow"></div>
+                <h1>
+                    <a class="tooltipResourceName" href="" target="_blank"></a>
+                </h1>
+            </div>
             <div class="popup">
                 <div class="bar">
                     <p></p>
@@ -26,10 +32,22 @@
                             <p></p>
                         </div><!-- /resource-description-->
                         <div class="attributes">
-                            <h3 class="attribute">Activity: <span class="activityType"></span></h3>
-                            <h3 class="attribute"><span class="activityInterval"></span></h3>
-                            <h3 class="attribute">Age: <span class="activityAgeStart"></span>&#8212;<span class="activityAgeEnd"></span></h3>
-                            <h3 class="attribute"><span class="activityExperience"></span></h3>
+                            <h3 class="attribute">
+                                <img class="icon" src="./images/icon_activityType.svg" alt="Activity Type">
+                                Activity:
+                                    <span class="activityType"></span>
+                            </h3>
+                            <h3 class="attribute">
+                                <img class="icon" src="./images/icon_activityInterval.svg" alt="Activity Interval">
+                                <span class="activityInterval"></span>
+                            </h3>
+                            <h3 class="attribute">
+                                <img class="icon" src="./images/icon_activityAge.svg" alt="Activity Age">
+                                Age: <span class="activityAgeStart"></span>&#8212;<span class="activityAgeEnd"></span></h3>
+                            <h3 class="attribute">
+                                <img class="icon" src="./images/icon_activityDifficulty.svg" alt="Activity Experience">
+                                <span class="activityExperience"></span>
+                            </h3>
                         </div><!-- attronites-->
                     </section><!-- / details-->
                     <section class="organization">

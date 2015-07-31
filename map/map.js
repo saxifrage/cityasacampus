@@ -1,20 +1,26 @@
 Map = {};
 
 Map.popup = function(e) {
- var rect = $(this);
- var offset = $(this).offset();
+    var rect = $(this);
 
- var rectWidth = $(this)[0].getBoundingClientRect().width;
- var rectHeight = $(this)[0].getBoundingClientRect().height;
+    /* Get position and dimensions */
+    var offset = $(this).offset();
+    var rectWidth = $(this)[0].getBoundingClientRect().width;
+    var rectHeight = $(this)[0].getBoundingClientRect().height;
 
- var centerX = offset.left + rectWidth/2 - 250;
- var centerY = offset.top + rectHeight/2;
+    /* Position popover */
+    var centerX = offset.left + rectWidth/2 - 250;
+    var centerY = offset.top + rectHeight/2;
 
- $('.popup').css({
-   'top' : centerY,
-   'left' : centerX,
- });
+    $('.popup').css({
+        'top' : centerY,
+        'left' : centerX,
+    });
 
+    /* Hide tooltip that pops up on hover */
+    $('.tooltip').hide();
+
+    /* Assign JSON data and show */
     var resource = Map.resources[rect.attr('id')];
 
     $('.selected').attr('class', '');
@@ -45,6 +51,33 @@ Map.popdown = function() {
     $('.selected').attr('class', '');
 };
 
+Map.tooltip = function(e) {
+    var rect = $(this);
+
+    /* Get position and dimensions */
+    var offset = $(this).offset();
+    var rectWidth = $(this)[0].getBoundingClientRect().width;
+    var rectHeight = $(this)[0].getBoundingClientRect().height;
+
+    /* Position Tooltip */
+    var centerX = offset.left + rectWidth/2;
+    var centerY = offset.top + rectHeight/2;
+
+    $('.tooltip').css({
+        'top' : centerY,
+        'left' : centerX,
+    });
+
+    /* Assign JSON data and show*/
+    var resource = Map.resources[rect.attr('id')];
+    $('.selected').attr('class', '');
+    rect.attr('class', 'selected');
+
+    $('.tooltipResourceName').html(resource.resourceName).attr('href', resource.resourceUrl);
+    $('.tooltip').show();
+    e.stopPropagation();
+};
+
 Map.init = function() {
 
     jQuery.get('resources.json', function(resources) {
@@ -52,7 +85,7 @@ Map.init = function() {
         $('#map').load('map.svg', function() {
             $('svg').svg();
             var svg = $('svg').svg('get');
-
+            $('rect').hover(Map.tooltip);
             $('rect').click(Map.popup);
             $('#map').click(Map.popdown);
         });
