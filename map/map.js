@@ -1,22 +1,19 @@
 Map = {};
 
 Map.popup = function(e) {
-    var rect = $(this);
-    var offset = $(this).offset();
+ var rect = $(this);
+ var offset = $(this).offset();
 
-    var rectWidth = $(this).attr('width').replace(/[^-\d\.]/g, '');
-    var rectHeight = $(this).attr('height').replace(/[^-\d\.]/g, '');
+ var rectWidth = $(this)[0].getBoundingClientRect().width;
+ var rectHeight = $(this)[0].getBoundingClientRect().height;
 
-    var popoverWidth = 250;
-    var popoverHeight = $('.popup').height();
+ var centerX = offset.left + rectWidth/2 - 250;
+ var centerY = offset.top + rectHeight/2;
 
-    var centerX = offset.left - rectWidth/2;
-    var centerY = offset.top - rectHeight/2;
-
-    $('.popup').css({
-       'top' : centerY,
-       'left' : centerX,
-    });
+ $('.popup').css({
+   'top' : centerY,
+   'left' : centerX,
+ });
 
     var resource = Map.resources[rect.attr('id')];
 
