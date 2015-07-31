@@ -2,18 +2,43 @@ Map = {};
 
 Map.popup = function(e) {
     var rect = $(this);
+    var offset = $(this).offset();
+
+    var rectWidth = $(this).attr('width').replace(/[^-\d\.]/g, '');
+    var rectHeight = $(this).attr('height').replace(/[^-\d\.]/g, '');
+
+    var popoverWidth = 250;
+    var popoverHeight = $('.popup').height();
+
+    var centerX = offset.left - rectWidth/2;
+    var centerY = offset.top - rectHeight/2;
+    //var position = $(this).position();
+
+    //var str = $( height ).text();
+    $( ".popup .details" ).html( centerY );
+    $('.popup').css({
+       'top' : centerY,
+       'left' : centerX,
+    });
+
     var resource = Map.resources[rect.attr('id')];
 
     $('.selected').attr('class', '');
     rect.attr('class', 'selected');
 
     $('.resourceName').html(resource.resourceName).attr('href', resource.resourceUrl);
-    $('.popup h1').css('background-image', 'url("'+resource.imageUrl+'")');
+    $('.popup-header').css('background-image', 'url("'+resource.imageUrl+'")');
     $('.resourceDescription').html(resource.resourceDescription);
 
     $('.orgName a').attr('href', resource.orgUrl);
     $('.orgName a').html(resource.orgName);
     $('.orgDescription').html(resource.orgDescription);
+
+    $('.activityType').html(resource.locationType);
+    $('.activityInterval').html(resource.instanceType);
+    $('.activityExperience').html(resource.difficultyLevel);
+    $('.activityAgeStart').html(resource.ageRangeStart);
+    $('.activityAgeEnd').html(resource.ageRangeEnd);
 
     $('.cta a').attr('href', resource.resourceUrl);
 

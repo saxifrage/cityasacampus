@@ -62,16 +62,18 @@ rect.selected:hover {
 
 .popup {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 20px;
   left: 20px;
-  width: 250px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15); }
+  width: 250px; }
 
 .popup-header {
   background-size: cover;
+  background-color: transparent;
   position: relative;
-  padding: 20px 20px 25px; }
+  padding: 60px 20px 35px;
+  -webkit-clip-path: polygon(75% 20%, 100% 0, 100% 20%, 100% 100%, 0 100%, 0% 60%, 0 20%);
+  clip-path: polygon(75% 20%, 100% 0, 100% 20%, 100% 100%, 0 100%, 0% 60%, 0 20%); }
 
 .popup-header .overlay {
   position: absolute;
@@ -94,12 +96,19 @@ rect.selected:hover {
   text-decoration: none;
   color: white; }
 
-.popup-body {
-  height: 256px;
-  overflow: auto; }
-
+/* Details */
 .popup .details {
+  background-color: #ffffff;
   padding: 20px 20px 25px; }
+
+/* Attributes */
+.popup .attributes {
+  padding: 20px 0 0; }
+
+h3.attribute {
+  font-weight: 700;
+  color: #0099FF;
+  text-transform: uppercase; }
 
 .popup .organization {
   padding: 25px 20px;
@@ -109,7 +118,7 @@ rect.selected:hover {
   font: bold 18px/21px Helvetica, sans-serif;
   margin: 10px 0 10px; }
 
-.popup h3 {
+.popup h3.orgHeader {
   font: 700 10px/8px Helvetica, sans-serif;
   text-transform: uppercase;
   margin: 0px 0px 15px;
