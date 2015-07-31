@@ -12,10 +12,7 @@ Map.popup = function(e) {
 
     var centerX = offset.left - rectWidth/2;
     var centerY = offset.top - rectHeight/2;
-    //var position = $(this).position();
 
-    //var str = $( height ).text();
-    $( ".popup .details" ).html( centerY );
     $('.popup').css({
        'top' : centerY,
        'left' : centerX,
