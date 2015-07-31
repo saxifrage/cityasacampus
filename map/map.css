@@ -99,7 +99,8 @@ rect.selected:hover {
 /* Details */
 .popup .details {
   background-color: #ffffff;
-  padding: 20px 20px 25px; }
+  padding: 20px 20px 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
 
 /* Attributes */
 .popup .attributes {
@@ -132,6 +133,9 @@ h3.attribute {
   text-transform: uppercase;
   margin: 0px 0px 15px;
   color: #b3b3b3; }
+
+.cta {
+  margin-top: 20px; }
 
 .tooltip {
   display: none;

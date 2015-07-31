@@ -123,6 +123,7 @@ clip-path: polygon(75% 20%, 100% 0, 100% 20%, 100% 100%, 0 100%, 0% 60%, 0 20%);
 .popup .details{
     background-color: #ffffff;
     padding: 20px 20px 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
 
 /* Attributes */
@@ -147,8 +148,8 @@ h3.attribute{
 }
 
 .popup .organization{
-  padding: 25px 20px;
-  background: darken(#ffffff, 5%);
+    padding: 25px 20px;
+    background: darken(#ffffff, 5%);
 }
 
 .popup h2 {
@@ -161,6 +162,10 @@ h3.attribute{
     text-transform: uppercase;
     margin: 0px 0px 15px;
     color: darken(#ffffff, 30%)
+}
+
+.cta{
+    margin-top: 20px;
 }
 
 .tooltip {
