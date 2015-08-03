@@ -70,12 +70,15 @@ Map.tooltip = function(e) {
 
     /* Assign JSON data and show*/
     var resource = Map.resources[rect.attr('id')];
-    $('.selected').attr('class', '');
-    rect.attr('class', 'selected');
 
     $('.tooltipResourceName').html(resource.resourceName).attr('href', resource.resourceUrl);
     $('.tooltip').show();
     e.stopPropagation();
+};
+
+Map.tooltipHide = function() {
+    $('.tooltip').hide();
+   // $('.selected').attr('class', '');
 };
 
 Map.init = function() {
@@ -86,8 +89,10 @@ Map.init = function() {
             $('svg').svg();
             var svg = $('svg').svg('get');
             $('rect').hover(Map.tooltip);
+            $('svg').mouseout(Map.tooltipHide);
+            $('#map').click(Map.tooltipHide);
             $('rect').click(Map.popup);
-            $('#map').click(Map.popdown);
+            $('body').click(Map.popdown);
         });
     });
 };
