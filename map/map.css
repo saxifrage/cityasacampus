@@ -152,6 +152,8 @@ rect.selected:hover {
   display: block;
   text-decoration: none;
   color: white; }
+  .popup a.resourceName:hover {
+    color: #0099FF; }
 
 /* Details */
 .popup .details {

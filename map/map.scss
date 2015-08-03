@@ -187,6 +187,9 @@ clip-path: polygon(75% 20%, 100% 0, 100% 20%, 100% 100%, 0 100%, 0% 60%, 0 20%);
     display: block;
     text-decoration: none;
     color: white;
+    &:hover{
+      color: $brand-primary;
+    }
 }
 
 /* Details */
