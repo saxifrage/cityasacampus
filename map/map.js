@@ -28,17 +28,39 @@ Map.popup = function(e) {
 
     $('.resourceName').html(resource.resourceName).attr('href', resource.resourceUrl);
     $('.popup-header').css('background-image', 'url("'+resource.imageUrl+'")');
-    $('.resourceDescription').html(resource.resourceDescription);
+
+    /* Trims Org Description to 300 chars */
+    if ( resource.resourceDescription.length > 300) {
+        var trimmedResourceDescription = resource.resourceDescription.substr(0, 300) + "\u2026";
+        $('.resourceDescription').html(trimmedResourceDescription);
+    } else {
+        $('.resourceDescription').html(resource.resourceDescription);
+    }
 
     $('.orgName a').attr('href', resource.orgUrl);
     $('.orgName a').html(resource.orgName);
-    $('.orgDescription').html(resource.orgDescription);
+
+    /* Trims Org Description to 150 chars */
+    if ( resource.orgDescription.length > 300) {
+        var trimmedOrgDescription = resource.orgDescription.substr(0, 150) + "\u2026";
+        $('.orgDescription').html(trimmedOrgDescription);
+    } else {
+        $('.orgDescription').html(resource.orgDescription);
+    }        
 
     $('.activityType').html(resource.locationType);
     $('.activityInterval').html(resource.instanceType);
     $('.activityExperience').html(resource.difficultyLevel);
-    $('.activityAgeStart').html(resource.ageRangeStart);
-    $('.activityAgeEnd').html(resource.ageRangeEnd);
+
+    /* Concatenates age start and end into single var; replaces 9–90 with 9+ */
+    if ( resource.ageRangeStart == "9" && resource.ageRangeEnd == "90" ){
+        resource.ageRangeAll = "9+";
+    } else {
+        resource.ageRangeAll = resource.ageRangeStart + "&#8212;" + resource.ageRangeEnd;
+    }
+    $('.activityAgeAll').html(resource.ageRangeAll);
+    
+    $('.activityAgeStart').html(resource.ageRangeAll);
 
     $('.cta a').attr('href', resource.resourceUrl);
 
@@ -78,7 +100,7 @@ Map.tooltip = function(e) {
 
 Map.tooltipHide = function() {
     $('.tooltip').hide();
-   // $('.selected').attr('class', '');
+    $('.selected').attr('class', '');
 };
 
 Map.init = function() {
