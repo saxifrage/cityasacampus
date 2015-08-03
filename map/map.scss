@@ -57,8 +57,9 @@ a.btn{
 
 // Navigation // --------------------------------------------------
 .navigation{
-  position: absolute;
+  position: fixed;
 }
+
 nav{
   float: left;
   margin: 40px 0px 40px 40px;
@@ -72,11 +73,13 @@ nav{
 
 nav li a {
   background-color: #808080;
+  opacity: .9;
   color: #ffffff;
   display: block;
   padding: 14px 20px;
   &:hover{
     background-color: darken(#808080, 10%);
+    opacity: 1;
     color: #ffffff;
     text-shadow: 0px 0px 12px rgba(255,255,255,.7);
   }
@@ -87,6 +90,13 @@ nav li a {
   margin-bottom: 5px;
   background-color: darken(#808080, 10%);
 }
+
+.nav-heading .icon{
+  width: 20px;
+  height: 20px;
+  top: 5px;
+}
+
 
 .primary{
   font-size: 18px;

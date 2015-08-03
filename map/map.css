@@ -43,7 +43,7 @@ a.btn {
   color: #ffffff; }
 
 .navigation {
-  position: absolute; }
+  position: fixed; }
 
 nav {
   float: left;
@@ -56,11 +56,13 @@ nav {
 
 nav li a {
   background-color: #808080;
+  opacity: .9;
   color: #ffffff;
   display: block;
   padding: 14px 20px; }
   nav li a:hover {
     background-color: #676767;
+    opacity: 1;
     color: #ffffff;
     text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.7); }
 
@@ -68,6 +70,11 @@ nav li a {
   font-weight: 700;
   margin-bottom: 5px;
   background-color: #676767; }
+
+.nav-heading .icon {
+  width: 20px;
+  height: 20px;
+  top: 5px; }
 
 .primary {
   font-size: 18px; }
