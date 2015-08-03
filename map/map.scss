@@ -1,7 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
-// Vars // --------------------------------------------------
+// Vars & Helpers // --------------------------------------------------
 $brand-primary: #0099FF;
+
+
+.text-center{
+  text-align: center !important;
+}
 
 // Global // --------------------------------------------------
 
@@ -48,6 +53,56 @@ a.btn{
 ::moz-selection{
   background: $brand-primary;
   color: #ffffff;
+}
+
+// Navigation // --------------------------------------------------
+.navigation{
+  position: absolute;
+}
+nav{
+  float: left;
+  margin: 40px 0px 40px 40px;
+  min-width: 170px;
+}
+
+.nav li{
+  list-style: none;
+  border-bottom: 1px solid lighten(#808080, 10%);
+}
+
+nav li a {
+  background-color: #808080;
+  color: #ffffff;
+  display: block;
+  padding: 14px 20px;
+  &:hover{
+    background-color: darken(#808080, 10%);
+    color: #ffffff;
+    text-shadow: 0px 0px 12px rgba(255,255,255,.7);
+  }
+}
+
+.nav-heading{
+  font-weight: 700;
+  margin-bottom: 5px;
+  background-color: darken(#808080, 10%);
+}
+
+.primary{
+  font-size: 18px;
+}
+
+.secondary{
+  font-size: 16px;
+}
+
+.tertiary{
+  font-size: 14px
+}
+
+.secondary li a,
+.tertiary li a{
+    padding: 10px 20px;
 }
 
 // Map // --------------------------------------------------
