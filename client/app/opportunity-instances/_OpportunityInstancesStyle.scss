@@ -88,7 +88,6 @@ h3.sub-banner-heading{
 .opp-section-header{
   background-color: $brand-primary;
   border-bottom: 4px solid $brand-primary-light;
-
 }
 
 .opp-section-header h3{
@@ -108,5 +107,13 @@ h3.sub-banner-heading{
 
 h4.detail-type{
   color: #3b4144;
+  margin: 0px;
+}
+
+img.org-profile-image{
+  border-radius: 50%;
+}
+
+h3.organization-name{
   margin: 0px;
 }

@@ -7,7 +7,7 @@
       <h1 class="event-title">{{opportunityInstance.name}}</h1>
     </div>
     <p class="desc-container">{{opportunityInstance.short_description}}</p>
-  </div>  ~
+  </div>
 
   <section class="sub-banner">
     <div class="container">
@@ -132,12 +132,19 @@
           <h3>Organization</h3>
         </header>
         <section class="opp-section organizer">
-          <a href="{{opportunityInstance.organizer.url}}" target="_blank">
-            <img class="img-responsive center-block" src="{{opportunityInstance.organizer.logo}}" ng-show="opportunityInstance.organizer.logo" />
-          </a>
-          <a href="{{opportunityInstance.organizer.url}}" target="_blank">
-            {{opportunityInstance.organizer.name}}
-          </a>
+          <div class="row">
+            <div class="col-sm-4">
+              <a href="{{opportunityInstance.organizer.url}}" target="_blank">
+                <img class="img-responsive center-block org-profile-image" src="{{opportunityInstance.organizer.logo}}" ng-show="opportunityInstance.organizer.logo" />
+              </a>
+              </div><!-- /col-sm-4-->
+              <div class="col-sm-8">
+                <h3 class="organization-name">{{opportunityInstance.organizer.name}}</h3>
+                <a href="{{opportunityInstance.organizer.url}}" target="_blank">
+                  <small>{{opportunityInstance.organizer.url}}</small>
+                </a>
+              </div><!-- /col-sm-8-->
+          </div><!-- /row-->
           <p>{{opportunityInstance.organizer.description}}</p>
         </section>
 
