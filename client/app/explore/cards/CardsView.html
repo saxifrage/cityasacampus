@@ -1,31 +1,35 @@
 <div class="cards">
   <div ng-repeat="o in opportunityInstances" class="card" ng-click="goToOpportunityInstance(o.uid)">
-    <div class="top" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{o.img.src}})">
-      <h5 class="name">{{o.name}}</h5>
-    </div>
+    <div class="top" style="background: url({{o.img.src}})"></div>
 
     <div class="body">
-      <div class="description">
-        <p><em>{{o.organizer.name}}</em>: {{o.description | truncate: 100: '...': true}}</p>
-      </div>
+      <h5 class="name">{{o.name}}</h5>
+      <p class="date">{{o.starts | date:'MM.dd.yy'}}</p>
 
-      <div class="attributes">
-        <h3 class="attribute">
-          <img class="icon" src="/explore/cards/activity-type-icon.svg" />
-          Activity:
-          <span class="activity-type" ng-if="!o.online_opportunity">Local</span>
-          <span class="activity-type" ng-if="o.online_opportunity">Digital</span>
-        </h3>
-        <h3 class="attribute">
-          <img class="icon" src="/explore/cards/activity-date-icon.svg" />
-          <span class="activity-date">{{o.starts | date:'MM/dd/yyyy'}}</span>
-        </h3>
-        <h3 class="attribute">
-          <img class="icon" src="/explore/cards/activity-price-icon.svg" />
-          <span class="activity-price" ng-if="!o.price">free</span>
-          <span class="activity-price" ng-if="o.price">{{o.price | currency:'$'}}</span>
-        </h3>
-      </div>
+      <p class="organizer-and-location">{{o.organizer.name}} | {{o.neighborhood}}</p>
+
+      <div class="description"><p>{{o.description | truncate: 100: '...': true}}</p></div>
+
+      <!-- TODO: use a proper grid system -->
+      <table class="attributes">
+        <tr>
+          <td class="activity-type">
+            <img class="icon" src="/explore/cards/activity-type-icon.svg" />
+            <span ng-if="!o.online_opportunity">Local</span>
+            <span ng-if="o.online_opportunity">Digital</span>
+          </td>
+          <td class="activity-duration">
+            <img class="icon" src="/explore/cards/activity-duration-icon.svg" />
+            <span ng-if="!o.ongoing">One-time</span>
+            <span ng-if="o.ongoing">Ongoing</span>
+          </td>
+          <td class="activity-price">
+            <img class="icon" src="/explore/cards/activity-price-icon.svg" />
+            <span ng-if="!o.price">Free</span>
+            <span ng-if="o.price">{{o.price | currency:'$'}}</span>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 
