@@ -1,5 +1,7 @@
 software = Topic.create(name: 'Software')
-neighborhood = 'zalgo'
+math = Topic.create(name: 'Math')
+random_img = "http://lorempixel.com/g/400/400/"
+neighborhood = 'Oakland'
 cloakroom = Location.create(name: 'The Cloakroom')
 codeandsupply = Organizer.create(name: 'Code & Supply', description: 'Pittsburgh\'s software community', url: 'http://www.codeandsupply.co', logo_url: 'https://raw.githubusercontent.com/codeandsupply/assets/master/logos/logo-large.png')
 saxifrage = Organizer.create(name: 'Saxifrage School', description: 'The Saxifrage School is a higher education laboratory working to lower costs, re-think the campus, and reconcile theory with practice.', url: 'http://www.saxifrageschool.org/', logo_url: 'http://www.saxifrageschool.org/img/saxifrage_logo.png')
@@ -10,10 +12,10 @@ profdev = Opportunity.create(name: 'Professional Development', description: 'Get
 
 Opportunity.create(name: 'Carpentry courses', organizer: saxifrage)
 
-OpportunityInstance.create(name: 'Software Design Patterns', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood)
-OpportunityInstance.create(name: 'Tools of the Trade', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood)
-OpportunityInstance.create(name: 'Software Testing', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood)
-OpportunityInstance.create(name: 'Programming Principles', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood)
+OpportunityInstance.create(name: 'Software Design Patterns', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood, logo_url: random_img)
+OpportunityInstance.create(name: 'Tools of the Trade', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood, logo_url: random_img)
+OpportunityInstance.create(name: 'Software Testing', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood, logo_url: random_img)
+OpportunityInstance.create(name: 'Programming Principles', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood, logo_url: random_img)
 
 junky_organizer = Organizer.create(name: 'Spam organizer')
 junky_opportunities = []
@@ -22,12 +24,31 @@ junky_opportunities = []
 end
 
 junky_opportunities.each do |opp|
-  5.times do |n|
-    new_opp = opp.opportunity_instances.build(name: "Opportunity Instance #{n}",
-                                    starts_at: Time.now + 6.months + n.days,
-                                    ends_at: Time.now + 6.months + n.days +
-                                    2.hours, location: cloakroom, topic:
-                                    software, neighborhood: neighborhood)
-    new_opp.save!
-  end
+  opp.opportunity_instances.build(
+    name: [*('A'..'Z')].sample(6).join + " Software",
+    starts_at: Time.now + 6.months,
+    ends_at: Time.now + 6.months,
+    location: cloakroom,
+    topic: software,
+    neighborhood: neighborhood,
+    location_name: "fooville",
+    price: Random.rand(100),
+    min_age: 4,
+    max_age: Random.rand(99),
+    logo_url: random_img
+  ).save!
+
+  opp.opportunity_instances.build(
+    name: [*('A'..'Z')].sample(6).join + " Math",
+    starts_at: Time.now + 6.months,
+    ends_at: Time.now + 6.months,
+    location: cloakroom,
+    topic: math,
+    neighborhood: neighborhood,
+    location_name: "bazville",
+    price: Random.rand(100),
+    min_age: 4,
+    max_age: Random.rand(99),
+    logo_url: random_img
+  ).save!
 end
