@@ -97,6 +97,6 @@ class OpportunityInstancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def opportunity_instance_params
-      params.require(:opportunity_instance).permit(:name, :address, :description, :registration_url, :location_name, :registration_deadline, :program_type, :logo_url, :starts_at, :ends_at, :online_address, :zipcode, :city, :state, :is_online, :hide_reason, :hide, :contact_name, :contact_email, :contact_phone, :registration_url, :price_level, :min_age, :max_age, :extra_data)
+      params.require(:opportunity_instance).permit(:name, :address, :description, :registration_url, :location_name, :registration_deadline, :program_type, :logo_url, :starts_at, :ends_at, :online_address, :zipcode, :city, :state, :is_online, :hide_reason, :hide, :contact_name, :contact_email, :contact_phone, :registration_url, :price_level, :min_age, :max_age, :extra_data, :duration, :difficulty)
     end
 end
