@@ -20,7 +20,7 @@
       min-width: 200px;
       max-width: 300px;
       width: 31%;
-      padding-bottom: 5px;
+      padding-bottom: 25px;
       
       .top {
         border-top-left-radius: 10px;
@@ -35,17 +35,19 @@
         padding-top: 15px;
 
         .name {
-          font-size: 20px;
+          font-size: 18px;
           line-height: 1.3;
           position: relative;
           display: block;
           text-decoration: none;
           margin-top: 0px;
+          font-family: 'Open Sans', sans-serif;
           word-wrap: break-word;
           width: 95%;
           margin: auto;
           text-align: center;
-          color: #3BAAD8;
+          color: #0099FF;
+          padding-top: 25px;
         }
 
         .date {
@@ -55,11 +57,11 @@
           word-wrap: break-word;
           width: 95%;
           margin: auto;
+          font-family: 'Open Sans', sans-serif;
           text-align: center;
-          color: #42C159;
-          font-family: initial;
+          color: #33CC00;
           padding-top: 8px;
-          font-size: 20px;
+          font-size: 18px;
           letter-spacing: 1px;
         }
 
@@ -72,7 +74,7 @@
           margin: auto;
           text-align: center;
           color: #000;
-          font-family: 'Open Sans';
+          font-family: 'Open Sans', sans-serif;
           padding-top: 6px;
           font-size: 17px;
         }
@@ -84,12 +86,14 @@
           color: #333333;
           font-size: 12px;
           text-align: justify;
+          word-wrap: break-word;
         }
 
         .attributes {
           font-weight: 600;
           color: #0099FF;
           text-transform: uppercase;
+          font-family: 'Open Sans', sans-serif;
           margin-bottom: 5px;
           font-size: 11px;
           margin-top: 1px;
