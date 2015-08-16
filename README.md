@@ -4,7 +4,7 @@ Find our roadmap, documentation, and on-boarding information for contributors at
 
 To edit documentation or the roadmap, switch to the gh-pages branch.
 
-If you are interesting in setting up City as a Campus for your city, please review [Getting Started](https://github.com/saxifrage/learn/blob/guidelines/GETTING_STARTED.md).
+If you are interesting in setting up City as a Campus for your city, please review [Getting Started](https://github.com/saxifrage/learn/blob/master/GETTING_STARTED.md).
 
 ## Join our chat on Gitter
 
