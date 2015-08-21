@@ -10,7 +10,7 @@ Map.popup = function(e) {
     var rectHeight = $(this)[0].getBoundingClientRect().height;
 
     /* Position popover */
-    var centerX = offset.left + rectWidth/2 - 250;
+    var centerX = offset.left + rectWidth/2 - 300;
     var centerY = offset.top + rectHeight/2;
 
     $('.popup').css({
@@ -84,7 +84,7 @@ Map.tooltip = function(e) {
     var rectHeight = $(this)[0].getBoundingClientRect().height;
 
     /* Position Tooltip */
-    var centerX = offset.left + rectWidth/2;
+    var centerX = offset.left + rectWidth/2 + 10;
     var centerY = offset.top + rectHeight/2;
 
     $('.tooltip').css({
