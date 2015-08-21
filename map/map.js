@@ -2,6 +2,7 @@ Map = {};
 
 Map.popup = function(e) {
     var rect = $(this);
+    var svg = rect.parent();
 
     /* Get position and dimensions */
     var offset = $(this).offset();
@@ -21,7 +22,7 @@ Map.popup = function(e) {
     $('.tooltip').hide();
 
     /* Assign JSON data and show */
-    var resource = Map.resources[rect.attr('id')];
+    var resource = Map.resources[svg.attr('id')][rect.attr('id')];
 
     $('.selected').attr('class', '');
     rect.attr('class', 'selected');
@@ -75,6 +76,7 @@ Map.popdown = function() {
 
 Map.tooltip = function(e) {
     var rect = $(this);
+    var svg = rect.parent();
 
     /* Get position and dimensions */
     var offset = $(this).offset();
@@ -91,7 +93,7 @@ Map.tooltip = function(e) {
     });
 
     /* Assign JSON data and show*/
-    var resource = Map.resources[rect.attr('id')];
+    var resource = Map.resources[svg.attr('id')][rect.attr('id')];
 
     $('.tooltipResourceName').html(resource.resourceName).attr('href', resource.resourceUrl);
     $('.tooltip').show();
