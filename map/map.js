@@ -27,43 +27,43 @@ Map.popup = function(e) {
     $('.selected').attr('class', '');
     rect.attr('class', 'selected');
 
-    $('.resourceName').html(resource.resourceName).attr('href', resource.resourceUrl);
-    $('.popup-header').css('background-image', 'url("'+resource.imageUrl+'")');
+    $('.resourceName').html(resource.resource_name).attr('href', resource.resource_url);
+    $('.popup-header').css('background-image', 'url("'+resource.image_url+'")');
 
     /* Trims Org Description to 300 chars */
-    if ( resource.resourceDescription.length > 300) {
-        var trimmedResourceDescription = resource.resourceDescription.substr(0, 300) + "\u2026";
+    if ( resource.resource_description.length > 300) {
+        var trimmedResourceDescription = resource.resource_description.substr(0, 300) + "\u2026";
         $('.resourceDescription').html(trimmedResourceDescription);
     } else {
-        $('.resourceDescription').html(resource.resourceDescription);
+        $('.resourceDescription').html(resource.resource_description);
     }
 
-    $('.orgName a').attr('href', resource.orgUrl);
-    $('.orgName a').html(resource.orgName);
+    $('.orgName a').attr('href', resource.org_url);
+    $('.orgName a').html(resource.org_name);
 
     /* Trims Org Description to 150 chars */
-    if ( resource.orgDescription.length > 300) {
-        var trimmedOrgDescription = resource.orgDescription.substr(0, 150) + "\u2026";
+    if ( resource.org_description.length > 300) {
+        var trimmedOrgDescription = resource.org_description.substr(0, 150) + "\u2026";
         $('.orgDescription').html(trimmedOrgDescription);
     } else {
-        $('.orgDescription').html(resource.orgDescription);
-    }        
+        $('.orgDescription').html(resource.org_description);
+    }
 
-    $('.activityType').html(resource.locationType);
-    $('.activityInterval').html(resource.instanceType);
-    $('.activityExperience').html(resource.difficultyLevel);
+    $('.activityType').html(resource.location_type);
+    $('.activityInterval').html(resource.instance_type);
+    $('.activityExperience').html(resource.difficulty_level);
 
     /* Concatenates age start and end into single var; replaces 9–90 with 9+ */
-    if ( resource.ageRangeStart == "9" && resource.ageRangeEnd == "90" ){
-        resource.ageRangeAll = "9+";
+    if ( resource.age_range_start == "9" && resource.age_range_end == "90" ){
+        resource.age_range_all = "9+";
     } else {
-        resource.ageRangeAll = resource.ageRangeStart + "&#8212;" + resource.ageRangeEnd;
+        resource.age_range_all = resource.age_range_start + "&#8212;" + resource.age_range_end;
     }
-    $('.activityAgeAll').html(resource.ageRangeAll);
-    
-    $('.activityAgeStart').html(resource.ageRangeAll);
+    $('.activityAgeAll').html(resource.age_range_all);
 
-    $('.cta a').attr('href', resource.resourceUrl);
+    $('.activityAgeStart').html(resource.age_range_all);
+
+    $('.cta a').attr('href', resource.resource_url);
 
     $('.popup').show();
     e.stopPropagation();
@@ -95,7 +95,7 @@ Map.tooltip = function(e) {
     /* Assign JSON data and show*/
     var resource = Map.resources[svg.attr('id')][rect.attr('id')];
 
-    $('.tooltipResourceName').html(resource.resourceName).attr('href', resource.resourceUrl);
+    $('.tooltipResourceName').html(resource.resource_name).attr('href', resource.resource_url);
     $('.tooltip').show();
     e.stopPropagation();
 };
