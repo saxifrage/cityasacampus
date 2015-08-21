@@ -3,6 +3,7 @@ Map = {};
 Map.popup = function(e) {
     var rect = $(this);
     var svg = rect.parent();
+    Map.currentPopUp = this;
 
     /* Get position and dimensions */
     var offset = $(this).offset();
@@ -69,14 +70,25 @@ Map.popup = function(e) {
     e.stopPropagation();
 };
 
+Map.currentPopUp = null;
+Map.isPoppedUp = function(rect) {
+    console.log(Map.currentPopUp === rect, Map.currentPopUp, rect);
+    return (Map.currentPopUp === rect);
+};
+
 Map.popdown = function() {
+    Map.currentPopUp = null;
     $('.popup').hide();
     $('.selected').attr('class', '');
 };
 
 Map.tooltip = function(e) {
+    var self = this;
     var rect = $(this);
     var svg = rect.parent();
+
+    if (Map.isPoppedUp(this))
+        return;
 
     /* Get position and dimensions */
     var offset = $(this).offset();
@@ -95,7 +107,9 @@ Map.tooltip = function(e) {
     /* Assign JSON data and show*/
     var resource = Map.resources[svg.attr('id')][rect.attr('id')];
 
-    $('.tooltipResourceName').html(resource.resource_name).attr('href', resource.resource_url);
+    $('.tooltipResourceName').html(resource.resource_name)
+                             .off('click')
+                             .on('click', function(e) { Map.popup.call(self, e); });
     $('.tooltip').show();
     e.stopPropagation();
 };
