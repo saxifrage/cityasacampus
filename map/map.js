@@ -183,7 +183,7 @@ Map.initResources = function(topics) {
             var circle = Map.$svg('circle').attr({
                 r: 10,
                 stroke: 'white',
-                'stroke-width': 5,
+                'stroke-width': 2,
                 fill: 'transparent',
                 cy: y + h/2,
                 cx: x + w/2
