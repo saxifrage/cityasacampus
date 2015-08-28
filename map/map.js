@@ -119,21 +119,25 @@ Map.tooltipHide = function() {
 };
 
 Map.loadPathways = function(topics) {
-    var pathways = new DAG();
+    var pathways = {};
+    var resource_to_pathway = {};
     for (var topic_uid in topics) {
         if (!topics.hasOwnProperty(topic_uid))
             continue;
         var resources = topics[topic_uid];
-        for (var resource_uuid in resources) {
-            if (!resources.hasOwnProperty(resource_uuid))
+        for (var resource_uid in resources) {
+            if (!resources.hasOwnProperty(resource_uid))
                 continue;
-            var resource = resources[resource_uuid];
-            if (resource.uid === '')  // Pretty sure Tim has cleaned these dud rows up now.
-                continue;
-            pathways.addEdges(resource.uid, null, resource.comes_after, resource.comes_before);
+            var resource = resources[resource_uid];
+            if (!pathways.hasOwnProperty(resource.subtopic_id))
+                pathways[resource.subtopic_id] = new DAG();
+            pathway = pathways[resource.subtopic_id];
+            pathway.addEdges(resource.uid, null, resource.comes_after, resource.comes_before);
+            resource_to_pathway[resource.uid] = pathway;
         }
     }
     Map.pathways = pathways;
+    Map.resource_to_pathway = resource_to_pathway;
 };
 
 Map.init = function() {
