@@ -72,7 +72,6 @@ Map.popup = function(e) {
 
 Map.currentPopUp = null;
 Map.isPoppedUp = function(rect) {
-    console.log(Map.currentPopUp === rect, Map.currentPopUp, rect);
     return (Map.currentPopUp === rect);
 };
 
@@ -119,10 +118,28 @@ Map.tooltipHide = function() {
     $('.selected').attr('class', '');
 };
 
-Map.init = function() {
+Map.loadPathways = function(topics) {
+    var pathways = new DAG();
+    for (var topic_uid in topics) {
+        if (!topics.hasOwnProperty(topic_uid))
+            continue;
+        var resources = topics[topic_uid];
+        for (var resource_uuid in resources) {
+            if (!resources.hasOwnProperty(resource_uuid))
+                continue;
+            var resource = resources[resource_uuid];
+            if (resource.uid === '')  // Pretty sure Tim has cleaned these dud rows up now.
+                continue;
+            pathways.addEdges(resource.uid, null, resource.comes_after, resource.comes_before);
+        }
+    }
+    Map.pathways = pathways;
+};
 
+Map.init = function() {
     jQuery.get('resources.json', function(resources) {
         Map.resources = resources;
+        Map.loadPathways(resources);
         $('#map').load('map.svg', function() {
             $('svg').svg();
             var svg = $('svg').svg('get');
