@@ -1,6 +1,21 @@
 Map = {};
 
-Map.popup = function(e) {
+Map.nodeVisit = function(e) {
+    Map.popup.call(this);
+    Map.pathwayShow.call(this);
+    e.stopPropagation();
+}
+
+Map.nodeLeave = function(e) {
+    Map.popdown.call(this);
+    Map.pathwayHide.call(this);
+    e.stopPropagation();
+}
+
+
+// Popups
+
+Map.popup = function() {
     var rect = $(this);
     var svg = rect.parent();
     Map.currentPopUp = this;
@@ -67,7 +82,6 @@ Map.popup = function(e) {
     $('.cta a').attr('href', resource.resource_url);
 
     $('.popup').show();
-    e.stopPropagation();
 };
 
 Map.currentPopUp = null;
@@ -80,6 +94,9 @@ Map.popdown = function() {
     $('.popup').hide();
     $('.selected').attr('class', '');
 };
+
+
+// Tooltips
 
 Map.tooltip = function(e) {
     var self = this;
@@ -108,17 +125,19 @@ Map.tooltip = function(e) {
 
     $('.tooltipResourceName').html(resource.resource_name)
                              .off('click')
-                             .on('click', function(e) { Map.popup.call(self, e); });
+                             .on('click', function(e) { Map.visit.call(self, e); });
     $('.tooltip').show();
     e.stopPropagation();
 };
 
 Map.tooltipHide = function() {
     $('.tooltip').hide();
-    $('.selected').attr('class', '');
 };
 
-Map.loadPathways = function(topics) {
+
+// Pathways
+
+Map.pathwaysLoad = function(topics) {
     var pathways = {};
     var resource_to_pathway = {};
     for (var topic_uid in topics) {
@@ -140,18 +159,35 @@ Map.loadPathways = function(topics) {
     Map.resource_to_pathway = resource_to_pathway;
 };
 
+Map.pathwayShow = function(e) {
+    var rect = $(this)
+      , clicked = rect.attr('id')
+      , pathway = Map.resource_to_pathway[clicked]
+       ;
+
+    for (var i=0, id; id = pathway.names[i]; i++)
+        $('rect[id=' + id + ']').attr('class', 'selected');
+};
+
+Map.pathwayHide = function(e) {
+};
+
+
+
+// Init
+
 Map.init = function() {
     jQuery.get('resources.json', function(resources) {
         Map.resources = resources;
-        Map.loadPathways(resources);
+        Map.pathwaysLoad(resources);
         $('#map').load('map.svg', function() {
             $('svg').svg();
             var svg = $('svg').svg('get');
             $('rect').hover(Map.tooltip);
             $('svg').mouseout(Map.tooltipHide);
             $('#map').click(Map.tooltipHide);
-            $('rect').click(Map.popup);
-            $('body').click(Map.popdown);
+            $('rect').click(Map.nodeVisit);
+            $('body').click(Map.nodeLeave);
         });
     });
 };
