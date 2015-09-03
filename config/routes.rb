@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   scope '/admin' do
+    root :to => 'application#index'
     resources :topics, only: [:edit, :new]
     resources :organizers, only: [:edit, :new]
     resources :locations, only: [:edit, :new]
@@ -23,6 +24,4 @@ Rails.application.routes.draw do
       get 'search/:term', action: :search
     end
   end
-
-  root 'application#hello'
 end
