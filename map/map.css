@@ -117,6 +117,9 @@ rect.selected,
 rect.selected:hover {
   fill: #005c99; }
 
+path {
+  display: none; }
+
 .popup {
   display: none;
   position: absolute;

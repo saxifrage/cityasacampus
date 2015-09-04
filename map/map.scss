@@ -146,6 +146,10 @@ rect.selected:hover{
     fill: darken($brand-primary, 20%);
 }
 
+path {
+    display: none;
+}
+
 // Pop-Up // --------------------------------------------------
 .popup {
     display: none;
@@ -259,12 +263,12 @@ h3.attribute{
 }
 
 .tooltip .arrow {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-top: 10px solid white;
-    border-bottom: 10px solid transparent; 
+    border-bottom: 10px solid transparent;
     border-left:10px solid transparent;
     position: absolute;
     top: 0px;
-    left: -10px; 
+    left: -10px;
 }

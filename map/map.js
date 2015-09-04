@@ -1,29 +1,45 @@
 Map = {};
 
-Map.popup = function(e) {
+// Creates svg element, returned as jQuery object -- http://stackoverflow.com/a/29017767
+Map.$svg = function(elem) {
+    return $(document.createElementNS('http://www.w3.org/2000/svg', elem));
+}
+
+Map.nodeVisit = function(e) {
+    Map.popup.call(this);
+    Map.pathwayShow.call(this);
+    e.stopPropagation();
+}
+
+Map.nodeLeave = function(e) {
+    Map.popdown.call(this);
+    Map.pathwayHide.call(this);
+    e.stopPropagation();
+}
+
+
+// Popups
+
+Map.popup = function() {
     var rect = $(this);
     var svg = rect.parent();
     Map.currentPopUp = this;
 
-    /* Get position and dimensions */
-    var offset = $(this).offset();
-    var rectWidth = $(this)[0].getBoundingClientRect().width;
-    var rectHeight = $(this)[0].getBoundingClientRect().height;
-
     /* Position popover */
-    var centerX = offset.left + rectWidth/2 - 300;
-    var centerY = offset.top + rectHeight/2;
+    var center = Map.centerGet($(this));
 
     $('.popup').css({
-        'top' : centerY,
-        'left' : centerX,
+        'top' : center.y,
+        'left' : center.x - 300,
     });
 
     /* Hide tooltip that pops up on hover */
     $('.tooltip').hide();
 
     /* Assign JSON data and show */
-    var resource = Map.resources[svg.attr('id')][rect.attr('id')];
+    var resource = Map.topics[svg.attr('id')]
+                      .subtopics[rect.attr('subtopic_id')]
+                      .resources[rect.attr('id')];
 
     $('.selected').attr('class', '');
     rect.attr('class', 'selected');
@@ -67,12 +83,10 @@ Map.popup = function(e) {
     $('.cta a').attr('href', resource.resource_url);
 
     $('.popup').show();
-    e.stopPropagation();
 };
 
 Map.currentPopUp = null;
 Map.isPoppedUp = function(rect) {
-    console.log(Map.currentPopUp === rect, Map.currentPopUp, rect);
     return (Map.currentPopUp === rect);
 };
 
@@ -82,6 +96,9 @@ Map.popdown = function() {
     $('.selected').attr('class', '');
 };
 
+
+// Tooltips
+
 Map.tooltip = function(e) {
     var self = this;
     var rect = $(this);
@@ -90,47 +107,167 @@ Map.tooltip = function(e) {
     if (Map.isPoppedUp(this))
         return;
 
-    /* Get position and dimensions */
-    var offset = $(this).offset();
-    var rectWidth = $(this)[0].getBoundingClientRect().width;
-    var rectHeight = $(this)[0].getBoundingClientRect().height;
-
-    /* Position Tooltip */
-    var centerX = offset.left + rectWidth/2 + 10;
-    var centerY = offset.top + rectHeight/2;
+    var center = Map.centerGet($(this));
 
     $('.tooltip').css({
-        'top' : centerY,
-        'left' : centerX,
+        'top' : center.y,
+        'left' : center.x + 10,
     });
 
     /* Assign JSON data and show*/
-    var resource = Map.resources[svg.attr('id')][rect.attr('id')];
+    var resource = Map.topics[svg.attr('id')]
+                      .subtopics[rect.attr('subtopic_id')]
+                      .resources[rect.attr('id')];
 
     $('.tooltipResourceName').html(resource.resource_name)
                              .off('click')
-                             .on('click', function(e) { Map.popup.call(self, e); });
+                             .on('click', function(e) { Map.nodeVisit.call(self, e); });
     $('.tooltip').show();
     e.stopPropagation();
 };
 
 Map.tooltipHide = function() {
     $('.tooltip').hide();
-    $('.selected').attr('class', '');
+};
+
+
+// Pathways
+
+Map.pathwayShow = function(e) {
+    var rect = $(this)
+      , topic_id = rect.attr('topic_id')
+      , subtopic_id = rect.attr('subtopic_id')
+      , pathway = Map.topics[topic_id].subtopics[subtopic_id].dag
+      , svg = $('svg#' + topic_id);
+       ;
+    $('path.pathway').hide();
+    for (var i=0, id; id = pathway.names[i]; i++)
+    {
+        $('rect#' + id, svg).attr('class', 'selected');
+        $('path.' + id, svg).show();
+    }
+};
+
+Map.pathwayHide = function(e) {
+    $('path.pathway').hide();
+};
+
+
+// Init
+
+Map.centerGet = function(rect) {
+    var offset = rect.offset();
+    var rectWidth = rect[0].getBoundingClientRect().width;
+    var rectHeight = rect[0].getBoundingClientRect().height;
+
+    var centerY = offset.top + rectHeight/2;
+    var centerX = offset.left + rectWidth/2;
+
+    return {y: centerY, x: centerX};
+};
+
+Map.initTopics = function(topics) {
+
+    function getRectCenter(topic_id, resource_id) {
+        var rect = $('#' + topic_id + ' rect#' + resource_id);
+        var x = parseInt(rect.attr('x'), 10)
+          , y = parseInt(rect.attr('y'), 10)
+          , w = parseInt(rect.attr('width'), 10)
+          , h = parseInt(rect.attr('height'), 10)
+           ;
+        return {'x': x + w/2, 'y': y + h/2 };
+    }
+
+    for (var topic_id in topics) {
+        if (!topics.hasOwnProperty(topic_id)) continue;
+        var topic = topics[topic_id];
+
+        topic.svg = $('svg#' + topic_id);
+
+        var subtopics = topic.subtopics;
+        for (var subtopic_id in subtopics) {
+            if (!subtopics.hasOwnProperty(subtopic_id)) continue;
+            var subtopic = subtopics[subtopic_id];
+
+            subtopic.dag = new DAG();
+
+            var resources = subtopic.resources;
+            for (var resource_id in resources) {
+                if (!resources.hasOwnProperty(resource_id)) continue;
+                var resource = resources[resource_id];
+
+                subtopic.dag.addEdges( resource.id              // name
+                                     , resource                 // value
+                                     , resource.before_this     // comes_after
+                                     , resource.after_this      // comes_before
+                                      );
+
+                // Draw a circle.
+                var center = getRectCenter(topic_id, resource_id);
+                var circle = Map.$svg('circle').attr({
+                    r: 5,
+                    stroke: 'white',
+                    'stroke-width': 2,
+                    fill: 'transparent',
+                    cy: center.y,
+                    cx: center.x
+                });
+                topic.svg.append(circle);
+
+                // Teach the rect some things.
+                var rect = $('rect#'+resource.id, topic.svg);
+                rect.attr({'subtopic_id': subtopic_id, 'topic_id': topic_id});
+            }
+        }
+    }
+
+
+    // Loop back through the completed DAGs and make <path>s.
+
+    for (var topic_id in topics) {
+        if (!topics.hasOwnProperty(topic_id)) continue;
+        var topic = topics[topic_id];
+
+        var subtopics = topic.subtopics;
+        for (var subtopic_id in subtopics) {
+            if (!subtopics.hasOwnProperty(subtopic_id)) continue;
+            var subtopic = subtopics[subtopic_id];
+
+            var dag = subtopic.dag
+
+            for (var i=0, resource_id; resource_id=dag.names[i]; i++) {
+                var v = dag.vertices[resource_id];
+                for (var j=0, prev_id; prev_id = v.incomingNames[j]; j++)
+                {
+                    var start = getRectCenter(topic_id, prev_id);
+                    var end = getRectCenter(topic_id, resource_id);
+
+                    var path = Map.$svg('path').attr({
+                        class: 'pathway ' + resource_id,
+                        d: 'M ' + start.x + ' ' + start.y + ' L ' + end.x + ' ' + end.y,
+                        stroke: 'white',
+                        'stroke-width': 2
+                    });
+                    topic.svg.append(path);
+                }
+            }
+        }
+    }
+    $("body").html($("body").html());  // refresh to pick up new SVG elements
+
+    Map.topics = topics;
 };
 
 Map.init = function() {
-
-    jQuery.get('resources.json', function(resources) {
-        Map.resources = resources;
+    jQuery.get('resources.json', function(topics) {
+        $('.navigation').hide();
         $('#map').load('map.svg', function() {
-            $('svg').svg();
-            var svg = $('svg').svg('get');
+            Map.initTopics(topics);
             $('rect').hover(Map.tooltip);
             $('svg').mouseout(Map.tooltipHide);
             $('#map').click(Map.tooltipHide);
-            $('rect').click(Map.popup);
-            $('body').click(Map.popdown);
+            $('rect').click(Map.nodeVisit);
+            $('body').click(Map.nodeLeave);
         });
     });
 };
