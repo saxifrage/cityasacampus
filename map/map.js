@@ -13,6 +13,7 @@ Map.nodeVisit = function(e) {
 
 Map.nodeLeave = function(e) {
     Map.popdown.call(this);
+    Map.pathwayHide.call(this);
     e.stopPropagation();
 }
 
@@ -116,7 +117,7 @@ Map.tooltip = function(e) {
 
     $('.tooltipResourceName').html(resource.resource_name)
                              .off('click')
-                             .on('click', function(e) { Map.visit.call(self, e); });
+                             .on('click', function(e) { Map.nodeVisit.call(self, e); });
     $('.tooltip').show();
     e.stopPropagation();
 };
@@ -133,9 +134,17 @@ Map.pathwayShow = function(e) {
       , clicked = rect.attr('id')
       , pathway = Map.resource_to_pathway[clicked]
        ;
-
+    $('path.pathway').hide();
     for (var i=0, id; id = pathway.names[i]; i++)
+    {
         $('rect[id=' + id + ']').attr('class', 'selected');
+        $('path.' + id).show();
+    }
+};
+
+Map.pathwayHide = function(e) {
+    console.log('hiding pathways');
+    $('path.pathway').hide();
 };
 
 
@@ -155,12 +164,23 @@ Map.centerGet = function(rect) {
 Map.initResources = function(topics) {
     var pathways = {};
     var resource_to_pathway = {};
+    var subtopic_to_topic = {};
 
-    for (var topic_uid in topics) {
-        if (!topics.hasOwnProperty(topic_uid))
+    function getRectCenter(id) {
+        var rect = $('rect[id=' + id + ']');
+        var x = parseInt(rect.attr('x'), 10)
+          , y = parseInt(rect.attr('y'), 10)
+          , w = parseInt(rect.attr('width'), 10)
+          , h = parseInt(rect.attr('height'), 10)
+           ;
+        return {'x': x + w/2, 'y': y + h/2 };
+    }
+
+    for (var topic_id in topics) {
+        if (!topics.hasOwnProperty(topic_id))
             continue;
-        var resources = topics[topic_uid];
-        var svgDoc = $('svg#'+topic_uid);
+        var resources = topics[topic_id];
+        var svgDoc = $('svg#'+topic_id);
         for (var id in resources) {
             if (!resources.hasOwnProperty(id))
                 continue;
@@ -172,23 +192,44 @@ Map.initResources = function(topics) {
             pathway = pathways[resource.subtopic_id];
             pathway.addEdges(resource.uid, null, resource.comes_after, resource.comes_before);
             resource_to_pathway[resource.uid] = pathway;
+            subtopic_to_topic[resource.subtopic_id] = topic_id;
 
             // Draw a circle.
-            var rect = $('rect[id=' + id + ']');
-            var x = parseInt(rect.attr('x'), 10)
-              , y = parseInt(rect.attr('y'), 10)
-              , w = parseInt(rect.attr('width'), 10)
-              , h = parseInt(rect.attr('height'), 10)
-               ;
+            var center = getRectCenter(id);
             var circle = Map.$svg('circle').attr({
                 r: 10,
                 stroke: 'white',
                 'stroke-width': 2,
                 fill: 'transparent',
-                cy: y + h/2,
-                cx: x + w/2
+                cy: center.y,
+                cx: center.x
             });
             svgDoc.append(circle);
+        }
+    }
+
+
+    // Loop back through the completed DAGs and make <path>s.
+
+    for (var subtopic_id in pathways) {
+        if (!pathways.hasOwnProperty(subtopic_id)) continue;
+        var dag = pathways[subtopic_id];
+        var svgDoc = $('svg#'+subtopic_to_topic[subtopic_id]);
+        for (var i=0, id; id=dag.names[i]; i++) {
+            var v = dag.vertices[id];
+            for (var j=0, prev_id; prev_id = v.incomingNames[j]; j++)
+            {
+                var start = getRectCenter(prev_id);
+                var end = getRectCenter(id);
+
+                var path = Map.$svg('path').attr({
+                    class: 'pathway ' + id,
+                    d: 'M ' + start.x + ' ' + start.y + ' L ' + end.x + ' ' + end.y,
+                    stroke: 'white',
+                    'stroke-width': 2
+                });
+                svgDoc.append(path);
+            }
         }
     }
 

@@ -146,6 +146,10 @@ rect.selected:hover{
     fill: darken($brand-primary, 20%);
 }
 
+path {
+    display: none;
+}
+
 // Pop-Up // --------------------------------------------------
 .popup {
     display: none;
