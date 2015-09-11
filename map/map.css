@@ -1,7 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
-* {
-  box-sizing: border-box; }
-
 .text-center {
   text-align: center !important; }
 
@@ -130,7 +127,8 @@ path {
   width: 98px;
   height: 50px;
   background: white;
-  border: 1px solid #0099ff; }
+  border: 1px solid #0099ff;
+  z-index: 2; }
   .zoom-controls div {
     width: 48px;
     height: 48px;
@@ -228,6 +226,7 @@ h3.attribute {
   display: none;
   background: #ffffff;
   position: absolute;
+  z-index: 1;
   top: 20px;
   left: 20px;
   padding: 12px 15px;

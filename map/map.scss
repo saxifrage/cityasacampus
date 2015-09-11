@@ -2,8 +2,6 @@
 
 // Vars & Helpers // --------------------------------------------------
 
-* { box-sizing: border-box; }
-
 $brand-primary: #0099FF;
 
 .text-center{
@@ -163,6 +161,7 @@ path {
     height: 50px;
     background: white;
     border: 1px solid $brand-primary;
+    z-index: 2;
 
     div {
         width: 48px;
@@ -283,6 +282,7 @@ h3.attribute{
     display: none;
     background: #ffffff;
     position: absolute;
+    z-index: 1;
     top: 20px;
     left: 20px;
     padding: 12px 15px;

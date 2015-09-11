@@ -153,6 +153,29 @@ Map.pathwayHide = function(e) {
 };
 
 
+// Zooming
+
+Map.initZooming = function() {
+    Map._baseTransform = $('g').attr('transform');
+    Map._scale = 1;
+    Map._scaleFactor = 1.5;
+};
+
+Map._zoom = function() {
+    $('g').attr('transform', Map._baseTransform + ' scale(' + Map._scale + ')');
+};
+
+Map.inZoom = function(e) {
+    Map._scale = Map._scale * Map._scaleFactor;
+    Map._zoom();
+};
+
+Map.outZoom = function(e) {
+    Map._scale = Map._scale / Map._scaleFactor;
+    Map._zoom();
+};
+
+
 // Init
 
 Map.centerGet = function(rect) {
@@ -258,16 +281,20 @@ Map.initTopics = function(topics) {
     Map.topics = topics;
 };
 
+
 Map.init = function() {
     jQuery.get('resources.json', function(topics) {
         $('.navigation').hide();
         $('#map').load('map.svg', function() {
+            Map.initZooming();
             Map.initTopics(topics);
             $('rect').hover(Map.tooltip);
             $('svg').mouseout(Map.tooltipHide);
             $('#map').click(Map.tooltipHide);
             $('rect').click(Map.nodeVisit);
             $('body').click(Map.nodeLeave);
+            $('.zoom-controls .in').click(Map.inZoom);
+            $('.zoom-controls .out').click(Map.outZoom);
         });
     });
 };
