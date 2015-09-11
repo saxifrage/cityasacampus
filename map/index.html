@@ -1,15 +1,15 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Example CaaC Map</title>
-        <style>@import url("map.css");</style>
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script src="dag.js"></script>
-        <script src="map.js"></script>
-        <script>$(document).ready(Map.init);</script>
-        <link rel="shortcut icon" href="./images/favicon.ico"/>
-    </head>
-    <body>
+<head>
+    <title>Example CaaC Map</title>
+    <style>@import url("map.css");</style>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="dag.js"></script>
+    <script src="map.js"></script>
+    <script>$(document).ready(Map.init);</script>
+    <link rel="shortcut icon" href="./images/favicon.ico"/>
+</head>
+<body>
     <section class="navigation">
         <hr class="nav-line">
         <nav class="nav primary text-center">
@@ -93,61 +93,61 @@
         </nav>
     </section>
 
+    <div id="map"></div>
 
+    <div class="tooltip">
+        <div class="arrow"></div>
+        <h1>
+            <a href="#" class="tooltipResourceName"></a>
+        </h1>
+    </div>
 
-        <div id="map"></div>
-            <div class="tooltip">
-            <div class="arrow"></div>
-                <h1>
-                    <a href="#" class="tooltipResourceName"></a>
-                </h1>
-            </div>
-            <div class="popup">
-                <div class="bar">
+    <div class="popup">
+        <div class="bar">
+            <p></p>
+        </div>
+        <header class="popup-header">
+            <h1>
+                <a class="resourceName" href="" target="_blank"></a>
+            </h1>
+            <div class="overlay"></div>
+        </header>
+        <main class="popup-body">
+            <section class="details">
+                <div class="resourceDescription">
                     <p></p>
-                </div>
-                <header class="popup-header">
-                    <h1>
-                        <a class="resourceName" href="" target="_blank"></a>
-                    </h1>
-                    <div class="overlay"></div>
-                </header>
-                <main class="popup-body">
-                    <section class="details">
-                        <div class="resourceDescription">
-                            <p></p>
-                        </div><!-- /resource-description-->
-                        <div class="attributes">
-                            <h3 class="attribute">
-                                <img class="icon" src="./images/icon_activityType.svg" alt="Activity Type">
-                                    <span class="activityType"></span>
-                            </h3>
-                            <h3 class="attribute">
-                                <img class="icon" src="./images/icon_activityInterval.svg" alt="Activity Interval">
-                                <span class="activityInterval"></span>
-                            </h3>
-                            <h3 class="attribute">
-                                <img class="icon" src="./images/icon_activityAge.svg" alt="Activity Age">
-                                Age:
-                                <span class="activityAgeAll"></span>
-                            <h3 class="attribute">
-                                <img class="icon" src="./images/icon_activityDifficulty.svg" alt="Activity Experience">
-                                <span class="activityExperience"></span>
-                            </h3>
-                        </div><!-- attronites-->
-                        <section class="cta">
-                            <a class="btn" href="" target="_blank">Get Started</a>
-                        </section><!-- cta-->
-                    </section><!-- / details-->
-                    <section class="organization">
-                        <h3 class="orgHeader">Organization Information</h3>
-                        <h2 class="orgName">
-                            <a href="" target="_blank"></a>
-                        </h2>
-                        <div class="orgDescription">
-                        </div><!-- /orgdescription-->
-                    </section><!-- /organization-->
-                </main>
-            </div><!--popup-->
-    </body>
+                </div><!-- /resource-description-->
+                <div class="attributes">
+                    <h3 class="attribute">
+                        <img class="icon" src="./images/icon_activityType.svg" alt="Activity Type">
+                            <span class="activityType"></span>
+                    </h3>
+                    <h3 class="attribute">
+                        <img class="icon" src="./images/icon_activityInterval.svg" alt="Activity Interval">
+                        <span class="activityInterval"></span>
+                    </h3>
+                    <h3 class="attribute">
+                        <img class="icon" src="./images/icon_activityAge.svg" alt="Activity Age">
+                        Age:
+                        <span class="activityAgeAll"></span>
+                    <h3 class="attribute">
+                        <img class="icon" src="./images/icon_activityDifficulty.svg" alt="Activity Experience">
+                        <span class="activityExperience"></span>
+                    </h3>
+                </div><!-- attronites-->
+                <section class="cta">
+                    <a class="btn" href="" target="_blank">Get Started</a>
+                </section><!-- cta-->
+            </section><!-- / details-->
+            <section class="organization">
+                <h3 class="orgHeader">Organization Information</h3>
+                <h2 class="orgName">
+                    <a href="" target="_blank"></a>
+                </h2>
+                <div class="orgDescription">
+                </div><!-- /orgdescription-->
+            </section><!-- /organization-->
+        </main>
+    </div><!--popup-->
+</body>
 </html>
