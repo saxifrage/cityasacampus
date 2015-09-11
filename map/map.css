@@ -17,7 +17,7 @@ p {
   font-size: 13px; }
 
 a {
-  color: #0099FF;
+  color: #0099ff;
   text-decoration: none;
   transition: all .15s linear;
   -webkit-transition: all .15s linear; }
@@ -25,7 +25,7 @@ a {
     color: #007acc; }
 
 a.btn {
-  background: #0099FF;
+  background: #0099ff;
   color: #ffffff;
   display: block;
   text-align: center;
@@ -35,11 +35,11 @@ a.btn {
     background: #008ae6; }
 
 ::selection {
-  background: #0099FF;
+  background: #0099ff;
   color: #ffffff; }
 
 ::moz-selection {
-  background: #0099FF;
+  background: #0099ff;
   color: #ffffff; }
 
 .navigation {
@@ -105,7 +105,7 @@ li.nav-heading a {
   background: white; }
 
 rect {
-  fill: #0099FF;
+  fill: #0099ff;
   transition: all .15 linear;
   -webkit-transition: all .15 linear; }
 
@@ -119,6 +119,29 @@ rect.selected:hover {
 
 path {
   display: none; }
+
+.zoom-controls {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 98px;
+  height: 50px;
+  background: white;
+  border: 1px solid #0099ff;
+  z-index: 2; }
+  .zoom-controls div {
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    font: normal 48px/48px 'Open Sans', sans-serif;
+    display: inline-block;
+    background: white;
+    cursor: pointer;
+    text-align: center; }
+    .zoom-controls div.out {
+      line-height: 40px; }
+    .zoom-controls div:hover {
+      background: #0099ff; }
 
 .popup {
   display: none;
@@ -156,7 +179,7 @@ path {
   text-decoration: none;
   color: white; }
   .popup a.resourceName:hover {
-    color: #0099FF; }
+    color: #0099ff; }
 
 /* Details */
 .popup .details {
@@ -170,7 +193,7 @@ path {
 
 h3.attribute {
   font-weight: 700;
-  color: #0099FF;
+  color: #0099ff;
   text-transform: uppercase;
   margin-bottom: 5px; }
 
@@ -203,6 +226,7 @@ h3.attribute {
   display: none;
   background: #ffffff;
   position: absolute;
+  z-index: 1;
   top: 20px;
   left: 20px;
   padding: 12px 15px;
