@@ -1,8 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
 // Vars & Helpers // --------------------------------------------------
-$brand-primary: #0099FF;
 
+* { box-sizing: border-box; }
+
+$brand-primary: #0099FF;
 
 .text-center{
   text-align: center !important;
@@ -149,6 +151,38 @@ rect.selected:hover{
 path {
     display: none;
 }
+
+
+// Zoom // ----------------------------------------------------
+
+.zoom-controls {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 98px;
+    height: 50px;
+    background: white;
+    border: 1px solid $brand-primary;
+
+    div {
+        width: 48px;
+        height: 48px;
+        overflow: hidden;
+        font: normal 48px/48px 'Open Sans', sans-serif;
+        display: inline-block;
+        background: white;
+        cursor: pointer;
+        text-align: center;
+        &.out {
+            line-height: 40px;
+        }
+
+        &:hover {
+            background: $brand-primary;
+        }
+    }
+}
+
 
 // Pop-Up // --------------------------------------------------
 .popup {
