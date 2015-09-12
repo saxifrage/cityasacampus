@@ -2,6 +2,7 @@ angular.module('caac', [
   'caac.explore.controller',
   'caac.home.controller',
   'caac.opportunity-instances.controller',
+  'caac.dashboard.controller',
   'ngRoute',
   'angular.filter'
 ]).config(['$routeProvider', function($routeProvider) {
@@ -14,6 +15,9 @@ angular.module('caac', [
   }).when('/opportunity-instances/:uid', {
     controller: 'OpportunityInstancesController',
     templateUrl: 'opportunity-instances/OpportunityInstancesView.html'
+  }).when('/dashboard', {
+    controller: 'DashboardController',
+    templateUrl: 'dashboard/DashboardView.html'
   }).when('/', {
     controller: 'HomeController',
     templateUrl: 'home/HomeView.html'
