@@ -1,0 +1,17 @@
+.dashboard {
+  .learners-link, .organizers-link {
+    margin: 25px auto auto auto;
+    display: block;
+    text-align: center;
+    width: 25%;
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .dashboard {
+    .learners-link, .organizers-link {
+      width: 50%;
+    }
+  }
+}
