@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  scope '/admin' do
+  scope '/dashboard' do
+    devise_for :users
     root :to => 'application#index'
     resources :topics, only: [:edit, :new]
     resources :organizers, only: [:edit, :new]

@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    @opportunities = Opportunity.all
-    render 'dashboard/opportunities'
+    redirect_to '/dashboard/users/sign_in'
   end
 end
