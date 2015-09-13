@@ -29,7 +29,7 @@ angular.module('caac.explore.controller', [
 
           if (res.data.result.length === 0) {
             logger.warn('paged to end of resultset');
-            $rootScope.$broadcast('REACHED_MAX_RESULTS');
+            self.reachedMaxEntries = true;
           }
 
           if (page) {
