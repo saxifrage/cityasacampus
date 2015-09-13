@@ -10,12 +10,6 @@ angular.module('caac.explore.cards.directive', [
 
         self.curPage = 1;
 
-        self.$on('REACHED_MAX_RESULTS', function() {
-          self.reachedMaxEntries = true;
-        });
-
-        self.reachedMaxEntries = false;
-
         self.seeMore = function() {
           self.getOpportunityInstancesByTerm(self.term || '', ++self.curPage);
         };

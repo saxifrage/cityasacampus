@@ -9,6 +9,8 @@ angular.module('caac.shared.conf.service', [])
         //shared
         c.APP = 'City as a Campus';
         c.CITY = 'Pittsburgh';
+
+        //TODO: rip this out...
         c.TOPICS = [
           'Coding & Games',
           'Community Action',
