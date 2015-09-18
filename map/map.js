@@ -283,7 +283,7 @@ Map.initTopics = function(topics) {
 
 
 Map.init = function() {
-    jQuery.get('resources.json', function(topics) {
+    jQuery.get('topics.json', function(topics) {
         $('.navigation').hide();
         $('#map').load('map.svg', function() {
             Map.initZooming();
