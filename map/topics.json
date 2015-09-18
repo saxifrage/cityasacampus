@@ -3,6 +3,46 @@
         "id": "art-design",
         "subtopics": {
             "architecture": {
+                "dag": {
+                    "names": [
+                        "carnegie-museums-of-art-and-natural-history-you-are-here---pittsburgh-placemaking",
+                        "mattress-factory-summer-art-cooperative",
+                        "diy-sketch-a-real-building-",
+                        "carnegie-museums-of-art-and-natural-history-dream-house---sketch-to-structure",
+                        "design-boom-design-boom",
+                        "carnegie-museums-of-art-and-natural-history-city-explorers---urban-designers"
+                    ],
+                    "vertices": {
+                        "carnegie-museums-of-art-and-natural-history-city-explorers---urban-designers": {
+                            "incomingNames": []
+                        },
+                        "carnegie-museums-of-art-and-natural-history-dream-house---sketch-to-structure": {
+                            "incomingNames": [
+                                "design-boom-design-boom"
+                            ]
+                        },
+                        "carnegie-museums-of-art-and-natural-history-you-are-here---pittsburgh-placemaking": {
+                            "incomingNames": [
+                                "carnegie-museums-of-art-and-natural-history-city-explorers---urban-designers"
+                            ]
+                        },
+                        "design-boom-design-boom": {
+                            "incomingNames": [
+                                "carnegie-museums-of-art-and-natural-history-you-are-here---pittsburgh-placemaking"
+                            ]
+                        },
+                        "diy-sketch-a-real-building-": {
+                            "incomingNames": [
+                                "carnegie-museums-of-art-and-natural-history-dream-house---sketch-to-structure"
+                            ]
+                        },
+                        "mattress-factory-summer-art-cooperative": {
+                            "incomingNames": [
+                                "diy-sketch-a-real-building-"
+                            ]
+                        }
+                    }
+                },
                 "id": "architecture",
                 "resources": {
                     "carnegie-museums-of-art-and-natural-history-city-explorers---urban-designers": {
@@ -169,6 +209,124 @@
                 "topic_id": "art-design"
             },
             "artisan": {
+                "dag": {
+                    "names": [
+                        "diy-hack-a-t-shirt-",
+                        "pittsburgh-filmmaker-and-center-for-the-arts-raku",
+                        "society-for-contemporary-craft-visit-scc-store",
+                        "food-revolution-pittsburgh-cooking-club-at-harvest-and-create",
+                        "mcg-youth-and-arts-electric-avenue",
+                        "mcg-youth-and-arts-ceramics-sets",
+                        "society-for-contemporary-craft-contemporary-craft-blog",
+                        "pittsburgh-filmmaker-and-center-for-the-arts-high-fire-ceramics",
+                        "tech-shop-steam003---textile-printing-and-sewing-",
+                        "labs-at-carnegie-library-of-pittsburgh-fashion-design-workshops",
+                        "pittsburgh-filmmaker-and-center-for-the-arts-the-shop",
+                        "tek-start-the-beauty-of-stem-makers-institute",
+                        "carnegie-museums-of-art-and-natural-history-fiber-art",
+                        "pittsburgh-filmmaker-and-center-for-the-arts-stained-glass",
+                        "pittsburgh-filmmaker-and-center-for-the-arts-creature-design-and-mask-making",
+                        "mcg-youth-and-arts-pillows-galore",
+                        "pittsburgh-filmmaker-and-center-for-the-arts-manipulating-metals",
+                        "pittsburgh-center-for-creative-reuse-the-remaker-playshop---sew-mend-make",
+                        "society-for-contemporary-craft-drop-in-studio"
+                    ],
+                    "vertices": {
+                        "carnegie-museums-of-art-and-natural-history-fiber-art": {
+                            "incomingNames": [
+                                "pittsburgh-center-for-creative-reuse-the-remaker-playshop---sew-mend-make"
+                            ]
+                        },
+                        "diy-hack-a-t-shirt-": {
+                            "incomingNames": [
+                                "pittsburgh-filmmaker-and-center-for-the-arts-creature-design-and-mask-making"
+                            ]
+                        },
+                        "food-revolution-pittsburgh-cooking-club-at-harvest-and-create": {
+                            "incomingNames": [
+                                "pittsburgh-filmmaker-and-center-for-the-arts-high-fire-ceramics"
+                            ]
+                        },
+                        "labs-at-carnegie-library-of-pittsburgh-fashion-design-workshops": {
+                            "incomingNames": [
+                                "mcg-youth-and-arts-pillows-galore"
+                            ]
+                        },
+                        "mcg-youth-and-arts-ceramics-sets": {
+                            "incomingNames": [
+                                "food-revolution-pittsburgh-cooking-club-at-harvest-and-create"
+                            ]
+                        },
+                        "mcg-youth-and-arts-electric-avenue": {
+                            "incomingNames": []
+                        },
+                        "mcg-youth-and-arts-pillows-galore": {
+                            "incomingNames": [
+                                "society-for-contemporary-craft-drop-in-studio"
+                            ]
+                        },
+                        "pittsburgh-center-for-creative-reuse-the-remaker-playshop---sew-mend-make": {
+                            "incomingNames": [
+                                "mcg-youth-and-arts-ceramics-sets"
+                            ]
+                        },
+                        "pittsburgh-filmmaker-and-center-for-the-arts-creature-design-and-mask-making": {
+                            "incomingNames": [
+                                "tech-shop-steam003---textile-printing-and-sewing-"
+                            ]
+                        },
+                        "pittsburgh-filmmaker-and-center-for-the-arts-high-fire-ceramics": {
+                            "incomingNames": [
+                                "pittsburgh-filmmaker-and-center-for-the-arts-raku"
+                            ]
+                        },
+                        "pittsburgh-filmmaker-and-center-for-the-arts-manipulating-metals": {
+                            "incomingNames": [
+                                "pittsburgh-filmmaker-and-center-for-the-arts-stained-glass"
+                            ]
+                        },
+                        "pittsburgh-filmmaker-and-center-for-the-arts-raku": {
+                            "incomingNames": [
+                                "pittsburgh-filmmaker-and-center-for-the-arts-manipulating-metals"
+                            ]
+                        },
+                        "pittsburgh-filmmaker-and-center-for-the-arts-stained-glass": {
+                            "incomingNames": [
+                                "mcg-youth-and-arts-electric-avenue"
+                            ]
+                        },
+                        "pittsburgh-filmmaker-and-center-for-the-arts-the-shop": {
+                            "incomingNames": [
+                                "diy-hack-a-t-shirt-"
+                            ]
+                        },
+                        "society-for-contemporary-craft-contemporary-craft-blog": {
+                            "incomingNames": [
+                                "society-for-contemporary-craft-visit-scc-store"
+                            ]
+                        },
+                        "society-for-contemporary-craft-drop-in-studio": {
+                            "incomingNames": [
+                                "society-for-contemporary-craft-contemporary-craft-blog"
+                            ]
+                        },
+                        "society-for-contemporary-craft-visit-scc-store": {
+                            "incomingNames": [
+                                "pittsburgh-filmmaker-and-center-for-the-arts-the-shop"
+                            ]
+                        },
+                        "tech-shop-steam003---textile-printing-and-sewing-": {
+                            "incomingNames": [
+                                "tek-start-the-beauty-of-stem-makers-institute"
+                            ]
+                        },
+                        "tek-start-the-beauty-of-stem-makers-institute": {
+                            "incomingNames": [
+                                "carnegie-museums-of-art-and-natural-history-fiber-art"
+                            ]
+                        }
+                    }
+                },
                 "id": "artisan",
                 "resources": {
                     "carnegie-museums-of-art-and-natural-history-fiber-art": {
@@ -751,6 +909,106 @@
                 "topic_id": "art-design"
             },
             "fine-art": {
+                "dag": {
+                    "names": [
+                        "mcg-youth-and-arts-the-wide-world-of-photo",
+                        "deviant-art-deviantart",
+                        "the-andy-warhol-museum-youth-open-studio",
+                        "the-andy-warhol-museum-vertical-silkscreen-printing-with-stefan-hoffmann",
+                        "evan-mirapaul-la-hutte-royal",
+                        "colossal-colossal",
+                        "carnegie-museums-of-art-and-natural-history-experimental-drawing-and-painting",
+                        "mattress-factory-summer-art-cooperative",
+                        "mcg-youth-and-arts-print-draw-paint",
+                        "pittsburgh-filmmaker-and-center-for-the-arts-drawing",
+                        "moma--moma-teens-online",
+                        "mattress-factory-community-art-lab",
+                        "carnegie-museums-of-art-and-natural-history-drawing-people",
+                        "carnegie-museums-of-art-and-natural-history-sketchbook",
+                        "diy-sketch-a-real-building-",
+                        "carnegie-museums-of-art--interact"
+                    ],
+                    "vertices": {
+                        "carnegie-museums-of-art--interact": {
+                            "incomingNames": [
+                                "mcg-youth-and-arts-print-draw-paint"
+                            ]
+                        },
+                        "carnegie-museums-of-art-and-natural-history-drawing-people": {
+                            "incomingNames": [
+                                "pittsburgh-filmmaker-and-center-for-the-arts-drawing"
+                            ]
+                        },
+                        "carnegie-museums-of-art-and-natural-history-experimental-drawing-and-painting": {
+                            "incomingNames": [
+                                "carnegie-museums-of-art-and-natural-history-drawing-people"
+                            ]
+                        },
+                        "carnegie-museums-of-art-and-natural-history-sketchbook": {
+                            "incomingNames": [
+                                "deviant-art-deviantart"
+                            ]
+                        },
+                        "colossal-colossal": {
+                            "incomingNames": [
+                                "evan-mirapaul-la-hutte-royal"
+                            ]
+                        },
+                        "deviant-art-deviantart": {
+                            "incomingNames": [
+                                "colossal-colossal"
+                            ]
+                        },
+                        "diy-sketch-a-real-building-": {
+                            "incomingNames": []
+                        },
+                        "evan-mirapaul-la-hutte-royal": {
+                            "incomingNames": [
+                                "mattress-factory-summer-art-cooperative"
+                            ]
+                        },
+                        "mattress-factory-community-art-lab": {
+                            "incomingNames": [
+                                "the-andy-warhol-museum-vertical-silkscreen-printing-with-stefan-hoffmann"
+                            ]
+                        },
+                        "mattress-factory-summer-art-cooperative": {
+                            "incomingNames": [
+                                "diy-sketch-a-real-building-"
+                            ]
+                        },
+                        "mcg-youth-and-arts-print-draw-paint": {
+                            "incomingNames": [
+                                "the-andy-warhol-museum-youth-open-studio"
+                            ]
+                        },
+                        "mcg-youth-and-arts-the-wide-world-of-photo": {
+                            "incomingNames": [
+                                "moma--moma-teens-online"
+                            ]
+                        },
+                        "moma--moma-teens-online": {
+                            "incomingNames": [
+                                "carnegie-museums-of-art-and-natural-history-experimental-drawing-and-painting"
+                            ]
+                        },
+                        "pittsburgh-filmmaker-and-center-for-the-arts-drawing": {
+                            "incomingNames": [
+                                "carnegie-museums-of-art-and-natural-history-sketchbook"
+                            ]
+                        },
+                        "the-andy-warhol-museum-vertical-silkscreen-printing-with-stefan-hoffmann": {
+                            "incomingNames": [
+                                "mcg-youth-and-arts-the-wide-world-of-photo"
+                            ]
+                        },
+                        "the-andy-warhol-museum-youth-open-studio": {
+                            "incomingNames": [
+                                "mattress-factory-community-art-lab"
+                            ]
+                        }
+                    }
+                },
                 "id": "fine-art",
                 "resources": {
                     "carnegie-museums-of-art-and-natural-history-drawing-people": {
@@ -1205,6 +1463,88 @@
                 "topic_id": "art-design"
             },
             "visual-communication": {
+                "dag": {
+                    "names": [
+                        "mcg-youth-and-arts-electric-avenue",
+                        "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards",
+                        "mcg-youth-and-arts-digital-expressions",
+                        "pittsburgh-filmmaker-and-center-for-the-arts-graphic-design",
+                        "pittsburgh-filmmaker-and-center-for-the-arts-anime",
+                        "the-andy-warhol-museum-andy-warhol---pop-portraits-and-selfies",
+                        "carnegie-museums-of-art--interact",
+                        "carnegie-museums-of-art-and-natural-history-youth-museum-institute---exhibit-design-lab",
+                        "mcg-youth-and-arts-print-draw-paint",
+                        "the-andy-warhol-museum-online-weeeknd-factory",
+                        "pittsburgh-filmmaker-and-center-for-the-arts-stained-glass",
+                        "labs-at-carnegie-library-of-pittsburgh-open-lab",
+                        "open-ideo-adding-visual-goodness-to-your-ideas-"
+                    ],
+                    "vertices": {
+                        "carnegie-museums-of-art--interact": {
+                            "incomingNames": [
+                                "mcg-youth-and-arts-print-draw-paint"
+                            ]
+                        },
+                        "carnegie-museums-of-art-and-natural-history-youth-museum-institute---exhibit-design-lab": {
+                            "incomingNames": [
+                                "carnegie-museums-of-art--interact"
+                            ]
+                        },
+                        "labs-at-carnegie-library-of-pittsburgh-open-lab": {
+                            "incomingNames": [
+                                "mcg-youth-and-arts-digital-expressions"
+                            ]
+                        },
+                        "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards": {
+                            "incomingNames": [
+                                "labs-at-carnegie-library-of-pittsburgh-open-lab"
+                            ]
+                        },
+                        "mcg-youth-and-arts-digital-expressions": {
+                            "incomingNames": [
+                                "carnegie-museums-of-art-and-natural-history-youth-museum-institute---exhibit-design-lab"
+                            ]
+                        },
+                        "mcg-youth-and-arts-electric-avenue": {
+                            "incomingNames": [
+                                "the-andy-warhol-museum-online-weeeknd-factory"
+                            ]
+                        },
+                        "mcg-youth-and-arts-print-draw-paint": {
+                            "incomingNames": []
+                        },
+                        "open-ideo-adding-visual-goodness-to-your-ideas-": {
+                            "incomingNames": [
+                                "pittsburgh-filmmaker-and-center-for-the-arts-graphic-design"
+                            ]
+                        },
+                        "pittsburgh-filmmaker-and-center-for-the-arts-anime": {
+                            "incomingNames": [
+                                "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards"
+                            ]
+                        },
+                        "pittsburgh-filmmaker-and-center-for-the-arts-graphic-design": {
+                            "incomingNames": [
+                                "the-andy-warhol-museum-andy-warhol---pop-portraits-and-selfies"
+                            ]
+                        },
+                        "pittsburgh-filmmaker-and-center-for-the-arts-stained-glass": {
+                            "incomingNames": [
+                                "mcg-youth-and-arts-electric-avenue"
+                            ]
+                        },
+                        "the-andy-warhol-museum-andy-warhol---pop-portraits-and-selfies": {
+                            "incomingNames": [
+                                "pittsburgh-filmmaker-and-center-for-the-arts-anime"
+                            ]
+                        },
+                        "the-andy-warhol-museum-online-weeeknd-factory": {
+                            "incomingNames": [
+                                "open-ideo-adding-visual-goodness-to-your-ideas-"
+                            ]
+                        }
+                    }
+                },
                 "id": "visual-communication",
                 "resources": {
                     "carnegie-museums-of-art--interact": {
@@ -1568,6 +1908,46 @@
         "id": "building-making",
         "subtopics": {
             "design": {
+                "dag": {
+                    "names": [
+                        "hack-pittsburgh-visit-hackpittsburgh",
+                        "super-awesome-sylvia-show-super-awesome-sylvia---episodes",
+                        "pbs-kids-pbs-design-squad---watch",
+                        "diy-sketch-a-real-building-",
+                        "assemble-teens-as-teachers",
+                        "pbs-kids-pbs-design-squad---build"
+                    ],
+                    "vertices": {
+                        "assemble-teens-as-teachers": {
+                            "incomingNames": [
+                                "super-awesome-sylvia-show-super-awesome-sylvia---episodes"
+                            ]
+                        },
+                        "diy-sketch-a-real-building-": {
+                            "incomingNames": [
+                                "assemble-teens-as-teachers"
+                            ]
+                        },
+                        "hack-pittsburgh-visit-hackpittsburgh": {
+                            "incomingNames": [
+                                "pbs-kids-pbs-design-squad---watch"
+                            ]
+                        },
+                        "pbs-kids-pbs-design-squad---build": {
+                            "incomingNames": [
+                                "diy-sketch-a-real-building-"
+                            ]
+                        },
+                        "pbs-kids-pbs-design-squad---watch": {
+                            "incomingNames": [
+                                "pbs-kids-pbs-design-squad---build"
+                            ]
+                        },
+                        "super-awesome-sylvia-show-super-awesome-sylvia---episodes": {
+                            "incomingNames": []
+                        }
+                    }
+                },
                 "id": "design",
                 "resources": {
                     "assemble-teens-as-teachers": {
@@ -1734,6 +2114,130 @@
                 "topic_id": "building-making"
             },
             "fabrication": {
+                "dag": {
+                    "names": [
+                        "childrens-museum-of-pittsburgh-makeshop",
+                        "assemble-learning-parties",
+                        "maker-faire--visit-maker-faire-pittsburgh",
+                        "assemble-m3---materials-media-and-me",
+                        "pbs-kids-pbs-design-squad---watch",
+                        "gtech-strategies-412-build",
+                        "assemble-saturday-crafternoons-",
+                        "northern-tier-regional-library-cube-head-superheroes",
+                        "instructables-build-something",
+                        "assemble-assemble-afterschool",
+                        "built-by-kids-activities",
+                        "hack-pittsburgh-visit-hackpittsburgh",
+                        "diy-minecrafter",
+                        "maker-media-make-magazine",
+                        "millvale-community-library-maker-thursdays",
+                        "assemble-youth-maker-night",
+                        "carnegie-science-center-fab-lab",
+                        "tech-shop-visit-tech-shop",
+                        "pittsburgh-center-for-creative-reuse-the-remaker-playshop---sew-mend-make",
+                        "society-for-contemporary-craft-drop-in-studio"
+                    ],
+                    "vertices": {
+                        "assemble-assemble-afterschool": {
+                            "incomingNames": [
+                                "assemble-youth-maker-night"
+                            ]
+                        },
+                        "assemble-learning-parties": {
+                            "incomingNames": [
+                                "assemble-m3---materials-media-and-me"
+                            ]
+                        },
+                        "assemble-m3---materials-media-and-me": {
+                            "incomingNames": [
+                                "built-by-kids-activities"
+                            ]
+                        },
+                        "assemble-saturday-crafternoons-": {
+                            "incomingNames": [
+                                "society-for-contemporary-craft-drop-in-studio"
+                            ]
+                        },
+                        "assemble-youth-maker-night": {
+                            "incomingNames": [
+                                "gtech-strategies-412-build"
+                            ]
+                        },
+                        "built-by-kids-activities": {
+                            "incomingNames": [
+                                "millvale-community-library-maker-thursdays"
+                            ]
+                        },
+                        "carnegie-science-center-fab-lab": {
+                            "incomingNames": [
+                                "maker-media-make-magazine"
+                            ]
+                        },
+                        "childrens-museum-of-pittsburgh-makeshop": {
+                            "incomingNames": [
+                                "assemble-saturday-crafternoons-"
+                            ]
+                        },
+                        "diy-minecrafter": {
+                            "incomingNames": [
+                                "northern-tier-regional-library-cube-head-superheroes"
+                            ]
+                        },
+                        "gtech-strategies-412-build": {
+                            "incomingNames": [
+                                "tech-shop-visit-tech-shop"
+                            ]
+                        },
+                        "hack-pittsburgh-visit-hackpittsburgh": {
+                            "incomingNames": [
+                                "pbs-kids-pbs-design-squad---watch"
+                            ]
+                        },
+                        "instructables-build-something": {
+                            "incomingNames": [
+                                "hack-pittsburgh-visit-hackpittsburgh"
+                            ]
+                        },
+                        "maker-faire--visit-maker-faire-pittsburgh": {
+                            "incomingNames": [
+                                "carnegie-science-center-fab-lab"
+                            ]
+                        },
+                        "maker-media-make-magazine": {
+                            "incomingNames": [
+                                "assemble-assemble-afterschool"
+                            ]
+                        },
+                        "millvale-community-library-maker-thursdays": {
+                            "incomingNames": [
+                                "pittsburgh-center-for-creative-reuse-the-remaker-playshop---sew-mend-make"
+                            ]
+                        },
+                        "northern-tier-regional-library-cube-head-superheroes": {
+                            "incomingNames": [
+                                "childrens-museum-of-pittsburgh-makeshop"
+                            ]
+                        },
+                        "pbs-kids-pbs-design-squad---watch": {
+                            "incomingNames": []
+                        },
+                        "pittsburgh-center-for-creative-reuse-the-remaker-playshop---sew-mend-make": {
+                            "incomingNames": [
+                                "maker-faire--visit-maker-faire-pittsburgh"
+                            ]
+                        },
+                        "society-for-contemporary-craft-drop-in-studio": {
+                            "incomingNames": [
+                                "assemble-learning-parties"
+                            ]
+                        },
+                        "tech-shop-visit-tech-shop": {
+                            "incomingNames": [
+                                "instructables-build-something"
+                            ]
+                        }
+                    }
+                },
                 "id": "fabrication",
                 "resources": {
                     "assemble-assemble-afterschool": {
@@ -2316,6 +2820,64 @@
                 "topic_id": "building-making"
             },
             "play": {
+                "dag": {
+                    "names": [
+                        "assemble-unblurred",
+                        "childrens-museum-of-pittsburgh-the-makeshop-show",
+                        "northern-tier-regional-library-cube-head-superheroes",
+                        "diy-lego-master",
+                        "slamacow-minecraft-leaking-into-the-real-world---minecraft-animation",
+                        "diy-minecrafter",
+                        "diy-make-a-rube-goldberg-machine-",
+                        "lego-lego-sets",
+                        "ted-talks-life-lessons-through-tinkering"
+                    ],
+                    "vertices": {
+                        "assemble-unblurred": {
+                            "incomingNames": [
+                                "ted-talks-life-lessons-through-tinkering"
+                            ]
+                        },
+                        "childrens-museum-of-pittsburgh-the-makeshop-show": {
+                            "incomingNames": [
+                                "assemble-unblurred"
+                            ]
+                        },
+                        "diy-lego-master": {
+                            "incomingNames": [
+                                "slamacow-minecraft-leaking-into-the-real-world---minecraft-animation"
+                            ]
+                        },
+                        "diy-make-a-rube-goldberg-machine-": {
+                            "incomingNames": [
+                                "diy-lego-master"
+                            ]
+                        },
+                        "diy-minecrafter": {
+                            "incomingNames": [
+                                "northern-tier-regional-library-cube-head-superheroes"
+                            ]
+                        },
+                        "lego-lego-sets": {
+                            "incomingNames": [
+                                "diy-make-a-rube-goldberg-machine-"
+                            ]
+                        },
+                        "northern-tier-regional-library-cube-head-superheroes": {
+                            "incomingNames": []
+                        },
+                        "slamacow-minecraft-leaking-into-the-real-world---minecraft-animation": {
+                            "incomingNames": [
+                                "diy-minecrafter"
+                            ]
+                        },
+                        "ted-talks-life-lessons-through-tinkering": {
+                            "incomingNames": [
+                                "lego-lego-sets"
+                            ]
+                        }
+                    }
+                },
                 "id": "play",
                 "resources": {
                     "assemble-unblurred": {
@@ -2583,6 +3145,46 @@
         "id": "coding-gaming",
         "subtopics": {
             "appmaking": {
+                "dag": {
+                    "names": [
+                        "tumblr-how-to-create-a-custom-html-theme",
+                        "appshed-academy",
+                        "grow-a-generation-mobile-app-development",
+                        "id-tech-intro-to-programming-with-scratch-and-javascript",
+                        "webmaker-tools-appmaker",
+                        "stem-advanced-technologies-for-kids-mobile-app-design"
+                    ],
+                    "vertices": {
+                        "appshed-academy": {
+                            "incomingNames": [
+                                "stem-advanced-technologies-for-kids-mobile-app-design"
+                            ]
+                        },
+                        "grow-a-generation-mobile-app-development": {
+                            "incomingNames": [
+                                "id-tech-intro-to-programming-with-scratch-and-javascript"
+                            ]
+                        },
+                        "id-tech-intro-to-programming-with-scratch-and-javascript": {
+                            "incomingNames": []
+                        },
+                        "stem-advanced-technologies-for-kids-mobile-app-design": {
+                            "incomingNames": [
+                                "webmaker-tools-appmaker"
+                            ]
+                        },
+                        "tumblr-how-to-create-a-custom-html-theme": {
+                            "incomingNames": [
+                                "appshed-academy"
+                            ]
+                        },
+                        "webmaker-tools-appmaker": {
+                            "incomingNames": [
+                                "grow-a-generation-mobile-app-development"
+                            ]
+                        }
+                    }
+                },
                 "id": "appmaking",
                 "resources": {
                     "appshed-academy": {
@@ -2717,6 +3319,118 @@
                 "topic_id": "coding-gaming"
             },
             "coding": {
+                "dag": {
+                    "names": [
+                        "girl-develop-it-introduction-to-git-and-github",
+                        "diyorg-set-up-a-virtual-machine-with-ubuntu-",
+                        "id-tech-java-programming",
+                        "codeorg-20-hour-intro-course",
+                        "computer-science-education-week-thinkersmith-unplugged-hour-of-code-activity",
+                        "neighborhood-learning-alliance-tech-warriors-training",
+                        "grow-a-generation-mobile-app-development",
+                        "id-tech-intro-to-programming-with-scratch-and-javascript",
+                        "women-at-scs-school-of-computer-science---carnegie-mellon-university-creative-tech-nights",
+                        "codeorg-code-combat",
+                        "the-jerome-bettis-bus-stops-here-foundation-the-cyber-bus-computer-engineering-program",
+                        "codecademy-python",
+                        "carnegie-mellon-university-school-of-computer-science-leap-at-cmu",
+                        "codeorg-studio-activities",
+                        "digital-media-academy-online-fundamentals-of-programming",
+                        "lifelong-kindergarten-group-at-the-mit-media-lab-scratch",
+                        "microsoft-virtual-academy-hour-of-code-event-training",
+                        "institute-of-play-gamekit-challenge-pack---the-basics"
+                    ],
+                    "vertices": {
+                        "carnegie-mellon-university-school-of-computer-science-leap-at-cmu": {
+                            "incomingNames": [
+                                "institute-of-play-gamekit-challenge-pack---the-basics"
+                            ]
+                        },
+                        "codecademy-python": {
+                            "incomingNames": [
+                                "girl-develop-it-introduction-to-git-and-github"
+                            ]
+                        },
+                        "codeorg-20-hour-intro-course": {
+                            "incomingNames": [
+                                "the-jerome-bettis-bus-stops-here-foundation-the-cyber-bus-computer-engineering-program"
+                            ]
+                        },
+                        "codeorg-code-combat": {
+                            "incomingNames": [
+                                "codeorg-studio-activities"
+                            ]
+                        },
+                        "codeorg-studio-activities": {
+                            "incomingNames": [
+                                "codeorg-20-hour-intro-course"
+                            ]
+                        },
+                        "computer-science-education-week-thinkersmith-unplugged-hour-of-code-activity": {
+                            "incomingNames": [
+                                "digital-media-academy-online-fundamentals-of-programming"
+                            ]
+                        },
+                        "digital-media-academy-online-fundamentals-of-programming": {
+                            "incomingNames": [
+                                "id-tech-java-programming"
+                            ]
+                        },
+                        "diyorg-set-up-a-virtual-machine-with-ubuntu-": {
+                            "incomingNames": [
+                                "carnegie-mellon-university-school-of-computer-science-leap-at-cmu"
+                            ]
+                        },
+                        "girl-develop-it-introduction-to-git-and-github": {
+                            "incomingNames": [
+                                "diyorg-set-up-a-virtual-machine-with-ubuntu-"
+                            ]
+                        },
+                        "grow-a-generation-mobile-app-development": {
+                            "incomingNames": [
+                                "id-tech-intro-to-programming-with-scratch-and-javascript"
+                            ]
+                        },
+                        "id-tech-intro-to-programming-with-scratch-and-javascript": {
+                            "incomingNames": [
+                                "lifelong-kindergarten-group-at-the-mit-media-lab-scratch"
+                            ]
+                        },
+                        "id-tech-java-programming": {
+                            "incomingNames": [
+                                "codeorg-code-combat"
+                            ]
+                        },
+                        "institute-of-play-gamekit-challenge-pack---the-basics": {
+                            "incomingNames": []
+                        },
+                        "lifelong-kindergarten-group-at-the-mit-media-lab-scratch": {
+                            "incomingNames": [
+                                "neighborhood-learning-alliance-tech-warriors-training"
+                            ]
+                        },
+                        "microsoft-virtual-academy-hour-of-code-event-training": {
+                            "incomingNames": [
+                                "codecademy-python"
+                            ]
+                        },
+                        "neighborhood-learning-alliance-tech-warriors-training": {
+                            "incomingNames": [
+                                "computer-science-education-week-thinkersmith-unplugged-hour-of-code-activity"
+                            ]
+                        },
+                        "the-jerome-bettis-bus-stops-here-foundation-the-cyber-bus-computer-engineering-program": {
+                            "incomingNames": [
+                                "women-at-scs-school-of-computer-science---carnegie-mellon-university-creative-tech-nights"
+                            ]
+                        },
+                        "women-at-scs-school-of-computer-science---carnegie-mellon-university-creative-tech-nights": {
+                            "incomingNames": [
+                                "microsoft-virtual-academy-hour-of-code-event-training"
+                            ]
+                        }
+                    }
+                },
                 "id": "coding",
                 "resources": {
                     "carnegie-mellon-university-school-of-computer-science-leap-at-cmu": {
@@ -3235,6 +3949,64 @@
                 "topic_id": "coding-gaming"
             },
             "game-play": {
+                "dag": {
+                    "names": [
+                        "global-game-jam-2015-global-game-jam-games",
+                        "diyorg-make-a-board-game",
+                        "codeorg-make-a-flappy-game",
+                        "institute-of-play-through-the-arcade",
+                        "diyorg-design-a-body-game",
+                        "cs2n-rumbleblocks",
+                        "carnegie-science-center-click---spy-school",
+                        "e-line-media-gamestar-mechanic",
+                        "carnegie-science-center--click---spy-mission"
+                    ],
+                    "vertices": {
+                        "carnegie-science-center--click---spy-mission": {
+                            "incomingNames": [
+                                "carnegie-science-center-click---spy-school"
+                            ]
+                        },
+                        "carnegie-science-center-click---spy-school": {
+                            "incomingNames": [
+                                "e-line-media-gamestar-mechanic"
+                            ]
+                        },
+                        "codeorg-make-a-flappy-game": {
+                            "incomingNames": []
+                        },
+                        "cs2n-rumbleblocks": {
+                            "incomingNames": [
+                                "global-game-jam-2015-global-game-jam-games"
+                            ]
+                        },
+                        "diyorg-design-a-body-game": {
+                            "incomingNames": [
+                                "carnegie-science-center--click---spy-mission"
+                            ]
+                        },
+                        "diyorg-make-a-board-game": {
+                            "incomingNames": [
+                                "institute-of-play-through-the-arcade"
+                            ]
+                        },
+                        "e-line-media-gamestar-mechanic": {
+                            "incomingNames": [
+                                "cs2n-rumbleblocks"
+                            ]
+                        },
+                        "global-game-jam-2015-global-game-jam-games": {
+                            "incomingNames": [
+                                "diyorg-make-a-board-game"
+                            ]
+                        },
+                        "institute-of-play-through-the-arcade": {
+                            "incomingNames": [
+                                "codeorg-make-a-flappy-game"
+                            ]
+                        }
+                    }
+                },
                 "id": "game-play",
                 "resources": {
                     "carnegie-science-center--click---spy-mission": {
@@ -3401,6 +4173,126 @@
                 "topic_id": "coding-gaming"
             },
             "gamemaking": {
+                "dag": {
+                    "names": [
+                        "global-game-jam-2015-global-game-jam-games",
+                        "diyorg-make-a-pen-and-paper-game",
+                        "id-tech-adventures-in-minecraft-game-design",
+                        "id-tech-mobile-game-design-for-iphone-and-android",
+                        "diyorg-make-a-board-game",
+                        "codeorg-make-a-flappy-game",
+                        "institute-of-play-through-the-arcade",
+                        "diyorg-design-a-body-game",
+                        "cs2n-rumbleblocks",
+                        "institute-of-play-gamekit-challenge-pack---the-basics",
+                        "gamesalad-game-salad",
+                        "e-line-media-gamestar-mechanic",
+                        "carnegie-mellon-university-school-of-computer-science-leap-at-cmu",
+                        "remake-learning-digital-learning-tools",
+                        "schell-games-gamesprout",
+                        "carnegie-science-center-click---spy-school",
+                        "id-tech-game-programming-for-apple-ios-and-android-with-unity",
+                        "stem-advanced-technologies-for-kids-video-game-design",
+                        "diyorg-minecrafter",
+                        "carnegie-science-center--click---spy-mission"
+                    ],
+                    "vertices": {
+                        "carnegie-mellon-university-school-of-computer-science-leap-at-cmu": {
+                            "incomingNames": [
+                                "institute-of-play-gamekit-challenge-pack---the-basics"
+                            ]
+                        },
+                        "carnegie-science-center--click---spy-mission": {
+                            "incomingNames": []
+                        },
+                        "carnegie-science-center-click---spy-school": {
+                            "incomingNames": [
+                                "e-line-media-gamestar-mechanic"
+                            ]
+                        },
+                        "codeorg-make-a-flappy-game": {
+                            "incomingNames": [
+                                "stem-advanced-technologies-for-kids-video-game-design"
+                            ]
+                        },
+                        "cs2n-rumbleblocks": {
+                            "incomingNames": []
+                        },
+                        "diyorg-design-a-body-game": {
+                            "incomingNames": [
+                                "carnegie-science-center--click---spy-mission"
+                            ]
+                        },
+                        "diyorg-make-a-board-game": {
+                            "incomingNames": [
+                                "institute-of-play-through-the-arcade"
+                            ]
+                        },
+                        "diyorg-make-a-pen-and-paper-game": {
+                            "incomingNames": [
+                                "diyorg-design-a-body-game"
+                            ]
+                        },
+                        "diyorg-minecrafter": {
+                            "incomingNames": [
+                                "gamesalad-game-salad"
+                            ]
+                        },
+                        "e-line-media-gamestar-mechanic": {
+                            "incomingNames": [
+                                "cs2n-rumbleblocks"
+                            ]
+                        },
+                        "gamesalad-game-salad": {
+                            "incomingNames": [
+                                "schell-games-gamesprout"
+                            ]
+                        },
+                        "global-game-jam-2015-global-game-jam-games": {
+                            "incomingNames": [
+                                "diyorg-make-a-board-game"
+                            ]
+                        },
+                        "id-tech-adventures-in-minecraft-game-design": {
+                            "incomingNames": [
+                                "diyorg-minecrafter"
+                            ]
+                        },
+                        "id-tech-game-programming-for-apple-ios-and-android-with-unity": {
+                            "incomingNames": [
+                                "id-tech-adventures-in-minecraft-game-design"
+                            ]
+                        },
+                        "id-tech-mobile-game-design-for-iphone-and-android": {
+                            "incomingNames": [
+                                "id-tech-game-programming-for-apple-ios-and-android-with-unity"
+                            ]
+                        },
+                        "institute-of-play-gamekit-challenge-pack---the-basics": {
+                            "incomingNames": [
+                                "diyorg-make-a-pen-and-paper-game"
+                            ]
+                        },
+                        "institute-of-play-through-the-arcade": {
+                            "incomingNames": [
+                                "codeorg-make-a-flappy-game"
+                            ]
+                        },
+                        "remake-learning-digital-learning-tools": {
+                            "incomingNames": []
+                        },
+                        "schell-games-gamesprout": {
+                            "incomingNames": [
+                                "remake-learning-digital-learning-tools"
+                            ]
+                        },
+                        "stem-advanced-technologies-for-kids-video-game-design": {
+                            "incomingNames": [
+                                "id-tech-mobile-game-design-for-iphone-and-android"
+                            ]
+                        }
+                    }
+                },
                 "id": "gamemaking",
                 "resources": {
                     "codeorg-make-a-flappy-game": {
@@ -3823,6 +4715,22 @@
                 "topic_id": "coding-gaming"
             },
             "resources": {
+                "dag": {
+                    "names": [
+                        "schell-games-gamesprout",
+                        "remake-learning-digital-learning-tools"
+                    ],
+                    "vertices": {
+                        "remake-learning-digital-learning-tools": {
+                            "incomingNames": []
+                        },
+                        "schell-games-gamesprout": {
+                            "incomingNames": [
+                                "remake-learning-digital-learning-tools"
+                            ]
+                        }
+                    }
+                },
                 "id": "resources",
                 "resources": {
                     "remake-learning-digital-learning-tools": {
@@ -3861,6 +4769,64 @@
                 "topic_id": "coding-gaming"
             },
             "web-101": {
+                "dag": {
+                    "names": [
+                        "brain-pop-digital-etiquette",
+                        "made-w-code-watch-the-film",
+                        "brain-pop-digital-etiquette-quiz",
+                        "mozilla-webmaker-make-a-meme",
+                        "girl-develop-it-introduction-to-web-concepts",
+                        "school-of-open-get-to-know-the-hackasaurus-xray-goggles",
+                        "instructables-create-tumblr-account",
+                        "mozilla-webmaker-x-ray-goggles",
+                        "girl-develop-it-web-accessibility"
+                    ],
+                    "vertices": {
+                        "brain-pop-digital-etiquette": {
+                            "incomingNames": [
+                                "brain-pop-digital-etiquette-quiz"
+                            ]
+                        },
+                        "brain-pop-digital-etiquette-quiz": {
+                            "incomingNames": [
+                                "girl-develop-it-introduction-to-web-concepts"
+                            ]
+                        },
+                        "girl-develop-it-introduction-to-web-concepts": {
+                            "incomingNames": [
+                                "mozilla-webmaker-make-a-meme"
+                            ]
+                        },
+                        "girl-develop-it-web-accessibility": {
+                            "incomingNames": []
+                        },
+                        "instructables-create-tumblr-account": {
+                            "incomingNames": [
+                                "brain-pop-digital-etiquette"
+                            ]
+                        },
+                        "made-w-code-watch-the-film": {
+                            "incomingNames": [
+                                "school-of-open-get-to-know-the-hackasaurus-xray-goggles"
+                            ]
+                        },
+                        "mozilla-webmaker-make-a-meme": {
+                            "incomingNames": [
+                                "girl-develop-it-web-accessibility"
+                            ]
+                        },
+                        "mozilla-webmaker-x-ray-goggles": {
+                            "incomingNames": [
+                                "instructables-create-tumblr-account"
+                            ]
+                        },
+                        "school-of-open-get-to-know-the-hackasaurus-xray-goggles": {
+                            "incomingNames": [
+                                "mozilla-webmaker-x-ray-goggles"
+                            ]
+                        }
+                    }
+                },
                 "id": "web-101",
                 "resources": {
                     "brain-pop-digital-etiquette": {
@@ -4123,6 +5089,106 @@
                 "topic_id": "coding-gaming"
             },
             "webmaking": {
+                "dag": {
+                    "names": [
+                        "codecademy-make-a-website",
+                        "appshed-academy",
+                        "webmaker-tools-thimble",
+                        "tumblr-how-to-create-a-custom-html-theme",
+                        "codecademy-make-an-interactive-website",
+                        "mozilla-webmaker-make-a-meme",
+                        "webmaker-training-html-basics",
+                        "w3-schools-html5-tutorial",
+                        "girl-develop-it-html-intro",
+                        "girl-develop-it-web-accessibility",
+                        "webmaker-training-building-on-the-web",
+                        "assemble-make-it",
+                        "p2pu-webmaking-101",
+                        "girl-develop-it-intermediate-html-and-css",
+                        "diyorg-gather-website-inspiration",
+                        "tumblr-theme-garden"
+                    ],
+                    "vertices": {
+                        "appshed-academy": {
+                            "incomingNames": []
+                        },
+                        "assemble-make-it": {
+                            "incomingNames": [
+                                "webmaker-training-html-basics"
+                            ]
+                        },
+                        "codecademy-make-a-website": {
+                            "incomingNames": [
+                                "assemble-make-it"
+                            ]
+                        },
+                        "codecademy-make-an-interactive-website": {
+                            "incomingNames": [
+                                "webmaker-tools-thimble"
+                            ]
+                        },
+                        "diyorg-gather-website-inspiration": {
+                            "incomingNames": [
+                                "p2pu-webmaking-101"
+                            ]
+                        },
+                        "girl-develop-it-html-intro": {
+                            "incomingNames": [
+                                "diyorg-gather-website-inspiration"
+                            ]
+                        },
+                        "girl-develop-it-intermediate-html-and-css": {
+                            "incomingNames": [
+                                "tumblr-how-to-create-a-custom-html-theme"
+                            ]
+                        },
+                        "girl-develop-it-web-accessibility": {
+                            "incomingNames": [
+                                "girl-develop-it-html-intro"
+                            ]
+                        },
+                        "mozilla-webmaker-make-a-meme": {
+                            "incomingNames": [
+                                "girl-develop-it-web-accessibility"
+                            ]
+                        },
+                        "p2pu-webmaking-101": {
+                            "incomingNames": [
+                                "codecademy-make-a-website"
+                            ]
+                        },
+                        "tumblr-how-to-create-a-custom-html-theme": {
+                            "incomingNames": [
+                                "appshed-academy"
+                            ]
+                        },
+                        "tumblr-theme-garden": {
+                            "incomingNames": [
+                                "codecademy-make-an-interactive-website"
+                            ]
+                        },
+                        "w3-schools-html5-tutorial": {
+                            "incomingNames": [
+                                "webmaker-training-building-on-the-web"
+                            ]
+                        },
+                        "webmaker-tools-thimble": {
+                            "incomingNames": [
+                                "girl-develop-it-intermediate-html-and-css"
+                            ]
+                        },
+                        "webmaker-training-building-on-the-web": {
+                            "incomingNames": [
+                                "tumblr-theme-garden"
+                            ]
+                        },
+                        "webmaker-training-html-basics": {
+                            "incomingNames": [
+                                "w3-schools-html5-tutorial"
+                            ]
+                        }
+                    }
+                },
                 "id": "webmaking",
                 "resources": {
                     "assemble-make-it": {
@@ -4582,6 +5648,106 @@
         "id": "food-gardening",
         "subtopics": {
             "eating-and-cooking": {
+                "dag": {
+                    "names": [
+                        "slow-foods-origins-of-taste",
+                        "wilkinsburg-public-library-unmask-super-snacks",
+                        "phipps-conservatory-phipps-cafe",
+                        "food-revolution-pittsburgh-cooking-club-at-summer-dreamers",
+                        "food-n-me-various-activities",
+                        "food-revolution-pittsburgh-cooking-club",
+                        "food-revolution-pittsburgh-cooking-demos",
+                        "carnegie-library-of-pittsburgh-cooking-for-teens-",
+                        "saint-paul-episcopal-church-mission-trip",
+                        "sam-stern-light-meals-and-snacks",
+                        "food-revolution-pittsburgh-cooking-club-at-harvest-and-create",
+                        "local-harvest-local-farmers-markets",
+                        "food-revolution-day-recipes",
+                        "fox-master-chef-jr",
+                        "cooking-with-rockstars-cooking-with-rockstars",
+                        "slow-foods-youth-network-slow-food-youth-network-eat-the-future-you-want"
+                    ],
+                    "vertices": {
+                        "carnegie-library-of-pittsburgh-cooking-for-teens-": {
+                            "incomingNames": [
+                                "food-n-me-various-activities"
+                            ]
+                        },
+                        "cooking-with-rockstars-cooking-with-rockstars": {
+                            "incomingNames": [
+                                "local-harvest-local-farmers-markets"
+                            ]
+                        },
+                        "food-n-me-various-activities": {
+                            "incomingNames": [
+                                "fox-master-chef-jr"
+                            ]
+                        },
+                        "food-revolution-day-recipes": {
+                            "incomingNames": [
+                                "sam-stern-light-meals-and-snacks"
+                            ]
+                        },
+                        "food-revolution-pittsburgh-cooking-club": {
+                            "incomingNames": [
+                                "slow-foods-origins-of-taste"
+                            ]
+                        },
+                        "food-revolution-pittsburgh-cooking-club-at-harvest-and-create": {
+                            "incomingNames": [
+                                "food-revolution-day-recipes"
+                            ]
+                        },
+                        "food-revolution-pittsburgh-cooking-club-at-summer-dreamers": {
+                            "incomingNames": [
+                                "food-revolution-pittsburgh-cooking-club-at-harvest-and-create"
+                            ]
+                        },
+                        "food-revolution-pittsburgh-cooking-demos": {
+                            "incomingNames": [
+                                "food-revolution-pittsburgh-cooking-club"
+                            ]
+                        },
+                        "fox-master-chef-jr": {
+                            "incomingNames": [
+                                "wilkinsburg-public-library-unmask-super-snacks"
+                            ]
+                        },
+                        "local-harvest-local-farmers-markets": {
+                            "incomingNames": [
+                                "slow-foods-youth-network-slow-food-youth-network-eat-the-future-you-want"
+                            ]
+                        },
+                        "phipps-conservatory-phipps-cafe": {
+                            "incomingNames": [
+                                "carnegie-library-of-pittsburgh-cooking-for-teens-"
+                            ]
+                        },
+                        "saint-paul-episcopal-church-mission-trip": {
+                            "incomingNames": [
+                                "phipps-conservatory-phipps-cafe"
+                            ]
+                        },
+                        "sam-stern-light-meals-and-snacks": {
+                            "incomingNames": []
+                        },
+                        "slow-foods-origins-of-taste": {
+                            "incomingNames": [
+                                "food-revolution-pittsburgh-cooking-club-at-summer-dreamers"
+                            ]
+                        },
+                        "slow-foods-youth-network-slow-food-youth-network-eat-the-future-you-want": {
+                            "incomingNames": [
+                                "food-revolution-pittsburgh-cooking-demos"
+                            ]
+                        },
+                        "wilkinsburg-public-library-unmask-super-snacks": {
+                            "incomingNames": [
+                                "cooking-with-rockstars-cooking-with-rockstars"
+                            ]
+                        }
+                    }
+                },
                 "id": "eating-and-cooking",
                 "resources": {
                     "carnegie-library-of-pittsburgh-cooking-for-teens-": {
@@ -5068,6 +6234,52 @@
                 "topic_id": "food-gardening"
             },
             "food-security": {
+                "dag": {
+                    "names": [
+                        "saint-paul-episcopal-church-mission-trip",
+                        "falling-fruit-mapping-the-urban-harvest",
+                        "winter-root-wild-edibles-app",
+                        "no-kid-hungry-no-kid-hungry-summer-",
+                        "phipps-conservatory-phipps-cafe",
+                        "take-part-place-at-the-table",
+                        "pa-summer-food-service-program-summer-food-service-"
+                    ],
+                    "vertices": {
+                        "falling-fruit-mapping-the-urban-harvest": {
+                            "incomingNames": [
+                                "no-kid-hungry-no-kid-hungry-summer-"
+                            ]
+                        },
+                        "no-kid-hungry-no-kid-hungry-summer-": {
+                            "incomingNames": [
+                                "take-part-place-at-the-table"
+                            ]
+                        },
+                        "pa-summer-food-service-program-summer-food-service-": {
+                            "incomingNames": [
+                                "saint-paul-episcopal-church-mission-trip"
+                            ]
+                        },
+                        "phipps-conservatory-phipps-cafe": {
+                            "incomingNames": []
+                        },
+                        "saint-paul-episcopal-church-mission-trip": {
+                            "incomingNames": [
+                                "phipps-conservatory-phipps-cafe"
+                            ]
+                        },
+                        "take-part-place-at-the-table": {
+                            "incomingNames": [
+                                "pa-summer-food-service-program-summer-food-service-"
+                            ]
+                        },
+                        "winter-root-wild-edibles-app": {
+                            "incomingNames": [
+                                "falling-fruit-mapping-the-urban-harvest"
+                            ]
+                        }
+                    }
+                },
                 "id": "food-security",
                 "resources": {
                     "falling-fruit-mapping-the-urban-harvest": {
@@ -5234,6 +6446,58 @@
                 "topic_id": "food-gardening"
             },
             "gardening": {
+                "dag": {
+                    "names": [
+                        "food-n-me-smash-your-food",
+                        "diy-diy-gardener",
+                        "phipps-conservatory-homegrown-hero-badge-resources-",
+                        "webmd-and-whitehouse-webmd-town-hall",
+                        "phipps-conservatory-homegrown-challenges",
+                        "phipps-conservatory-12-month-gardening-tips",
+                        "grow-pittsburgh-start-a-garden",
+                        "saint-paul-episcopal-church-saint-francis-garden"
+                    ],
+                    "vertices": {
+                        "diy-diy-gardener": {
+                            "incomingNames": [
+                                "saint-paul-episcopal-church-saint-francis-garden"
+                            ]
+                        },
+                        "food-n-me-smash-your-food": {
+                            "incomingNames": []
+                        },
+                        "grow-pittsburgh-start-a-garden": {
+                            "incomingNames": [
+                                "food-n-me-smash-your-food"
+                            ]
+                        },
+                        "phipps-conservatory-12-month-gardening-tips": {
+                            "incomingNames": [
+                                "phipps-conservatory-homegrown-challenges"
+                            ]
+                        },
+                        "phipps-conservatory-homegrown-challenges": {
+                            "incomingNames": [
+                                "phipps-conservatory-homegrown-hero-badge-resources-"
+                            ]
+                        },
+                        "phipps-conservatory-homegrown-hero-badge-resources-": {
+                            "incomingNames": [
+                                "grow-pittsburgh-start-a-garden"
+                            ]
+                        },
+                        "saint-paul-episcopal-church-saint-francis-garden": {
+                            "incomingNames": [
+                                "phipps-conservatory-12-month-gardening-tips"
+                            ]
+                        },
+                        "webmd-and-whitehouse-webmd-town-hall": {
+                            "incomingNames": [
+                                "diy-diy-gardener"
+                            ]
+                        }
+                    }
+                },
                 "id": "gardening",
                 "resources": {
                     "diy-diy-gardener": {
@@ -5464,6 +6728,58 @@
                 "topic_id": "food-gardening"
             },
             "locavore": {
+                "dag": {
+                    "names": [
+                        "food-n-me-various-activities",
+                        "falling-fruit-mapping-the-urban-harvest",
+                        "winter-root-wild-edibles-app",
+                        "eat-local-challenge-10-reasons-to-eat-local-food",
+                        "foraging-pittsburgh-wild-food-walks",
+                        "wild-purveyors-tour-of-store",
+                        "healcrest-farm-farm-fresh-icepops",
+                        "teen-observer-alice-waters-article"
+                    ],
+                    "vertices": {
+                        "eat-local-challenge-10-reasons-to-eat-local-food": {
+                            "incomingNames": [
+                                "wild-purveyors-tour-of-store"
+                            ]
+                        },
+                        "falling-fruit-mapping-the-urban-harvest": {
+                            "incomingNames": []
+                        },
+                        "food-n-me-various-activities": {
+                            "incomingNames": [
+                                "teen-observer-alice-waters-article"
+                            ]
+                        },
+                        "foraging-pittsburgh-wild-food-walks": {
+                            "incomingNames": [
+                                "winter-root-wild-edibles-app"
+                            ]
+                        },
+                        "healcrest-farm-farm-fresh-icepops": {
+                            "incomingNames": [
+                                "foraging-pittsburgh-wild-food-walks"
+                            ]
+                        },
+                        "teen-observer-alice-waters-article": {
+                            "incomingNames": [
+                                "eat-local-challenge-10-reasons-to-eat-local-food"
+                            ]
+                        },
+                        "wild-purveyors-tour-of-store": {
+                            "incomingNames": [
+                                "healcrest-farm-farm-fresh-icepops"
+                            ]
+                        },
+                        "winter-root-wild-edibles-app": {
+                            "incomingNames": [
+                                "falling-fruit-mapping-the-urban-harvest"
+                            ]
+                        }
+                    }
+                },
                 "id": "locavore",
                 "resources": {
                     "eat-local-challenge-10-reasons-to-eat-local-food": {
@@ -5662,6 +6978,76 @@
                 "topic_id": "food-gardening"
             },
             "nutrition": {
+                "dag": {
+                    "names": [
+                        "food-n-me-smash-your-food",
+                        "food-n-me-various-activities",
+                        "center-for-disease--control-bam-body-and-mind",
+                        "fit-webmd-fit-webmd-handbook",
+                        "the-white-house-lets-move-kids",
+                        "fit-webmd-fit-webmd-teen",
+                        "teen-observer-alice-waters-article",
+                        "fda-read-the-label-youth-outreach-campaign-",
+                        "usda-choose-my-plate-teen-boys",
+                        "grow-pittsburgh-start-a-garden",
+                        "usda-choose-my-plate-teen-girls"
+                    ],
+                    "vertices": {
+                        "center-for-disease--control-bam-body-and-mind": {
+                            "incomingNames": [
+                                "the-white-house-lets-move-kids"
+                            ]
+                        },
+                        "fda-read-the-label-youth-outreach-campaign-": {
+                            "incomingNames": [
+                                "fit-webmd-fit-webmd-teen"
+                            ]
+                        },
+                        "fit-webmd-fit-webmd-handbook": {
+                            "incomingNames": [
+                                "center-for-disease--control-bam-body-and-mind"
+                            ]
+                        },
+                        "fit-webmd-fit-webmd-teen": {
+                            "incomingNames": [
+                                "fit-webmd-fit-webmd-handbook"
+                            ]
+                        },
+                        "food-n-me-smash-your-food": {
+                            "incomingNames": [
+                                "usda-choose-my-plate-teen-boys"
+                            ]
+                        },
+                        "food-n-me-various-activities": {
+                            "incomingNames": [
+                                "teen-observer-alice-waters-article"
+                            ]
+                        },
+                        "grow-pittsburgh-start-a-garden": {
+                            "incomingNames": [
+                                "food-n-me-smash-your-food"
+                            ]
+                        },
+                        "teen-observer-alice-waters-article": {
+                            "incomingNames": []
+                        },
+                        "the-white-house-lets-move-kids": {
+                            "incomingNames": [
+                                "food-n-me-various-activities"
+                            ]
+                        },
+                        "usda-choose-my-plate-teen-boys": {
+                            "incomingNames": [
+                                "usda-choose-my-plate-teen-girls"
+                            ]
+                        },
+                        "usda-choose-my-plate-teen-girls": {
+                            "incomingNames": [
+                                "fda-read-the-label-youth-outreach-campaign-"
+                            ]
+                        }
+                    }
+                },
                 "id": "nutrition",
                 "resources": {
                     "center-for-disease--control-bam-body-and-mind": {
@@ -5961,6 +7347,34 @@
         "id": "mediamaking",
         "subtopics": {
             "audio": {
+                "dag": {
+                    "names": [
+                        "mcg-youth-and-arts-the-wide-world-of-photo",
+                        "labs-at-carnegie-library-of-pittsburgh-open-lab",
+                        "wyep-rock-radio-camp",
+                        "wyep-radio-tour"
+                    ],
+                    "vertices": {
+                        "labs-at-carnegie-library-of-pittsburgh-open-lab": {
+                            "incomingNames": []
+                        },
+                        "mcg-youth-and-arts-the-wide-world-of-photo": {
+                            "incomingNames": [
+                                "wyep-rock-radio-camp"
+                            ]
+                        },
+                        "wyep-radio-tour": {
+                            "incomingNames": [
+                                "labs-at-carnegie-library-of-pittsburgh-open-lab"
+                            ]
+                        },
+                        "wyep-rock-radio-camp": {
+                            "incomingNames": [
+                                "wyep-radio-tour"
+                            ]
+                        }
+                    }
+                },
                 "id": "audio",
                 "resources": {
                     "wyep-radio-tour": {
@@ -6031,6 +7445,106 @@
                 "topic_id": "mediamaking"
             },
             "film-and-video": {
+                "dag": {
+                    "names": [
+                        "pf-and-pca-filmmakers-youth-media-directors-workshop",
+                        "vimeo-directing-101",
+                        "diy-org-film-a-spoof-video",
+                        "pf-and-pca-filmmakers-youth-media-foundations-of-filmmaking",
+                        "pf-and-pca-filmmakers-youth-media-cryptozoology",
+                        "starz-the-chair",
+                        "diy-org-reenact-a-scene",
+                        "the-criterion-collection-criterion-collection-top-10s",
+                        "white-house-the-white-house--students-film-festival",
+                        "carnegie-science-center-i5-video-competition",
+                        "steeltown-entertainment-youth-and-media",
+                        "carnegie-science-center-digital-video-smash-jam-two-day-workshop",
+                        "diy-org-make-trick-photography-",
+                        "diy-org-create-a-book-trailer",
+                        "teen-ink-teen-ink-video",
+                        "pf-and-pca-filmmakers-youth-media-handmade-filmmaking-at-pf"
+                    ],
+                    "vertices": {
+                        "carnegie-science-center-digital-video-smash-jam-two-day-workshop": {
+                            "incomingNames": [
+                                "steeltown-entertainment-youth-and-media"
+                            ]
+                        },
+                        "carnegie-science-center-i5-video-competition": {
+                            "incomingNames": [
+                                "white-house-the-white-house--students-film-festival"
+                            ]
+                        },
+                        "diy-org-create-a-book-trailer": {
+                            "incomingNames": [
+                                "diy-org-reenact-a-scene"
+                            ]
+                        },
+                        "diy-org-film-a-spoof-video": {
+                            "incomingNames": [
+                                "pf-and-pca-filmmakers-youth-media-cryptozoology"
+                            ]
+                        },
+                        "diy-org-make-trick-photography-": {
+                            "incomingNames": []
+                        },
+                        "diy-org-reenact-a-scene": {
+                            "incomingNames": [
+                                "pf-and-pca-filmmakers-youth-media-directors-workshop"
+                            ]
+                        },
+                        "pf-and-pca-filmmakers-youth-media-cryptozoology": {
+                            "incomingNames": [
+                                "diy-org-create-a-book-trailer"
+                            ]
+                        },
+                        "pf-and-pca-filmmakers-youth-media-directors-workshop": {
+                            "incomingNames": [
+                                "the-criterion-collection-criterion-collection-top-10s"
+                            ]
+                        },
+                        "pf-and-pca-filmmakers-youth-media-foundations-of-filmmaking": {
+                            "incomingNames": [
+                                "starz-the-chair"
+                            ]
+                        },
+                        "pf-and-pca-filmmakers-youth-media-handmade-filmmaking-at-pf": {
+                            "incomingNames": [
+                                "carnegie-science-center-i5-video-competition"
+                            ]
+                        },
+                        "starz-the-chair": {
+                            "incomingNames": [
+                                "teen-ink-teen-ink-video"
+                            ]
+                        },
+                        "steeltown-entertainment-youth-and-media": {
+                            "incomingNames": [
+                                "diy-org-film-a-spoof-video"
+                            ]
+                        },
+                        "teen-ink-teen-ink-video": {
+                            "incomingNames": [
+                                "vimeo-directing-101"
+                            ]
+                        },
+                        "the-criterion-collection-criterion-collection-top-10s": {
+                            "incomingNames": [
+                                "pf-and-pca-filmmakers-youth-media-handmade-filmmaking-at-pf"
+                            ]
+                        },
+                        "vimeo-directing-101": {
+                            "incomingNames": [
+                                "carnegie-science-center-digital-video-smash-jam-two-day-workshop"
+                            ]
+                        },
+                        "white-house-the-white-house--students-film-festival": {
+                            "incomingNames": [
+                                "diy-org-make-trick-photography-"
+                            ]
+                        }
+                    }
+                },
                 "id": "film-and-video",
                 "resources": {
                     "carnegie-science-center-digital-video-smash-jam-two-day-workshop": {
@@ -6517,6 +8031,58 @@
                 "topic_id": "mediamaking"
             },
             "photo": {
+                "dag": {
+                    "names": [
+                        "mcg-youth-and-arts-photography",
+                        "mcg-youth-and-arts-the-wide-world-of-photo",
+                        "diy-org-build-a-photo-studio",
+                        "pf-and-pca-filmmakers-youth-media-foundations-of-photography",
+                        "wyep-rock-radio-camp",
+                        "white-house-the-white-house--students-film-festival",
+                        "pf-and-pca-filmmakers-youth-media-photography-at-pf",
+                        "diy-org-make-trick-photography-"
+                    ],
+                    "vertices": {
+                        "diy-org-build-a-photo-studio": {
+                            "incomingNames": [
+                                "mcg-youth-and-arts-photography"
+                            ]
+                        },
+                        "diy-org-make-trick-photography-": {
+                            "incomingNames": [
+                                "pf-and-pca-filmmakers-youth-media-foundations-of-photography"
+                            ]
+                        },
+                        "mcg-youth-and-arts-photography": {
+                            "incomingNames": [
+                                "pf-and-pca-filmmakers-youth-media-photography-at-pf"
+                            ]
+                        },
+                        "mcg-youth-and-arts-the-wide-world-of-photo": {
+                            "incomingNames": [
+                                "wyep-rock-radio-camp"
+                            ]
+                        },
+                        "pf-and-pca-filmmakers-youth-media-foundations-of-photography": {
+                            "incomingNames": [
+                                "diy-org-build-a-photo-studio"
+                            ]
+                        },
+                        "pf-and-pca-filmmakers-youth-media-photography-at-pf": {
+                            "incomingNames": [
+                                "mcg-youth-and-arts-the-wide-world-of-photo"
+                            ]
+                        },
+                        "white-house-the-white-house--students-film-festival": {
+                            "incomingNames": [
+                                "diy-org-make-trick-photography-"
+                            ]
+                        },
+                        "wyep-rock-radio-camp": {
+                            "incomingNames": []
+                        }
+                    }
+                },
                 "id": "photo",
                 "resources": {
                     "diy-org-build-a-photo-studio": {
@@ -6715,6 +8281,58 @@
                 "topic_id": "mediamaking"
             },
             "visual-communication": {
+                "dag": {
+                    "names": [
+                        "pf-and-pca-filmmakers-youth-media-graphic-design",
+                        "mcg-youth-and-arts-electric-avenue",
+                        "madmagz-make-your-own-magazine",
+                        "jenesis-magazine-online-youth-lifestyle-publication-based-in-pittsburgh",
+                        "labs-at-carnegie-library-of-pittsburgh-clp-teens-tumblr",
+                        "wyep-radio-tour",
+                        "interview-magazine-andy-warhol-magazine--interview-",
+                        "labs-at-carnegie-library-of-pittsburgh-open-lab"
+                    ],
+                    "vertices": {
+                        "interview-magazine-andy-warhol-magazine--interview-": {
+                            "incomingNames": [
+                                "madmagz-make-your-own-magazine"
+                            ]
+                        },
+                        "jenesis-magazine-online-youth-lifestyle-publication-based-in-pittsburgh": {
+                            "incomingNames": [
+                                "pf-and-pca-filmmakers-youth-media-graphic-design"
+                            ]
+                        },
+                        "labs-at-carnegie-library-of-pittsburgh-clp-teens-tumblr": {
+                            "incomingNames": [
+                                "jenesis-magazine-online-youth-lifestyle-publication-based-in-pittsburgh"
+                            ]
+                        },
+                        "labs-at-carnegie-library-of-pittsburgh-open-lab": {
+                            "incomingNames": [
+                                "labs-at-carnegie-library-of-pittsburgh-clp-teens-tumblr"
+                            ]
+                        },
+                        "madmagz-make-your-own-magazine": {
+                            "incomingNames": []
+                        },
+                        "mcg-youth-and-arts-electric-avenue": {
+                            "incomingNames": [
+                                "interview-magazine-andy-warhol-magazine--interview-"
+                            ]
+                        },
+                        "pf-and-pca-filmmakers-youth-media-graphic-design": {
+                            "incomingNames": [
+                                "mcg-youth-and-arts-electric-avenue"
+                            ]
+                        },
+                        "wyep-radio-tour": {
+                            "incomingNames": [
+                                "labs-at-carnegie-library-of-pittsburgh-open-lab"
+                            ]
+                        }
+                    }
+                },
                 "id": "visual-communication",
                 "resources": {
                     "interview-magazine-andy-warhol-magazine--interview-": {
@@ -6950,6 +8568,58 @@
         "id": "robotics",
         "subtopics": {
             "engineering": {
+                "dag": {
+                    "names": [
+                        "wilkinsburg-public-library-unmask---bristle-bot-racers",
+                        "synn-labs-music-video-with-rube-goldberg-",
+                        "deep-local-nike-chalkbot",
+                        "grow-a-generation-engineering-your-passion",
+                        "carnegie-science-center-chain-reaction-contraption-contest",
+                        "diy-make-a-rube-goldberg-machine",
+                        "carnegie-science-center-roboworld-activities",
+                        "super-awesome-sylvia-watercolorbot"
+                    ],
+                    "vertices": {
+                        "carnegie-science-center-chain-reaction-contraption-contest": {
+                            "incomingNames": [
+                                "wilkinsburg-public-library-unmask---bristle-bot-racers"
+                            ]
+                        },
+                        "carnegie-science-center-roboworld-activities": {
+                            "incomingNames": [
+                                "synn-labs-music-video-with-rube-goldberg-"
+                            ]
+                        },
+                        "deep-local-nike-chalkbot": {
+                            "incomingNames": [
+                                "grow-a-generation-engineering-your-passion"
+                            ]
+                        },
+                        "diy-make-a-rube-goldberg-machine": {
+                            "incomingNames": [
+                                "carnegie-science-center-chain-reaction-contraption-contest"
+                            ]
+                        },
+                        "grow-a-generation-engineering-your-passion": {
+                            "incomingNames": [
+                                "super-awesome-sylvia-watercolorbot"
+                            ]
+                        },
+                        "super-awesome-sylvia-watercolorbot": {
+                            "incomingNames": []
+                        },
+                        "synn-labs-music-video-with-rube-goldberg-": {
+                            "incomingNames": [
+                                "diy-make-a-rube-goldberg-machine"
+                            ]
+                        },
+                        "wilkinsburg-public-library-unmask---bristle-bot-racers": {
+                            "incomingNames": [
+                                "deep-local-nike-chalkbot"
+                            ]
+                        }
+                    }
+                },
                 "id": "engineering",
                 "resources": {
                     "carnegie-science-center-chain-reaction-contraption-contest": {
@@ -7148,6 +8818,58 @@
                 "topic_id": "robotics"
             },
             "programming-robots": {
+                "dag": {
+                    "names": [
+                        "digital-media-academy-online-fundamentals-of-programming",
+                        "id-tech-java-programming",
+                        "id-tech-intro-to-programming-with-scratch-and-javascript",
+                        "carnegie-mellon-robotics-academy-robotc",
+                        "carnegie-mellon-university-school-of-computer-science-leap-at-cmu",
+                        "carnegie-mellon-robotics-academy-cs2n",
+                        "sarah-heinz-house-join-sharp",
+                        "lifelong-kindergarten-group-at-the-mit-media-lab-scratch"
+                    ],
+                    "vertices": {
+                        "carnegie-mellon-robotics-academy-cs2n": {
+                            "incomingNames": [
+                                "lifelong-kindergarten-group-at-the-mit-media-lab-scratch"
+                            ]
+                        },
+                        "carnegie-mellon-robotics-academy-robotc": {
+                            "incomingNames": [
+                                "carnegie-mellon-robotics-academy-cs2n"
+                            ]
+                        },
+                        "carnegie-mellon-university-school-of-computer-science-leap-at-cmu": {
+                            "incomingNames": []
+                        },
+                        "digital-media-academy-online-fundamentals-of-programming": {
+                            "incomingNames": [
+                                "id-tech-java-programming"
+                            ]
+                        },
+                        "id-tech-intro-to-programming-with-scratch-and-javascript": {
+                            "incomingNames": [
+                                "digital-media-academy-online-fundamentals-of-programming"
+                            ]
+                        },
+                        "id-tech-java-programming": {
+                            "incomingNames": [
+                                "carnegie-mellon-university-school-of-computer-science-leap-at-cmu"
+                            ]
+                        },
+                        "lifelong-kindergarten-group-at-the-mit-media-lab-scratch": {
+                            "incomingNames": [
+                                "id-tech-intro-to-programming-with-scratch-and-javascript"
+                            ]
+                        },
+                        "sarah-heinz-house-join-sharp": {
+                            "incomingNames": [
+                                "carnegie-mellon-robotics-academy-robotc"
+                            ]
+                        }
+                    }
+                },
                 "id": "programming-robots",
                 "resources": {
                     "carnegie-mellon-robotics-academy-cs2n": {
@@ -7378,6 +9100,94 @@
                 "topic_id": "robotics"
             },
             "robot-interaction": {
+                "dag": {
+                    "names": [
+                        "greene-academy-advanced-robotics",
+                        "carnegie-mellon-university--cookie-vs-creme---a-robotic-twist",
+                        "carnegie-mellon-create-lab-hummingbird-robotics-kit",
+                        "grow-a-generation-engineering-your-passion",
+                        "carnegie-mellon-robotics-academy-robotc",
+                        "greene-academy-ev3-lego-robotics",
+                        "pittsburgh-first-get-involved",
+                        "grow-a-generation-audacious-robotocists",
+                        "carnegie-library-of-pittsburgh-the-labs-at-clp---main---robotics-workshop-with-girls-of-steel",
+                        "girls-of-steel-robotics-the-girls-of-steel-robotics",
+                        "sarah-heinz-house-join-sharp",
+                        "super-awesome-sylvia-watercolorbot",
+                        "carnegie-mellon-robotics-academy-robots-virtual-world",
+                        "robocup-manuela-veloso---robocup-champion"
+                    ],
+                    "vertices": {
+                        "carnegie-library-of-pittsburgh-the-labs-at-clp---main---robotics-workshop-with-girls-of-steel": {
+                            "incomingNames": [
+                                "robocup-manuela-veloso---robocup-champion"
+                            ]
+                        },
+                        "carnegie-mellon-create-lab-hummingbird-robotics-kit": {
+                            "incomingNames": [
+                                "grow-a-generation-audacious-robotocists"
+                            ]
+                        },
+                        "carnegie-mellon-robotics-academy-robotc": {
+                            "incomingNames": []
+                        },
+                        "carnegie-mellon-robotics-academy-robots-virtual-world": {
+                            "incomingNames": [
+                                "carnegie-mellon-create-lab-hummingbird-robotics-kit"
+                            ]
+                        },
+                        "carnegie-mellon-university--cookie-vs-creme---a-robotic-twist": {
+                            "incomingNames": [
+                                "greene-academy-advanced-robotics"
+                            ]
+                        },
+                        "girls-of-steel-robotics-the-girls-of-steel-robotics": {
+                            "incomingNames": [
+                                "carnegie-library-of-pittsburgh-the-labs-at-clp---main---robotics-workshop-with-girls-of-steel"
+                            ]
+                        },
+                        "greene-academy-advanced-robotics": {
+                            "incomingNames": [
+                                "pittsburgh-first-get-involved"
+                            ]
+                        },
+                        "greene-academy-ev3-lego-robotics": {
+                            "incomingNames": [
+                                "carnegie-mellon-university--cookie-vs-creme---a-robotic-twist"
+                            ]
+                        },
+                        "grow-a-generation-audacious-robotocists": {
+                            "incomingNames": [
+                                "girls-of-steel-robotics-the-girls-of-steel-robotics"
+                            ]
+                        },
+                        "grow-a-generation-engineering-your-passion": {
+                            "incomingNames": [
+                                "super-awesome-sylvia-watercolorbot"
+                            ]
+                        },
+                        "pittsburgh-first-get-involved": {
+                            "incomingNames": [
+                                "sarah-heinz-house-join-sharp"
+                            ]
+                        },
+                        "robocup-manuela-veloso---robocup-champion": {
+                            "incomingNames": [
+                                "greene-academy-ev3-lego-robotics"
+                            ]
+                        },
+                        "sarah-heinz-house-join-sharp": {
+                            "incomingNames": [
+                                "carnegie-mellon-robotics-academy-robotc"
+                            ]
+                        },
+                        "super-awesome-sylvia-watercolorbot": {
+                            "incomingNames": [
+                                "carnegie-mellon-robotics-academy-robots-virtual-world"
+                            ]
+                        }
+                    }
+                },
                 "id": "robot-interaction",
                 "resources": {
                     "carnegie-library-of-pittsburgh-the-labs-at-clp---main---robotics-workshop-with-girls-of-steel": {
@@ -7768,6 +9578,64 @@
                 "topic_id": "robotics"
             },
             "robots-101": {
+                "dag": {
+                    "names": [
+                        "carnegie-mellon-robotics-academy-expedition-atlantis-",
+                        "carnegie-mellon-university-rumbleblocks-",
+                        "carnegie-science-center-roboworld",
+                        "carnegie-library-of-pittsburgh-weekly-workshop-at-clp---allegheny",
+                        "walt-disney-animation-studios-big-hero-6",
+                        "christopher-atkeson-build-baymax",
+                        "synn-labs-music-video-with-rube-goldberg-",
+                        "carnegie-science-center-roboworld-activities",
+                        "assemble-summer-dreamers"
+                    ],
+                    "vertices": {
+                        "assemble-summer-dreamers": {
+                            "incomingNames": [
+                                "carnegie-mellon-robotics-academy-expedition-atlantis-"
+                            ]
+                        },
+                        "carnegie-library-of-pittsburgh-weekly-workshop-at-clp---allegheny": {
+                            "incomingNames": [
+                                "assemble-summer-dreamers"
+                            ]
+                        },
+                        "carnegie-mellon-robotics-academy-expedition-atlantis-": {
+                            "incomingNames": [
+                                "carnegie-science-center-roboworld"
+                            ]
+                        },
+                        "carnegie-mellon-university-rumbleblocks-": {
+                            "incomingNames": [
+                                "carnegie-library-of-pittsburgh-weekly-workshop-at-clp---allegheny"
+                            ]
+                        },
+                        "carnegie-science-center-roboworld": {
+                            "incomingNames": [
+                                "carnegie-science-center-roboworld-activities"
+                            ]
+                        },
+                        "carnegie-science-center-roboworld-activities": {
+                            "incomingNames": [
+                                "synn-labs-music-video-with-rube-goldberg-"
+                            ]
+                        },
+                        "christopher-atkeson-build-baymax": {
+                            "incomingNames": [
+                                "carnegie-mellon-university-rumbleblocks-"
+                            ]
+                        },
+                        "synn-labs-music-video-with-rube-goldberg-": {
+                            "incomingNames": []
+                        },
+                        "walt-disney-animation-studios-big-hero-6": {
+                            "incomingNames": [
+                                "christopher-atkeson-build-baymax"
+                            ]
+                        }
+                    }
+                },
                 "id": "robots-101",
                 "resources": {
                     "assemble-summer-dreamers": {
@@ -8035,6 +9903,40 @@
         "id": "storytelling",
         "subtopics": {
             "communication": {
+                "dag": {
+                    "names": [
+                        "pittsburgh-poetry-collective-young-steel",
+                        "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards",
+                        "hear-me-hear-me-stories",
+                        "hear-me-hear-me-101-internship-program",
+                        "city-of-asylum-city-of-asylum-events"
+                    ],
+                    "vertices": {
+                        "city-of-asylum-city-of-asylum-events": {
+                            "incomingNames": [
+                                "hear-me-hear-me-101-internship-program"
+                            ]
+                        },
+                        "hear-me-hear-me-101-internship-program": {
+                            "incomingNames": [
+                                "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards"
+                            ]
+                        },
+                        "hear-me-hear-me-stories": {
+                            "incomingNames": [
+                                "city-of-asylum-city-of-asylum-events"
+                            ]
+                        },
+                        "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards": {
+                            "incomingNames": []
+                        },
+                        "pittsburgh-poetry-collective-young-steel": {
+                            "incomingNames": [
+                                "hear-me-hear-me-stories"
+                            ]
+                        }
+                    }
+                },
                 "id": "communication",
                 "resources": {
                     "city-of-asylum-city-of-asylum-events": {
@@ -8137,6 +10039,58 @@
                 "topic_id": "storytelling"
             },
             "gameplay": {
+                "dag": {
+                    "names": [
+                        "inkle-studios-80-days",
+                        "the-carnegie-library-of-pittsburgh-the-labs-at-clp-allegheny---slb-radio-series",
+                        "inkle-studios-inklewriter",
+                        "the-creativity-hub-story-cubes-app",
+                        "the-creativity-hub-story-cubes",
+                        "pittsburgh-public-schools-literary-arts-department-at-capa",
+                        "the-creativity-hub-extraordinaires",
+                        "diy-write-a-choose-your-own-adventure"
+                    ],
+                    "vertices": {
+                        "diy-write-a-choose-your-own-adventure": {
+                            "incomingNames": [
+                                "inkle-studios-80-days"
+                            ]
+                        },
+                        "inkle-studios-80-days": {
+                            "incomingNames": [
+                                "inkle-studios-inklewriter"
+                            ]
+                        },
+                        "inkle-studios-inklewriter": {
+                            "incomingNames": [
+                                "the-carnegie-library-of-pittsburgh-the-labs-at-clp-allegheny---slb-radio-series"
+                            ]
+                        },
+                        "pittsburgh-public-schools-literary-arts-department-at-capa": {
+                            "incomingNames": [
+                                "the-creativity-hub-story-cubes"
+                            ]
+                        },
+                        "the-carnegie-library-of-pittsburgh-the-labs-at-clp-allegheny---slb-radio-series": {
+                            "incomingNames": []
+                        },
+                        "the-creativity-hub-extraordinaires": {
+                            "incomingNames": [
+                                "diy-write-a-choose-your-own-adventure"
+                            ]
+                        },
+                        "the-creativity-hub-story-cubes": {
+                            "incomingNames": [
+                                "the-creativity-hub-story-cubes-app"
+                            ]
+                        },
+                        "the-creativity-hub-story-cubes-app": {
+                            "incomingNames": [
+                                "the-creativity-hub-extraordinaires"
+                            ]
+                        }
+                    }
+                },
                 "id": "gameplay",
                 "resources": {
                     "diy-write-a-choose-your-own-adventure": {
@@ -8335,6 +10289,34 @@
                 "topic_id": "storytelling"
             },
             "pro-reading": {
+                "dag": {
+                    "names": [
+                        "826-valencia-student-writing-gallery",
+                        "neighborhood-learning-alliance-reading-warriors",
+                        "wilkinsburg-public-library-unmask---summer-reading-challenge",
+                        "the-carnegie-library-of-pittsburgh-teen-summer-reading"
+                    ],
+                    "vertices": {
+                        "826-valencia-student-writing-gallery": {
+                            "incomingNames": []
+                        },
+                        "neighborhood-learning-alliance-reading-warriors": {
+                            "incomingNames": [
+                                "826-valencia-student-writing-gallery"
+                            ]
+                        },
+                        "the-carnegie-library-of-pittsburgh-teen-summer-reading": {
+                            "incomingNames": [
+                                "wilkinsburg-public-library-unmask---summer-reading-challenge"
+                            ]
+                        },
+                        "wilkinsburg-public-library-unmask---summer-reading-challenge": {
+                            "incomingNames": [
+                                "neighborhood-learning-alliance-reading-warriors"
+                            ]
+                        }
+                    }
+                },
                 "id": "pro-reading",
                 "resources": {
                     "neighborhood-learning-alliance-reading-warriors": {
@@ -8437,6 +10419,52 @@
                 "topic_id": "storytelling"
             },
             "spoken-word": {
+                "dag": {
+                    "names": [
+                        "get-lit-get-lit-players",
+                        "diy-tell-a-scary-story-",
+                        "the-carnegie-library-of-pittsburgh-the-labs-at-clp-allegheny---slb-radio-series",
+                        "inkle-studios-inklewriter",
+                        "the-moth-the-moth-video",
+                        "hear-me-hear-me-stories",
+                        "pittsburgh-poetry-collective-young-steel"
+                    ],
+                    "vertices": {
+                        "diy-tell-a-scary-story-": {
+                            "incomingNames": [
+                                "pittsburgh-poetry-collective-young-steel"
+                            ]
+                        },
+                        "get-lit-get-lit-players": {
+                            "incomingNames": [
+                                "diy-tell-a-scary-story-"
+                            ]
+                        },
+                        "hear-me-hear-me-stories": {
+                            "incomingNames": []
+                        },
+                        "inkle-studios-inklewriter": {
+                            "incomingNames": [
+                                "the-carnegie-library-of-pittsburgh-the-labs-at-clp-allegheny---slb-radio-series"
+                            ]
+                        },
+                        "pittsburgh-poetry-collective-young-steel": {
+                            "incomingNames": [
+                                "hear-me-hear-me-stories"
+                            ]
+                        },
+                        "the-carnegie-library-of-pittsburgh-the-labs-at-clp-allegheny---slb-radio-series": {
+                            "incomingNames": [
+                                "the-moth-the-moth-video"
+                            ]
+                        },
+                        "the-moth-the-moth-video": {
+                            "incomingNames": [
+                                "get-lit-get-lit-players"
+                            ]
+                        }
+                    }
+                },
                 "id": "spoken-word",
                 "resources": {
                     "diy-tell-a-scary-story-": {
@@ -8603,6 +10631,40 @@
                 "topic_id": "storytelling"
             },
             "visual": {
+                "dag": {
+                    "names": [
+                        "toonseum-summer-saturdays-superhero-workshop",
+                        "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards",
+                        "carnegie-museums-of-art-and-natural-history-comics-and-cartoons",
+                        "heinz-history-center-pittsburgh-history-detectives",
+                        "toonseum-create-your-own-comic-strip-"
+                    ],
+                    "vertices": {
+                        "carnegie-museums-of-art-and-natural-history-comics-and-cartoons": {
+                            "incomingNames": [
+                                "toonseum-create-your-own-comic-strip-"
+                            ]
+                        },
+                        "heinz-history-center-pittsburgh-history-detectives": {
+                            "incomingNames": [
+                                "carnegie-museums-of-art-and-natural-history-comics-and-cartoons"
+                            ]
+                        },
+                        "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards": {
+                            "incomingNames": [
+                                "heinz-history-center-pittsburgh-history-detectives"
+                            ]
+                        },
+                        "toonseum-create-your-own-comic-strip-": {
+                            "incomingNames": [
+                                "toonseum-summer-saturdays-superhero-workshop"
+                            ]
+                        },
+                        "toonseum-summer-saturdays-superhero-workshop": {
+                            "incomingNames": []
+                        }
+                    }
+                },
                 "id": "visual",
                 "resources": {
                     "carnegie-museums-of-art-and-natural-history-comics-and-cartoons": {
@@ -8737,6 +10799,28 @@
                 "topic_id": "storytelling"
             },
             "visual-": {
+                "dag": {
+                    "names": [
+                        "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards",
+                        "heinz-history-center-pittsburgh-history-detectives",
+                        "hear-me-hear-me-101-internship-program"
+                    ],
+                    "vertices": {
+                        "hear-me-hear-me-101-internship-program": {
+                            "incomingNames": [
+                                "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards"
+                            ]
+                        },
+                        "heinz-history-center-pittsburgh-history-detectives": {
+                            "incomingNames": []
+                        },
+                        "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards": {
+                            "incomingNames": [
+                                "heinz-history-center-pittsburgh-history-detectives"
+                            ]
+                        }
+                    }
+                },
                 "id": "visual-",
                 "resources": {
                     "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards": {
@@ -8775,6 +10859,94 @@
                 "topic_id": "storytelling"
             },
             "written": {
+                "dag": {
+                    "names": [
+                        "scholastic-art-and-writing-awards-scholastic-art-and-writing-awards",
+                        "pittsburgh-public-schools-literary-arts-department-at-capa",
+                        "grow-a-generation-the-writings-of-neil-degrasse-tyson-and-michio-kaku",
+                        "luminari-fantastic-fiction-writing---4-day-summer-camp-for-teens-",
+                        "alpha-science-fiction-fantasy-horror-workshop-for-young-writers-alpha-science-fiction-fantasy-horror-workshop-for-young-writers",
+                        "neighborhood-learning-alliance-reading-warriors",
+                        "826-valencia-student-writing-gallery",
+                        "studio-360-funny-ha-ha---the-high-school-humor-challenge",
+                        "figment-the-daily-fig",
+                        "the-creativity-hub-story-cubes",
+                        "grow-a-generation-crafting-a-science-fiction-short-story",
+                        "the-western-pa-writing-project-scholastic-writing-awards",
+                        "the-western-pa-writing-project-young-writers-institutes",
+                        "carnegie-mellon-university-department-of-english-the-martin-luther-king-junior-writing-awards"
+                    ],
+                    "vertices": {
+                        "826-valencia-student-writing-gallery": {
+                            "incomingNames": [
+                                "grow-a-generation-the-writings-of-neil-degrasse-tyson-and-michio-kaku"
+                            ]
+                        },
+                        "alpha-science-fiction-fantasy-horror-workshop-for-young-writers-alpha-science-fiction-fantasy-horror-workshop-for-young-writers": {
+                            "incomingNames": [
+                                "pittsburgh-public-schools-literary-arts-department-at-capa"
+                            ]
+                        },
+                        "carnegie-mellon-university-department-of-english-the-martin-luther-king-junior-writing-awards": {
+                            "incomingNames": [
+                                "grow-a-generation-crafting-a-science-fiction-short-story"
+                            ]
+                        },
+                        "figment-the-daily-fig": {
+                            "incomingNames": [
+                                "studio-360-funny-ha-ha---the-high-school-humor-challenge"
+                            ]
+                        },
+                        "grow-a-generation-crafting-a-science-fiction-short-story": {
+                            "incomingNames": [
+                                "scholastic-art-and-writing-awards-scholastic-art-and-writing-awards"
+                            ]
+                        },
+                        "grow-a-generation-the-writings-of-neil-degrasse-tyson-and-michio-kaku": {
+                            "incomingNames": [
+                                "figment-the-daily-fig"
+                            ]
+                        },
+                        "luminari-fantastic-fiction-writing---4-day-summer-camp-for-teens-": {
+                            "incomingNames": [
+                                "the-western-pa-writing-project-young-writers-institutes"
+                            ]
+                        },
+                        "neighborhood-learning-alliance-reading-warriors": {
+                            "incomingNames": [
+                                "826-valencia-student-writing-gallery"
+                            ]
+                        },
+                        "pittsburgh-public-schools-literary-arts-department-at-capa": {
+                            "incomingNames": [
+                                "the-creativity-hub-story-cubes"
+                            ]
+                        },
+                        "scholastic-art-and-writing-awards-scholastic-art-and-writing-awards": {
+                            "incomingNames": [
+                                "luminari-fantastic-fiction-writing---4-day-summer-camp-for-teens-"
+                            ]
+                        },
+                        "studio-360-funny-ha-ha---the-high-school-humor-challenge": {
+                            "incomingNames": [
+                                "carnegie-mellon-university-department-of-english-the-martin-luther-king-junior-writing-awards"
+                            ]
+                        },
+                        "the-creativity-hub-story-cubes": {
+                            "incomingNames": []
+                        },
+                        "the-western-pa-writing-project-scholastic-writing-awards": {
+                            "incomingNames": [
+                                "alpha-science-fiction-fantasy-horror-workshop-for-young-writers-alpha-science-fiction-fantasy-horror-workshop-for-young-writers"
+                            ]
+                        },
+                        "the-western-pa-writing-project-young-writers-institutes": {
+                            "incomingNames": [
+                                "the-western-pa-writing-project-scholastic-writing-awards"
+                            ]
+                        }
+                    }
+                },
                 "id": "written",
                 "resources": {
                     "826-valencia-student-writing-gallery": {

@@ -212,18 +212,10 @@ Map.initTopics = function(topics) {
             if (!subtopics.hasOwnProperty(subtopic_id)) continue;
             var subtopic = subtopics[subtopic_id];
 
-            subtopic.dag = new DAG();
-
             var resources = subtopic.resources;
             for (var resource_id in resources) {
                 if (!resources.hasOwnProperty(resource_id)) continue;
                 var resource = resources[resource_id];
-
-                subtopic.dag.addEdges( resource.id              // name
-                                     , resource                 // value
-                                     , resource.before_this     // comes_after
-                                     , resource.after_this      // comes_before
-                                      );
 
                 // Draw a circle.
                 var center = getRectCenter(topic_id, resource_id);
@@ -240,26 +232,9 @@ Map.initTopics = function(topics) {
                 // Teach the rect some things.
                 var rect = $('rect#'+resource.id, topic.svg);
                 rect.attr({'subtopic_id': subtopic_id, 'topic_id': topic_id});
-            }
-        }
-    }
 
-
-    // Loop back through the completed DAGs and make <path>s.
-
-    for (var topic_id in topics) {
-        if (!topics.hasOwnProperty(topic_id)) continue;
-        var topic = topics[topic_id];
-
-        var subtopics = topic.subtopics;
-        for (var subtopic_id in subtopics) {
-            if (!subtopics.hasOwnProperty(subtopic_id)) continue;
-            var subtopic = subtopics[subtopic_id];
-
-            var dag = subtopic.dag
-
-            for (var i=0, resource_id; resource_id=dag.names[i]; i++) {
-                var v = dag.vertices[resource_id];
+                // Draw pathways.
+                var v = subtopic.dag.vertices[resource_id];
                 for (var j=0, prev_id; prev_id = v.incomingNames[j]; j++)
                 {
                     var start = getRectCenter(topic_id, prev_id);
@@ -283,7 +258,7 @@ Map.initTopics = function(topics) {
 
 
 Map.init = function() {
-    jQuery.get('resources.json', function(topics) {
+    jQuery.get('topics.json', function(topics) {
         $('.navigation').hide();
         $('#map').load('map.svg', function() {
             Map.initZooming();
