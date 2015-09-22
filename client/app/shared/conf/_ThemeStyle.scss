@@ -1,15 +1,24 @@
-//
-// CAAC Variables
-// --------------------------------------------------
-
-$brand-primary: #0099ff;
-$brand-primary-light: lighten($brand-primary, 30%);
-$brand-secondary: #33cc00;
-
 
 //
 // Typography
 // --------------------------------------------------
+
+html{
+  font-size: 100%; /* Sets baseline of 16px for REM calculations */
+  @include media(max-width 992px) {
+    font-size: 90%;
+  }
+  @include media(max-width 882px) {
+    font-size: 80%;
+  }
+}
+
+body{
+  @include rem(font-size, $font-size-base);
+  background: #f7f7f7;
+  font-family: $font-family;
+  color: $brand-black;
+}
 
 h1,
 h2,
@@ -60,7 +69,6 @@ a{
 	float: right !important;
 }
 
-
 /* Responsive Images */
 .img-responsive{
   max-width: 100%;
@@ -80,7 +88,7 @@ a{
 // --------------------------------------------------
 
 .btn {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: $font-family;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
