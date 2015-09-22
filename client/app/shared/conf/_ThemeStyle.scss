@@ -35,52 +35,16 @@ a{
   }
 }
 
-//
-// Global Helpers
-// --------------------------------------------------
-
 ::selection{
-	background: #0099FF;
-	color: #ffffff;
+  background: #0099FF;
+  color: #ffffff;
 }
 
 ::-moz-selection{
-	background: #0099FF;
-	color: #ffffff;
+  background: #0099FF;
+  color: #ffffff;
 }
 
-.text-right{
-	text-align: right;
-}
-
-.text-left{
-	text-align: left;
-}
-
-.text-center{
-	text-align: center;
-}
-
-.pull-left{
-	float: left !important;
-}
-
-.pull-right{
-	float: right !important;
-}
-
-/* Responsive Images */
-.img-responsive{
-  max-width: 100%;
-  height: auto;
-  display: inline-block;
-}
-
-.center-block{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 
 //
@@ -146,10 +110,5 @@ a{
 // Icons
 // --------------------------------------------------
 .icon {
-  width: 15px;
-  height: 15px;
-  display: inline-block;
-  margin-right: 5px;
-  position: relative;
-  top: 2px;
+
 }

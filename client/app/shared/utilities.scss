@@ -1,0 +1,63 @@
+//
+// Text
+// --------------------------------------------------
+.text-right{
+	text-align: right;
+}
+
+.text-left{
+	text-align: left;
+}
+
+.text-center{
+	text-align: center;
+}
+
+//
+// Floats
+// --------------------------------------------------
+
+.pull-left{
+	float: left !important;
+}
+
+.pull-right{
+	float: right !important;
+}
+
+
+//
+// Images
+// --------------------------------------------------
+
+/* Responsive Images */
+.img-responsive{
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.center-block{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+//
+// Visbility
+// --------------------------------------------------
+
+.hidden-break{
+	display: inline-block;
+	@include media(max-width $nav-break){
+		display: none !important;
+	}
+}
+
+.visible-break{
+	display: none !important;
+	@include media(max-width $nav-break){
+		display: inline-block !important;
+	}
+}
