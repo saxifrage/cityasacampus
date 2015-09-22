@@ -18,7 +18,7 @@ This project depends on Git, Ruby, Rubygems, Node, NPM, Gulp, and Postgresql, pl
 ###Application install
 ```bash
 $ git clone git@github.com:saxifrage/cityasacampus.git
-$ cd learn
+$ cd cityasacampus
 $ bundle install
 $ rake db:setup
 # $ rake db:seed (optional if you want some test data...) 
