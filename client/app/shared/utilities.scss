@@ -43,6 +43,14 @@
   margin-right: auto;
 }
 
+svg path{
+	@include transition(fill .15s linear);
+}
+
+svg.hover:hover path{
+	fill: $brand-primary;
+}
+
 
 //
 // Visbility

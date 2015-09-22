@@ -151,11 +151,12 @@
 // --------------------------------------------------
 .navbar__toggle{
   float: right;
+  @include rem(width, 34px);
+  @include rem(margin-top, 5px);
+  &:hover{
+    cursor: pointer;
+  }
 }
-
-
-
-
 
 
 //
