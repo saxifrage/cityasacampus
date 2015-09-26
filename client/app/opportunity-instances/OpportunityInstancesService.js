@@ -5,7 +5,7 @@ angular.module('caac.opportunity-instances.service', [
     function($log, ConfService, $http) {
       var logger = $log.getInstance('OpportunitiesService');
       var selectByTerm = function(term, page) {
-        term = term || '';
+        term = term || '*';
 
         logger.info('attempting to retrieve opportunity instances related to "' + term + '" from backend');
 

@@ -111,6 +111,9 @@ angular.module('caac.explore.controller', [
         logger.info('updating navbar search input to say "' + $routeParams.term + '"');
         self.term = $routeParams.term;
         self.getOpportunityInstancesByTerm(self.term);
+      } else {
+        //no term specified, just return everything!
+        self.getOpportunityInstancesByTerm();     
       }
     };
 
