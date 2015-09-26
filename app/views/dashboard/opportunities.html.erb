@@ -1,6 +1,26 @@
-<h1>Learning Opportunities</h1>
-<%= link_to '+ Add a new\'n', new_opportunity_path %>
-<br/>
-<% @opportunities.each do |opportunity| %>
-  <%= link_to opportunity.name, opportunity %><br/>
-<% end %>
+<h1 class="page">Dashboard > Manage Opportunities</h1>
+
+<div class="opportunities">
+  <%= link_to '<button>Add New Opportunity</button>'.html_safe, new_opportunity_path %>
+
+  <br />
+  <br />
+
+  <table class="pure-table pure-table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @opportunities.each do |opportunity| %>
+        <tr>
+          <td><%= opportunity.name %></td>
+          <td><%= link_to "<button>edit</button>".html_safe, edit_opportunity_path(opportunity) %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -4,9 +4,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    #TODO: I don't link how it's redirecting but `users` is magically
-    #handled by Devise and our User ActiveRecord. In other words,
-    #we actually don't have a UserController and assoc. action to map to :/
-    redirect_to '/dashboard/users/sign_in'
+    if signed_in?
+      render 'dashboard/index'
+    else
+      #TODO: need to subclass devise controller in order
+      #to default the `dashboard/` route to this...
+      redirect_to '/dashboard/users/sign_in'
+    end
   end
 end
