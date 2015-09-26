@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Learn</title>
+  <title>City as a Campus</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if signed_in? %>
-  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-<% end %>
-<%= notice %>
-<%= alert %>
-<%= yield %>
+  <div id="main">
+    <div id="navbar">
+      <div class="logo"></div>
+      <div class="links">
+        <% if signed_in? %>
+          <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+    <hr style="clear: both"/>
+    <div class="content">
+      <%= notice %>
+      <%= alert %>
+      <%= yield %>
+    </div>
+  </div>
+
 </body>
 </html>

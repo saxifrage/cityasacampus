@@ -2,12 +2,14 @@ class OpportunitiesController < ApplicationController
   before_action :set_opportunity, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-
   # GET /opportunities
   # GET /opportunities.json
   def index
     @opportunities = Opportunity.all
-    render json: @opportunities
+    respond_to do |format|
+      format.html { render 'dashboard/opportunities' }
+      format.json { render json: @opportunities }
+    end
   end
 
   # GET /opportunities/1
