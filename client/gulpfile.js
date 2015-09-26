@@ -28,6 +28,7 @@ gulp.task(tasks.JS_VENDORS, function() {
       npmLocation + '/angular/angular.min.js',
       npmLocation + '/angular-route/angular-route.min.js',
       npmLocation + '/jquery/dist/jquery.min.js',
+      npmLocation + '/masonry-layout/dist/masonry.pkgd.min.js',
       npmLocation + '/moment/min/moment.min.js',
       npmLocation + '/angular-filter/dist/angular-filter.min.js'
     ])
