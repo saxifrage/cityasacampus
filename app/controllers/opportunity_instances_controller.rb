@@ -32,22 +32,26 @@ class OpportunityInstancesController < ApplicationController
   def search
     respond_to do |format|
       format.json {
-        paginate(json: OpportunityInstance
-          .joins(:topic)
-          .joins(:opportunity)
-          .where("opportunity_instances.ends_at > CURRENT_TIMESTAMP")
-          .fuzzy_search({
-            name: params[:term],
-            description: params[:term],
-            topics: {
-              name: params[:term]
-            },
-            opportunities: {
+        if params[:term] == "*"
+          paginate(json: OpportunityInstance, root: :result)
+        else
+          paginate(json: OpportunityInstance
+            .joins(:topic)
+            .joins(:opportunity)
+            .where("opportunity_instances.ends_at > CURRENT_TIMESTAMP")
+            .fuzzy_search({
               name: params[:term],
-              description: params[:term]
-            }
-          }, false), root: :result
-        )
+              description: params[:term],
+              topics: {
+                name: params[:term]
+              },
+              opportunities: {
+                name: params[:term],
+                description: params[:term]
+              }
+            }, false), root: :result
+          )
+        end
       }
     end
   end
