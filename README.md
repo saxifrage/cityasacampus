@@ -28,15 +28,15 @@ $ npm i
 $ gulp
 ```
 
+- (Detailed log of a Mac install from source here: https://github.com/saxifrage/cityasacampus/issues/57)
+- (Detailed log of a Linux install from source here: https://github.com/saxifrage/cityasacampus/issues/213)
+
 ### Running the app
 ```bash
 $ rails s
 ```
 
 Visit the app in your browser at http://localhost:3000/
-
-###Mac (from source)
-See [install log](https://github.com/saxifrage/cityasacampus/issues/57).
 
 ## License
 MIT
