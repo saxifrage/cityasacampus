@@ -10,21 +10,6 @@ angular.module('caac.shared.conf.service', [])
         c.APP = 'City as a Campus';
         c.CITY = 'Pittsburgh';
 
-        //TODO: rip this out...
-        c.TOPICS = [
-          'Coding & Games',
-          'Community Action',
-          'Designing + Making',
-          'Earth & Science',
-          'Media',
-          'Numbers',
-          'Performance',
-          'Sports & Wellness',
-          'Storytelling',
-          'Work & Career',
-          'Zoology'
-        ];
-
         //env specific
         if (['localhost', '127.0.0.1'].indexOf(appEnv) >= -1) { //this means dev env
           c.ENV = '(DEV) ';
