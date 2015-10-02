@@ -7,20 +7,23 @@ codeandsupply = Organizer.create(name: 'Code & Supply', description: 'Pittsburgh
 saxifrage = Organizer.create(name: 'Saxifrage School', description: 'The Saxifrage School is a higher education laboratory working to lower costs, re-think the campus, and reconcile theory with practice.', url: 'http://www.saxifrageschool.org/', logo_url: 'http://www.saxifrageschool.org/img/saxifrage_logo.png')
 Organizer.create(name: 'Assemble', description: 'Maker gallery', url: '', logo_url: '')
 
-starterseries = Opportunity.create(name: '#StarterSeries', description: 'Learn to code', organizer: codeandsupply)
-profdev = Opportunity.create(name: 'Professional Development', description: 'Get yourself a better job', organizer: codeandsupply)
+film = ResourceSubType.create(name: 'Film', resource_type: ResourceType.create(name: 'Digital'))
+workshop = ResourceSubType.create(name: 'Workshop', resource_type: ResourceType.create(name: 'Local'))
 
-Opportunity.create(name: 'Carpentry courses', organizer: saxifrage)
+starterseries = Opportunity.create(name: '#StarterSeries', description: 'Learn to code', organizer: codeandsupply, resource_sub_type: film)
+profdev = Opportunity.create(name: 'Professional Development', description: 'Get yourself a better job', organizer: codeandsupply, resource_sub_type: workshop)
 
-OpportunityInstance.create(name: 'Software Design Patterns', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood, logo_url: random_img)
-OpportunityInstance.create(name: 'Tools of the Trade', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood, logo_url: random_img)
+Opportunity.create(name: 'Carpentry courses', organizer: saxifrage, resource_sub_type: workshop)
+
+OpportunityInstance.create(name: 'Software Design Patterns', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood, logo_url: random_img, resource_sub_type: film)
+OpportunityInstance.create(name: 'Tools of the Trade', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood, logo_url: random_img, resource_sub_type: workshop)
 OpportunityInstance.create(name: 'Software Testing', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood, logo_url: random_img)
 OpportunityInstance.create(name: 'Programming Principles', opportunity: starterseries, starts_at: Time.now+1.hours, ends_at: Time.now + 2.hours, location: cloakroom, topic: software, neighborhood: neighborhood, logo_url: random_img)
 
 junky_organizer = Organizer.create(name: 'Spam organizer')
 junky_opportunities = []
 10.times do |n|
-  junky_opportunities << Opportunity.create(name: "Opportunity #{n}", description: "This is a class. It'll teach you about #{n}", organizer: codeandsupply)
+  junky_opportunities << Opportunity.create(name: "Opportunity #{n}", description: "This is a class. It'll teach you about #{n}", organizer: codeandsupply, resource_sub_type: workshop)
 end
 
 junky_opportunities.each do |opp|
@@ -35,7 +38,8 @@ junky_opportunities.each do |opp|
     price: Random.rand(100),
     min_age: 4,
     max_age: Random.rand(99),
-    logo_url: random_img
+    logo_url: random_img,
+    resource_sub_type: film
   ).save!
 
   opp.opportunity_instances.build(
@@ -49,6 +53,7 @@ junky_opportunities.each do |opp|
     price: Random.rand(100),
     min_age: 4,
     max_age: Random.rand(99),
-    logo_url: random_img
+    logo_url: random_img,
+    resource_sub_type: workshop
   ).save!
 end

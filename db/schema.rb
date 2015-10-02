@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809030551) do
+ActiveRecord::Schema.define(version: 20151002203739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,9 +58,16 @@ ActiveRecord::Schema.define(version: 20150809030551) do
     t.datetime "updated_at",            null: false
     t.integer  "organizer_id"
     t.integer  "topic_id"
+    t.integer  "after_this_id"
+    t.integer  "before_this_id"
+    t.string   "badge_class_id"
+    t.integer  "resource_sub_type_id"
   end
 
+  add_index "opportunities", ["after_this_id"], name: "index_opportunities_on_after_this_id", using: :btree
+  add_index "opportunities", ["before_this_id"], name: "index_opportunities_on_before_this_id", using: :btree
   add_index "opportunities", ["organizer_id"], name: "index_opportunities_on_organizer_id", using: :btree
+  add_index "opportunities", ["resource_sub_type_id"], name: "index_opportunities_on_resource_sub_type_id", using: :btree
   add_index "opportunities", ["topic_id"], name: "index_opportunities_on_topic_id", using: :btree
 
   create_table "opportunity_instances", force: :cascade do |t|
@@ -102,12 +109,14 @@ ActiveRecord::Schema.define(version: 20150809030551) do
     t.string   "neighborhood"
     t.integer  "duration"
     t.integer  "difficulty"
+    t.integer  "resource_sub_type_id"
   end
 
   add_index "opportunity_instances", ["difficulty"], name: "index_opportunity_instances_on_difficulty", using: :btree
   add_index "opportunity_instances", ["duration"], name: "index_opportunity_instances_on_duration", using: :btree
   add_index "opportunity_instances", ["location_id"], name: "index_opportunity_instances_on_location_id", using: :btree
   add_index "opportunity_instances", ["opportunity_id"], name: "index_opportunity_instances_on_opportunity_id", using: :btree
+  add_index "opportunity_instances", ["resource_sub_type_id"], name: "index_opportunity_instances_on_resource_sub_type_id", using: :btree
   add_index "opportunity_instances", ["topic_id"], name: "index_opportunity_instances_on_topic_id", using: :btree
 
   create_table "organizers", force: :cascade do |t|
@@ -121,6 +130,17 @@ ActiveRecord::Schema.define(version: 20150809030551) do
   end
 
   add_index "organizers", ["topic_id"], name: "index_organizers_on_topic_id", using: :btree
+
+  create_table "resource_sub_types", force: :cascade do |t|
+    t.string  "name"
+    t.integer "resource_type_id"
+  end
+
+  add_index "resource_sub_types", ["resource_type_id"], name: "index_resource_sub_types_on_resource_type_id", using: :btree
+
+  create_table "resource_types", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
