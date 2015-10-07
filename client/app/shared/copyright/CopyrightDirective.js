@@ -1,15 +1,19 @@
 angular.module('caac.shared.copyright.directive', [
 
-]).directive('copyright', [
-  function() {
-    return {
-      restrict: 'E',
-      templateUrl: 'shared/copyright/CopyrightView.html',
-      link: function(scope, elem) {
-        var self = scope;
+  ])
+  .controller('CopyrightController', ['$scope',
+    function($scope) {
+      var self = $scope;
 
-        self.year = new Date().getFullYear();
-      }
-    };
-  }
-]);
+      self.year = new Date().getFullYear();
+    }
+  ])
+  .directive('copyright', [
+    function() {
+      return {
+        restrict: 'E',
+        templateUrl: 'shared/copyright/CopyrightView.html',
+        controller: 'CopyrightController'
+      };
+    }
+  ]);

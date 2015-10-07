@@ -7,16 +7,16 @@ angular.module('caac.dashboard.controller', [
     var self = $scope;
     var logger = $log.getInstance('DashboardController');
 
-    self.studentNotice = function() {
-      alert('Learner accounts are not yet available. For now, just browse opportunities or explore our map!');
-    };
-
-    self.init = function() {
+    self.construct = function() {
       TitleService.set('Dashboard');
 
       logger.info('showing current dashboard links');
     };
 
-    self.init();
+    self.studentNotice = function() {
+      alert('Learner accounts are not yet available. For now, just browse opportunities or explore our map!');
+    };
+
+    self.construct();
   }
 ]);
