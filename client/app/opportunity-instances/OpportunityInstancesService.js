@@ -1,8 +1,8 @@
 angular.module('caac.opportunity-instances.service', [
     'caac.shared.conf.service'
   ])
-  .factory('OpportunityInstancesService', ['$log', 'ConfService', '$http',
-    function($log, ConfService, $http) {
+  .factory('OpportunityInstancesService', ['$log', 'ConfService', '$http', '$location',
+    function($log, ConfService, $http, $location) {
       var logger = $log.getInstance('OpportunitiesService');
       var selectByTerm = function(term, page) {
         term = term || '*';
@@ -24,9 +24,14 @@ angular.module('caac.opportunity-instances.service', [
         return $http.get(ConfService.get('API') + '/opportunity_instances/' + uid + '.json');
       };
 
+      var goToOpportunityInstance = function(uid) {
+        if (uid) $location.path('opportunity-instances/' + uid);
+      };
+
       return {
         selectByUid: selectByUid,
-        selectByTerm: selectByTerm
+        selectByTerm: selectByTerm,
+        goToOpportunityInstance: goToOpportunityInstance
       };
     }
   ]);

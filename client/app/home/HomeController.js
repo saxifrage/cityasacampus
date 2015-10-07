@@ -5,10 +5,10 @@ angular.module('caac.home.controller', [
   function($scope, TitleService) {
     var self = $scope;
 
-    self.init = function() {
+    self.construct = function() {
       TitleService.set('Home');
     };
 
-    self.init();
+    self.construct();
   }
 ]);
