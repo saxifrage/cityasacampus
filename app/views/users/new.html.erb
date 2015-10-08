@@ -1,0 +1,29 @@
+<%= form_for(@user) do |user_form| %>
+  <p>
+    <%= user_form.label :email, "email" %>
+    <%= user_form.text_field :email %>
+  </p>
+  <p>
+    <%= user_form.label :password, "password" %>
+    <%= user_form.text_field :password %>
+  </p>
+  <p>
+    <%= user_form.label :password_confirmation, "password confirmation" %>
+    <%= user_form.text_field :password_confirmation %>
+  </p>
+
+  <%= user_form.fields_for :organizers do |organizer_form| %>
+    <p>
+      <%= organizer_form.label :name, "Name" %>
+      <%= organizer_form.text_field :name %>
+    </p>
+    <p>
+      <%= organizer_form.label :description, "description" %>
+      <%= organizer_form.text_field :name %>
+    </p>
+  <% end %>
+
+  <p>
+    <%= user_form.submit 'Create' %>
+  </p>
+<% end %>

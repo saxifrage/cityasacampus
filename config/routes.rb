@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'dashboard/home'
 
   scope '/dashboard' do
-    devise_for :users
+    # devise_for :users
+    resources :users
     root :to => 'application#index'
     resources :topics
     resources :organizers
