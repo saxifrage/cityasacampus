@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008174657) do
+ActiveRecord::Schema.define(version: 20151009135351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,18 +119,18 @@ ActiveRecord::Schema.define(version: 20151008174657) do
   add_index "opportunity_instances", ["resource_sub_type_id"], name: "index_opportunity_instances_on_resource_sub_type_id", using: :btree
   add_index "opportunity_instances", ["topic_id"], name: "index_opportunity_instances_on_topic_id", using: :btree
 
-  create_table "organizer_admins", force: :cascade do |t|
+  create_table "organizer_users", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",      null: false
     t.integer  "organizer_id", null: false
   end
 
-  add_index "organizer_admins", ["organizer_id", "user_id"], name: "index_organizer_admins_on_organizer_id_and_user_id", using: :btree
+  add_index "organizer_users", ["organizer_id", "user_id"], name: "index_organizer_users_on_organizer_id_and_user_id", using: :btree
 
   create_table "organizers", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
+    t.string   "name",        null: false
+    t.string   "description", null: false
     t.string   "url"
     t.string   "logo_url"
     t.datetime "created_at",  null: false

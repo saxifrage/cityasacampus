@@ -4,8 +4,8 @@ class Organizer < ActiveRecord::Base
   
   validates_presence_of :name
   
-  has_many :users, through: :organizer_admins
-  has_many :organizer_admins, dependent: :destroy
+  has_many :users, through: :organizer_users
+  has_many :organizer_users, dependent: :destroy
 
   def active_model_serializer
     OrganizerSerializer

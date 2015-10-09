@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :organizers, through: :organizer_admins
-  has_many :organizer_admins, dependent: :destroy
+  has_many :organizers, through: :organizer_users
+  has_many :organizer_users, dependent: :destroy
 
   accepts_nested_attributes_for :organizers
-  accepts_nested_attributes_for :organizer_admins
+  accepts_nested_attributes_for :organizer_users
   
 end

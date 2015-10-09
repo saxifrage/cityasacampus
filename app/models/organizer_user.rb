@@ -1,4 +1,4 @@
-class OrganizerAdmin < ActiveRecord::Base
+class OrganizerUser < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :organizer

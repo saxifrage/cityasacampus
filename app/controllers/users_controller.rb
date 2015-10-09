@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user.organizers.build
-    @user.organizer_admins.build
+    @user.organizer_users.build
   end
 
   def create
