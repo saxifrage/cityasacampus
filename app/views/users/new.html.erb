@@ -1,29 +1,30 @@
-<%= form_for(@user) do |user_form| %>
-  <p>
-    <%= user_form.label :email, "email" %>
-    <%= user_form.text_field :email %>
-  </p>
-  <p>
-    <%= user_form.label :password, "password" %>
-    <%= user_form.text_field :password %>
-  </p>
-  <p>
-    <%= user_form.label :password_confirmation, "password confirmation" %>
-    <%= user_form.text_field :password_confirmation %>
-  </p>
-
-  <%= user_form.fields_for :organizers do |organizer_form| %>
-    <p>
-      <%= organizer_form.label :name, "Name" %>
-      <%= organizer_form.text_field :name %>
-    </p>
-    <p>
-      <%= organizer_form.label :description, "description" %>
-      <%= organizer_form.text_field :name %>
-    </p>
-  <% end %>
-
-  <p>
-    <%= user_form.submit 'Create' %>
-  </p>
+<legend><h2>Add your organization to City as a Campus!</h2></legend>
+<%= form_for @user, html: { class: 'pure-form pure-form-stacked' } do |user_form| %> 
+  <fieldset>
+    <h3>You</h3>
+    <%= user_form.label :name, 'name' %>
+    <%= user_form.text_field :name, class: 'pure-u-1-2' %>
+    <%= user_form.label :email, 'email' %>
+    <%= user_form.text_field :email, class: 'pure-u-1-2' %>
+    <%= user_form.label :password, 'password' %>
+    <%= user_form.password_field :password, class: 'pure-u-1-2' %>
+    <%= user_form.label :password_confirmation, 'password confirmation' %>
+    <%= user_form.password_field :password_confirmation, class: 'pure-u-1-2' %>
+  </fieldset>
+  <fieldset>
+    <h3>Your Organization</h3>
+    <%= user_form.fields_for :organizers do |organizer_form| %>
+      <%= organizer_form.label :name, 'Name' %>
+      <%= organizer_form.text_field :name, class: 'pure-u-1-2' %>
+      <%= organizer_form.label :description, 'description' %>
+      <%= organizer_form.text_field :description, class: 'pure-u-1-2' %>
+      <%= organizer_form.label :url, 'website' %>
+      <%= organizer_form.text_field :url, class: 'pure-u-1-2' %>
+      <%= organizer_form.label :logo_url, 'logo url' %>
+      <%= organizer_form.text_field :logo_url, class: 'pure-u-1-2' %>
+      <%= organizer_form.label :topic_id, 'topic' %>
+      <%= organizer_form.select :topic_id, Topic.all.collect { |topic| [ topic.name, topic.id ] }, { include_blank: true }, class: 'pure-u-1-2' %>
+    <% end %>
+  </fieldset>
+  <%= user_form.submit 'Create Account', class: 'pure-button pure-button-primary' %>
 <% end %>

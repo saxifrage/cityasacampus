@@ -8,14 +8,19 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to :back
+    if @user.save
+      redirect_to '/#/'
+    else
+      flash['alert'] = @user.errors.full_messages
+      render :new
+    end
   end
   
   private
 
   def user_params
-    params.require(:user).permit(:password, :password_confirmation, :email, organizers_attributes: [
-      :name, :description
+    params.require(:user).permit(:password, :password_confirmation, :email, :name, organizers_attributes: [
+      :name, :description, :topic_id
     ])
   end
 
