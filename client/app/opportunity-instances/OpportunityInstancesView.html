@@ -124,8 +124,10 @@
           <h3>Time + Place</h3>
         </header>
         <section class="opp-section time-place" style="text-align:center">
+          <google-map address="opportunityInstance.location.address"></google-map>
           <div class="col-sm-7 col-xs-height col-middle">
-            <p>{{opportunityInstance.venue_name}}</p>
+            <p>{{opportunityInstance.location.name}}</p>
+            <p>{{opportunityInstance.location.address}}</p>
             <p>{{opportunityInstance.starts | date:'MM/dd/yyyy hh:mm a'}}</p>
           </div>
         </section>
