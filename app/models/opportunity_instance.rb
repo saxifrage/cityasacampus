@@ -14,10 +14,12 @@ class OpportunityInstance < ActiveRecord::Base
   end
 
   def resource_type
+    # Fall back to the Opportunity's resource type if the instance doesn't have one
     self[:resource_type] ? self[:resource_type] : self.opportunity.resource_type
   end
 
   def resource_sub_type
+    # Fall back to the Opportunity's resource sub type if the instance doesn't have one
     self[:resource_sub_type] ? self[:resource_sub_type] : self.opportunity.resource_sub_type
   end
 end
