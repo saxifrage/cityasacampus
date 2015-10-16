@@ -1,5 +1,5 @@
 <legend><h2>Add your organization to City as a Campus!</h2></legend>
-<%= form_for @user, html: { class: 'pure-form pure-form-stacked' } do |user_form| %> 
+<%= form_for @user, url: registrations_path, html: { class: 'pure-form pure-form-stacked' } do |user_form| %> 
   <fieldset>
     <h3>You</h3>
     <%= user_form.label :name, 'name' %>

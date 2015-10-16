@@ -2,8 +2,15 @@ Rails.application.routes.draw do
   get 'dashboard/home'
 
   scope '/dashboard' do
-    resources :users
+    
     root :to => 'application#index'
+    
+    devise_for :users, :skip => [ :registrations ]
+    resources :registrations, only: [:create] do
+      collection do 
+        get 'organizer_registration'
+      end
+    end
     resources :topics
     resources :organizers
     resources :locations

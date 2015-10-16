@@ -1,6 +1,6 @@
-class UsersController < ApplicationController
+class RegistrationsController < ApplicationController
 
-  def new
+  def organizer_registration
     @user = User.new
     @user.organizers.build
     @user.organizer_users.build
@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to '/#/'
+      sign_in(@user)
+      redirect_to root_path
     else
       flash['alert'] = @user.errors.full_messages
       render :new
