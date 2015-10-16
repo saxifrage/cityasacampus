@@ -1,11 +1,11 @@
 angular.module('caac.shared.copyright.directive', [
-
+    'caac.shared.dates.moment.instance',
   ])
-  .controller('CopyrightController', ['$scope',
-    function($scope) {
+  .controller('CopyrightController', ['$scope', 'MomentInstance',
+    function($scope, MomentInstance) {
       var self = $scope;
 
-      self.year = new Date().getFullYear();
+      self.year = MomentInstance().format('YYYY');
     }
   ])
   .directive('copyright', [

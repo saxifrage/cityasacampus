@@ -1,6 +1,7 @@
 angular.module('caac.opportunity-instances.controller', [
   'caac.shared.title.service',
-  'caac.opportunity-instances.service'
+  'caac.opportunity-instances.service',
+  'caac.shared.geo.google-maps.directive',
 ]).controller('OpportunityInstancesController', ['$log', '$routeParams', '$scope', 'TitleService', 'OpportunityInstancesService', '$location',
   function($log, $routeParams, $scope, TitleService, OpportunityInstancesService, $location) {
     var self = $scope;
