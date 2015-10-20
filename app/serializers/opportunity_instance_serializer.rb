@@ -1,18 +1,14 @@
 class OpportunityInstanceSerializer < ActiveModel::Serializer
   root :result
-  attributes :context, :type, :uid, :id, :name, :description, :img
+  attributes :context, :uid, :id, :name, :description, :img
   has_one :organizer
   attributes :min_age, :max_age, :venue_name, :online_opportunity, :ongoing,
     :price, :registration_deadline, :registration_url, :created, :changed,
-    :ends, :starts, :neighborhood, :duration, :difficulty
+    :ends, :starts, :neighborhood, :duration, :difficulty, :location 
   has_one :topic
 
   def uid
     object.id
-  end
-
-  def type
-    'EducationEvent'
   end
 
   def context

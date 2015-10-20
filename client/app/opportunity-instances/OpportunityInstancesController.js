@@ -1,45 +1,40 @@
 angular.module('caac.opportunity-instances.controller', [
   'caac.shared.title.service',
-  'caac.opportunity-instances.service'
-]).controller('OpportunityInstancesController', ['$log', '$routeParams', '$scope', 'TitleService', 'OpportunityInstancesService',
-  function($log, $routeParams, $scope, TitleService, OpportunityInstancesService) {
+  'caac.opportunity-instances.service',
+  'caac.shared.geo.google-maps.directive',
+]).controller('OpportunityInstancesController', ['$log', '$routeParams', '$scope', 'TitleService', 'OpportunityInstancesService', '$location',
+  function($log, $routeParams, $scope, TitleService, OpportunityInstancesService, $location) {
     var self = $scope;
     var logger = $log.getInstance('OpportunityInstancesController');
 
-    self.getByUid = function() {
-      var steps = {
-        start: function() {
-          logger.info('attempting to retrieve an opportunity instance');
-          self.loadingStatus++;
-          return OpportunityInstancesService.selectByUid($routeParams.uid);
-        },
+    self.loadingStatus = 0;
+    self.opportunityInstance = null;
 
-        results: function(res) {
-          self.noResultsErr = !res || res.data.result.length === 0 ?
-            'No opportunity instances' : '';
+    self.construct = function() {
+      TitleService.set('Opportunity Instances');
+      self.getByUid();
+    };
+
+    self.getByUid = function() {
+      logger.info('attempting to retrieve an opportunity instance');
+
+      self.loadingStatus++;
+      OpportunityInstancesService.selectByUid($routeParams.uid)
+        .then(function(res) {
+          if (!res || !res.data || !res.data.result || res.data.result.length === 0) $location.path('/explore');
 
           logger.info('showing opportunity instance');
           self.opportunityInstance = res.data.result;
           self.determineRegistrationStatus();
-          
-          return;
-        },
-
-        error: function(e) {
+        })
+        .catch(function(e) {
           logger.error('can\'t retrieve opportunity instance');
           self.opportunityInstance = null;
-          self.noResultsErr = e.data.err;
-        },
-
-        done: function() {
+          $location.path('/explore');
+        })
+        .finally(function() {
           self.loadingStatus--;
-        }
-      };
-
-      steps.start()
-        .then(steps.results)
-        .catch(steps.error)
-        .finally(steps.done);
+        });
     };
 
     //this will make register btn gray/inactive
@@ -53,12 +48,6 @@ angular.module('caac.opportunity-instances.controller', [
       }
     };
 
-    self.init = function() {
-      TitleService.set('Opportunity Instances');
-      self.loadingStatus = 0;
-      self.getByUid();
-    };
-
-    self.init();
+    self.construct();
   }
 ]);

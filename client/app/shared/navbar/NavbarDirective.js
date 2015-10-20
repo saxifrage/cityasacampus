@@ -1,34 +1,27 @@
 angular.module('caac.shared.navbar.directive', [
-  'caac.shared.jquery.service'
-]).directive('navbar', ['$rootScope', '$location', 'jQueryService',
-  function($rootScope, $location, jQueryService) {
+  ])
+  .controller('NavbarController', ['$scope', '$location',
+    function($scope, $location) {
+      var self = $scope;
+
+      var construct = function() {
+
+      };
+
+      self.setActivePage = function() {};
+
+      self.textSearch = function(term) {
+        if (!term) return;
+        $location.path('explore/' + term);
+      };
+
+      construct();
+    }
+  ])
+  .directive('navbar', [function() {
     return {
       restrict: 'E',
       templateUrl: 'shared/navbar/NavbarView.html',
-      link: function(scope, elem) {
-        var self = scope;
-
-        self.setActivePage = function() {};
-
-        //allows for <navbar search="false"></navbar>
-        var setSearchBarVisibility = function() {
-          var attr = jQueryService(elem[0]).attr('search');
-          if (attr && attr.bool() === false) {
-            jQueryService('.search').hide();
-          }
-        };
-
-        self.textSearch = function(term) {
-          if (!term) return;
-          $location.path('explore/' + term);
-        };
-
-        var init = function() {
-          setSearchBarVisibility();
-        };
-
-        init();
-      }
+      controller: 'NavbarController'
     };
-  }
-]);
+  }]);

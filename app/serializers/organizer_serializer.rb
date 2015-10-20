@@ -11,7 +11,7 @@ class OrganizerSerializer < ActiveModel::Serializer
   end
 
   def logo
-    "http://cdn.evbuc.com/images/151295/28467766139/1/logo.jpg"
+    object.logo_url
   end
 
   def uid
