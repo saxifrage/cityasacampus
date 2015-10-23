@@ -6,7 +6,7 @@ class OpportunityInstancesController < ApplicationController
     respond_to do |format|
       format.html do
         @opportunity_instances = policy_scope(OpportunityInstance)
-        render :index
+        render 'dashboard/opportunity_instances'
       end
       format.json do
         opportunity_instances = OpportunityInstance.all
