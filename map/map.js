@@ -59,11 +59,11 @@ Map.popup = function() {
     $('.orgName a').html(resource.org_name);
 
     /* Trims Org Description to 150 chars */
-    if ( resource.org_description.length > 300) {
-        var trimmedOrgDescription = resource.org_description.substr(0, 150) + "\u2026";
+    if ( resource.organizer_description.length > 300) {
+        var trimmedOrgDescription = resource.organizer_description.substr(0, 150) + "\u2026";
         $('.orgDescription').html(trimmedOrgDescription);
     } else {
-        $('.orgDescription').html(resource.org_description);
+        $('.orgDescription').html(resource.organizer_description);
     }
 
     $('.activityType').html(resource.location_type);
