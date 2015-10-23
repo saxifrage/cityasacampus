@@ -13,7 +13,7 @@ class RegistrationsController < ApplicationController
       redirect_to root_path
     else
       flash['alert'] = @user.errors.full_messages
-      render :new
+      render 'organizer_registration'
     end
   end
   
