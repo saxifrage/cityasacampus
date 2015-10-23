@@ -1,0 +1,28 @@
+<h1 class="page">Dashboard > Manage Opportunity Instances</h1>
+
+<div class="opportunity_instances">
+  <%= link_to '<button>Add New Opportunity Instance</button>'.html_safe, new_opportunity_instance_path %>
+
+  <br />
+  <br />
+
+  <table class="pure-table pure-table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Opportunity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @opportunity_instances.each do |opportunity_instance| %>
+        <tr>
+          <td><%= opportunity_instance.name %></td>
+          <td><%= link_to opportunity_instance.opportunity.name, opportunity_instance.opportunity %></td>
+          <td><%= link_to "<button>show</button>".html_safe, opportunity_instance %> <%= link_to "<button>edit</button>".html_safe, edit_opportunity_instance_path(opportunity_instance) %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
