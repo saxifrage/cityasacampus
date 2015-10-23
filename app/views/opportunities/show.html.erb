@@ -8,13 +8,13 @@
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @opportunity.address %>
+  <strong>Description:</strong>
+  <%= @opportunity.description %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @opportunity.description %>
+  <strong>Organizer:</strong>
+  <%= @opportunity.organizer.name %>
 </p>
 
 <p>
@@ -33,8 +33,13 @@
 </p>
 
 <p>
-  <strong>Program type:</strong>
-  <%= @opportunity.program_type %>
+  <strong>Resource type:</strong>
+  <%= @opportunity.resource_type.name %>
+</p>
+
+<p>
+  <strong>Resource sub-type:</strong>
+  <%= @opportunity.resource_sub_type.name %>
 </p>
 
 <p>
@@ -58,8 +63,8 @@
 </p>
 
 <p>
-  <strong>Zipcode:</strong>
-  <%= @opportunity.zipcode %>
+  <strong>Address:</strong>
+  <%= @opportunity.address %>
 </p>
 
 <p>
@@ -70,6 +75,11 @@
 <p>
   <strong>State:</strong>
   <%= @opportunity.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @opportunity.zipcode %>
 </p>
 
 <p>

@@ -18,7 +18,7 @@
       <% @opportunities.each do |opportunity| %>
         <tr>
           <td><%= opportunity.name %></td>
-          <td><%= link_to "<button>edit</button>".html_safe, edit_opportunity_path(opportunity) %>
+          <td><%= link_to "<button>show</button>".html_safe, opportunity %> <%= link_to "<button>edit</button>".html_safe, edit_opportunity_path(opportunity) %>
         </tr>
       <% end %>
     </tbody>

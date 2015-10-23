@@ -16,10 +16,6 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </div>
-  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
@@ -41,11 +37,11 @@
   </div>
   <div class="field">
     <%= f.label :registration_deadline %><br>
-    <%= f.datetime_select :registration_deadline %>
+    <%= f.datetime_local_field :registration_deadline %>
   </div>
   <div class="field">
-    <%= f.label :program_type %><br>
-    <%= f.text_field :program_type %>
+    <%= f.label :resource_sub_type %><br>
+    <%= f.collection_select :resource_sub_type_id, ResourceSubType.all, :id, :name, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :logo_url %><br>
@@ -53,39 +49,45 @@
   </div>
   <div class="field">
     <%= f.label :starts_at %><br>
-    <%= f.datetime_select :starts_at %>
+    <%= f.datetime_local_field :starts_at %>
   </div>
   <div class="field">
     <%= f.label :ends_at %><br>
-    <%= f.datetime_select :ends_at %>
-  </div>
-  <div class="field">
-    <%= f.label :online_address %><br>
-    <%= f.text_field :online_address %>
-  </div>
-  <div class="field">
-    <%= f.label :zipcode %><br>
-    <%= f.text_field :zipcode %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
+    <%= f.datetime_local_field :ends_at %>
   </div>
   <div class="field">
     <%= f.label :is_online %><br>
     <%= f.check_box :is_online %>
   </div>
-  <div class="field">
-    <%= f.label :hide_reason %><br>
-    <%= f.text_field :hide_reason %>
+  <div class="field" id="opportunity_instance_online_container">
+    <%= f.label :online_address %><br>
+    <%= f.text_field :online_address %>
+  </div>
+  <div id="opportunity_instance_offline_container">
+    <div class="field">
+      <%= f.label :address %><br>
+      <%= f.text_area :address %>
+    </div>
+    <div class="field">
+      <%= f.label :city %><br>
+      <%= f.text_field :city %>
+    </div>
+    <div class="field">
+      <%= f.label :zipcode %><br>
+      <%= f.text_field :zipcode %>
+    </div>
+    <div class="field">
+      <%= f.label :state %><br>
+      <%= f.text_field :state %>
+    </div>
   </div>
   <div class="field">
     <%= f.label :hide %><br>
     <%= f.check_box :hide %>
+  </div>
+  <div class="field" id="opportunity_instance_hide_reason_container">
+    <%= f.label :hide_reason %><br>
+    <%= f.text_field :hide_reason %>
   </div>
   <div class="field">
     <%= f.label :contact_name %><br>
@@ -121,7 +123,7 @@
   </div>
   <div class="field">
     <%= f.label :opportunity %><br>
-    <%= f.select :opportunity_id, options_from_collection_for_select(Opportunity.all, :id, :name) %>
+    <%= f.collection_select :opportunity_id, @opportunities, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>
