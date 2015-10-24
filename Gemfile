@@ -18,6 +18,11 @@ gem 'api-pagination'
 gem 'devise'
 gem 'textacular', '~> 3.0'
 gem 'pundit'
+gem 'momentjs-rails'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end
 
 group :development, :test do
   gem 'byebug'

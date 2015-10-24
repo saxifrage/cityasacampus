@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require moment
+//= require datetimepicker
 //= require turbolinks
 //= require_tree .

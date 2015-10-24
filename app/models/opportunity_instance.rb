@@ -13,6 +13,14 @@ class OpportunityInstance < ActiveRecord::Base
     OpportunityInstanceSerializer
   end
 
+  def registration_deadline
+    self[:registration_deadline].strftime("%-m/%-d/%Y %-l:%M %P")
+  end
+
+  def registration_deadline=(value)
+    self[:registration_deadline] = DateTime.strptime(value, "%m/%d/%Y %l:%M %P")
+  end
+
   def resource_type
     # Fall back to the Opportunity's resource type if the instance doesn't have one
     self[:resource_type] ? self[:resource_type] : self.opportunity.resource_type
