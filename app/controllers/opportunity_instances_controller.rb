@@ -7,7 +7,7 @@ class OpportunityInstancesController < ApplicationController
     @paginator = OpenStruct.new(opportunity_instances: @opportunity_instances, per_page: 15)
 
     respond_to do |format|
-      format.html { render :index }
+      format.html { render 'dashboard/opportunity_instances' }
       format.json { paginate json: @opportunity_instances, root: :result }
     end
   end
