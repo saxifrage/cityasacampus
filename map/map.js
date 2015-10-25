@@ -81,7 +81,7 @@ Map.flyout = function(){
 
     $('.cta a').attr('href', resource.resource_url);
 
-    $('.flyout').show();
+    $('.flyout').addClass('show');
 }
 
 Map.currentPopUp = null;
@@ -91,7 +91,7 @@ Map.isPoppedUp = function(rect) {
 
 Map.flyin = function() {
     Map.currentPopUp = null;
-    $('.flyout').hide();
+    $('.flyout').removeClass('show');
     $('.selected').attr('class', '');
 };
 

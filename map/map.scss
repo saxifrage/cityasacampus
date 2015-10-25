@@ -182,14 +182,18 @@ path {
 .flyout {
     background: darken(#ffffff, 5%);
     box-shadow: 0px 10px 25px rgba(0,0,0,.3);
-    display: none;
     height: 100%;
-    left: 0px;
+    left: -400px;
     overflow: scroll;
     position: fixed;
     top: 0px;
     width: 400px;
     z-index: 2;
+    -webkit-transition: left .1s linear;
+    transition: left .1s linear;
+    &.show{
+      left: 0px;
+    }
 }
 
 .flyout-header{
