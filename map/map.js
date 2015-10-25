@@ -6,21 +6,20 @@ Map.$svg = function(elem) {
 }
 
 Map.nodeVisit = function(e) {
-    Map.popup.call(this);
+    Map.flyout.call(this);
     Map.pathwayShow.call(this);
     e.stopPropagation();
 }
 
 Map.nodeLeave = function(e) {
-    Map.popdown.call(this);
+    Map.flyin.call(this);
     Map.pathwayHide.call(this);
     e.stopPropagation();
 }
 
 
-// Popups
-
-Map.popup = function() {
+//Flyout Resource
+Map.flyout = function(){
     var rect = $(this);
     var svg = rect.parent();
     Map.currentPopUp = this;
@@ -28,9 +27,9 @@ Map.popup = function() {
     /* Position popover */
     var center = Map.centerGet($(this));
 
-    $('.popup').css({
-        'top' : center.y,
-        'left' : center.x - 300,
+    $('.flyout').css({
+        //'top' : center.y,
+        //'left' : center.x - 300,
     });
 
     /* Hide tooltip that pops up on hover */
@@ -45,7 +44,7 @@ Map.popup = function() {
     rect.attr('class', 'selected');
 
     $('.resourceName').html(resource.resource_name).attr('href', resource.resource_url);
-    $('.popup-header').css('background-image', 'url("'+resource.image_url+'")');
+    $('.flyout-header').css('background-image', 'url("'+resource.image_url+'")');
 
     /* Trims Org Description to 300 chars */
     if ( resource.resource_description.length > 300) {
@@ -68,13 +67,13 @@ Map.popup = function() {
 
     $('.activityType').html(resource.location_type);
     $('.activityInterval').html(resource.instance_type);
-    $('.activityExperience').html(resource.difficulty_level);
+    $('.activityExperience').html(resource.difficulty);
 
     /* Concatenates age start and end into single var; replaces 9–90 with 9+ */
-    if ( resource.age_range_start == "9" && resource.age_range_end == "90" ){
+    if ( resource.min_age == "9" && resource.max_age == "90" ){
         resource.age_range_all = "9+";
     } else {
-        resource.age_range_all = resource.age_range_start + "&#8212;" + resource.age_range_end;
+        resource.age_range_all = resource.min_age + "&#8212;" + resource.max_age;
     }
     $('.activityAgeAll').html(resource.age_range_all);
 
@@ -82,23 +81,22 @@ Map.popup = function() {
 
     $('.cta a').attr('href', resource.resource_url);
 
-    $('.popup').show();
-};
+    $('.flyout').show();
+}
 
 Map.currentPopUp = null;
 Map.isPoppedUp = function(rect) {
     return (Map.currentPopUp === rect);
 };
 
-Map.popdown = function() {
+Map.flyin = function() {
     Map.currentPopUp = null;
-    $('.popup').hide();
+    $('.flyout').hide();
     $('.selected').attr('class', '');
 };
 
 
 // Tooltips
-
 Map.tooltip = function(e) {
     var self = this;
     var rect = $(this);
@@ -267,7 +265,7 @@ Map.init = function() {
             $('svg').mouseout(Map.tooltipHide);
             $('#map').click(Map.tooltipHide);
             $('rect').click(Map.nodeVisit);
-            $('body').click(Map.nodeLeave);
+            $('.close').click(Map.nodeLeave);
             $('.zoom-controls .in').click(Map.inZoom);
             $('.zoom-controls .out').click(Map.outZoom);
         });

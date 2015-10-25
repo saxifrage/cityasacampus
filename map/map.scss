@@ -13,14 +13,11 @@ $brand-primary: #0099FF;
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body{
-  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   color: #333333;
-  font-size: 12px;
-}
-
-p{
-  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 a {
@@ -184,25 +181,26 @@ path {
 
 
 // Pop-Up // --------------------------------------------------
-.popup {
+.flyout {
+    background: #ffffff;
     display: none;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 300px;
-    //box-shadow: 0px 0px 25px rgba(0,0,0,.15);
+    height: 100%;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 400px;
+    z-index: 2;
+    box-shadow: 0px 10px 25px rgba(0,0,0,.3);
 }
 
-.popup-header{
+.flyout-header{
     background-size: cover;
     background-color: transparent;
     position: relative;
-    padding: 60px 20px 35px;
-    -webkit-clip-path: polygon(75% 20%, 100% 0, 100% 20%, 100% 100%, 0 100%, 0% 60%, 0 20%);
-clip-path: polygon(75% 20%, 100% 0, 100% 20%, 100% 100%, 0 100%, 0% 60%, 0 20%);
+    padding: 80px 30px 55px;
 }
 
-.popup-header .overlay {
+.flyout-header .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -212,12 +210,12 @@ clip-path: polygon(75% 20%, 100% 0, 100% 20%, 100% 100%, 0 100%, 0% 60%, 0 20%);
     background: rgba(0,0,0,.6);
 }
 
-.popup h1{
+.flyout h1{
   margin: 0;
 }
 
-.popup a.resourceName {
-    font-size: 20px;
+.flyout a.resourceName {
+    font-size: 30px;
     line-height: 1.3;
     position: relative;
     z-index: 1;
@@ -230,52 +228,60 @@ clip-path: polygon(75% 20%, 100% 0, 100% 20%, 100% 100%, 0 100%, 0% 60%, 0 20%);
 }
 
 /* Details */
-.popup .details{
+.flyout .details{
     background-color: #ffffff;
-    padding: 20px 20px 25px;
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    padding: 40px 30px 45px;
 }
 
 /* Attributes */
-.popup .attributes{
-padding: 20px 0 0;
+.flyout .attributes{
+padding: 40px 0 0;
 }
 
 h3.attribute{
     font-weight: 700;
     color: $brand-primary;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    margin-left: 45px;
+    position: relative;
 }
 
 .icon{
-    width: 15px;
-    height: 15px;
+    width: 30px;
+    height: 30px;
     display: inline-block;
-    margin-right: 5px;
-    position: relative;
-    top: 2px;
+    margin-right: 12px;
+    position: absolute;
+    left: -45px;
 }
 
-.popup .organization{
-    padding: 25px 20px;
+.activityAgeAll{
+
+}
+
+.flyout .organization{
     background: darken(#ffffff, 5%);
+    height: 100%;
+    padding: 45px 30px;
+    position: absolute;
 }
 
-.popup h2 {
+.flyout h2 {
     font: bold 18px/21px Helvetica, sans-serif;
     margin: 10px 0 10px;
 }
 
-.popup h3.orgHeader {
-    font: 700 10px/8px Helvetica, sans-serif;
+.flyout h3.orgHeader {
+    font: 700 20px/20px Helvetica, sans-serif;
     text-transform: uppercase;
-    margin: 0px 0px 15px;
+    margin: 0px 0px 25px;
     color: darken(#ffffff, 30%)
 }
 
 .cta{
-    margin-top: 20px;
+  padding-top: 40px;
 }
 
 .tooltip {
