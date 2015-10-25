@@ -149,7 +149,6 @@ path {
 
 
 // Zoom // ----------------------------------------------------
-
 .zoom-controls {
     position: fixed;
     right: 10px;
@@ -159,7 +158,6 @@ path {
     background: white;
     border: 1px solid $brand-primary;
     z-index: 2;
-
     div {
         width: 48px;
         height: 48px;
@@ -182,7 +180,7 @@ path {
 
 // Pop-Up // --------------------------------------------------
 .flyout {
-    background: #ffffff;
+    background: darken(#ffffff, 5%);
     box-shadow: 0px 10px 25px rgba(0,0,0,.3);
     display: none;
     height: 100%;
@@ -209,6 +207,19 @@ path {
     height: 100%;
     z-index: 0;
     background: rgba(0,0,0,.6);
+}
+
+.close{
+  color: #ffffff;
+  font-size: 20px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  z-index: 2;
+  &:hover{
+    color: darken(#ffffff, 10%);
+    cursor: pointer;
+  }
 }
 
 .flyout h1{
@@ -263,10 +274,7 @@ h3.attribute{
 }
 
 .flyout .organization{
-    background: darken(#ffffff, 5%);
-    height: 100%;
     padding: 45px 30px;
-    position: absolute;
 }
 
 .flyout h2 {
@@ -284,6 +292,8 @@ h3.attribute{
 .cta{
   padding-top: 40px;
 }
+
+// Tooltips // --------------------------------------------------
 
 .tooltip {
     display: none;
