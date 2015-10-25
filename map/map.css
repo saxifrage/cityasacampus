@@ -110,6 +110,9 @@ rect {
     fill: #007acc;
     cursor: pointer; }
 
+#fill {
+  fill: black; }
+
 rect.selected {
   fill: #005c99; }
   rect.selected:hover {

@@ -36,7 +36,7 @@ Map.flyout = function(){
                       .resources[rect.attr('id')];
 
     $('.selected').attr({'class': '', 'style': ''});
-    rect.attr({"style": "fill: green"});
+    rect.attr({"style": "animation: fill 2s infinite"});
 
     $('.resourceName').html(resource.resource_name).attr('href', resource.resource_url);
     $('.flyout-header').css('background-image', 'url("'+resource.image_url+'")');

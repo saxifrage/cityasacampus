@@ -137,6 +137,10 @@ rect {
     }
 }
 
+#fill {
+    fill: black;
+}
+
 rect.selected{
     fill: darken($brand-primary, 20%);
     &:hover{
@@ -150,6 +154,18 @@ rect#current{
 
 path {
     display: none;
+}
+
+@keyframes fill {
+    0% {
+        fill: darken($brand-primary, 20%);
+    }
+    50% {
+        fill: darken($brand-primary, 30%);
+    }
+    100% {
+        fill: darken($brand-primary, 20%);
+    }
 }
 
 
