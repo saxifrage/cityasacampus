@@ -104,16 +104,19 @@ li.nav-heading a {
 
 rect {
   fill: #0099FF;
-  transition: all .15 linear;
-  -webkit-transition: all .15 linear; }
+  transition: fill .15s linear;
+  -webkit-transition: fill .15s linear; }
+  rect:hover {
+    fill: #007acc;
+    cursor: pointer; }
 
-rect:hover {
-  fill: #007acc;
-  cursor: pointer; }
-
-rect.selected,
-rect.selected:hover {
+rect.selected {
   fill: #005c99; }
+  rect.selected:hover {
+    fill: #003d66; }
+
+rect#current {
+  fill: green; }
 
 path {
   display: none; }

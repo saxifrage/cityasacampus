@@ -129,18 +129,23 @@ li.nav-heading a{
 
 rect {
     fill: $brand-primary;
-    transition: all .15 linear;
-    -webkit-transition: all .15 linear;
+    transition: fill .15s linear;
+    -webkit-transition: fill .15s linear;
+    &:hover{
+      fill: darken($brand-primary, 10%);
+      cursor: pointer;
+    }
 }
 
-rect:hover {
-    fill: darken($brand-primary, 10%);
-    cursor: pointer;
-}
-
-rect.selected,
-rect.selected:hover{
+rect.selected{
     fill: darken($brand-primary, 20%);
+    &:hover{
+      fill: darken($brand-primary, 30%);
+    }
+}
+
+rect#current{
+  fill: green;
 }
 
 path {

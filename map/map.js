@@ -12,8 +12,8 @@ Map.nodeVisit = function(e) {
 }
 
 Map.nodeLeave = function(e) {
-    Map.flyin.call(this);
     Map.pathwayHide.call(this);
+    Map.flyin.call(this);
     e.stopPropagation();
 }
 
@@ -27,11 +27,6 @@ Map.flyout = function(){
     /* Position popover */
     var center = Map.centerGet($(this));
 
-    $('.flyout').css({
-        //'top' : center.y,
-        //'left' : center.x - 300,
-    });
-
     /* Hide tooltip that pops up on hover */
     $('.tooltip').hide();
 
@@ -40,8 +35,8 @@ Map.flyout = function(){
                       .subtopics[rect.attr('subtopic_id')]
                       .resources[rect.attr('id')];
 
-    $('.selected').attr('class', '');
-    rect.attr('class', 'selected');
+    $('.selected').attr({'class': '', 'style': ''});
+    rect.attr({"style": "fill: green"});
 
     $('.resourceName').html(resource.resource_name).attr('href', resource.resource_url);
     $('.flyout-header').css('background-image', 'url("'+resource.image_url+'")');
@@ -91,8 +86,8 @@ Map.isPoppedUp = function(rect) {
 
 Map.flyin = function() {
     Map.currentPopUp = null;
+    $('.selected').attr({'class': '', 'style': ''});
     $('.flyout').removeClass('show');
-    $('.selected').attr('class', '');
 };
 
 
@@ -130,7 +125,6 @@ Map.tooltipHide = function() {
 
 
 // Pathways
-
 Map.pathwayShow = function(e) {
     var rect = $(this)
       , topic_id = rect.attr('topic_id')
@@ -139,7 +133,7 @@ Map.pathwayShow = function(e) {
       , svg = $('svg#' + topic_id);
        ;
     $('path.pathway').hide();
-    for (var i=0, id; id = pathway.names[i]; i++)
+    for (var i=2, id; id = pathway.names[i]; i++)
     {
         $('rect#' + id, svg).attr('class', 'selected');
         $('path.' + id, svg).show();
