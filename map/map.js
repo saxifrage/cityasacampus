@@ -133,7 +133,7 @@ Map.pathwayShow = function(e) {
       , svg = $('svg#' + topic_id);
        ;
     $('path.pathway').hide();
-    for (var i=2, id; id = pathway.names[i]; i++)
+    for (var i=0, id; id = pathway.names[i]; i++)
     {
         $('rect#' + id, svg).attr('class', 'selected');
         $('path.' + id, svg).show();
