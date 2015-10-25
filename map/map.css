@@ -110,9 +110,6 @@ rect {
     fill: #007acc;
     cursor: pointer; }
 
-#fill {
-  fill: black; }
-
 rect.selected {
   fill: #005c99; }
   rect.selected:hover {
@@ -124,6 +121,13 @@ rect#current {
 path {
   display: none; }
 
+@keyframes fill {
+  0% {
+    fill: #005c99; }
+  50% {
+    fill: #003d66; }
+  100% {
+    fill: #005c99; } }
 .zoom-controls {
   position: fixed;
   right: 10px;
