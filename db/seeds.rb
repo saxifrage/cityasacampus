@@ -91,6 +91,12 @@ st_pauls_episcopal_church = Organizer.create(
     url: 'http://www.stpaulspgh.org/',
     logo_url: 'http://www.pittsburghhornclub.com/images/StPaulMay2007.jpg'
 )
+pennsylvania_association_for_sustainable_agriculture = Organizer.create(
+    name: 'Pennsylvania Association for Sustainable Agriculture',
+    description: 'Promoting Profitable Farms that Produce Healthy Food for All People While Respecting the Natural Environment.',
+    url: 'https://www.pasafarming.org/',
+    logo_url: 'https://www.pasafarming.org/logo.png'
+)
 
 # ------------- #
 # OPPORTUNITIES #
@@ -116,6 +122,14 @@ farming = Opportunity.create(
     resource_sub_type: event
 )
 
+grower_events = Opportunity.create(
+    name: 'PASA Events',
+    description: 'Grower education events',
+    organizer: pennsylvania_association_for_sustainable_agriculture,
+    resource_sub_type: event
+)
+
+
 # --------------------- #
 # OPPORTUNITY INSTANCES #
 # --------------------- #
@@ -136,6 +150,86 @@ OpportunityInstance.create(
     price: 2343,
     registration_deadline: Time.now + 2.months,
     registration_url: 'www.google.com' 
+)
+
+#GROWER_EVENTS
+OpportunityInstance.create(
+    name: 'Health Insurance Basics for Farmers',
+    opportunity: grower_events,
+    location: sprout_fund_location,
+    topic: agriculture,
+    starts_at: Time.now + 1.months,
+    ends_at: Time.now + 1.months + 1.days,
+    neighborhood: garfield,
+    logo_url: 'http://images.gotowebinar.com/4383eb581931eed69054675423036881',
+    description: lorem_ipsum,
+    min_age: 13,
+    max_age: 100,
+    is_online: true,
+    ongoing: false,
+    price: 0,
+    registration_deadline: Time.now + 1.week,
+    registration_url: 'https://attendee.gotowebinar.com/register/440353677246665217' 
+)
+
+#GROWER_EVENTS
+OpportunityInstance.create(
+    name: 'Adapting to Climate Change by Building Soil Health',
+    opportunity: grower_events,
+    location: sprout_fund_location,
+    topic: agriculture,
+    starts_at: Time.now + 1.months,
+    ends_at: Time.now + 1.months + 1.days,
+    neighborhood: garfield,
+    logo_url: 'https://img.evbuc.com/https%3A%2F%2Fimg.evbuc.com%2Fhttps%253A%252F%252Fcdn.evbuc.com%252Fimages%252F16063135%252F145674774980%252F1%252Foriginal.jpg%3Frect%3D0%252C136%252C708%252C354%26s%3Da2bc0f43b16fbccc0de0e5f7f8588d96?h=150&w=300&s=01aab267d16f1edd4277db822868b554',
+    description: lorem_ipsum,
+    min_age: 18,
+    max_age: 100,
+    is_online: true,
+    ongoing: false,
+    price: 0,
+    registration_deadline: Time.now + 1.week,
+    registration_url: 'http://www.eventbrite.com/e/adapting-to-climate-change-by-building-soil-health-tickets-18983980597' 
+)
+
+#GROWER_EVENTS
+OpportunityInstance.create(
+    name: 'Mock USDA G.A.P. Audit',
+    opportunity: grower_events,
+    location: sprout_fund_location,
+    topic: agriculture,
+    starts_at: Time.now + 1.months,
+    ends_at: Time.now + 1.months + 1.days,
+    neighborhood: garfield,
+    logo_url: 'https://img.evbuc.com/https%3A%2F%2Fimg.evbuc.com%2Fhttps%253A%252F%252Fcdn.evbuc.com%252Fimages%252F16020900%252F1441344275%252F1%252Foriginal.jpg%3Frect%3D0%252C302%252C600%252C300%26s%3Df22e456f35c05e74f90cdf66775897d4?h=150&w=300&s=a7cc80571e892e897bd4d9d2d4d29984',
+    description: lorem_ipsum,
+    min_age: 18,
+    max_age: 100,
+    is_online: true,
+    ongoing: false,
+    price: 0,
+    registration_deadline: Time.now + 1.week,
+    registration_url: 'http://www.eventbrite.com/e/eastern-region-event-gap-mock-audit-registration-19013384545?aff=efbevent' 
+)
+
+#GROWER_EVENTS
+OpportunityInstance.create(
+    name: 'USDA Food Safety Planning',
+    opportunity: grower_events,
+    location: sprout_fund_location,
+    topic: agriculture,
+    starts_at: Time.now + 1.months,
+    ends_at: Time.now + 1.months + 1.days,
+    neighborhood: garfield,
+    logo_url: 'https://img.evbuc.com/https%3A%2F%2Fimg.evbuc.com%2Fhttps%253A%252F%252Fcdn.evbuc.com%252Fimages%252F16021413%252F1441344275%252F1%252Foriginal.jpg%3Frect%3D0%252C17%252C466%252C233%26s%3Dae2a5239c3454578724283e5e574c0e5?h=150&w=300&s=c29e912bfcef3c397c309baccf15b390',
+    description: lorem_ipsum,
+    min_age: 18,
+    max_age: 100,
+    is_online: true,
+    ongoing: false,
+    price: 55,
+    registration_deadline: Time.now + 1.week,
+    registration_url: 'https://www.eventbrite.com/e/understanding-gap-writing-your-own-food-safety-plan-two-day-training-tickets-19013894069' 
 )
 
 #SOFTWARE
