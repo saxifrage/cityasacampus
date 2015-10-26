@@ -17,34 +17,6 @@ art = Topic.create(name: 'Art')
 # --------- #
 event = ResourceSubType.create(name: 'Event', resource_type: ResourceType.create(name: 'Local'))
 
-# --------- #
-# LOCATIONS #
-# --------- #
-cloakroom_location = Location.create(
-    name: 'The Cloakroom', 
-    address: '124 S Highland Ave Pittsburgh, PA 15206'
-)
-sprout_fund_location = Location.create(
-    name: 'The Sprout Fund',
-    address: '5423 Penn Ave, Pittsburgh, PA 15206'
-)
-carnegie_library_location = Location.create(
-    name: 'Carnegie Library',
-    address: '4400 Forbes Ave, Pittsburgh, PA 15213'
-)
-garfield_community_farm_location = Location.create(
-    name: 'Garfield Community Farm',
-    address: 'Wicklow St, Pittsburgh, PA 15224'
-)
-assemble_location = Location.create(
-    name: 'Assemble',
-    address: '5125 Penn Ave, Pittsburgh, PA 15224'
-)
-st_pauls_episcopal_church_location = Location.create(
-    name: 'St. Paul\'s Episcopal Church',
-    address: '1066 Washington Rd. Pittsburgh,PA 15228'
-)
-
 # ------------- #
 # NEIGHBORHOODS #
 # ------------- #
@@ -98,6 +70,40 @@ pennsylvania_association_for_sustainable_agriculture = Organizer.create(
     logo_url: 'https://www.pasafarming.org/logo.png'
 )
 
+# -------#
+# VENUES #
+# -------#
+cloakroom_venue = Venue.create(
+    name: 'The Cloakroom',
+    address: '124 S Highland Ave Pittsburgh, PA 15206',
+    organizer: code_and_supply
+)
+sprout_fund_venue = Venue.create(
+    name: 'The Sprout Fund',
+    address: '5423 Penn Ave, Pittsburgh, PA 15206',
+    organizer: pennsylvania_association_for_sustainable_agriculture
+)
+carnegie_library_venue = Venue.create(
+    name: 'Carnegie Library',
+    address: '4400 Forbes Ave, Pittsburgh, PA 15213',
+    organizer: garfield_community_farm
+)
+garfield_community_farm_venue = Venue.create(
+    name: 'Garfield Community Farm',
+    address: 'Wicklow St, Pittsburgh, PA 15224',
+    organizer: garfield_community_farm
+)
+assemble_venue = Venue.create(
+    name: 'Assemble',
+    address: '5125 Penn Ave, Pittsburgh, PA 15224',
+    organizer: code_and_supply
+)
+st_pauls_episcopal_church_venue = Venue.create(
+    name: 'St. Paul\'s Episcopal Church',
+    address: '1066 Washington Rd. Pittsburgh,PA 15228',
+    organizer: st_pauls_episcopal_church
+)
+
 # ------------- #
 # OPPORTUNITIES #
 # ------------- #
@@ -136,7 +142,7 @@ grower_events = Opportunity.create(
 OpportunityInstance.create(
     name: 'Software Design Patterns',
     opportunity: starter_series,
-    location: cloakroom_location,
+    venue: cloakroom_venue,
     topic: software,
     starts_at: Time.now + 3.months,
     ends_at: Time.now + 3.months + 1.days,
@@ -156,7 +162,7 @@ OpportunityInstance.create(
 OpportunityInstance.create(
     name: 'Health Insurance Basics for Farmers',
     opportunity: grower_events,
-    location: sprout_fund_location,
+    venue: sprout_fund_venue,
     topic: agriculture,
     starts_at: Time.now + 1.months,
     ends_at: Time.now + 1.months + 1.days,
@@ -176,7 +182,7 @@ OpportunityInstance.create(
 OpportunityInstance.create(
     name: 'Adapting to Climate Change by Building Soil Health',
     opportunity: grower_events,
-    location: sprout_fund_location,
+    venue: sprout_fund_venue,
     topic: agriculture,
     starts_at: Time.now + 1.months,
     ends_at: Time.now + 1.months + 1.days,
@@ -196,7 +202,7 @@ OpportunityInstance.create(
 OpportunityInstance.create(
     name: 'Mock USDA G.A.P. Audit',
     opportunity: grower_events,
-    location: sprout_fund_location,
+    venue: sprout_fund_venue,
     topic: agriculture,
     starts_at: Time.now + 1.months,
     ends_at: Time.now + 1.months + 1.days,
@@ -216,7 +222,7 @@ OpportunityInstance.create(
 OpportunityInstance.create(
     name: 'USDA Food Safety Planning',
     opportunity: grower_events,
-    location: sprout_fund_location,
+    venue: sprout_fund_venue,
     topic: agriculture,
     starts_at: Time.now + 1.months,
     ends_at: Time.now + 1.months + 1.days,
@@ -236,7 +242,7 @@ OpportunityInstance.create(
 OpportunityInstance.create(
     name: 'Tools of the Trade',
     opportunity: starter_series,
-    location: sprout_fund_location,
+    venue: assemble_venue,
     topic: software,
     starts_at: Time.now + 1.months,
     ends_at: Time.now + 1.months + 1.days,
@@ -255,7 +261,7 @@ OpportunityInstance.create(
 OpportunityInstance.create(
     name: 'Software Testing',
     opportunity: starter_series,
-    location: cloakroom_location,
+    venue: cloakroom_venue,
     topic: software,
     starts_at: Time.now + 2.months,
     ends_at: Time.now + 2.months + 1.days,
@@ -275,7 +281,7 @@ OpportunityInstance.create(
 OpportunityInstance.create(
     name: 'Gardening 101',
     opportunity: gardening_series,
-    location: st_pauls_episcopal_church_location ,
+    venue: st_pauls_episcopal_church_venue,
     topic: agriculture,
     starts_at: Time.now + 2.months,
     ends_at: Time.now + 2.months + 1.days,
@@ -294,7 +300,7 @@ OpportunityInstance.create(
 OpportunityInstance.create(
     name: 'History of Farming',
     opportunity: farming,
-    location: carnegie_library_location,
+    venue: carnegie_library_venue,
     topic: agriculture,
     starts_at: Time.now + 3.months,
     ends_at: Time.now + 3.months + 1.days,
@@ -313,7 +319,7 @@ OpportunityInstance.create(
 OpportunityInstance.create(
     name: 'Discover Cattle',
     opportunity: farming,
-    location: garfield_community_farm_location ,
+    venue: garfield_community_farm_venue ,
     topic: agriculture,
     starts_at: Time.now + 4.months + 5.days,
     ends_at: Time.now + 4.months + 6.days,

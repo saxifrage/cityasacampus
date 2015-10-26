@@ -1,7 +1,7 @@
 class OpportunityInstance < ActiveRecord::Base
   belongs_to :opportunity
   has_one :organizer, through: :opportunity
-  belongs_to :location
+  belongs_to :venue
   belongs_to :topic
   belongs_to :resource_sub_type
   has_one :resource_type, through: :resource_sub_type

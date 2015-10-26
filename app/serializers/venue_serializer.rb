@@ -1,6 +1,6 @@
-class LocationSerializer < ActiveModel::Serializer
+class VenueSerializer < ActiveModel::Serializer
   attributes :id, :name, :url, :neighborhood, :map_url, :address, :latitude, :longitude
-#    "location": {
+#    "venue": {
 #        "@type":"Place",
 #        "address": {
 #            "streetAddress": "6587 Butler Street", 

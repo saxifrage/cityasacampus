@@ -13,13 +13,13 @@ Rails.application.routes.draw do
     end
     resources :topics
     resources :organizers
-    resources :locations
+    resources :venues
     resources :opportunities
     resources :opportunity_instances
   end
 
   resources :topics, except: [:edit, :new]
-  resources :locations, except: [:edit, :new]
+  resources :venues, except: [:edit, :new]
   resources :opportunities, except: [:edit, :new]
 
   resources :organizers, except: [:edit, :new] do

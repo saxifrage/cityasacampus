@@ -11,23 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151009140728) do
+ActiveRecord::Schema.define(version: 20151106164732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pg_trgm"
-
-  create_table "locations", force: :cascade do |t|
-    t.string   "name"
-    t.string   "url"
-    t.string   "neighborhood"
-    t.string   "map_url"
-    t.text     "address"
-    t.string   "latitude"
-    t.string   "longitude"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
 
   create_table "opportunities", force: :cascade do |t|
     t.string   "name"
@@ -98,7 +86,7 @@ ActiveRecord::Schema.define(version: 20151009140728) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.integer  "opportunity_id"
-    t.integer  "location_id"
+    t.integer  "venue_id"
     t.boolean  "ongoing"
     t.integer  "price"
     t.string   "url"
@@ -114,10 +102,10 @@ ActiveRecord::Schema.define(version: 20151009140728) do
 
   add_index "opportunity_instances", ["difficulty"], name: "index_opportunity_instances_on_difficulty", using: :btree
   add_index "opportunity_instances", ["duration"], name: "index_opportunity_instances_on_duration", using: :btree
-  add_index "opportunity_instances", ["location_id"], name: "index_opportunity_instances_on_location_id", using: :btree
   add_index "opportunity_instances", ["opportunity_id"], name: "index_opportunity_instances_on_opportunity_id", using: :btree
   add_index "opportunity_instances", ["resource_sub_type_id"], name: "index_opportunity_instances_on_resource_sub_type_id", using: :btree
   add_index "opportunity_instances", ["topic_id"], name: "index_opportunity_instances_on_topic_id", using: :btree
+  add_index "opportunity_instances", ["venue_id"], name: "index_opportunity_instances_on_venue_id", using: :btree
 
   create_table "organizer_users", force: :cascade do |t|
     t.datetime "created_at"
@@ -183,8 +171,24 @@ ActiveRecord::Schema.define(version: 20151009140728) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "venues", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "neighborhood"
+    t.string   "map_url"
+    t.text     "address"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "organizer_id"
+  end
+
+  add_index "venues", ["organizer_id"], name: "index_venues_on_organizer_id", using: :btree
+
   add_foreign_key "opportunities", "topics"
-  add_foreign_key "opportunity_instances", "locations"
   add_foreign_key "opportunity_instances", "topics"
+  add_foreign_key "opportunity_instances", "venues"
   add_foreign_key "organizers", "topics"
+  add_foreign_key "venues", "organizers"
 end
