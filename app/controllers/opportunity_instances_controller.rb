@@ -64,6 +64,19 @@ class OpportunityInstancesController < ApplicationController
   # GET /opportunity_instances/new
   def new
     @opportunity_instance = OpportunityInstance.new
+
+    # Check to see if the request originated from the opportunity
+    if params[:opportunity] && Opportunity.exists?(params[:opportunity])
+      opportunity = Opportunity.find(params[:opportunity])
+      @opportunity_instance.opportunity = opportunity
+
+      # Default to the opportunity attributes from which the request originated
+      opportunity.attributes.each do |attr_name, attr_value|
+        if(@opportunity_instance.respond_to?((attr_name + "=").to_sym) && attr_name != "id")
+          @opportunity_instance[attr_name] = attr_value
+        end
+      end
+    end
   end
 
   # GET /opportunity_instances/1/edit
