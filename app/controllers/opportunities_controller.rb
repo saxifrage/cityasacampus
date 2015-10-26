@@ -6,10 +6,12 @@ class OpportunitiesController < ApplicationController
   # GET /opportunities
   # GET /opportunities.json
   def index
-    @opportunities = policy_scope(Opportunity)
     respond_to do |format|
-      format.html { render 'dashboard/opportunities' }
-      format.json { render json: @opportunities }
+      format.html do
+        @opportunities = policy_scope(Opportunity)
+        render 'dashboard/opportunities'
+      end
+      format.json { render json: Opportunity.all }
     end
   end
 
