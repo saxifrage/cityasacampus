@@ -1,0 +1,17 @@
+<%= form_for(@grid) do |f| %>
+  <% if @grid.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@grid.errors.count, "error") %> prohibited this grid from being saved:</h2>
+
+      <ul>
+      <% @grid.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

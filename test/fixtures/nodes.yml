@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pathway_id: 
+  opportunity_id: 
+  position: 1
+
+two:
+  pathway_id: 
+  opportunity_id: 
+  position: 1

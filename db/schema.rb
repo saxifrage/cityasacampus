@@ -11,11 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151213060748) do
+ActiveRecord::Schema.define(version: 20151214180556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pg_trgm"
+
+  create_table "grids", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.integer  "map_id",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "grids", ["map_id"], name: "index_grids_on_map_id", using: :btree
+
+  create_table "maps", force: :cascade do |t|
+    t.integer  "organizer_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "maps", ["organizer_id"], name: "index_maps_on_organizer_id", using: :btree
+
+  create_table "nodes", force: :cascade do |t|
+    t.integer  "pathway_id",     null: false
+    t.integer  "opportunity_id", null: false
+    t.integer  "position",       null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "nodes", ["opportunity_id"], name: "index_nodes_on_opportunity_id", using: :btree
+  add_index "nodes", ["pathway_id"], name: "index_nodes_on_pathway_id", using: :btree
 
   create_table "opportunities", force: :cascade do |t|
     t.string   "name"
@@ -46,14 +74,10 @@ ActiveRecord::Schema.define(version: 20151213060748) do
     t.datetime "updated_at",            null: false
     t.integer  "organizer_id"
     t.integer  "topic_id"
-    t.integer  "after_this_id"
-    t.integer  "before_this_id"
     t.string   "badge_class_id"
     t.integer  "resource_sub_type_id"
   end
 
-  add_index "opportunities", ["after_this_id"], name: "index_opportunities_on_after_this_id", using: :btree
-  add_index "opportunities", ["before_this_id"], name: "index_opportunities_on_before_this_id", using: :btree
   add_index "opportunities", ["organizer_id"], name: "index_opportunities_on_organizer_id", using: :btree
   add_index "opportunities", ["resource_sub_type_id"], name: "index_opportunities_on_resource_sub_type_id", using: :btree
   add_index "opportunities", ["topic_id"], name: "index_opportunities_on_topic_id", using: :btree
@@ -117,15 +141,26 @@ ActiveRecord::Schema.define(version: 20151213060748) do
   add_index "organizer_users", ["organizer_id", "user_id"], name: "index_organizer_users_on_organizer_id_and_user_id", using: :btree
 
   create_table "organizers", force: :cascade do |t|
-    t.string   "name",        null: false
-    t.string   "description", null: false
+    t.string   "name",             null: false
+    t.string   "description",      null: false
     t.string   "url"
     t.string   "logo_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "draft_map_id"
+    t.integer  "published_map_id"
   end
 
   add_index "organizers", ["name"], name: "index_organizers_on_name", using: :btree
+
+  create_table "pathways", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.integer  "grid_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pathways", ["grid_id"], name: "index_pathways_on_grid_id", using: :btree
 
   create_table "resource_sub_types", force: :cascade do |t|
     t.string  "name"
@@ -189,8 +224,15 @@ ActiveRecord::Schema.define(version: 20151213060748) do
 
   add_index "venues", ["organizer_id"], name: "index_venues_on_organizer_id", using: :btree
 
+  add_foreign_key "grids", "maps"
+  add_foreign_key "maps", "organizers"
+  add_foreign_key "nodes", "opportunities"
+  add_foreign_key "nodes", "pathways"
   add_foreign_key "opportunities", "topics"
   add_foreign_key "opportunity_instances", "topics"
   add_foreign_key "opportunity_instances", "venues"
+  add_foreign_key "organizers", "maps", column: "draft_map_id"
+  add_foreign_key "organizers", "maps", column: "published_map_id"
+  add_foreign_key "pathways", "grids"
   add_foreign_key "venues", "organizers"
 end
