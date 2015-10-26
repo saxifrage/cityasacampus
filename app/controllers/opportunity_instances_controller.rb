@@ -3,17 +3,20 @@ class OpportunityInstancesController < ApplicationController
   before_action :set_opportunities, only: [:edit, :new]
 
   def index
-    @opportunity_instances = policy_scope(OpportunityInstance)
-    @paginator = OpenStruct.new(opportunity_instances: @opportunity_instances, per_page: 15)
-
     respond_to do |format|
-      format.html { render :index }
-      format.json { paginate json: @opportunity_instances, root: :result }
+      format.html do
+        @opportunity_instances = policy_scope(OpportunityInstance)
+        render :index
+      end
+      format.json do
+        opportunity_instances = OpportunityInstance.all
+        @paginator = OpenStruct.new(opportunity_instances: opportunity_instances, per_page: 15)
+        paginate json: opportunity_instances, root: :result
+      end
     end
   end
 
   def show
-    authorize @opportunity_instance
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @opportunity_instance, root: :result, serializer: OpportunityInstanceSerializer }
