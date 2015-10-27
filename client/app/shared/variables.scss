@@ -20,5 +20,5 @@ $font-family: "Open Sans", Arial, sans-serif;
 //
 // Media
 // --------------------------------------------------
-$screen-sm: 550px;
-$nav-break: 750px;
+$screen-sm: new-breakpoint(min-width 550px);
+$nav-break: new-breakpoint(min-width 750px);

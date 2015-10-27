@@ -10,16 +10,19 @@
 }
 
 .card {
+  @include omega-reset(3n);
   @include span-columns(12);
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   padding-bottom: 25px;
   margin-bottom: 40px;
-  @include media(min-width $screen-sm){
+  @include media($screen-sm){
     @include span-columns(6);
+    @include omega(2n);
   }
-  @include media(min-width $nav-break){
+  @include media($nav-break){
+    @include omega-reset(2n);
     @include span-columns(4);
     @include omega(3n);
   }
@@ -97,14 +100,25 @@
 }
 
 .card .attributes {
-  font-weight: 600;
-  color: #0099FF;
+  display: table;
+  color: $brand-primary;
+  margin-top: 20px;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
-  margin-bottom: 5px;
-  font-size: 11px;
-  margin-top: 1px;
   width: 100%;
+}
+
+.attributes .attribute{
+  box-sizing:border-box;
+  display: table-cell;
+  width: 33%;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.attributes .icon{
+  display: block;
+  margin: 0 auto 7px;
+  max-height: 25px;
 }
 
 .card .lazy-load {
