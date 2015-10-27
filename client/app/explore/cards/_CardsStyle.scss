@@ -1,27 +1,28 @@
 .explore {
   .cards {
-    margin: auto;
-    width: 90%;
-    margin-bottom: 200px;
+    @include outer-container();
+    padding: 40px 20px;
     font-family: 'Open Sans', sans-serif;
     
     .loading-indicator {
-      margin: auto;
       margin-top: 20px;
       display: block;
     }
 
     .card {
-      margin: 1%;
-      float: left;
+      @include span-columns(12);
       background: #ffffff;
       border-radius: 10px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-      min-height: 450px;
-      min-width: 200px;
-      max-width: 300px;
-      width: 31%;
       padding-bottom: 25px;
+      margin-bottom: 40px;
+      @include media(min-width $screen-sm){
+        @include span-columns(6);
+      }
+      @include media(min-width $nav-break){
+        @include span-columns(4);
+        @include omega(3n);
+      }
       &:hover{
         cursor: pointer;
       }
@@ -109,16 +110,5 @@
   .lazy-load {
     margin: auto;
     display: block;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .explore .cards .card {
-    float: none;
-    display: block;
-    margin: auto;
-    width: 90%;
-    margin-top: 30px;
-    margin-bottom: 30px;
   }
 }
