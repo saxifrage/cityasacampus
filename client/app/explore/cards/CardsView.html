@@ -1,12 +1,13 @@
 <div class="cards">
-  <div ng-repeat="o in opportunityInstances" class="card" ng-click="goToOpportunityInstance(o.uid)">
+  <div ng-repeat="o in opportunityInstances" class="card text-center" ng-click="goToOpportunityInstance(o.uid)">
     <div class="top" style="background: url({{o.img.src}})"></div>
 
     <div class="body">
       <h5 class="name">{{o.name}}</h5>
       <p class="date">{{o.starts | date:'MM.dd.yy'}}</p>
 
-      <p class="organizer-and-location">{{o.organizer.name}} | {{o.neighborhood}}</p>
+      <p class="organizer">{{o.organizer.name}}</p>
+      <p class="location">{{o.neighborhood}}</p>
 
       <div class="description"><p>{{o.description | truncate: 100: '...': true}}</p></div>
 

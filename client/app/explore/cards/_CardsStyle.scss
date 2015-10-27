@@ -3,7 +3,8 @@
     margin: auto;
     width: 90%;
     margin-bottom: 200px;
-
+    font-family: 'Open Sans', sans-serif;
+    
     .loading-indicator {
       margin: auto;
       margin-top: 20px;
@@ -43,7 +44,6 @@
           display: block;
           text-decoration: none;
           margin-top: 0px;
-          font-family: 'Open Sans', sans-serif;
           word-wrap: break-word;
           width: 95%;
           margin: auto;
@@ -59,31 +59,31 @@
           word-wrap: break-word;
           width: 95%;
           margin: auto;
-          font-family: 'Open Sans', sans-serif;
-          text-align: center;
           color: #33CC00;
           padding-top: 8px;
           font-size: 18px;
           letter-spacing: 1px;
         }
 
-        .organizer-and-location {
+        .organizer {
           position: relative;
           display: block;
           text-decoration: none;
           word-wrap: break-word;
           width: 95%;
           margin: auto;
-          text-align: center;
           color: #000;
-          font-family: 'Open Sans', sans-serif;
-          padding-top: 6px;
+          padding-top: 15px;
           font-size: 17px;
+        }
+
+        .location{
+          font-size: 13px;
+          margin: 5px 0 5px;
         }
 
         .description {
           padding-top: 5px;
-          font-family: 'Open Sans', sans-serif;
           -webkit-font-smoothing: antialiased;
           color: #333333;
           font-size: 12px;
