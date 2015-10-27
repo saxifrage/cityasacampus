@@ -96,15 +96,15 @@ Map.tooltip = function(e) {
     var self = this;
     var rect = $(this);
     var svg = rect.parent();
-
+    var height = $('.tooltip').height();
     if (Map.isPoppedUp(this))
         return;
 
     var center = Map.centerGet($(this));
 
     $('.tooltip').css({
-        'top' : center.y,
-        'left' : center.x + 10,
+        'top' : center.y - height - 40,
+        'left' : center.x - 125,
     });
 
     /* Assign JSON data and show*/

@@ -137,10 +137,6 @@ rect {
     }
 }
 
-#fill {
-    fill: black;
-}
-
 rect.selected{
     fill: darken($brand-primary, 20%);
     &:hover{
@@ -328,6 +324,8 @@ h3.attribute{
     top: 20px;
     left: 20px;
     padding: 12px 15px;
+    width: 250px;
+    text-align: center;
     //width: 250px;
     box-shadow: 0px 0px 25px rgba(0,0,0,.15);
 }
@@ -341,10 +339,10 @@ h3.attribute{
 .tooltip .arrow {
     width: 0;
     height: 0;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
     border-top: 10px solid white;
-    border-bottom: 10px solid transparent;
-    border-left:10px solid transparent;
     position: absolute;
-    top: 0px;
-    left: -10px;
+    bottom: -10px;
+    left: 115px;
 }

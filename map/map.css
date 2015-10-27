@@ -256,6 +256,8 @@ h3.attribute {
   top: 20px;
   left: 20px;
   padding: 12px 15px;
+  width: 250px;
+  text-align: center;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15); }
 
 .tooltip h1 {
@@ -266,9 +268,9 @@ h3.attribute {
 .tooltip .arrow {
   width: 0;
   height: 0;
-  border-top: 10px solid white;
-  border-bottom: 10px solid transparent;
+  border-right: 10px solid transparent;
   border-left: 10px solid transparent;
+  border-top: 10px solid white;
   position: absolute;
-  top: 0px;
-  left: -10px; }
+  bottom: -10px;
+  left: 115px; }
