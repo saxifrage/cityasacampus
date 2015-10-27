@@ -101,6 +101,8 @@ GEM
       pry (>= 0.9.10)
     puma (2.11.1)
       rack (>= 1.1, < 2.0)
+    pundit (1.0.1)
+      activesupport (>= 3.0.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -193,6 +195,7 @@ DEPENDENCIES
   pg
   pry-rails
   puma
+  pundit
   rails (= 4.2.1)
   rails_12factor
   rails_serve_static_assets

@@ -6,13 +6,18 @@
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @opportunity_instance.address %>
+  <strong>Description:</strong>
+  <%= @opportunity_instance.description %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @opportunity_instance.description %>
+  <strong>Opportunity:</strong>
+  <%= @opportunity_instance.opportunity.name %>
+</p>
+
+<p>
+  <strong>Organizer:</strong>
+  <%= @opportunity_instance.organizer.name %>
 </p>
 
 <p>
@@ -31,8 +36,13 @@
 </p>
 
 <p>
-  <strong>Program type:</strong>
-  <%= @opportunity_instance.program_type %>
+  <strong>Resource type:</strong>
+  <%= @opportunity_instance.resource_type.name %>
+</p>
+
+<p>
+  <strong>Resource sub-type:</strong>
+  <%= @opportunity_instance.resource_sub_type.name %>
 </p>
 
 <p>
@@ -56,8 +66,8 @@
 </p>
 
 <p>
-  <strong>Zipcode:</strong>
-  <%= @opportunity_instance.zipcode %>
+  <strong>Address:</strong>
+  <%= @opportunity_instance.address %>
 </p>
 
 <p>
@@ -68,6 +78,11 @@
 <p>
   <strong>State:</strong>
   <%= @opportunity_instance.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @opportunity_instance.zipcode %>
 </p>
 
 <p>
@@ -98,11 +113,6 @@
 <p>
   <strong>Contact phone:</strong>
   <%= @opportunity_instance.contact_phone %>
-</p>
-
-<p>
-  <strong>Registration url:</strong>
-  <%= @opportunity_instance.registration_url %>
 </p>
 
 <p>

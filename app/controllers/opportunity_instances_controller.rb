@@ -1,13 +1,18 @@
 class OpportunityInstancesController < ApplicationController
   before_action :set_opportunity_instance, only: [:show, :edit, :update, :destroy]
+  before_action :set_opportunities, only: [:edit, :new]
 
   def index
-    @opportunity_instances = OpportunityInstance.all
-    @paginator = OpenStruct.new(opportunity_instances: @opportunity_instances, per_page: 15)
-
     respond_to do |format|
-      format.html { render :index }
-      format.json { paginate json: @opportunity_instances, root: :result }
+      format.html do
+        @opportunity_instances = policy_scope(OpportunityInstance)
+        render 'dashboard/opportunity_instances'
+      end
+      format.json do
+        opportunity_instances = OpportunityInstance.all
+        @paginator = OpenStruct.new(opportunity_instances: opportunity_instances, per_page: 15)
+        paginate json: opportunity_instances, root: :result
+      end
     end
   end
 
@@ -59,16 +64,31 @@ class OpportunityInstancesController < ApplicationController
   # GET /opportunity_instances/new
   def new
     @opportunity_instance = OpportunityInstance.new
+
+    # Check to see if the request originated from the opportunity
+    if params[:opportunity] && Opportunity.exists?(params[:opportunity])
+      opportunity = Opportunity.find(params[:opportunity])
+      @opportunity_instance.opportunity = opportunity
+
+      # Default to the opportunity attributes from which the request originated
+      opportunity.attributes.each do |attr_name, attr_value|
+        if(@opportunity_instance.respond_to?((attr_name + "=").to_sym) && attr_name != "id")
+          @opportunity_instance[attr_name] = attr_value
+        end
+      end
+    end
   end
 
   # GET /opportunity_instances/1/edit
   def edit
+    authorize @opportunity_instance
   end
 
   # POST /opportunity_instances
   # POST /opportunity_instances.json
   def create
     @opportunity_instance = OpportunityInstance.new(opportunity_instance_params)
+    authorize @opportunity_instance
 
     respond_to do |format|
       if @opportunity_instance.save
@@ -84,6 +104,8 @@ class OpportunityInstancesController < ApplicationController
   # PATCH/PUT /opportunity_instances/1
   # PATCH/PUT /opportunity_instances/1.json
   def update
+    authorize @opportunity_instance
+
     respond_to do |format|
       if @opportunity_instance.update(opportunity_instance_params)
         format.html { redirect_to @opportunity_instance, notice: 'Opportunity instance was successfully updated.' }
@@ -98,6 +120,7 @@ class OpportunityInstancesController < ApplicationController
   # DELETE /opportunity_instances/1
   # DELETE /opportunity_instances/1.json
   def destroy
+    authorize @opportunity_instance
     @opportunity_instance.destroy
     respond_to do |format|
       format.html { redirect_to opportunity_instances_url, notice: 'Opportunity instance was successfully destroyed.' }
@@ -111,8 +134,18 @@ class OpportunityInstancesController < ApplicationController
       @opportunity_instance = OpportunityInstance.find(params[:id])
     end
 
+    def set_opportunities
+      @opportunities = policy_scope(Opportunity)
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def opportunity_instance_params
-      params.require(:opportunity_instance).permit(:name, :address, :description, :registration_url, :location_name, :registration_deadline, :program_type, :logo_url, :starts_at, :ends_at, :online_address, :zipcode, :city, :state, :is_online, :hide_reason, :hide, :contact_name, :contact_email, :contact_phone, :registration_url, :price_level, :min_age, :max_age, :extra_data, :duration, :difficulty)
+      permitted_params = [:name, :address, :description, :registration_url, :location_name,
+                          :registration_deadline, :program_type, :logo_url, :starts_at,
+                          :ends_at, :online_address, :zipcode, :city, :state, :is_online,
+                          :hide_reason, :hide, :contact_name, :contact_email, :contact_phone,
+                          :registration_url, :price_level, :min_age, :max_age, :extra_data,
+                          :duration, :difficulty, :resource_sub_type_id, :opportunity_id]
+      params.require(:opportunity_instance).permit(permitted_params)
     end
 end
