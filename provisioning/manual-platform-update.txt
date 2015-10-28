@@ -5,7 +5,11 @@ $ cd cityasacampus
 $ exec $SHELL
 $ bundler exec pumactl -P shared/pids/puma.pid stop
 $ cd ..
+
+# this is just temporary... we'll eventually want to forcebly
+# pull origin master down. 
 $ sudo rm -rf cityasacampus
+
 $ git clone https://github.com/saxifrage/cityasacampus.git
 $ nano .ruby-version #change to 2.2.0
 $ bundle install
