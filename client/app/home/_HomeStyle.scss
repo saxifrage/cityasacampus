@@ -1,5 +1,158 @@
-.home > .fork {
-  height: 47px;
-  width: 124px; 
-  background-image: url('./home/assets/github-fork-btn.png');
+// Hero // --------------------------------------------------
+.container{
+	@include outer-container();
+}
+
+.hero.home{
+	position: relative;
+	top: 0px;
+	margin: 0 auto;
+	@include rem(padding, 80px 0);
+}
+
+.hero.home .container{
+	z-index: 2;
+	position: relative;
+	@include rem(max-width, 600px);
+}
+
+h1.hero__title{
+	@include rem(font-size, 48px);
+	color: $brand-primary;
+	margin-top: 0px;
+}
+
+h2.hero__desc{
+	@include rem(font-size, 28px);
+	color: $brand-primary;
+	font-weight: 300;
+	@include rem(margin, 0 auto 50px);
+}
+
+.hero .btn{
+	@include rem(padding, 20px);
+	display: block;
+}
+
+.hero__or{
+	display: block;
+	@include rem(margin, 25px 0);
+}
+
+.hero input[type="search"]{
+	width: 100%;
+	@include rem(padding, 20px 0);
+	text-align: center;
+	border: 1px solid $brand-primary;
+	opacity: .8;
+	@include rem(font-size, 24px);
+	&:focus{
+		outline: 0;
+		opacity: 1;
+	}
+}
+
+.hero ::-webkit-input-placeholder {
+   color: $brand-primary;
+}
+
+.hero :-moz-placeholder { /* Firefox 18- */
+   color: $brand-primary;  
+}
+
+.hero ::-moz-placeholder {  /* Firefox 19+ */
+   color: $brand-primary;  
+}
+
+.hero :-ms-input-placeholder {  
+   color: $brand-primary;  
+}
+
+.home__map{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.home__map svg{
+	height: 100%;
+	@media screen and (min-width: 1300px){
+		width: 100%;
+	}
+}
+
+@keyframes map-opacity { 
+	0% { opacity: .1; }
+	50% { opacity: 1; }
+	100% { opacity: 1; }
+}
+
+.animate-opacity{
+	opacity: .1;
+	animation-name: map-opacity;
+	animation-duration: 1s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;  
+		// loop to rotate all 100 circles
+	@for $j from 1 through 14 {
+		&:nth-child(#{$j}){
+			$h: ($j*2);
+			animation-delay: #{$h}s;
+			animation-iteration-count: 2;
+		}
+	}
+}
+
+.home__two-col{
+	@include rem(padding, 80px 0);
+	@include outer-container();
+}
+
+.home__two-col h2{
+	font-size: 36px;
+	margin: 0px 0px 20px;
+}
+
+.home__two-col h3{
+	margin: 0px;
+	font-weight: 300;
+	font-size: 24px;
+}
+
+.home__two-col .two-col{
+	@include rem(margin-top, 40px);
+	@include span-columns(12);
+	@include media($nav-break){
+		@include span-columns(6);
+	}
+}
+
+.home__two-col .two-col ul{
+	list-style: none;
+	margin-left: 80px;
+}
+
+.home__two-col .two-col h4{
+	@include rem(font-size, 28px);
+	font-weight: 700;
+}
+
+.home__two-col .two-col li{
+	@include rem(font-size, 24px);
+	position: relative;
+	@include rem(margin-bottom, 20px);
+	font-weight: 300;
+}
+
+.home__two-col .two-col li span{
+	position: absolute;
+	left: -70px;
+	border: 2px solid #33CCCC;
+	@include rem(padding, 6px 15px);
+	border-radius: 50%;
+	font-weight: 600;
 }

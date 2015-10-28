@@ -1,4 +1,4 @@
-<header role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader" class="super-header">
+<!--<header role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader" class="super-header">
   <div class="container">
     <div class="row">
       <div class="text-right sign-in">
@@ -6,50 +6,42 @@
       </div>
     </div>
   </div>
-</header>
+</header>-->
 
 <header role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader" class="header">
-    <nav class="navbar navbar-default">
+    <nav class="navbar">
       <div class="container">
-
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+        <div class="navbar__brand">
           <a class="navbar-brand" href="#/"><img src="shared/navbar/assets/logo_caac.svg" alt="City as a Campus"></a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav primary">
-               <li class="active">
-                    <a href="#/explore">Explore</a>
-               </li>
-               <li>
-                    <a href="#/">How It Works</a>
-               </li>
-               <li>
-                    <a href="#/">About CAAC</a>
-               </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right social">
-            <li><a href="#"><img class="icon-social" src="shared/navbar/assets/facebook.svg" alt="Facebook"></a></li>
-            <li><a href="#"><img class="icon-social" src="shared/navbar/assets/twitter.svg" alt="Twitter"></a></li>
-            <li><a href="#"><img class="icon-social" src="shared/navbar/assets/github.svg" alt="Github"></a></li>
-          </ul>
-          <form class="navbar-form navbar-right search" role="search" ng-submit="textSearch(term)">
-            <div class="form-group">
-              <input type="text" class="form-search" ng-model="term" placeholder="I'm interested in...">
-              <button type="submit"><img class="icon-search" src="shared/navbar/assets/search.svg" alt="search"></button>
-            </div>
-          </form>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+        </div><!--/navbar__brand-->
+        <ul class="nav navbar__primary hidden-break">
+          <li class="active">
+            <a href="#/explore">Explore</a>
+          </li>
+          <!--<li>
+            <a href="#/">How It Works</a>
+          </li>-->
+          <li>
+            <a href="#/">About CAAC</a>
+          </li>
+        </ul>
+        <a class="navbar__toggle visible-break">
+          <svg class="hover" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51 50"><path d="M16.47 5.455h31.25c1.48 0 2.68-1.22 2.68-2.728C50.4 1.22 49.2 0 47.72 0H16.47c-1.48 0-2.68 1.22-2.68 2.727s1.2 2.728 2.68 2.728zM3.08 22.727h44.64c1.48 0 2.68-1.22 2.68-2.727 0-1.506-1.2-2.727-2.68-2.727H3.08C1.6 17.273.4 18.493.4 20c0 1.506 1.2 2.727 2.68 2.727zM16.47 40h31.25c1.48 0 2.68-1.22 2.68-2.727s-1.2-2.728-2.68-2.728H16.47c-1.48 0-2.68 1.22-2.68 2.728 0 1.506 1.2 2.727 2.68 2.727z" fill="#B9C0C1" fill-rule="evenodd"/></svg>
+        </a>
+        <ul class="nav navbar--social hidden-break">
+          <li><a href="#"><img class="icon icon--social" src="shared/navbar/assets/facebook.svg" alt="Facebook"></a></li>
+          <li><a href="#"><img class="icon icon--social" src="shared/navbar/assets/twitter.svg" alt="Twitter"></a></li>
+          <li><a href="#"><img class="icon icon--social" src="shared/navbar/assets/github.svg" alt="Github"></a></li>
+        </ul>
+        <form class="nav navbar__search" role="search" ng-submit="textSearch(term)">
+          <div class="form-group">
+            <input type="text" class="navbar__search--form" ng-model="term" placeholder="I'm interested in...">
+            <button class="navbar__search--button" type="submit">
+              <img class="navbar__search--icon" src="shared/navbar/assets/search.svg" alt="search">
+            </button>
+          </div>
+        </form>
+      </div><!-- /.container -->
     </nav>
-
 </header>
 

@@ -1,7 +1,24 @@
+//
+// Vendors
+// --------------------------------------------------
+@import './shared/bourbon/bourbon';
+@import './shared/neat/neat';
+
+
+//
+// Base
+// --------------------------------------------------
+@import './shared/variables.scss';
+@import './shared/mixins.scss';
+@import './shared/utilities.scss';
 @import './shared/normalize/NormalizeStyle';
+
+
+//
+// Components
+// --------------------------------------------------
 @import './shared/conf/ThemeStyle';
 @import './shared/grid/GridStyle';
-@import './shared/geo/MapStyle';
 @import './explore/ExploreStyle';
 @import './dashboard/DashboardStyle';
 @import './shared/navbar/NavbarStyle';

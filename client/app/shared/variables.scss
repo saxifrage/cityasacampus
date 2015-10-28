@@ -1,0 +1,24 @@
+//
+// Colors
+// --------------------------------------------------
+
+$brand-primary: #0099ff;
+$brand-black: #222222;
+$brand-primary-light: lighten($brand-primary, 30%);
+$brand-secondary: #33cc00;
+$brand-gray: #B9C0C1;
+
+
+//
+// Typography
+// --------------------------------------------------
+
+$font-size-base: 16px;
+$font-family: "Open Sans", Arial, sans-serif;
+
+
+//
+// Media
+// --------------------------------------------------
+$screen-sm: new-breakpoint(min-width 550px);
+$nav-break: new-breakpoint(min-width 750px);

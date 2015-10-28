@@ -1,0 +1,83 @@
+//
+// Text
+// --------------------------------------------------
+.text-right{
+	text-align: right;
+}
+
+.text-left{
+	text-align: left;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.text-primary-blue{
+	color: $brand-primary;
+}
+
+.text-green{
+	color: #33CCCC;
+}
+
+.text-light-blue{
+	color: #33CCFF;
+}
+
+//
+// Floats
+// --------------------------------------------------
+
+.pull-left{
+	float: left !important;
+}
+
+.pull-right{
+	float: right !important;
+}
+
+
+//
+// Images
+// --------------------------------------------------
+
+/* Responsive Images */
+.img-responsive{
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.center-block{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+svg path{
+	@include transition(fill .15s linear);
+}
+
+svg.hover:hover path{
+	fill: $brand-primary;
+}
+
+
+//
+// Visbility
+// --------------------------------------------------
+
+.hidden-break{
+	display: inline-block;
+	@include media(max-width $nav-break){
+		display: none !important;
+	}
+}
+
+.visible-break{
+	display: none !important;
+	@include media(max-width $nav-break){
+		display: inline-block !important;
+	}
+}

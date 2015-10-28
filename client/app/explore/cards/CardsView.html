@@ -1,29 +1,31 @@
 <div class="cards">
-  <div ng-repeat="o in opportunityInstances" class="card" ng-click="goToOpportunityInstance(o.uid)">
-    <div class="top" style="background: url({{o.img.src}})"></div>
+  <div ng-repeat="o in opportunityInstances" class="card text-center" ng-click="goToOpportunityInstance(o.uid)">
+
+    <div class="top" style="background-image: url({{o.img.src}})"></div>
 
     <div class="body">
       <h5 class="name">{{o.name}}</h5>
       <p class="date">{{o.starts | date:'MM.dd.yy'}}</p>
 
-      <p class="organizer-and-location">{{o.organizer.name}} | {{o.neighborhood}}</p>
+      <p class="organizer">{{o.organizer.name}}</p>
+      <p class="location">{{o.neighborhood}}</p>
 
       <div class="description"><p>{{o.description | truncate: 100: '...': true}}</p></div>
 
       <!-- TODO: use a proper grid system -->
       <table class="attributes">
         <tr>
-          <td class="activity-type">
+          <td class="attribute activity-type">
             <img class="icon" src="/explore/cards/activity-type-icon.svg" />
             <span ng-if="!o.online_opportunity">Local</span>
             <span ng-if="o.online_opportunity">Digital</span>
           </td>
-          <td class="activity-duration">
+          <td class="attribute activity-duration">
             <img class="icon" src="/explore/cards/activity-duration-icon.svg" />
             <span ng-if="!o.ongoing">One-time</span>
             <span ng-if="o.ongoing">Ongoing</span>
           </td>
-          <td class="activity-price">
+          <td class="attribute activity-price">
             <img class="icon" src="/explore/cards/activity-price-icon.svg" />
             <span ng-if="!o.price">Free</span>
             <span ng-if="o.price">{{o.price | currency:'$'}}</span>
