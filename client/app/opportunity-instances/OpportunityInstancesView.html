@@ -32,7 +32,7 @@
           <h3 class="sub-banner-heading">{{opportunityInstance.registration_deadline | date:'MM/dd/yyyy'}}</h3>
         </div><!--/col-md-2-->
         <div class="col-md-2-5">
-          <a class="btn btn-primary btn-block" ng-class="{'disabled': registrationStatus}" href="{{opportunityInstance.registration_url}}">Register Now</a>
+          <a class="btn btn-primary btn-block" ng-class="{'disabled': registrationStatus}" href="{{opportunityInstance.registration_url}}" target="_blank">Register Now</a>
         </div><!--/col-md-2-->
       </div><!--/row -->
     </div><!-- /container-->
@@ -40,64 +40,7 @@
 
   <div class="container opportunity-content">
     <div class="row">
-
-      <section class="opp-details col-md-8 col-md-push-4">
-        <header class="opp-section-header">
-          <h3>Event Details</h3>
-        </header>
-        <div class="opp-section">
-          <p>{{opportunityInstance.description}}</p>
-        </div>
-
-        <header class="opp-section-header">
-          <h3>Facts</h3>
-        </header>
-        <div class="opp-section">
-          <div class="row-same-height opp-detail-row" ng-if="opportunityInstance.min_age && opportunityInstance.max_age">
-            <div class="col-sm-5 col-xs-height col-middle">
-              <h4 class="detail-type">Age Range:</h4>
-            </div>
-            <div class="col-sm-7 col-xs-height col-middle">
-              <p>
-                {{opportunityInstance.min_age}} - {{opportunityInstance.max_age}}
-              </p>
-            </div>
-          </div><!-- /opp-detail-row-->
-          <div class="row-same-height opp-detail-row" ng-if="opportunityInstance.price">
-            <div class="col-sm-5 col-xs-height col-middle">
-              <h4 class="detail-type">Price:</h4>
-            </div>
-            <div class="col-sm-7 col-xs-height col-middle">
-              <p>
-                <span>
-                    {{opportunityInstance.price | currency:'$'}}
-                </span>
-                <span ng-if="!opportunityInstance.price">free</span>
-              </p>
-            </div>
-          </div><!-- /opp-detail-row-->
-          <div class="row-same-height opp-detail-row">
-            <div class="col-sm-5 col-xs-height col-middle">
-              <h4 class="detail-type">Online?</h4>
-            </div>
-            <div class="col-sm-7 col-xs-height col-middle">
-              <p ng-if="opportunityInstance.online_opportunity">Yes</p>
-              <p ng-if="!opportunityInstance.online_opportunity">No</p>
-            </div>
-          </div><!-- /opp-detail-row-->
-          <div class="row-same-height opp-detail-row">
-            <div class="col-sm-5 col-xs-height col-middle">
-              <h4 class="detail-type">Ongoing?</h4>
-            </div>
-            <div class="col-sm-7 col-xs-height col-middle">
-              <p ng-if="opportunityInstance.ongoing">Yes</p>
-              <p ng-if="!opportunityInstance.ongoing">No</p>
-            </div>
-          </div><!-- /opp-detail-row-->
-        </div><!-- /opp-section-->
-      </section>
-
-      <div class="opp-sidebar col-md-4 col-md-pull-8">
+<div class="opp-sidebar text-center">
         <header class="opp-section-header">
           <h3>Organizer</h3>
         </header>
@@ -105,9 +48,9 @@
           <a href="{{opportunityInstance.organizer.url}}" target="_blank">
             <img class="img-responsive center-block" src="{{opportunityInstance.organizer.logo}}" ng-show="opportunityInstance.organizer.logo" />
           </a>
-          <a href="{{opportunityInstance.organizer.url}}" target="_blank">
+          <h3><a href="{{opportunityInstance.organizer.url}}" target="_blank">
             {{opportunityInstance.organizer.name}}
-          </a>
+          </a></h3>
           <p>{{opportunityInstance.organizer.description}}</p>
         </section>
 
@@ -136,7 +79,7 @@
           <h3>Badges</h3>
         </header>
         <!-- //TODO: temporary -->
-        <section class="opp-section badges">
+        <section class="opp-section badges text-left">
           <svg width="75" height="75" title="Badges are coming soon!">
             <circle cx="40" cy="40" r="30" stroke="grey" stroke-width="5" fill="green"></circle>
           </svg>
@@ -156,6 +99,63 @@
         </section>
         -->
       </div><!-- /opp-sidebar-->
+      <section class="opp-details col-md-8 col-md-push-4">
+        <header class="opp-section-header">
+          <h3>Event Details</h3>
+        </header>
+        <div class="opp-section">
+          <p>{{opportunityInstance.description}}</p>
+        </div>
+
+        <header class="opp-section-header">
+          <h3>Facts</h3>
+        </header>
+        <div class="opp-section">
+          <div class="row-same-height opp-detail-row" ng-if="opportunityInstance.min_age && opportunityInstance.max_age">
+            <div class="col-sm-5 col-xs-height col-middle">
+              <h4 class="detail-type">Age Range:</h4>
+            </div>
+            <div class="col-sm-7 col-xs-height col-middle text-right">
+              <p>
+                {{opportunityInstance.min_age}} - {{opportunityInstance.max_age}}
+              </p>
+            </div>
+          </div><!-- /opp-detail-row-->
+          <div class="row-same-height opp-detail-row" ng-if="opportunityInstance.price">
+            <div class="col-sm-5 col-xs-height col-middle">
+              <h4 class="detail-type">Price:</h4>
+            </div>
+            <div class="col-sm-7 col-xs-height col-middle text-right">
+              <p>
+                <span>
+                    {{opportunityInstance.price | currency:'$'}}
+                </span>
+                <span ng-if="!opportunityInstance.price">free</span>
+              </p>
+            </div>
+          </div><!-- /opp-detail-row-->
+          <div class="row-same-height opp-detail-row">
+            <div class="col-sm-5 col-xs-height col-middle">
+              <h4 class="detail-type">Online?</h4>
+            </div>
+            <div class="col-sm-7 col-xs-height col-middle text-right">
+              <p ng-if="opportunityInstance.online_opportunity">Yes</p>
+              <p ng-if="!opportunityInstance.online_opportunity">No</p>
+            </div>
+          </div><!-- /opp-detail-row-->
+          <div class="row-same-height opp-detail-row">
+            <div class="col-sm-5 col-xs-height col-middle">
+              <h4 class="detail-type">Ongoing?</h4>
+            </div>
+            <div class="col-sm-7 col-xs-height col-middle text-right">
+              <p ng-if="opportunityInstance.ongoing">Yes</p>
+              <p ng-if="!opportunityInstance.ongoing">No</p>
+            </div>
+          </div><!-- /opp-detail-row-->
+        </div><!-- /opp-section-->
+      </section>
+
+      
   </div><!-- /row-->
 </div><!-- /container-fluid-->
 </div><!--opportunity-instance-->

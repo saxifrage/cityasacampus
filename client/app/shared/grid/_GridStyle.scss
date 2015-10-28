@@ -1,4 +1,4 @@
-// ------------------------------------------------------------
+// -----------------------------------------------------------
 // Override Neat's grid settings
 // ------------------------------------------------------------
 
@@ -20,4 +20,41 @@ $fg-gutter: $gutter;
 @mixin omega-reset($nth) {
   &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
   &:nth-child(#{$nth}+1) { clear: none }
+}
+
+/* vertical alignment styles */		
+		
+.col-top {		
+  vertical-align: top;		
+}		
+	
+.col-middle {		
+  vertical-align: middle;		
+}		
+		
+.col-bottom {		
+  vertical-align: bottom;		
+}		
+		
+/* columns of same height styles */		
+		
+.row-full-height {		
+  height: 100%;		
+}		
+		
+.col-full-height {		
+  height: 100%;		
+  verticalalign: middle;		
+}		
+		
+.row-same-height {		
+  display: table;		
+  width: 100%;		
+  /* fix overflow */		
+  tablelayout: fixed;		
+}		
+		
+.col-xs-height {		
+  display: table-cell;		
+  float: none !important;		
 }

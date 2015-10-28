@@ -34,15 +34,23 @@ h1.event-title{
 // --------------------------------------------------
 .sub-banner {
   background-color: $brand-primary;
-  padding: 35px 0;
+  padding: 35px 0 45px;
 }
 
 .sub-banner .col-md-2-5{
+  width: 20%;
+  float: left;
   @media screen and (max-width: 992px){
     margin-bottom: 25px;
+    width: 50%;
+    text-align: center;
     &:last-child{
       margin-bottom: 0px;
+      width: 100%;
     }//last
+  }//media
+  @media screen and (max-width: 550px){
+    width: 100%;
   }//media
 }
 
@@ -56,7 +64,7 @@ h1.event-title{
 h3.sub-banner-heading{
   color: #ffffff;
   margin: 3px 0 0;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .sub-banner .btn{
@@ -71,13 +79,25 @@ h3.sub-banner-heading{
 // Opportunity Body
 // --------------------------------------------------
 .opportunity-content{
+  @include outer-container();
   margin-top: 40px;
 }
 
 .opp-details{
+  @include span-columns(12);
+  @include media($nav-break){
+      @include span-columns(8);
+  }
   @media screen and (max-width: 992px){
     margin-bottom: 40px;
   }//media
+}
+
+.opp-sidebar{
+  @include span-columns(12);
+  @include media($nav-break){
+      @include span-columns(4);
+  }
 }
 
 .opp-section{
