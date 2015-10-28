@@ -4,9 +4,13 @@
 	<div class="container">
 		<h1 class="hero__title">Learn.PGH</h1>
 		<h2 class="hero__desc">Pursue your passions and unlock new opportunities.</h2>
-		<a class="btn btn-primary" href="#">Explore the Map</a>
+		<a class="btn btn-primary" href="http://cityasacampus.org/map/" target="_blank">Explore the Map</a>
 		<span class="hero__or">Or</span>
-		<input type="search" placeholder="Search for a resource...">
+		<form role="search" ng-submit="textSearch(term)">
+          <div class="form-group">
+            <input type="search" ng-model="term" placeholder="Search for a resource...">
+          </div>
+        </form>
 	</div>
 	<div class="home__map">
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
