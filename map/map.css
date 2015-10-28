@@ -249,7 +249,6 @@ h3.attribute {
   padding-top: 40px; }
 
 .tooltip {
-  display: none;
   background: #ffffff;
   position: absolute;
   z-index: 1;
@@ -257,11 +256,14 @@ h3.attribute {
   left: 20px;
   width: 250px;
   text-align: center;
+  opacity: 1;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15); }
 
 .tooltip a {
   padding: 12px 15px;
   display: block; }
+  .tooltip a:hover {
+    cursor: pointer; }
 
 .tooltip h1 {
   font-size: 12px;

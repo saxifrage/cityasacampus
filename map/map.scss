@@ -317,7 +317,7 @@ h3.attribute{
 // Tooltips // --------------------------------------------------
 
 .tooltip {
-    display: none;
+    //display: none;
     background: #ffffff;
     position: absolute;
     z-index: 1;
@@ -325,13 +325,16 @@ h3.attribute{
     left: 20px;
     width: 250px;
     text-align: center;
-    //width: 250px;
+    opacity: 1;
     box-shadow: 0px 0px 25px rgba(0,0,0,.15);
 }
 
 .tooltip a{
   padding: 12px 15px;
   display: block;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .tooltip h1{

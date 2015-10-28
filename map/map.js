@@ -103,15 +103,14 @@ Map.tooltip = function(e) {
     var center = Map.centerGet($(this));
 
     $('.tooltip').css({
-        'top' : center.y - height - 40,
-        'left' : center.x - 125,
+        'top' : center.y - height - 35,
+        'left' : center.x - 125
     });
 
     /* Assign JSON data and show*/
     var resource = Map.topics[svg.attr('id')]
                       .subtopics[rect.attr('subtopic_id')]
                       .resources[rect.attr('id')];
-
     $('.tooltipResourceName').html(resource.resource_name)
                              .off('click')
                              .on('click', function(e) { Map.nodeVisit.call(self, e); });
