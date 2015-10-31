@@ -80,7 +80,7 @@ angular.module('caac.shared.geo.google-maps.directive', [
     function() {
       return {
         restrict: 'E',
-        template: '<div class="map"></div>',
+        template: '<div style="height:270px;width:auto" class="map"></div>',
         scope: {
           address: '='
         },
