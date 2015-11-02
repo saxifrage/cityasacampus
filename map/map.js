@@ -33,7 +33,7 @@ Map.nodeLeave = function(e) {
 }
 
 
-//Flyout Resource
+// Flyout Resource
 Map.flyout = function(){
     var rect = $(this);
     var svg = rect.parent();
@@ -208,8 +208,10 @@ Map.initTopics = function(topics) {
     }
 
     // Start primary nav.
+    var navigation = $('.navigation');
     var primary_nav = Template('nav-primary');
-    $('.nav-heading a', primary_nav).html('Topics');
+    primary_nav.attr('data-id', 'all-topics');
+    $('.nav-heading a', primary_nav).html('All Topics');
 
     for (var topic_id in topics) {
         if (!topics.hasOwnProperty(topic_id)) continue;
@@ -218,12 +220,13 @@ Map.initTopics = function(topics) {
         topic.svg = $('svg#' + topic_id);
 
         // Add topic to nav.
-        $('.nav-list', primary_nav).append(
-            $('<li class="nav-item">').append(
-                $('<a>').html(topic.name)
-            )
+        $('ul', primary_nav).append(
+            $('<li>').append(
+                $('<a href="#">').html(topic.name)
+            ).attr('data-id', topic_id)
         );
         var secondary_nav = Template('nav-secondary');
+        secondary_nav.attr('data-id', topic_id);
         $('.nav-heading a', secondary_nav).html(topic.name);
 
         var subtopics = topic.subtopics;
@@ -232,12 +235,13 @@ Map.initTopics = function(topics) {
             var subtopic = subtopics[subtopic_id];
 
             // Add subtopic to nav.
-            $('.nav-list', secondary_nav).append(
-                $('<li class="nav-item">').append(
-                    $('<a>').html(subtopic.name)
-                )
+            $('ul', secondary_nav).append(
+                $('<li>').append(
+                    $('<a href="#">').html(subtopic.name)
+                ).attr('data-id', subtopic_id)
             );
             var tertiary_nav = Template('nav-tertiary');
+            tertiary_nav.attr('data-id', subtopic_id);
             $('.nav-heading a', tertiary_nav).html(subtopic.name);
 
             var resources = subtopic.resources;
@@ -246,10 +250,10 @@ Map.initTopics = function(topics) {
                 var resource = resources[resource_id];
 
                 // Add resource to nav.
-                $('.nav-list', tertiary_nav).append(
-                    $('<li class="nav-item">').append(
-                        $('<a>').html(resource.resource_name)
-                    )
+                $('ul', tertiary_nav).append(
+                    $('<li>').append(
+                        $('<a href="#">').html(resource.resource_name)
+                    ).attr('data-id', resource_id)
                 );
 
                 // Draw a circle.
@@ -284,17 +288,67 @@ Map.initTopics = function(topics) {
                     topic.svg.append(path);
                 }
             }
-            $('.navigation').append(tertiary_nav);
+            navigation.append(tertiary_nav);
         }
-        $('.navigation').append(secondary_nav);
+        navigation.append(secondary_nav);
     }
-    $('.navigation').append(primary_nav).show();
+    navigation.append(primary_nav);
+    navigation.children().each(function(i,nav){navigation.prepend(nav)});
+    navigation.show();
 
     $("body").html($("body").html());  // refresh to pick up new SVG elements
+
+    $('.navigation h2 a').click(Map.navToMenu);
+    $('.navigation li a').click(Map.navToItem);
+    $('nav').css('display', 'none');
+    $('nav.primary').show();
 
     Map.topics = topics;
 };
 
+
+// Nav
+Map.navToMenu = function(e) {
+
+    var list = item.closest('ul');
+
+    // Close everything to the right if need be.
+    var item = $(e.target);
+    var nav = item.closest('nav');
+    var level = nav.data('level');
+    if (level === 'primary') $('nav.secondary').hide();
+    if (level === 'secondary') $('nav.tertiary').hide();
+    nav.animate({right: 240}, 300);
+
+    list.slideDown(300);
+
+    // Slide down the menu for this heading.
+};
+
+Map.navToItem = function(e) {
+    var item = $(e.target).closest('li');
+    var list = item.closest('ul');
+    var nav = item.closest('nav');
+    var line = $('.nav-line');
+
+    // Slide to the left if necessary.
+    nav.animate({right: 280}, 300);
+    line.animate({width: 600}, 300);
+    list.slideUp(300);
+
+    // Turn the new menu on and move it into position.
+    var heading = $('nav[data-id=' + item.data('id') + '] h2');
+    var newNav = heading.closest('nav');
+    var pos = item.position();
+
+    console.log(heading);
+    console.log(newNav);
+    console.log(pos);
+
+    newNav.css({top: pos.top})
+          .show()
+          .animate({top: 0}, function() { Map.navToMenu.call(e) });
+};
 
 Map.init = function() {
     jQuery.get('topics.json', function(topics) {
