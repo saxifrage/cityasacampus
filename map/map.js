@@ -2,7 +2,16 @@
 $.fn.scrollLock=function(){return $(this).on("DOMMouseScroll mousewheel",function(h){var g=$(this),f=this.scrollTop,d=this.scrollHeight,b=g.height(),i=h.originalEvent.wheelDelta,a=i>0,c=function(){h.stopPropagation();h.preventDefault();h.returnValue=false;return false};if(!a&&-i>d-b-f){g.scrollTop(d);return c()}else{if(a&&i>f){g.scrollTop(0);return c()}}})};$.fn.scrollRelease=function(){return $(this).off("DOMMouseScroll mousewheel")};
 
 
+// Template?!
+// ==========
+
+function Template(id) {
+    return $($('script#template-'+id).html());
+}
+
+
 // Map!
+// ====
 
 Map = {};
 
@@ -198,21 +207,50 @@ Map.initTopics = function(topics) {
         return {'x': x + w/2, 'y': y + h/2 };
     }
 
+    // Start primary nav.
+    var primary_nav = Template('nav-primary');
+    $('.nav-heading a', primary_nav).html('Topics');
+
     for (var topic_id in topics) {
         if (!topics.hasOwnProperty(topic_id)) continue;
         var topic = topics[topic_id];
 
         topic.svg = $('svg#' + topic_id);
 
+        // Add topic to nav.
+        $('.nav-list', primary_nav).append(
+            $('<li class="nav-item">').append(
+                $('<a>').html(topic.name)
+            )
+        );
+        var secondary_nav = Template('nav-secondary');
+        $('.nav-heading a', secondary_nav).html(topic.name);
+
         var subtopics = topic.subtopics;
         for (var subtopic_id in subtopics) {
             if (!subtopics.hasOwnProperty(subtopic_id)) continue;
             var subtopic = subtopics[subtopic_id];
 
+            // Add subtopic to nav.
+            $('.nav-list', secondary_nav).append(
+                $('<li class="nav-item">').append(
+                    $('<a>').html(subtopic.name)
+                )
+            );
+            var tertiary_nav = Template('nav-tertiary');
+            $('.nav-heading a', tertiary_nav).html(subtopic.name);
+
             var resources = subtopic.resources;
             for (var resource_id in resources) {
                 if (!resources.hasOwnProperty(resource_id)) continue;
                 var resource = resources[resource_id];
+
+                // Add resource to nav.
+                $('.nav-list', tertiary_nav).append(
+                    $('<li class="nav-item">').append(
+                        $('<a>').html(resource.resource_name)
+                    )
+                );
 
                 // Draw a circle.
                 var center = getRectCenter(topic_id, resource_id);
@@ -246,8 +284,12 @@ Map.initTopics = function(topics) {
                     topic.svg.append(path);
                 }
             }
+            $('.navigation').append(tertiary_nav);
         }
+        $('.navigation').append(secondary_nav);
     }
+    $('.navigation').append(primary_nav).show();
+
     $("body").html($("body").html());  // refresh to pick up new SVG elements
 
     Map.topics = topics;

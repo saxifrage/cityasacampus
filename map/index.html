@@ -11,85 +11,6 @@
 <body>
     <section class="navigation">
         <hr class="nav-line">
-        <nav class="nav primary text-center">
-            <ul class="nav-list">
-                <li class="nav-heading">
-                    <img class="nav-icon" src="./images/icon_navBlock.svg" alt="Block">
-                    <a href="#">
-                        Really long headline is really long
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Coding &amp; Gaming</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Main Topic</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Main Topic</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Main Topic</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Show All</a>
-                </li>
-            </ul>
-        </nav>
-
-        <nav class="nav secondary text-center">
-            <ul class="nav-list">
-                <li class="nav-heading">
-                    <img class="nav-icon" src="./images/icon_navTopic.svg" alt="Topic">
-                    <a href="#">
-                        Gardening
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Nutrition</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Locavore</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Food &amp; Security</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Nourishment</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Show All</a>
-                </li>
-            </ul>
-        </nav>
-
-        <nav class="nav tertiary text-center">
-            <ul class="nav-list">
-                <li class="nav-heading">
-                    <img class="nav-icon" src="./images/icon_navResource.svg" alt="Topic">
-                    <a href="#">
-                    DIY Gardner</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">WebMD Town Hall</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">St. Francis Garden</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Homegrown Challenges</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Homegrown Hero</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Start a Garden</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Show All</a>
-                </li>
-            </ul>
-        </nav>
     </section>
 
     <div id="map"></div>
@@ -150,5 +71,36 @@
             </section><!-- /organization-->
         </main>
     </div><!--flyout-->
+
+    <script type="text/template" id="template-nav-primary">
+        <nav class="nav primary text-center">
+            <ul class="nav-list">
+                <li class="nav-heading">
+                    <img class="nav-icon" src="./images/icon_navBlock.svg" alt="Block">
+                    <a href="#">Topics</a>
+                </li>
+            </ul>
+        </nav>
+    </script>
+    <script type="text/template" id="template-nav-secondary">
+        <nav class="nav secondary text-center">
+            <ul class="nav-list">
+                <li class="nav-heading">
+                    <img class="nav-icon" src="./images/icon_navTopic.svg" alt="Topic">
+                    <a href="#"></a>
+                </li>
+            </ul>
+        </nav>
+    </script>
+    <script type="text/template" id="template-nav-tertiary">
+        <nav class="nav tertiary text-center">
+            <ul class="nav-list">
+                <li class="nav-heading">
+                    <img class="nav-icon" src="./images/icon_navResource.svg" alt="Topic">
+                    <a href="#"></a>
+                </li>
+            </ul>
+        </nav>
+    </script>
 </body>
 </html>
