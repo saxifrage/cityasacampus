@@ -59,19 +59,21 @@ a.btn {
       position: relative;
       font-size: 18px;
       font-weight: 700;
-      padding: 14px 20px;
       margin-bottom: 5px;
+      padding: 0;
       background-color: #676767;
       z-index: 2; }
-      .navigation nav h2 .nav-icon {
-        position: relative;
-        top: -2px;
-        margin-right: 10px;
-        width: 20px;
-        height: 20px;
-        vertical-align: middle; }
       .navigation nav h2 a {
+        display: block;
+        padding: 14px 20px;
         color: #ffffff; }
+        .navigation nav h2 a img {
+          position: relative;
+          top: -2px;
+          margin-right: 10px;
+          width: 20px;
+          height: 20px;
+          vertical-align: middle; }
     .navigation nav li {
       list-style: none;
       border-bottom: 1px solid #9a9a9a; }
@@ -157,7 +159,7 @@ path {
   background: #f2f2f2;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
   height: 100%;
-  left: -400px;
+  right: -400px;
   overflow: scroll;
   position: fixed;
   top: 0px;

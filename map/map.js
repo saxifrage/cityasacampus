@@ -211,7 +211,7 @@ Map.initTopics = function(topics) {
     var navigation = $('.navigation');
     var primary_nav = Template('nav-primary');
     primary_nav.attr('data-id', 'all-topics');
-    $('.nav-heading a', primary_nav).html('All Topics');
+    $('h2 span', primary_nav).html('All Topics');
 
     for (var topic_id in topics) {
         if (!topics.hasOwnProperty(topic_id)) continue;
@@ -227,7 +227,7 @@ Map.initTopics = function(topics) {
         );
         var secondary_nav = Template('nav-secondary');
         secondary_nav.attr('data-id', topic_id);
-        $('.nav-heading a', secondary_nav).html(topic.name);
+        $('h2 span', secondary_nav).html(topic.name);
 
         var subtopics = topic.subtopics;
         for (var subtopic_id in subtopics) {
@@ -242,7 +242,7 @@ Map.initTopics = function(topics) {
             );
             var tertiary_nav = Template('nav-tertiary');
             tertiary_nav.attr('data-id', subtopic_id);
-            $('.nav-heading a', tertiary_nav).html(subtopic.name);
+            $('h2 span', tertiary_nav).html(subtopic.name);
 
             var resources = subtopic.resources;
             for (var resource_id in resources) {
