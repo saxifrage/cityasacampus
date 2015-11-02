@@ -1,3 +1,9 @@
+// https://gist.github.com/theftprevention/5959411
+$.fn.scrollLock=function(){return $(this).on("DOMMouseScroll mousewheel",function(h){var g=$(this),f=this.scrollTop,d=this.scrollHeight,b=g.height(),i=h.originalEvent.wheelDelta,a=i>0,c=function(){h.stopPropagation();h.preventDefault();h.returnValue=false;return false};if(!a&&-i>d-b-f){g.scrollTop(d);return c()}else{if(a&&i>f){g.scrollTop(0);return c()}}})};$.fn.scrollRelease=function(){return $(this).off("DOMMouseScroll mousewheel")};
+
+
+// Map!
+
 Map = {};
 
 // Creates svg element, returned as jQuery object -- http://stackoverflow.com/a/29017767
@@ -76,7 +82,7 @@ Map.flyout = function(){
 
     $('.cta a').attr('href', resource.resource_url);
 
-    $('.flyout').addClass('show');
+    $('.flyout').addClass('show').scrollLock();
 }
 
 Map.currentPopUp = null;
