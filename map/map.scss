@@ -221,7 +221,7 @@ path {
     -webkit-transition: left .1s linear;
     transition: left .1s linear;
     &.show{
-      left: 0px;
+      right: 0px;
     }
 }
 

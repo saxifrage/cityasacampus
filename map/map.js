@@ -91,7 +91,7 @@ Map.flyout = function(){
 
     $('.cta a').attr('href', resource.resource_url);
 
-    $('.flyout').addClass('show').scrollLock();
+    $('.flyout').animate({right: 0}).scrollLock();
 }
 
 Map.currentPopUp = null;
@@ -102,7 +102,11 @@ Map.isPoppedUp = function(rect) {
 Map.flyin = function() {
     Map.currentPopUp = null;
     $('.selected').attr({'class': '', 'style': ''});
-    $('.flyout').removeClass('show');
+    $('.flyout').animate({right: -400}, {duration: 300, queue: false});
+
+    $('nav.tertiary').animate({right: 0}, {duration: 300, queue: false});
+    $('nav.secondary').animate({right: 280}, {duration: 300, queue: false});
+    $('nav.primary').animate({right: 560}, {duration: 300, queue: false});
 };
 
 
@@ -315,7 +319,23 @@ Map.navToMenu = function(e) {
     var nav = heading.closest('nav');
     var list = $('ul', nav);
 
-    // Close everything to the right if need be.
+    // Slide to the right if necessary.
+    if (nav.hasClass('primary')) {
+        $('nav.tertiary').fadeOut();
+        $('nav.secondary').fadeOut();
+        nav.animate({right: 0}, 300);
+        Map.flyin();
+    } else if (nav.hasClass('secondary')) {
+        $('nav.tertiary').fadeOut();
+        nav.animate({right: 0}, 300);
+        $('nav.primary').animate({right: 280}, 300);
+        Map.flyin();
+    } else if (nav.hasClass('tertiary')) {
+        nav.animate({right: 0}, 300);
+        $('nav.secondary').animate({right: 280}, 300);
+        $('nav.primary').animate({right: 560}, 300);
+        Map.flyin();
+    }
 
     // Slide down the menu for this heading.
     list.slideDown(300);
@@ -325,25 +345,37 @@ Map.navToItem = function(e) {
     var item = $(e.target).closest('li');
     var list = item.closest('ul');
     var nav = item.closest('nav');
-    var primary = $('nav.primary');
 
     // Slide to the left if necessary.
-    if (nav.hasClass('secondary'))
-        primary.animate({right: 560}, 300);
-    nav.animate({right: 280}, 300);
+    if (nav.hasClass('primary')) {
+        nav.animate({right: 280}, 300);
+    } else if (nav.hasClass('secondary')) {
+        $('nav.primary').animate({right: 560}, 300);
+        nav.animate({right: 280}, 300);
+    } else if (nav.hasClass('tertiary')) {
+        $('nav.secondary').animate({right: 680}, 300);
+        $('nav.primary').animate({right: 960}, 300);
+        nav.animate({right: 400}, 300);
+    }
     list.slideUp(300);
 
     // Turn the new menu on and move it into position.
-    var heading = $('nav[data-id=' + item.data('id') + '] h2');
-    var a = $('a', heading);
-    var newNav = heading.closest('nav');
-    var pos = item.position();
+    var id = item.data('id');
+    var heading = $('nav[data-id=' + id + '] h2');
 
-    $('ul', newNav).hide(); // will be unfurled in navToMenu
-    newNav.css({top: pos.top})
-          .show()
-          .animate({top: 0});
-    a.click();
+    if (heading.length === 1) {     // topic/subtopic
+        var a = $('a', heading);
+        var newNav = heading.closest('nav');
+        var pos = item.position();
+
+        $('ul', newNav).hide(); // will be unfurled in navToMenu
+        newNav.css({top: pos.top})
+              .show()
+              .animate({top: 0});
+        a.click();
+    } else {                        // resource
+        $('rect#' + id).click();
+    }
 };
 
 Map.init = function() {
