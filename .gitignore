@@ -1,2 +1,4 @@
 *.sw?
 _site
+.bundle
+vendor
