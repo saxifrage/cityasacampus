@@ -293,6 +293,7 @@ Map.initTopics = function(topics) {
         navigation.append(secondary_nav);
     }
     navigation.append(primary_nav);
+    // now reverse the order of the dom elements -  http://stackoverflow.com/a/5347882
     navigation.children().each(function(i,nav){navigation.prepend(nav)});
     navigation.show();
 
@@ -310,44 +311,39 @@ Map.initTopics = function(topics) {
 // Nav
 Map.navToMenu = function(e) {
 
-    var list = item.closest('ul');
+    var heading = $(e.target).closest('h2');
+    var nav = heading.closest('nav');
+    var list = $('ul', nav);
 
     // Close everything to the right if need be.
-    var item = $(e.target);
-    var nav = item.closest('nav');
-    var level = nav.data('level');
-    if (level === 'primary') $('nav.secondary').hide();
-    if (level === 'secondary') $('nav.tertiary').hide();
-    nav.animate({right: 240}, 300);
-
-    list.slideDown(300);
 
     // Slide down the menu for this heading.
+    list.slideDown(300);
 };
 
 Map.navToItem = function(e) {
     var item = $(e.target).closest('li');
     var list = item.closest('ul');
     var nav = item.closest('nav');
-    var line = $('.nav-line');
+    var primary = $('nav.primary');
 
     // Slide to the left if necessary.
+    if (nav.hasClass('secondary'))
+        primary.animate({right: 560}, 300);
     nav.animate({right: 280}, 300);
-    line.animate({width: 600}, 300);
     list.slideUp(300);
 
     // Turn the new menu on and move it into position.
     var heading = $('nav[data-id=' + item.data('id') + '] h2');
+    var a = $('a', heading);
     var newNav = heading.closest('nav');
     var pos = item.position();
 
-    console.log(heading);
-    console.log(newNav);
-    console.log(pos);
-
+    $('ul', newNav).hide(); // will be unfurled in navToMenu
     newNav.css({top: pos.top})
           .show()
-          .animate({top: 0}, function() { Map.navToMenu.call(e) });
+          .animate({top: 0});
+    a.click();
 };
 
 Map.init = function() {
