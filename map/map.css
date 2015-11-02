@@ -41,7 +41,9 @@ a.btn {
   color: #ffffff; }
 
 .navigation {
-  position: fixed; }
+  position: fixed;
+  top: 0;
+  right: 40px; }
 
 nav {
   float: left;
@@ -249,6 +251,7 @@ h3.attribute {
   padding-top: 40px; }
 
 .tooltip {
+  display: none;
   background: #ffffff;
   position: absolute;
   z-index: 1;
@@ -279,3 +282,5 @@ h3.attribute {
   position: absolute;
   bottom: -10px;
   left: 115px; }
+
+/*# sourceMappingURL=map.css.map */

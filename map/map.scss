@@ -55,6 +55,8 @@ a.btn{
 // Navigation // --------------------------------------------------
 .navigation{
   position: fixed;
+  top: 0;
+  right: 40px;
 }
 
 nav{
@@ -317,7 +319,7 @@ h3.attribute{
 // Tooltips // --------------------------------------------------
 
 .tooltip {
-    //display: none;
+    display: none;
     background: #ffffff;
     position: absolute;
     z-index: 1;
