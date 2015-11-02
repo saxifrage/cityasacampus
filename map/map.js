@@ -321,20 +321,20 @@ Map.navToMenu = function(e) {
 
     // Slide to the right if necessary.
     if (nav.hasClass('primary')) {
+        $('.flyout').animate({right: -400}, 300);
         $('nav.tertiary').fadeOut();
         $('nav.secondary').fadeOut();
         nav.animate({right: 0}, 300);
-        Map.flyin();
     } else if (nav.hasClass('secondary')) {
+        $('.flyout').animate({right: -400}, 300);
         $('nav.tertiary').fadeOut();
         nav.animate({right: 0}, 300);
         $('nav.primary').animate({right: 280}, 300);
-        Map.flyin();
     } else if (nav.hasClass('tertiary')) {
+        $('.flyout').animate({right: -400}, 300);
         nav.animate({right: 0}, 300);
         $('nav.secondary').animate({right: 280}, 300);
         $('nav.primary').animate({right: 560}, 300);
-        Map.flyin();
     }
 
     // Slide down the menu for this heading.
