@@ -1,8 +1,10 @@
 {
     "art-design": {
         "id": "art-design",
+        "name": "Art and Design",
         "subtopics": {
             "architecture": {
+                "name": "Architecture",
                 "dag": {
                     "names": [
                         "diy-sketch-a-real-building-",
@@ -38,6 +40,7 @@
                     }
                 },
                 "id": "architecture",
+                "name": "Architecture",
                 "resources": {
                     "carnegie-museums-of-art-and-natural-history-city-explorers---urban-designers": {
                         "after_this": "",
@@ -316,6 +319,7 @@
                     }
                 },
                 "id": "artisan",
+                "name": "Artisan",
                 "resources": {
                     "carnegie-museums-of-art-and-natural-history-fiber-art": {
                         "after_this": "pittsburgh-center-for-creative-reuse-the-remaker-playshop---sew-mend-make",
@@ -986,6 +990,7 @@
                     }
                 },
                 "id": "fine-art",
+                "name": "Fine Art",
                 "resources": {
                     "carnegie-museums-of-art-and-natural-history-drawing-people": {
                         "after_this": "pittsburgh-filmmaker-and-center-for-the-arts-drawing",
@@ -1510,6 +1515,7 @@
                     }
                 },
                 "id": "visual-communication",
+                "name": "Visual Communication",
                 "resources": {
                     "carnegie-museums-of-art--interact": {
                         "after_this": "mcg-youth-and-arts-print-draw-paint",
@@ -1870,6 +1876,7 @@
     },
     "building-making": {
         "id": "building-making",
+        "name": "Manufacturing",
         "subtopics": {
             "design": {
                 "dag": {
@@ -1907,6 +1914,7 @@
                     }
                 },
                 "id": "design",
+                "name": "Design",
                 "resources": {
                     "assemble-teens-as-teachers": {
                         "after_this": "super-awesome-sylvia-show-super-awesome-sylvia---episodes",
@@ -2185,6 +2193,7 @@
                     }
                 },
                 "id": "fabrication",
+                "name": "Fabrication",
                 "resources": {
                     "assemble-assemble-afterschool": {
                         "after_this": "assemble-youth-maker-night",
@@ -2819,6 +2828,7 @@
                     }
                 },
                 "id": "play",
+                "name": "Play",
                 "resources": {
                     "assemble-unblurred": {
                         "after_this": "ted-talks-life-lessons-through-tinkering",
@@ -3083,6 +3093,7 @@
     },
     "coding-gaming": {
         "id": "coding-gaming",
+        "name": "Web Development",
         "subtopics": {
             "appmaking": {
                 "dag": {
@@ -3114,6 +3125,7 @@
                     }
                 },
                 "id": "appmaking",
+                "name": "Appmaking",
                 "resources": {
                     "appshed-academy": {
                         "after_this": "stem-advanced-technologies-for-kids-mobile-app-design",
@@ -3348,6 +3360,7 @@
                     }
                 },
                 "id": "coding",
+                "name": "Coding",
                 "resources": {
                     "carnegie-mellon-university-school-of-computer-science-leap-at-cmu": {
                         "after_this": "institute-of-play-gamekit-challenge-pack---the-basics",
@@ -3896,6 +3909,7 @@
                     }
                 },
                 "id": "game-play",
+                "name": "Game Play",
                 "resources": {
                     "carnegie-science-center--click---spy-mission": {
                         "after_this": "carnegie-science-center-click---spy-school",
@@ -4138,6 +4152,7 @@
                     }
                 },
                 "id": "gamemaking",
+                "name": "Gamemaking",
                 "resources": {
                     "codeorg-make-a-flappy-game": {
                         "after_this": "stem-advanced-technologies-for-kids-video-game-design",
@@ -4570,6 +4585,7 @@
                     }
                 },
                 "id": "resources",
+                "name": "Resources",
                 "resources": {
                     "remake-learning-digital-learning-tools": {
                         "after_this": "",
@@ -4660,6 +4676,7 @@
                     }
                 },
                 "id": "web-101",
+                "name": "Web 101",
                 "resources": {
                     "brain-pop-digital-etiquette": {
                         "after_this": "brain-pop-digital-etiquette-quiz",
@@ -5010,6 +5027,7 @@
                     }
                 },
                 "id": "webmaking",
+                "name": "Webmaking",
                 "resources": {
                     "assemble-make-it": {
                         "after_this": "webmaker-training-html-basics",
@@ -5466,6 +5484,7 @@
     },
     "food-gardening": {
         "id": "food-gardening",
+        "name": "Agriculture",
         "subtopics": {
             "eating-and-cooking": {
                 "dag": {
@@ -5563,6 +5582,7 @@
                     }
                 },
                 "id": "eating-and-cooking",
+                "name": "Eating and Cooking",
                 "resources": {
                     "carnegie-library-of-pittsburgh-cooking-for-teens-": {
                         "after_this": "food-n-me-various-activities",
@@ -6083,6 +6103,7 @@
                     }
                 },
                 "id": "food-security",
+                "name": "Food Security",
                 "resources": {
                     "falling-fruit-mapping-the-urban-harvest": {
                         "after_this": "no-kid-hungry-no-kid-hungry-summer-",
@@ -6295,6 +6316,7 @@
                     }
                 },
                 "id": "gardening",
+                "name": "Gardening",
                 "resources": {
                     "diy-diy-gardener": {
                         "after_this": "saint-paul-episcopal-church-saint-francis-garden",
@@ -6565,6 +6587,7 @@
                     }
                 },
                 "id": "locavore",
+                "name": "Locavore",
                 "resources": {
                     "eat-local-challenge-10-reasons-to-eat-local-food": {
                         "after_this": "wild-purveyors-tour-of-store",
@@ -6821,6 +6844,7 @@
                     }
                 },
                 "id": "nutrition",
+                "name": "Nutrition",
                 "resources": {
                     "center-for-disease--control-bam-body-and-mind": {
                         "after_this": "the-white-house-lets-move-kids",
@@ -7117,6 +7141,7 @@
     },
     "mediamaking": {
         "id": "mediamaking",
+        "name": "Filmmaking",
         "subtopics": {
             "audio": {
                 "dag": {
@@ -7136,6 +7161,7 @@
                     }
                 },
                 "id": "audio",
+                "name": "Audio",
                 "resources": {
                     "wyep-radio-tour": {
                         "after_this": "labs-at-carnegie-library-of-pittsburgh-open-lab",
@@ -7300,6 +7326,7 @@
                     }
                 },
                 "id": "film-and-video",
+                "name": "Film and Video",
                 "resources": {
                     "carnegie-science-center-digital-video-smash-jam-two-day-workshop": {
                         "after_this": "steeltown-entertainment-youth-and-media",
@@ -7826,6 +7853,7 @@
                     }
                 },
                 "id": "photo",
+                "name": "Photo",
                 "resources": {
                     "diy-org-build-a-photo-studio": {
                         "after_this": "mcg-youth-and-arts-photography",
@@ -8070,6 +8098,7 @@
                     }
                 },
                 "id": "visual-communication",
+                "name": "Visual Communication",
                 "resources": {
                     "interview-magazine-andy-warhol-magazine--interview-": {
                         "after_this": "madmagz-make-your-own-magazine",
@@ -8302,6 +8331,7 @@
     },
     "robotics": {
         "id": "robotics",
+        "name": "Robotics",
         "subtopics": {
             "engineering": {
                 "dag": {
@@ -8345,6 +8375,7 @@
                     }
                 },
                 "id": "engineering",
+                "name": "Engineering",
                 "resources": {
                     "carnegie-science-center-chain-reaction-contraption-contest": {
                         "after_this": "wilkinsburg-public-library-unmask---bristle-bot-racers",
@@ -8589,6 +8620,7 @@
                     }
                 },
                 "id": "programming-robots",
+                "name": "Programming Robots",
                 "resources": {
                     "carnegie-mellon-robotics-academy-cs2n": {
                         "after_this": "lifelong-kindergarten-group-at-the-mit-media-lab-scratch",
@@ -8895,6 +8927,7 @@
                     }
                 },
                 "id": "robot-interaction",
+                "name": "Robot Interaction",
                 "resources": {
                     "carnegie-library-of-pittsburgh-the-labs-at-clp---main---robotics-workshop-with-girls-of-steel": {
                         "after_this": "robocup-manuela-veloso---robocup-champion",
@@ -9337,6 +9370,7 @@
                     }
                 },
                 "id": "robots-101",
+                "name": "Robots 101",
                 "resources": {
                     "assemble-summer-dreamers": {
                         "after_this": "carnegie-mellon-robotics-academy-expedition-atlantis-",
@@ -9601,6 +9635,7 @@
     },
     "storytelling": {
         "id": "storytelling",
+        "name": "Healthcare",
         "subtopics": {
             "communication": {
                 "dag": {
@@ -9626,6 +9661,7 @@
                     }
                 },
                 "id": "communication",
+                "name": "Communication",
                 "resources": {
                     "city-of-asylum-city-of-asylum-events": {
                         "after_this": "hear-me-hear-me-101-internship-program",
@@ -9768,6 +9804,7 @@
                     }
                 },
                 "id": "gameplay",
+                "name": "Gameplay",
                 "resources": {
                     "diy-write-a-choose-your-own-adventure": {
                         "after_this": "inkle-studios-80-days",
@@ -9988,6 +10025,7 @@
                     }
                 },
                 "id": "pro-reading",
+                "name": "Pro-reading",
                 "resources": {
                     "neighborhood-learning-alliance-reading-warriors": {
                         "after_this": "826-valencia-student-writing-gallery",
@@ -10124,6 +10162,7 @@
                     }
                 },
                 "id": "spoken-word",
+                "name": "Spoken Word",
                 "resources": {
                     "diy-tell-a-scary-story-": {
                         "after_this": "pittsburgh-poetry-collective-young-steel",
@@ -10318,6 +10357,7 @@
                     }
                 },
                 "id": "visual",
+                "name": "Visual",
                 "resources": {
                     "carnegie-museums-of-art-and-natural-history-comics-and-cartoons": {
                         "after_this": "toonseum-create-your-own-comic-strip-",
@@ -10462,6 +10502,7 @@
                     }
                 },
                 "id": "visual-",
+                "name": "Visual-",
                 "resources": {
                     "labs-at-carnegie-library-of-pittsburgh-the-labsy-awards": {
                         "after_this": "heinz-history-center-pittsburgh-history-detectives",
@@ -10576,6 +10617,7 @@
                     }
                 },
                 "id": "written",
+                "name": "Written",
                 "resources": {
                     "826-valencia-student-writing-gallery": {
                         "after_this": "grow-a-generation-the-writings-of-neil-degrasse-tyson-and-michio-kaku",

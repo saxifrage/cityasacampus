@@ -41,58 +41,64 @@ a.btn {
   color: #ffffff; }
 
 .navigation {
-  position: fixed; }
-
-nav {
-  float: left;
-  margin: 40px 0px 40px 40px;
-  width: 240px;
-  font-size: 18px; }
-
-.nav li {
-  list-style: none;
-  border-bottom: 1px solid #9a9a9a; }
-
-nav li.nav-item a {
-  background-color: #808080;
-  opacity: .9;
-  color: #ffffff;
-  display: block;
-  line-height: 1;
-  padding: 14px 20px; }
-  nav li.nav-item a:hover {
-    background-color: #676767;
-    opacity: 1;
-    color: #ffffff;
-    text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.7); }
-
-.nav-line {
-  position: absolute;
-  top: 65px;
-  left: 40px;
-  width: 80%;
-  z-index: 1;
-  border-top: 1px solid #808080;
-  opacity: .5; }
-
-li.nav-heading {
-  position: relative;
-  font-weight: 700;
-  padding: 14px 20px;
-  margin-bottom: 5px;
-  background-color: #676767;
-  z-index: 2; }
-
-li.nav-heading .nav-icon {
-  position: relative;
-  top: -2px;
-  margin-right: 10px;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle; }
-
-li.nav-heading a {
-  color: #ffffff; }
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0; }
+  .navigation nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 40px;
+    width: 240px;
+    font-size: 18px;
+    display: none; }
+    .navigation nav.primary {
+      display: block; }
+    .navigation nav h2 {
+      position: relative;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      padding: 0;
+      background-color: #676767;
+      z-index: 2; }
+      .navigation nav h2 a {
+        display: block;
+        padding: 14px 20px;
+        color: #ffffff; }
+        .navigation nav h2 a img {
+          position: relative;
+          top: -2px;
+          margin-right: 10px;
+          width: 20px;
+          height: 20px;
+          vertical-align: middle; }
+    .navigation nav ul {
+      display: none; }
+      .navigation nav ul li {
+        list-style: none;
+        border-bottom: 1px solid #9a9a9a; }
+        .navigation nav ul li a {
+          background-color: #808080;
+          opacity: .9;
+          color: #ffffff;
+          display: block;
+          line-height: 1;
+          padding: 14px 20px; }
+          .navigation nav ul li a:hover {
+            background-color: #676767;
+            opacity: 1;
+            color: #ffffff;
+            text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.7); }
+  .navigation hr {
+    position: absolute;
+    top: 65px;
+    left: 40px;
+    width: 0;
+    z-index: 1;
+    border-top: 1px solid #808080;
+    opacity: .5; }
 
 #map {
   display: table-cell;
@@ -130,7 +136,7 @@ path {
     fill: #005c99; } }
 .zoom-controls {
   position: fixed;
-  right: 10px;
+  left: 10px;
   bottom: 10px;
   width: 98px;
   height: 50px;
@@ -155,7 +161,7 @@ path {
   background: #f2f2f2;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
   height: 100%;
-  left: -400px;
+  right: -400px;
   overflow: scroll;
   position: fixed;
   top: 0px;
@@ -164,7 +170,7 @@ path {
   -webkit-transition: left .1s linear;
   transition: left .1s linear; }
   .flyout.show {
-    left: 0px; }
+    right: 0px; }
 
 .flyout-header {
   background-size: cover;
@@ -249,33 +255,32 @@ h3.attribute {
   padding-top: 40px; }
 
 .tooltip {
+  display: none;
+  color: #0099FF;
   background: #ffffff;
   position: absolute;
   z-index: 1;
   top: 20px;
   left: 20px;
-  width: 250px;
-  text-align: center;
   opacity: 1;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15); }
+  .tooltip h1 {
+    padding: 12px 15px;
+    font-size: 12px;
+    margin: 0;
+    text-transform: uppercase; }
+  .tooltip:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(250, 253, 255, 0);
+    border-left-color: #fafdff;
+    border-width: 10px;
+    margin-top: -10px; }
 
-.tooltip a {
-  padding: 12px 15px;
-  display: block; }
-  .tooltip a:hover {
-    cursor: pointer; }
-
-.tooltip h1 {
-  font-size: 12px;
-  margin: 0;
-  text-transform: uppercase; }
-
-.tooltip .arrow {
-  width: 0;
-  height: 0;
-  border-right: 10px solid transparent;
-  border-left: 10px solid transparent;
-  border-top: 10px solid white;
-  position: absolute;
-  bottom: -10px;
-  left: 115px; }
+/*# sourceMappingURL=map.css.map */

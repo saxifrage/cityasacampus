@@ -2,7 +2,16 @@
 $.fn.scrollLock=function(){return $(this).on("DOMMouseScroll mousewheel",function(h){var g=$(this),f=this.scrollTop,d=this.scrollHeight,b=g.height(),i=h.originalEvent.wheelDelta,a=i>0,c=function(){h.stopPropagation();h.preventDefault();h.returnValue=false;return false};if(!a&&-i>d-b-f){g.scrollTop(d);return c()}else{if(a&&i>f){g.scrollTop(0);return c()}}})};$.fn.scrollRelease=function(){return $(this).off("DOMMouseScroll mousewheel")};
 
 
+// Template?!
+// ==========
+
+function Template(id) {
+    return $($('script#template-'+id).html());
+}
+
+
 // Map!
+// ====
 
 Map = {};
 
@@ -24,14 +33,11 @@ Map.nodeLeave = function(e) {
 }
 
 
-//Flyout Resource
+// Flyout Resource
 Map.flyout = function(){
     var rect = $(this);
     var svg = rect.parent();
     Map.currentPopUp = this;
-
-    /* Position popover */
-    var center = Map.centerGet($(this));
 
     /* Hide tooltip that pops up on hover */
     $('.tooltip').hide();
@@ -82,7 +88,13 @@ Map.flyout = function(){
 
     $('.cta a').attr('href', resource.resource_url);
 
-    $('.flyout').addClass('show').scrollLock();
+    // Slide to the left, pushing nav.
+    $('nav').hide();
+    $('nav ul').hide()
+    $('nav.primary').show().animate({right: 960}, 300);
+    $('nav.secondary[data-id=' + resource.topic_id + ']').show().animate({right: 680}, 300);
+    $('nav.tertiary[data-id=' + resource.subtopic_id + ']').show().animate({right: 400}, 300);
+    $('.flyout').animate({right: 0}).scrollLock();
 }
 
 Map.currentPopUp = null;
@@ -93,7 +105,11 @@ Map.isPoppedUp = function(rect) {
 Map.flyin = function() {
     Map.currentPopUp = null;
     $('.selected').attr({'class': '', 'style': ''});
-    $('.flyout').removeClass('show');
+    $('.flyout').animate({right: -400}, {duration: 300, queue: false});
+
+    $('nav.tertiary').animate({right: 0}, {duration: 300, queue: false});
+    $('nav.secondary').animate({right: 280}, {duration: 300, queue: false});
+    $('nav.primary').animate({right: 560}, {duration: 300, queue: false});
 };
 
 
@@ -102,15 +118,12 @@ Map.tooltip = function(e) {
     var self = this;
     var rect = $(this);
     var svg = rect.parent();
+    var width = $('.tooltip').width();
     var height = $('.tooltip').height();
-    if (Map.isPoppedUp(this))
-        return;
-
-    var center = Map.centerGet($(this));
 
     $('.tooltip').css({
-        'top' : center.y - height - 35,
-        'left' : center.x - 125
+        'top' : e.pageY - (height / 2),
+        'left' : e.pageX - width - 25
     });
 
     /* Assign JSON data and show*/
@@ -118,8 +131,6 @@ Map.tooltip = function(e) {
                       .subtopics[rect.attr('subtopic_id')]
                       .resources[rect.attr('id')];
     $('.tooltipResourceName').html(resource.resource_name)
-                             .off('click')
-                             .on('click', function(e) { Map.nodeVisit.call(self, e); });
     $('.tooltip').show();
     e.stopPropagation();
 };
@@ -175,17 +186,6 @@ Map.outZoom = function(e) {
 
 // Init
 
-Map.centerGet = function(rect) {
-    var offset = rect.offset();
-    var rectWidth = rect[0].getBoundingClientRect().width;
-    var rectHeight = rect[0].getBoundingClientRect().height;
-
-    var centerY = offset.top + rectHeight/2;
-    var centerX = offset.left + rectWidth/2;
-
-    return {y: centerY, x: centerX};
-};
-
 Map.initTopics = function(topics) {
 
     function getRectCenter(topic_id, resource_id) {
@@ -198,21 +198,54 @@ Map.initTopics = function(topics) {
         return {'x': x + w/2, 'y': y + h/2 };
     }
 
+    // Start primary nav.
+    var navigation = $('.navigation');
+    var primary_nav = Template('nav-primary');
+    primary_nav.attr('data-id', 'all-topics');
+    $('h2 span', primary_nav).html('All Topics');
+
     for (var topic_id in topics) {
         if (!topics.hasOwnProperty(topic_id)) continue;
         var topic = topics[topic_id];
 
         topic.svg = $('svg#' + topic_id);
 
+        // Add topic to nav.
+        $('ul', primary_nav).append(
+            $('<li>').append(
+                $('<a href="#">').html(topic.name)
+            ).attr('data-id', topic_id)
+        );
+        var secondary_nav = Template('nav-secondary');
+        secondary_nav.attr('data-id', topic_id);
+        $('h2 span', secondary_nav).html(topic.name);
+
         var subtopics = topic.subtopics;
         for (var subtopic_id in subtopics) {
             if (!subtopics.hasOwnProperty(subtopic_id)) continue;
             var subtopic = subtopics[subtopic_id];
 
+            // Add subtopic to nav.
+            $('ul', secondary_nav).append(
+                $('<li>').append(
+                    $('<a href="#">').html(subtopic.name)
+                ).attr('data-id', subtopic_id)
+            );
+            var tertiary_nav = Template('nav-tertiary');
+            tertiary_nav.attr('data-id', subtopic_id);
+            $('h2 span', tertiary_nav).html(subtopic.name);
+
             var resources = subtopic.resources;
             for (var resource_id in resources) {
                 if (!resources.hasOwnProperty(resource_id)) continue;
                 var resource = resources[resource_id];
+
+                // Add resource to nav.
+                $('ul', tertiary_nav).append(
+                    $('<li>').append(
+                        $('<a href="#">').html(resource.resource_name)
+                    ).attr('data-id', resource_id)
+                );
 
                 // Draw a circle.
                 var center = getRectCenter(topic_id, resource_id);
@@ -246,21 +279,98 @@ Map.initTopics = function(topics) {
                     topic.svg.append(path);
                 }
             }
+            navigation.append(tertiary_nav);
         }
+        navigation.append(secondary_nav);
     }
+    navigation.append(primary_nav);
+    // now reverse the order of the dom elements -  http://stackoverflow.com/a/5347882
+    navigation.children().each(function(i,nav){navigation.prepend(nav)});
+    navigation.show();
+
     $("body").html($("body").html());  // refresh to pick up new SVG elements
+
+    $('.navigation h2 a').click(Map.navToMenu);
+    $('.navigation li a').click(Map.navToItem);
+    $('nav').css('display', 'none');
+    $('nav.primary').show();
 
     Map.topics = topics;
 };
 
 
+// Nav
+Map.navToMenu = function(e) {
+
+    var heading = $(e.target).closest('h2');
+    var nav = heading.closest('nav');
+    var list = $('ul', nav);
+
+    // Slide to the right if necessary.
+    if (nav.hasClass('primary')) {
+        $('.flyout').animate({right: -400}, 300);
+        $('nav.tertiary').fadeOut();
+        $('nav.secondary').fadeOut();
+        nav.animate({right: 0}, 300);
+    } else if (nav.hasClass('secondary')) {
+        $('.flyout').animate({right: -400}, 300);
+        $('nav.tertiary').fadeOut();
+        nav.animate({right: 0}, 300);
+        $('nav.primary').animate({right: 280}, 300);
+    } else if (nav.hasClass('tertiary')) {
+        $('.flyout').animate({right: -400}, 300);
+        nav.animate({right: 0}, 300);
+        $('nav.secondary').animate({right: 280}, 300);
+        $('nav.primary').animate({right: 560}, 300);
+    }
+
+    // Slide down the menu for this heading.
+    list.slideDown(300);
+};
+
+Map.navToItem = function(e) {
+    var item = $(e.target).closest('li');
+    var list = item.closest('ul');
+    var nav = item.closest('nav');
+
+    // Slide to the left if necessary.
+    if (nav.hasClass('primary')) {
+        nav.animate({right: 280}, 300);
+    } else if (nav.hasClass('secondary')) {
+        $('nav.primary').animate({right: 560}, 300);
+        nav.animate({right: 280}, 300);
+    } else if (nav.hasClass('tertiary')) {
+        $('nav.secondary').animate({right: 680}, 300);
+        $('nav.primary').animate({right: 960}, 300);
+        nav.animate({right: 400}, 300);
+    }
+    list.slideUp(300);
+
+    // Turn the new menu on and move it into position.
+    var id = item.data('id');
+    var heading = $('nav[data-id=' + id + '] h2');
+
+    if (heading.length === 1) {     // topic/subtopic
+        var a = $('a', heading);
+        var newNav = heading.closest('nav');
+        var pos = item.position();
+
+        $('ul', newNav).hide(); // will be unfurled in navToMenu
+        newNav.css({top: pos.top})
+              .show()
+              .animate({top: 0});
+        a.click();
+    } else {                        // resource
+        $('rect#' + id).click();
+    }
+};
+
 Map.init = function() {
     jQuery.get('topics.json', function(topics) {
-        $('.navigation').hide();
         $('#map').load('map.svg', function() {
             Map.initZooming();
             Map.initTopics(topics);
-            $('rect').hover(Map.tooltip);
+            $('rect').mousemove(Map.tooltip);
             $('svg').mouseout(Map.tooltipHide);
             $('#map').click(Map.tooltipHide);
             $('rect').click(Map.nodeVisit);
