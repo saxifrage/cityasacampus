@@ -96,22 +96,25 @@ a.btn{
       }
     }
 
-    li{
-      list-style: none;
-      border-bottom: 1px solid lighten(#808080, 10%);
+    ul {
+      display: none;
+      li{
+        list-style: none;
+        border-bottom: 1px solid lighten(#808080, 10%);
 
-      a {
-        background-color: #808080;
-        opacity: .9;
-        color: #ffffff;
-        display: block;
-        line-height: 1;
-        padding: 14px 20px;
-        &:hover{
-          background-color: darken(#808080, 10%);
-          opacity: 1;
+        a {
+          background-color: #808080;
+          opacity: .9;
           color: #ffffff;
-          text-shadow: 0px 0px 12px rgba(255,255,255,.7);
+          display: block;
+          line-height: 1;
+          padding: 14px 20px;
+          &:hover{
+            background-color: darken(#808080, 10%);
+            opacity: 1;
+            color: #ffffff;
+            text-shadow: 0px 0px 12px rgba(255,255,255,.7);
+          }
         }
       }
     }

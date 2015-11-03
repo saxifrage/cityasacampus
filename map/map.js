@@ -91,6 +91,12 @@ Map.flyout = function(){
 
     $('.cta a').attr('href', resource.resource_url);
 
+    // Slide to the left, pushing nav.
+    $('nav').hide();
+    $('nav ul').hide()
+    $('nav.primary').show().animate({right: 960}, 300);
+    $('nav.secondary[data-id=' + resource.topic_id + ']').show().animate({right: 680}, 300);
+    $('nav.tertiary[data-id=' + resource.subtopic_id + ']').show().animate({right: 400}, 300);
     $('.flyout').animate({right: 0}).scrollLock();
 }
 
