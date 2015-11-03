@@ -3,6 +3,10 @@
 // Vars & Helpers // --------------------------------------------------
 
 $brand-primary: #0099FF;
+$brand-green: #339900;
+$brand-medium-green: #006633;
+$brand-bright-green: #33CC00;
+$brand-dark-green: #025127;
 
 .text-center{
   text-align: center !important;
@@ -124,7 +128,7 @@ a.btn{
     position: absolute;
     top: 65px;
     left: 40px;
-    width: 0;
+    width: 600px;
     z-index: 1;
     border-top: 1px solid #808080;
     opacity: .5;
@@ -137,8 +141,6 @@ a.btn{
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    width: 100vw;
-    height: 100vh;
     background: white;
 }
 
@@ -159,23 +161,19 @@ rect.selected{
     }
 }
 
-rect#current{
-  fill: green;
-}
-
 path {
     display: none;
 }
 
 @keyframes fill {
     0% {
-        fill: darken($brand-primary, 20%);
+        fill: $brand-medium-green;
     }
     50% {
-        fill: darken($brand-primary, 30%);
+        fill: $brand-dark-green;
     }
     100% {
-        fill: darken($brand-primary, 20%);
+        fill: $brand-medium-green;
     }
 }
 

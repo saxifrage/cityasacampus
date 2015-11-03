@@ -32,6 +32,17 @@ Map.nodeLeave = function(e) {
     e.stopPropagation();
 }
 
+Map.centerGet = function(rect) {
+    var offset = rect.offset();
+    var rectWidth = rect[0].getBoundingClientRect().width;
+    var rectHeight = rect[0].getBoundingClientRect().height;
+
+    var centerY = offset.top + rectHeight/2;
+    var centerX = offset.left + rectWidth/2;
+
+    return {y: centerY, x: centerX};
+};
+
 
 // Flyout Resource
 Map.flyout = function(){
@@ -301,6 +312,8 @@ Map.initTopics = function(topics) {
 
 // Nav
 Map.navToMenu = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
 
     var heading = $(e.target).closest('h2');
     var nav = heading.closest('nav');
@@ -329,6 +342,9 @@ Map.navToMenu = function(e) {
 };
 
 Map.navToItem = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
     var item = $(e.target).closest('li');
     var list = item.closest('ul');
     var nav = item.closest('nav');
@@ -361,13 +377,23 @@ Map.navToItem = function(e) {
               .animate({top: 0});
         a.click();
     } else {                        // resource
-        $('rect#' + id).click();
+        var rect = $('rect#' + id)
+        var center = Map.centerGet(rect);
+        var toTop = center.y - ($(window).height() / 2);
+        var toLeft = center.x - (($(window).width() - 220) / 2);
+        $('body').animate({scrollTop: toTop, scrollLeft: toLeft}, 1000);
+        rect.click();
     }
 };
 
 Map.init = function() {
+    function logScroll() {
+        console.log($(this).scrollTop(), $(this).scrollLeft());
+    }
+
     jQuery.get('topics.json', function(topics) {
         $('#map').load('map.svg', function() {
+            $(window).scroll(logScroll);
             Map.initZooming();
             Map.initTopics(topics);
             $('rect').mousemove(Map.tooltip);
@@ -377,6 +403,9 @@ Map.init = function() {
             $('.close').click(Map.nodeLeave);
             $('.zoom-controls .in').click(Map.inZoom);
             $('.zoom-controls .out').click(Map.outZoom);
+
+            $(window).scrollTop(($('svg').height() - $(window).height()) / 2);
+            $(window).scrollLeft(($('svg').width() - $(window).width()) / 2);
         });
     });
 };

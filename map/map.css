@@ -95,7 +95,7 @@ a.btn {
     position: absolute;
     top: 65px;
     left: 40px;
-    width: 0;
+    width: 600px;
     z-index: 1;
     border-top: 1px solid #808080;
     opacity: .5; }
@@ -104,8 +104,6 @@ a.btn {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  width: 100vw;
-  height: 100vh;
   background: white; }
 
 rect {
@@ -121,19 +119,16 @@ rect.selected {
   rect.selected:hover {
     fill: #003d66; }
 
-rect#current {
-  fill: green; }
-
 path {
   display: none; }
 
 @keyframes fill {
   0% {
-    fill: #005c99; }
+    fill: #006633; }
   50% {
-    fill: #003d66; }
+    fill: #025127; }
   100% {
-    fill: #005c99; } }
+    fill: #006633; } }
 .zoom-controls {
   position: fixed;
   left: 10px;
