@@ -183,7 +183,7 @@ path {
 // Zoom // ----------------------------------------------------
 .zoom-controls {
     position: fixed;
-    right: 10px;
+    left: 10px;
     bottom: 10px;
     width: 98px;
     height: 50px;
@@ -332,39 +332,34 @@ h3.attribute{
 // Tooltips // --------------------------------------------------
 
 .tooltip {
-    display: none;
-    background: #ffffff;
-    position: absolute;
-    z-index: 1;
-    top: 20px;
-    left: 20px;
-    width: 250px;
-    text-align: center;
-    opacity: 1;
-    box-shadow: 0px 0px 25px rgba(0,0,0,.15);
-}
-
-.tooltip a{
-  padding: 12px 15px;
-  display: block;
-  &:hover{
-    cursor: pointer;
-  }
-}
-
-.tooltip h1{
+  display: none;
+  color: $brand-primary;
+  background: #ffffff;
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 20px;
+  opacity: 1;
+  box-shadow: 0px 0px 25px rgba(0,0,0,.15);
+  h1 {
+    padding: 12px 15px;
     font-size: 12px;
     margin: 0;
     text-transform: uppercase;
-}
+  }
 
-.tooltip .arrow {
-    width: 0;
+  &:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
     height: 0;
-    border-right: 10px solid transparent;
-    border-left: 10px solid transparent;
-    border-top: 10px solid white;
+    width: 0;
     position: absolute;
-    bottom: -10px;
-    left: 115px;
+    pointer-events: none;
+    border-color: rgba(250, 253, 255, 0);
+    border-left-color: #fafdff;
+    border-width: 10px;
+    margin-top: -10px;
+  }
 }

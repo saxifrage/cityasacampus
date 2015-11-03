@@ -39,9 +39,6 @@ Map.flyout = function(){
     var svg = rect.parent();
     Map.currentPopUp = this;
 
-    /* Position popover */
-    var center = Map.centerGet($(this));
-
     /* Hide tooltip that pops up on hover */
     $('.tooltip').hide();
 
@@ -121,15 +118,12 @@ Map.tooltip = function(e) {
     var self = this;
     var rect = $(this);
     var svg = rect.parent();
+    var width = $('.tooltip').width();
     var height = $('.tooltip').height();
-    if (Map.isPoppedUp(this))
-        return;
-
-    var center = Map.centerGet($(this));
 
     $('.tooltip').css({
-        'top' : center.y - height - 35,
-        'left' : center.x - 125
+        'top' : e.pageY - (height / 2),
+        'left' : e.pageX - width - 25
     });
 
     /* Assign JSON data and show*/
@@ -137,8 +131,6 @@ Map.tooltip = function(e) {
                       .subtopics[rect.attr('subtopic_id')]
                       .resources[rect.attr('id')];
     $('.tooltipResourceName').html(resource.resource_name)
-                             .off('click')
-                             .on('click', function(e) { Map.nodeVisit.call(self, e); });
     $('.tooltip').show();
     e.stopPropagation();
 };
@@ -193,17 +185,6 @@ Map.outZoom = function(e) {
 
 
 // Init
-
-Map.centerGet = function(rect) {
-    var offset = rect.offset();
-    var rectWidth = rect[0].getBoundingClientRect().width;
-    var rectHeight = rect[0].getBoundingClientRect().height;
-
-    var centerY = offset.top + rectHeight/2;
-    var centerX = offset.left + rectWidth/2;
-
-    return {y: centerY, x: centerX};
-};
 
 Map.initTopics = function(topics) {
 
@@ -389,7 +370,7 @@ Map.init = function() {
         $('#map').load('map.svg', function() {
             Map.initZooming();
             Map.initTopics(topics);
-            $('rect').hover(Map.tooltip);
+            $('rect').mousemove(Map.tooltip);
             $('svg').mouseout(Map.tooltipHide);
             $('#map').click(Map.tooltipHide);
             $('rect').click(Map.nodeVisit);

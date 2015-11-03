@@ -136,7 +136,7 @@ path {
     fill: #005c99; } }
 .zoom-controls {
   position: fixed;
-  right: 10px;
+  left: 10px;
   bottom: 10px;
   width: 98px;
   height: 50px;
@@ -256,35 +256,31 @@ h3.attribute {
 
 .tooltip {
   display: none;
+  color: #0099FF;
   background: #ffffff;
   position: absolute;
   z-index: 1;
   top: 20px;
   left: 20px;
-  width: 250px;
-  text-align: center;
   opacity: 1;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15); }
-
-.tooltip a {
-  padding: 12px 15px;
-  display: block; }
-  .tooltip a:hover {
-    cursor: pointer; }
-
-.tooltip h1 {
-  font-size: 12px;
-  margin: 0;
-  text-transform: uppercase; }
-
-.tooltip .arrow {
-  width: 0;
-  height: 0;
-  border-right: 10px solid transparent;
-  border-left: 10px solid transparent;
-  border-top: 10px solid white;
-  position: absolute;
-  bottom: -10px;
-  left: 115px; }
+  .tooltip h1 {
+    padding: 12px 15px;
+    font-size: 12px;
+    margin: 0;
+    text-transform: uppercase; }
+  .tooltip:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(250, 253, 255, 0);
+    border-left-color: #fafdff;
+    border-width: 10px;
+    margin-top: -10px; }
 
 /*# sourceMappingURL=map.css.map */
