@@ -1,7 +1,7 @@
 {
     "art-design": {
         "id": "art-design",
-        "name": "Art + Design",
+        "name": "Art and Design",
         "subtopics": {
             "architecture": {
                 "name": "Architecture",
@@ -1876,7 +1876,7 @@
     },
     "building-making": {
         "id": "building-making",
-        "name": "Building + Making",
+        "name": "Manufacturing",
         "subtopics": {
             "design": {
                 "dag": {
@@ -3093,7 +3093,7 @@
     },
     "coding-gaming": {
         "id": "coding-gaming",
-        "name": "Coding + Gaming",
+        "name": "Web Development",
         "subtopics": {
             "appmaking": {
                 "dag": {
@@ -5484,7 +5484,7 @@
     },
     "food-gardening": {
         "id": "food-gardening",
-        "name": "Food + Gardening",
+        "name": "Agriculture",
         "subtopics": {
             "eating-and-cooking": {
                 "dag": {
@@ -7141,7 +7141,7 @@
     },
     "mediamaking": {
         "id": "mediamaking",
-        "name": "Mediamaking",
+        "name": "Filmmaking",
         "subtopics": {
             "audio": {
                 "dag": {
@@ -9635,7 +9635,7 @@
     },
     "storytelling": {
         "id": "storytelling",
-        "name": "Storytelling",
+        "name": "Healthcare",
         "subtopics": {
             "communication": {
                 "dag": {
