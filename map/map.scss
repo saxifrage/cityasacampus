@@ -161,6 +161,10 @@ rect.selected{
     }
 }
 
+circle:hover {
+    cursor: pointer;
+}
+
 path {
     display: none;
 }

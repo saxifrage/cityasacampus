@@ -119,6 +119,9 @@ rect.selected {
   rect.selected:hover {
     fill: #003d66; }
 
+circle:hover {
+  cursor: pointer; }
+
 path {
   display: none; }
 

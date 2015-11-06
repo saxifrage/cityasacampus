@@ -21,8 +21,17 @@ Map.$svg = function(elem) {
 }
 
 Map.nodeVisit = function(e) {
-    Map.flyout.call(this);
-    Map.pathwayShow.call(this);
+
+    // allow for clicking circle in addition to rect
+    el = this;
+    $el = $(el);
+    if ($el.prop('tagName') === 'circle') {
+        $el = $('rect#' + $el.data('id'));
+        el = $el.get(0);
+    }
+
+    Map.flyout.call(el);
+    Map.pathwayShow.call(el);
     e.stopPropagation();
 }
 
@@ -266,7 +275,8 @@ Map.initTopics = function(topics) {
                     'stroke-width': 2,
                     fill: 'transparent',
                     cy: center.y,
-                    cx: center.x
+                    cx: center.x,
+                    'data-id': resource_id
                 });
                 topic.svg.append(circle);
 
@@ -393,13 +403,13 @@ Map.init = function() {
 
     jQuery.get('topics.json', function(topics) {
         $('#map').load('map.svg', function() {
-            $(window).scroll(logScroll);
+            //$(window).scroll(logScroll);
             Map.initZooming();
             Map.initTopics(topics);
             $('rect').mousemove(Map.tooltip);
             $('svg').mouseout(Map.tooltipHide);
             $('#map').click(Map.tooltipHide);
-            $('rect').click(Map.nodeVisit);
+            $('rect, circle').click(Map.nodeVisit);
             $('.close').click(Map.nodeLeave);
             $('.zoom-controls .in').click(Map.inZoom);
             $('.zoom-controls .out').click(Map.outZoom);
