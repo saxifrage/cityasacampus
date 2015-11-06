@@ -406,7 +406,7 @@ Map.init = function() {
             //$(window).scroll(logScroll);
             Map.initZooming();
             Map.initTopics(topics);
-            $('rect').mousemove(Map.tooltip);
+            $('rect, circle').mousemove(Map.tooltip);
             $('svg').mouseout(Map.tooltipHide);
             $('#map').click(Map.tooltipHide);
             $('rect, circle').click(Map.nodeVisit);
