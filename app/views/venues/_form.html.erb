@@ -1,10 +1,10 @@
-<%= form_for(@location) do |f| %>
-  <% if @location.errors.any? %>
+<%= form_for(@venue) do |f| %>
+  <% if @venue.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+      <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
 
       <ul>
-      <% @location.errors.full_messages.each do |message| %>
+      <% @venue.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -38,6 +38,10 @@
   <div class="field">
     <%= f.label :longitude %><br>
     <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :organizer %><br>
+    <%= f.collection_select :organizer_id, @organizers, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>
