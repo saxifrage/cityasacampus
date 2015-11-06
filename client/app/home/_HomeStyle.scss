@@ -20,6 +20,7 @@ h1.hero__title{
 	@include rem(font-size, 48px);
 	color: $brand-primary;
 	margin-top: 0px;
+	margin-bottom: 0.5em;
 }
 
 h2.hero__desc{
