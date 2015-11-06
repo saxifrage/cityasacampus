@@ -106,21 +106,17 @@ a.btn {
   vertical-align: middle;
   background: white; }
 
-rect {
+g.resource {
   fill: #0099FF;
   transition: fill .15s linear;
   -webkit-transition: fill .15s linear; }
-  rect:hover {
+  g.resource:hover {
     fill: #007acc;
     cursor: pointer; }
-
-rect.selected {
-  fill: #005c99; }
-  rect.selected:hover {
-    fill: #003d66; }
-
-circle:hover {
-  cursor: pointer; }
+  g.resource.selected {
+    fill: #005c99; }
+    g.resource.selected:hover {
+      fill: #003d66; }
 
 path {
   display: none; }

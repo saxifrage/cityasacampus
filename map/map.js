@@ -21,17 +21,8 @@ Map.$svg = function(elem) {
 }
 
 Map.nodeVisit = function(e) {
-
-    // allow for clicking circle in addition to rect
-    el = this;
-    $el = $(el);
-    if ($el.prop('tagName') === 'circle') {
-        $el = $('rect#' + $el.data('id'));
-        el = $el.get(0);
-    }
-
-    Map.flyout.call(el);
-    Map.pathwayShow.call(el);
+    Map.flyout.call(this);
+    Map.pathwayShow.call(this);
     e.stopPropagation();
 }
 
@@ -55,8 +46,9 @@ Map.centerGet = function(rect) {
 
 // Flyout Resource
 Map.flyout = function(){
-    var rect = $(this);
-    var svg = rect.parent();
+    var g = $(this);
+    var rect = $('rect', this);
+    var svg = g.parent().parent();
     Map.currentPopUp = this;
 
     /* Hide tooltip that pops up on hover */
@@ -67,8 +59,8 @@ Map.flyout = function(){
                       .subtopics[rect.attr('subtopic_id')]
                       .resources[rect.attr('id')];
 
-    $('.selected').attr({'class': '', 'style': ''});
-    rect.attr({"style": "animation: fill 2s infinite"});
+    $('.selected').attr({'class': ''});
+    g.attr({"style": "animation: fill 2s infinite"});
 
     $('.resourceName').html(resource.resource_name).attr('href', resource.resource_url);
     $('.flyout-header').css('background-image', 'url("'+resource.image_url+'")');
@@ -135,9 +127,9 @@ Map.flyin = function() {
 
 // Tooltips
 Map.tooltip = function(e) {
-    var self = this;
-    var rect = $(this);
-    var svg = rect.parent();
+    var g = $(this);
+    var rect = $('rect', this);
+    var svg = g.parent().parent();
     var width = $('.tooltip').width();
     var height = $('.tooltip').height();
 
@@ -162,16 +154,17 @@ Map.tooltipHide = function() {
 
 // Pathways
 Map.pathwayShow = function(e) {
-    var rect = $(this)
+    var g = $(this)
+      , rect = $('rect', this)
+      , svg = g.parent().parent()
       , topic_id = rect.attr('topic_id')
       , subtopic_id = rect.attr('subtopic_id')
       , pathway = Map.topics[topic_id].subtopics[subtopic_id].dag
-      , svg = $('svg#' + topic_id);
        ;
     $('path.pathway').hide();
     for (var i=0, id; id = pathway.names[i]; i++)
     {
-        $('rect#' + id, svg).attr('class', 'selected');
+        $('rect#' + id, svg).parent().attr('class', 'selected');
         $('path.' + id, svg).show();
     }
 };
@@ -229,6 +222,10 @@ Map.initTopics = function(topics) {
         var topic = topics[topic_id];
 
         topic.svg = $('svg#' + topic_id);
+        topic.svg.resources = Map.$svg('g').attr('class', 'resources');
+        topic.svg.append(topic.svg.resources);
+        topic.svg.pathways = Map.$svg('g').attr('class', 'pathways');
+        topic.svg.append(topic.svg.pathways);
 
         // Add topic to nav.
         $('ul', primary_nav).append(
@@ -267,20 +264,7 @@ Map.initTopics = function(topics) {
                     ).attr('data-id', resource_id)
                 );
 
-                // Draw a circle.
-                var center = getRectCenter(topic_id, resource_id);
-                var circle = Map.$svg('circle').attr({
-                    r: 5,
-                    stroke: 'white',
-                    'stroke-width': 2,
-                    fill: 'transparent',
-                    cy: center.y,
-                    cx: center.x,
-                    'data-id': resource_id
-                });
-                topic.svg.append(circle);
-
-                // Teach the rect some things.
+                // Get rect and load it up.
                 var rect = $('rect#'+resource.id, topic.svg);
                 rect.attr({'subtopic_id': subtopic_id, 'topic_id': topic_id});
 
@@ -297,8 +281,29 @@ Map.initTopics = function(topics) {
                         stroke: 'white',
                         'stroke-width': 2
                     });
-                    topic.svg.append(path);
+                    topic.svg.pathways.append(path);
                 }
+
+                // Start a <g>roup
+                var group = Map.$svg('g').attr('class', 'resource');
+
+                // Add the group to the topic.
+                group.append(rect.detach());
+                group.append(circle);
+                topic.svg.resources.append(group);
+
+                // Draw a circle.
+                var center = getRectCenter(topic_id, resource_id);
+                var circle = Map.$svg('circle').attr({
+                    r: 5,
+                    stroke: 'white',
+                    'stroke-width': 2,
+                    fill: 'transparent',
+                    cy: center.y,
+                    cx: center.x,
+                    'data-id': resource_id
+                });
+                topic.svg.resources.append(group);
             }
             navigation.append(tertiary_nav);
         }
@@ -406,10 +411,10 @@ Map.init = function() {
             //$(window).scroll(logScroll);
             Map.initZooming();
             Map.initTopics(topics);
-            $('rect, circle').mousemove(Map.tooltip);
+            $('g.resource').mousemove(Map.tooltip)
+                           .click(Map.nodeVisit);
             $('svg').mouseout(Map.tooltipHide);
             $('#map').click(Map.tooltipHide);
-            $('rect, circle').click(Map.nodeVisit);
             $('.close').click(Map.nodeLeave);
             $('.zoom-controls .in').click(Map.inZoom);
             $('.zoom-controls .out').click(Map.outZoom);

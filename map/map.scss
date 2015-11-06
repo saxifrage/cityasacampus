@@ -144,25 +144,20 @@ a.btn{
     background: white;
 }
 
-rect {
-    fill: $brand-primary;
-    transition: fill .15s linear;
-    -webkit-transition: fill .15s linear;
-    &:hover{
-      fill: darken($brand-primary, 10%);
-      cursor: pointer;
-    }
-}
-
-rect.selected{
+g.resource {
+  fill: $brand-primary;
+  transition: fill .15s linear;
+  -webkit-transition: fill .15s linear;
+  &:hover{
+    fill: darken($brand-primary, 10%);
+    cursor: pointer;
+  }
+  &.selected{
     fill: darken($brand-primary, 20%);
     &:hover{
       fill: darken($brand-primary, 30%);
     }
-}
-
-circle:hover {
-    cursor: pointer;
+  }
 }
 
 path {
