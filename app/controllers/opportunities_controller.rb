@@ -29,6 +29,44 @@ class OpportunitiesController < ApplicationController
     @opportunity = Opportunity.new
   end
 
+  @@permitted_params = [:name, :address, :description, :registration_url, :location_name,
+                        :registration_deadline, :program_type, :logo_url, :starts_at,
+                        :ends_at, :online_address, :zipcode, :city, :state, :is_online,
+                        :hide_reason, :hide, :contact_name, :contact_email, :contact_phone,
+                        :registration_url, :price_level, :min_age, :max_age, :extra_data,
+                        :topic_id, :organizer_id, :resource_sub_type_id]
+
+  # GET,POST /opportunities/bulk-add
+  def bulk_add
+    @permitted_params = @@permitted_params
+    @opportunities = []
+    @nbad = 0
+    @nerrors = 0
+
+    if request.method == 'POST'
+      Opportunity.transaction do
+        CSV.parse(params[:csv].read, headers: true) do |row|
+          topic = Topic.find_by_name(row.delete('topic'))
+          sub_type = ResourceSubType.find_by_name(row.delete('resource_sub_type'))
+
+          row['organizer_id'] = params[:organizer_id]
+          row['topic_id'] = unless topic.nil? then topic.id else nil end
+          row['resource_sub_type_id'] = unless sub_type.nil? then sub_type.id else nil end
+
+          opportunity = Opportunity.create(row.to_h)
+          @opportunities.push(opportunity)
+          if opportunity.errors.count > 0
+            @nbad += 1
+            @nerrors += opportunity.errors.count
+          end
+        end
+      end
+    end
+
+    @topic_names = Topic.pluck(:name)
+    @sub_type_names = ResourceSubType.pluck(:name)
+  end
+
   # GET /opportunities/1/edit
   def edit
     authorize @opportunity
@@ -88,12 +126,6 @@ class OpportunitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def opportunity_params
-      permitted_params = [:name, :address, :description, :registration_url, :location_name,
-                          :registration_deadline, :program_type, :logo_url, :starts_at,
-                          :ends_at, :online_address, :zipcode, :city, :state, :is_online,
-                          :hide_reason, :hide, :contact_name, :contact_email, :contact_phone,
-                          :registration_url, :price_level, :min_age, :max_age, :extra_data,
-                          :organizer_id, :resource_sub_type_id]
-      params.require(:opportunity).permit(permitted_params)
+      params.require(:opportunity).permit(@@permitted_params)
     end
 end
