@@ -30,7 +30,8 @@ gulp.task(tasks.JS_VENDORS, function() {
       npmLocation + '/jquery/dist/jquery.min.js',
       npmLocation + '/masonry-layout/dist/masonry.pkgd.min.js',
       npmLocation + '/moment/min/moment.min.js',
-      npmLocation + '/angular-filter/dist/angular-filter.min.js'
+      npmLocation + '/angular-filter/dist/angular-filter.min.js',
+      appLocation + '/shared/modernizr/modernizr.js',
     ])
     .pipe(concat('vendors.min.js'))
     .pipe(uglify())
@@ -39,6 +40,7 @@ gulp.task(tasks.JS_VENDORS, function() {
 
 gulp.task(tasks.JS_APP, function() {
   return gulp.src([
+      '!' + appLocation + '/shared/modernizr/modernizr.js',
       appLocation + '/**/**.js'
     ])
     .pipe(sourcemaps.init())
