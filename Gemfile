@@ -15,9 +15,10 @@ gem 'rails_12factor'
 gem "active_model_serializers", "~> 0.9.3"
 gem 'kaminari'
 gem 'api-pagination'
-gem 'devise'
+gem 'devise', '~> 3.5.2'
 gem 'textacular', '~> 3.0'
 gem 'pundit'
+gem 'devise_token_auth', '0.1.36'
 
 group :development, :test do
   gem 'byebug'

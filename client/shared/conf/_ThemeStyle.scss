@@ -37,12 +37,12 @@ a{
 
 ::selection{
   background: #0099FF;
-  color: #ffffff;
+  color: $brand-white;
 }
 
 ::-moz-selection{
   background: #0099FF;
-  color: #ffffff;
+  color: $brand-white;
 }
 
 
@@ -64,13 +64,10 @@ a{
   color: #494949;
   font-size: 22px;
   padding: 7px 15px 10px;
-  border-radius: 5px;
+  border-radius: 2px;
   font-weight: 700;
-  transition: background .15s linear;
-  -webkit-transition: background .15s linear;
-  -moz-transition: background .15s linear;
-  -o-transition: background .15s linear;
-  -ms-transition: background .15s linear;
+  @include transition(background .15s linear);
+  white-space: nowrap;
   &:hover{
     cursor: pointer;
   }
@@ -79,25 +76,30 @@ a{
 /* Nav buttons */
 .btn-grey {
   background: #B9C0C1;
-  color: #ffffff;
+  color: $brand-white;
   &:hover{
-  	background: darken(#B9C0C1, 10%);
-  	color: #ffffff;
+    background: darken(#B9C0C1, 10%);
+    color: $brand-white;
   }
 }
 
 .btn-primary{
   background-color: $brand-secondary;
-  color: #ffffff;
-  &:hover{
+  color: $brand-white;
+  &:active,
+  &:hover {
     background-color: darken($brand-secondary, 5%);
-    color: #ffffff;
     box-shadow: inset 0px 1px 0px $brand-secondary;
   }
-  &:active{
-    background-color: darken($brand-secondary, 5%);
-    color: #ffffff;
-    box-shadow: inset 0px 1px 0px darken($brand-secondary, 10%);
+}
+
+.btn-secondary {
+  background-color: $brand-primary-light;
+  color: $brand-white;
+  &:active,
+  &:hover {
+    background-color: darken($brand-primary-light, 5%);
+    box-shadow: inset 0px 1px 0px $brand-primary-light;
   }
 }
 

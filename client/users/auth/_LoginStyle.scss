@@ -1,0 +1,71 @@
+.login {
+    background-color: $brand-white;
+
+    .container {
+        position: relative;
+        top: 0px;
+        margin: 0 auto;
+        @include rem(padding, 80px 0);
+        @include rem(max-width, 600px);
+    }
+
+    .title {
+        @include rem(margin-bottom, 50px);
+
+        h1 {
+            @include rem(font-size, 48px);
+            @include rem(margin, 0 0 15px 0)
+            color: $brand-primary;
+        }
+
+        h2 {
+            @include rem(font-size, 24px);
+            color: $brand-primary;
+            font-weight: 300;
+            @include rem(margin, 10px 0);
+        }
+    }
+
+    input, button {
+        width: 100%;
+        @include rem(-webkit-border-radius, 5px);
+        @include rem(-moz-border-radius, 5px);
+        @include rem(border-radius, 5px);
+        @include rem(padding, 20px);
+        @include rem(margin, 10px 0);
+        @include rem(font-size, 24px);
+        opacity: .8;
+        &:focus{
+            outline: 0;
+            opacity: 1;
+        }
+        @include transition(opacity .15s linear);
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        border: 1px solid $brand-gray;
+    }
+
+    button {
+        background-color: $brand-white;
+        border: 1px solid $brand-primary;
+        color: $brand-primary;
+        @include rem(margin, 25px 0);
+        @include transition(background .15s linear);
+        -webkit-appearance: none;
+        &:hover{
+            background-color: $brand-primary;
+            color: $brand-white;
+        }
+    }
+
+    p {
+        @include rem(margin, 5px);
+    }
+
+    p.error {
+        color: $brand-red;
+        @include rem(font-size, 20px);
+    }
+}

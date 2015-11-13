@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  include DeviseTokenAuth::Concerns::SetUserByToken
   include Pundit
-  protect_from_forgery with: :exception
+
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  protect_from_forgery with: :null_session
 
   def index
     if signed_in?
@@ -12,5 +13,9 @@ class ApplicationController < ActionController::Base
       #to default the `dashboard/` route to this...
       redirect_to '/dashboard/users/sign_in'
     end
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :name
   end
 end

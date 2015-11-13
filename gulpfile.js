@@ -26,12 +26,14 @@ var tasks = {
 gulp.task(tasks.JS_VENDORS, function() {
   return gulp.src([
       npmLocation + '/angular/angular.min.js',
+      npmLocation + '/angular-cookie/angular-cookie.min.js',
+      npmLocation + '/angular-filter/dist/angular-filter.min.js',
       npmLocation + '/angular-route/angular-route.min.js',
       npmLocation + '/jquery/dist/jquery.min.js',
       npmLocation + '/masonry-layout/dist/masonry.pkgd.min.js',
       npmLocation + '/moment/min/moment.min.js',
-      npmLocation + '/angular-filter/dist/angular-filter.min.js',
-      appLocation + '/shared/modernizr/modernizr.js',
+      npmLocation + '/ng-token-auth/dist/ng-token-auth.min.js',
+      appLocation + '/shared/modernizr/modernizr.js'
     ])
     .pipe(concat('vendors.min.js'))
     .pipe(uglify())

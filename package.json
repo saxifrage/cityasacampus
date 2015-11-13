@@ -15,12 +15,13 @@
     "angular": "for use on the client side. See client/gulpfile.js.",
 
     "angular": "1.3.14",
+    "angular-cookie": "ivpusic/angular-cookie#v4.0.9",
     "angular-filter": "0.5.4",
     "angular-route": "1.3.14",
     "jquery": "2.1.3",
     "masonry-layout": "^3.3.2",
     "moment": "2.10.2",
-
+    "ng-token-auth": "lynndylanhurley/ng-token-auth#v0.0.29-beta1",
 
     "gulp": "Build Dependencies",
     "gulp": "==================",
