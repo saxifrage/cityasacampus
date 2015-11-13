@@ -1,0 +1,16 @@
+.login {
+    background-color: $brand-white;
+    @include rem(padding-top, 80px);
+
+    .container {
+        position: relative;
+        top: 0px;
+        margin: 0 auto;
+        @include rem(max-width, 600px);
+        @include rem(padding-bottom, 80px);
+    }
+
+    p {
+        @include rem(margin, 5px);
+    }
+}

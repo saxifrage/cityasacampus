@@ -1,0 +1,67 @@
+<navbar></navbar>
+
+<section class="register text-center">
+    <div class="container">
+        <div class="title primary-light">
+            <h1>Add Yourself</h1>
+            <h2>Tell us a little about you.</h2>
+        </div>
+        <register-form ng-model="registrationForm"></register-form>
+    </div>
+    <div class="container short">
+        <div class="title primary-light">
+            <h1>Add Yourself as an Organizer</h1>
+            <h2>Choose the one that best applies to you.</h2>
+        </div>
+        <div class="two-col">
+            <a class="btn btn__primary-light" ng-click="showOrganization=true;showIndividualOrganizer=false;">ORGANIZATION</a>
+        </div>
+        <div class="two-col right">
+            <a class="btn btn__primary" ng-click="showOrganization=false;showIndividualOrganizer=true">INDIVIDUAL ORGANIZER</a>
+        </div>
+    </div>
+    <div ng-show="showOrganization">
+        <div class="container">
+            <ul class="circle-list">
+                <li><span>1</span>Join an existing organization...</li>
+            </ul>
+            <angucomplete-alt id="organizers" class="form"
+                placeholder="Type the organization name here"
+                pause="100"
+                selected-object="selectedOrganizer"
+                local-data="organizers"
+                search-fields="name"
+                title-field="name"
+                minlength="1" />
+        </div>
+        <div class="container">
+            <p>OR</p>
+        </div>
+        <div class="container">
+            <ul class="circle-list">
+                <li><span>2</span>Create a new organization...</li>
+            </ul>
+            <form class="form" role="form" ng-submit="handleRegisterBtnClick()">
+                <input type="text" name="name" ng-model="organizerForm.name" ng-disabled="selectedOrganizer" ng-required="!selectedOrganizer" placeholder="Your Organization's name">
+                <input type="text" name="description" ng-model="organizerForm.description" ng-disabled="selectedOrganizer" ng-required="!selectedOrganizer" placeholder="Organization Description">
+                <input type="url" name="website" ng-model="organizerForm.website" ng-disabled="selectedOrganizer" ng-required="!selectedOrganizer" placeholder="Organization's Website">
+                <input type="url" name="logo" ng-model="organizerForm.logo" ng-disabled="selectedOrganizer" ng-required="!selectedOrganizer" placeholder="Organization's Logo URL">
+                <button type="submit">Create My Account</button>
+            </form>
+            <progress-indicator current-step="2" number-of-steps="2"></progress-indicator>
+        </div>
+    </div>
+    <div ng-show="showIndividualOrganizer">
+        <div class="container">
+            <form class="form" role="form" ng-submit="handleRegisterBtnClick()">
+                <input type="text" name="description" ng-model="individualOrganizerForm.description" required="required" placeholder="Describe your business">
+                <input type="url" name="website" ng-model="individualOrganizerForm.website" required="required" placeholder="Link your website or portfolio">
+                <input type="url" name="logo" ng-model="individualOrganizerForm.logo" required="required" placeholder="Link your logo">
+                <button type="submit">Create My Account</button>
+            </form>
+            <progress-indicator current-step="2" number-of-steps="2"></progress-indicator>
+        </div>
+    </div>
+</section>
+
+<copyright></copyright>

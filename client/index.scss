@@ -23,6 +23,8 @@
 @import './dashboard/DashboardStyle';
 @import './shared/navbar/NavbarStyle';
 @import './shared/copyright/CopyrightStyle';
+@import './shared/progress-indicator/ProgressIndicatorStyle';
 @import './home/HomeStyle';
 @import './opportunity-instances/OpportunityInstancesStyle';
-@import './users/auth/LoginStyle';
+@import './users/auth/login/LoginStyle';
+@import './users/auth/register/RegisterStyle'

@@ -1,0 +1,91 @@
+.register {
+    $mobile: new-breakpoint(max-width 500px 3);
+    background-color: $brand-white;
+    @include rem(padding-top, 80px);
+
+    .container {
+        @include outer-container(100%);
+        @include rem(max-width, 660px);
+        @include rem(padding-bottom, 80px);
+    }
+
+    .container.short {
+        padding-bottom: 0;
+    }
+
+    .two-col {
+        @include span-columns(6);
+        @include media($mobile) { @include span-columns(3); };
+        @include rem(margin, 0 0 75px 0);
+
+        a.btn {
+            color: $brand-white;
+            display: block;
+            margin: auto;
+            @include rem(padding, 15px 10px);
+            width: 95%;
+            @include rem(max-width, 300px);
+        }
+
+        img {
+            @include rem(height, 130px);
+            @include rem(margin, 30px auto);
+            opacity: .8;
+            width: auto;
+
+            &:hover {
+                outline: 0;
+                opacity: 1;
+            }
+            @include transition(opacity .15s linear);
+        }
+    }
+
+    .two-col.right {
+        float: right;
+        @include media($mobile) { float: left; };
+    }
+
+    ul.circle-list {
+        clear: both;
+        list-style: none;
+        @include rem(margin-bottom, 15px);
+        padding: 0;
+
+        li {
+            @include rem(font-size, 24px);
+            color: $brand-primary-light;
+        }
+
+        li span {
+            display: inline-block;
+            border: 2px solid $brand-primary-light;
+            border-radius: 50%;
+            @include rem(height, 50px);
+            @include rem(width, 50px);
+            @include rem(line-height, 46px);
+            @include rem(margin-right, 20px);
+        }
+    }
+
+    .angucomplete-dropdown {
+        left: 5%;
+        @include rem(max-height, 250px);
+        overflow-y: auto;
+        text-align: left;
+        width: 90%;
+    }
+
+    .angucomplete-row {
+        @include rem(font-size, 20px);
+    }
+
+    .angucomplete-selected-row {
+        background-color: $brand-primary-light;
+    }
+
+    p {
+        @include rem(font-size, 24px);
+        color: $brand-primary-light;
+    }
+}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113155326) do
+ActiveRecord::Schema.define(version: 20151213060748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,10 +123,9 @@ ActiveRecord::Schema.define(version: 20151113155326) do
     t.string   "logo_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "topic_id"
   end
 
-  add_index "organizers", ["topic_id"], name: "index_organizers_on_topic_id", using: :btree
+  add_index "organizers", ["name"], name: "index_organizers_on_name", using: :btree
 
   create_table "resource_sub_types", force: :cascade do |t|
     t.string  "name"
@@ -193,6 +192,5 @@ ActiveRecord::Schema.define(version: 20151113155326) do
   add_foreign_key "opportunities", "topics"
   add_foreign_key "opportunity_instances", "topics"
   add_foreign_key "opportunity_instances", "venues"
-  add_foreign_key "organizers", "topics"
   add_foreign_key "venues", "organizers"
 end

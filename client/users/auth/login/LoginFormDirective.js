@@ -29,7 +29,7 @@ angular.module('caac.users.login-form.directive', [
     function() {
       return {
         restrict: 'E',
-        templateUrl: 'users/auth/LoginForm.html',
+        templateUrl: 'users/auth/login/LoginForm.html',
         controller: 'LoginFormController'
       };
     }

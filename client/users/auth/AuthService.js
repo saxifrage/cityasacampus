@@ -5,6 +5,14 @@ angular.module('caac.users.auth.service', [])
         return $auth.submitLogin(loginPayload);
       };
 
+      var attemptRegistration = function(registrationPayload) {
+        return $auth.submitRegistration(registrationPayload);
+      };
+
+      var attemptUpdate = function(updatePayload) {
+        return $auth.updateAccount(updatePayload);
+      };
+
       var logout = function() {
         return $auth
           .signOut()
@@ -25,6 +33,8 @@ angular.module('caac.users.auth.service', [])
 
       return {
         attemptLogin: attemptLogin,
+        attemptRegistration: attemptRegistration,
+        attemptUpdate: attemptUpdate,
         logout: logout,
         isAuthenticated: isAuthenticated,
       };

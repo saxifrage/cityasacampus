@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:account_update).push(organizer_ids: [])
+    devise_parameter_sanitizer.for(:sign_up).push(:name, organizers_attributes: [:name, :description])
   end
 end

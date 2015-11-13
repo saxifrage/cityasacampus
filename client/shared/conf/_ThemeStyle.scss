@@ -62,7 +62,7 @@ a{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #494949;
-  font-size: 22px;
+  @include rem(font-size, 22px);
   padding: 7px 15px 10px;
   border-radius: 2px;
   font-weight: 700;
@@ -83,23 +83,33 @@ a{
   }
 }
 
-.btn-primary{
-  background-color: $brand-secondary;
+.btn__primary {
+  background-color: $brand-primary;
   color: $brand-white;
   &:active,
   &:hover {
-    background-color: darken($brand-secondary, 5%);
-    box-shadow: inset 0px 1px 0px $brand-secondary;
+    background-color: darken($brand-primary, 5%);
+    box-shadow: inset 0px 1px 0px $brand-primary;
   }
 }
 
-.btn-secondary {
+.btn__primary-light {
   background-color: $brand-primary-light;
   color: $brand-white;
   &:active,
   &:hover {
     background-color: darken($brand-primary-light, 5%);
     box-shadow: inset 0px 1px 0px $brand-primary-light;
+  }
+}
+
+.btn__secondary {
+  background-color: $brand-secondary;
+  color: $brand-white;
+  &:active,
+  &:hover {
+    background-color: darken($brand-secondary, 5%);
+    box-shadow: inset 0px 1px 0px $brand-secondary;
   }
 }
 
@@ -112,5 +122,96 @@ a{
 // Icons
 // --------------------------------------------------
 .icon {
+
+}
+
+//
+// Headings
+// --------------------------------------------------
+
+.title {
+  @include rem(margin-bottom, 50px);
+
+  h1 {
+    @include rem(font-size, 48px);
+    @include rem(margin, 0 0 15px 0)
+    color: $brand-primary;
+  }
+
+  h2 {
+    @include rem(font-size, 24px);
+    color: $brand-primary;
+    font-weight: 300;
+    @include rem(margin, 10px 0);
+  }
+}
+
+.title.secondary {
+  h1, h2 {
+    color: $brand-secondary;
+  }
+}
+
+.title.primary-light {
+  h1, h2 {
+    color: $brand-primary-light;
+  }
+}
+
+//
+// Forms
+// --------------------------------------------------
+
+.form {
+
+  button {
+    background-color: $brand-white;
+    border: 1px solid $brand-primary;
+    color: $brand-primary;
+    @include rem(margin, 25px 0);
+    @include transition(background .15s linear);
+    -webkit-appearance: none;
+    &:hover{
+        background-color: $brand-primary;
+        color: $brand-white;
+    }
+  }
+
+  button[type="submit"] {
+    @include rem(margin-top, 50px);
+  }
+
+  input, button {
+    width: 90%;
+    @include rem(-webkit-border-radius, 5px);
+    @include rem(-moz-border-radius, 5px);
+    @include rem(border-radius, 5px);
+    @include rem(padding, 20px);
+    @include rem(margin, 10px 0);
+    @include rem(font-size, 24px);
+    opacity: .8;
+    &:disabled {
+        background-color: $brand-gray;
+        color: $brand-white;
+    }
+    &:focus {
+        outline: 0;
+        opacity: 1;
+    }
+    @include transition(opacity .15s linear);
+  }
+
+  input.error {
+    border: 2px solid $brand-red;
+  }
+
+  input {
+    border: 1px solid $brand-gray;
+  }
+
+  p.error {
+    color: $brand-red;
+    @include rem(font-size, 20px);
+  }
 
 }
