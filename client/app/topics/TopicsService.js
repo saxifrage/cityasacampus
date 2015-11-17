@@ -1,10 +1,9 @@
 angular.module('caac.topics.service', [
-    'caac.shared.conf.service'
   ])
-  .factory('TopicsService', ['ConfService', '$http',
-    function(ConfService, $http) {
+  .factory('TopicsService', ['$http',
+    function($http) {
       var selectTopics = function() {
-        return $http.get(ConfService.get('API') + '/topics' + '.json');
+        return $http.get('/topics' + '.json');
       };
 
       return {

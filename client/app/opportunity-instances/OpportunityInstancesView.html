@@ -67,10 +67,10 @@
           <h3>Time + Place</h3>
         </header>
         <section class="opp-section time-place" style="text-align:center">
-          <google-map address="opportunityInstance.location.address"></google-map>
+          <google-map address="opportunityInstance.venue.address"></google-map>
           <div class="col-sm-7 col-xs-height col-middle">
-            <p>{{opportunityInstance.location.name}}</p>
-            <p>{{opportunityInstance.location.address}}</p>
+            <p>{{opportunityInstance.venue.name}}</p>
+            <p>{{opportunityInstance.venue.address}}</p>
             <p>{{opportunityInstance.starts | date:'MM/dd/yyyy hh:mm a'}}</p>
           </div>
         </section>
@@ -79,14 +79,14 @@
           <h3>Badges</h3>
         </header>
         <!-- //TODO: temporary -->
-        <section class="opp-section badges text-left">
-          <svg width="75" height="75" title="Badges are coming soon!">
+        <section class="opp-section badges text-left" title="Badges are coming soon!">
+          <svg width="75" height="75" >
             <circle cx="40" cy="40" r="30" stroke="grey" stroke-width="5" fill="green"></circle>
           </svg>
-          <svg width="75" height="75" style="margin-right: 25px;margin-left: 25px;" title="Badges are coming soon!">
+          <svg width="75" height="75" style="margin-right: 25px;margin-left: 25px;">
             <circle cx="40" cy="40" r="30" stroke="grey" stroke-width="5" fill="purple"></circle>
           </svg>
-          <svg width="75" height="75" title="Badges are coming soon!">
+          <svg width="75" height="75">
             <circle cx="40" cy="40" r="30" stroke="grey" stroke-width="5" fill="blue"></circle>
           </svg>
         </section>
