@@ -14,10 +14,10 @@ _recurse() {
 _install() {
   echo "Installing as $(whoami) ..."
   echo "Installing to $(echo ~)/cityasacampus ..."
-  sudo apt-get update -y &&
-  sudo apt-get install -y git-core &&
-  git clone https://github.com/saxifrage/cityasacampus.git ~/cityasacampus &&
-  cd ~/cityasacampus/provisioning &&
+  sudo apt-get update -y
+  sudo apt-get install -y git-core
+  git clone https://github.com/saxifrage/cityasacampus.git ~/cityasacampus
+  cd ~/cityasacampus/provisioning
   ./src/install.sh
 }
 
