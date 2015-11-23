@@ -7,14 +7,13 @@ if !(which psql >/dev/null); then
     postgresql-contrib \
     postgresql-common
 
-  printf "Enter postgres username to create: "; read username
-  printf "Enter postgres password for $username: "; read password
+  pass=`cat /dev/urandom | tr -cd 'a-f0-9' | head -c 16`
 
-  echo "CREATE ROLE $username WITH PASSWORD '$password' LOGIN SUPERUSER;" | sudo -u postgres psql
-  sudo su postgres -c "createdb learn_prod --owner '$1'"
+  echo "CREATE ROLE $USER WITH PASSWORD '$pass' LOGIN SUPERUSER;" | sudo -u postgres psql
+  sudo su postgres -c "createdb learn_prod --owner '$USER'"
   sudo service postgresql reload
 
-  sudo bash -c "echo \"export APP_DATABASE_USER=$1\" >> /etc/profile"
-  sudo bash -c "echo \"export APP_DATABASE_PASS=$2\" >> /etc/profile"
+  sudo bash -c "echo \"export APP_DATABASE_USER=$USER\" >> /etc/profile"
+  sudo bash -c "echo \"export APP_DATABASE_PASS=$pass\" >> /etc/profile"
   source /etc/profile
 fi

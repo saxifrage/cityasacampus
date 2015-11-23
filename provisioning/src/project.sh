@@ -7,8 +7,8 @@ if [ ! -d "~/cityasacampus/client/node_modules" ]; then
   sudo npm install
   sudo gulp production
 
-  printf "Enter rails app secret: "; read secret
-  printf "Enter rails app token: "; read token
+  secret=`cat /dev/urandom | tr -cd 'a-f0-9' | head -c 32`
+  token=`cat /dev/urandom | tr -cd 'a-f0-9' | head -c 32`
 
   sudo bash -c "echo \"export APP_SECRET=$secret\" >> /etc/profile"
   sudo bash -c "echo \"export APP_TOKEN=$token\" >> /etc/profile"
