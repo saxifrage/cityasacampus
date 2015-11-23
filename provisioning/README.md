@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-curl https://github.com/saxifrage/cityasacampus/blob/deployment/provisioning/src/bootstrap.sh | bash
+curl https://raw.githubusercontent.com/saxifrage/cityasacampus/deployment/provisioning/src/bootstrap.sh | bash
 ```
 
 ## Deployment
