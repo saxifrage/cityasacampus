@@ -7,7 +7,10 @@ if !(which psql >/dev/null); then
     postgresql-contrib \
     postgresql-common
 
-  echo "CREATE ROLE $1 WITH PASSWORD '$2' LOGIN SUPERUSER;" | sudo -u postgres psql
+  printf "Enter postgres username to create: "; read username
+  printf "Enter postgres password for $username: "; read password
+
+  echo "CREATE ROLE $username WITH PASSWORD '$password' LOGIN SUPERUSER;" | sudo -u postgres psql
   sudo su postgres -c "createdb learn_prod --owner '$1'"
   sudo service postgresql reload
 

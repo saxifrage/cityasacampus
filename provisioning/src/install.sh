@@ -10,7 +10,7 @@ sed -i -- 's/{{home_user}}/ubuntu/g' ./src/* && #{{home_user}} is replaced in fi
 ./src/ruby_gem_rake.sh &&
 ./src/rails.sh &&
 ./src/bundler.sh &&
-./src/postgres.sh {deployuser} {password} && #fill these variables in
-./src/project.sh {appsecret} {apptoken} && #fill these variables in
+./src/postgres.sh
+./src/project.sh
 ./src/nginx.sh &&
 ./src/puma.sh

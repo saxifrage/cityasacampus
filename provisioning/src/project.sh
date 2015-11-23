@@ -6,9 +6,12 @@ if [ ! -d "/home/{{home_user}}/cityasacampus/client/node_modules" ]; then
   sudo npm install --save-dev gulp-sass@2
   sudo npm install
   sudo gulp production
-  
-  sudo bash -c "echo \"export APP_SECRET=$1\" >> /etc/profile"
-  sudo bash -c "echo \"export APP_TOKEN=$2\" >> /etc/profile"
+
+  printf "Enter rails app secret: "; read secret
+  printf "Enter rails app token: "; read token
+
+  sudo bash -c "echo \"export APP_SECRET=$secret\" >> /etc/profile"
+  sudo bash -c "echo \"export APP_TOKEN=$token\" >> /etc/profile"
   source /etc/profile
 
   bundle install
