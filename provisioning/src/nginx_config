@@ -1,12 +1,12 @@
 upstream app {
-    server unix:/home/{{home_user}}/cityasacampus/shared/sockets/puma.sock fail_timeout=0;
+    server unix:{{base}}/cityasacampus/shared/sockets/puma.sock fail_timeout=0;
 }
 
 server {
     listen 80;
     server_name localhost;
 
-    root /home/{{home_user}}/cityasacampus/public;
+    root {{base}}/cityasacampus/public;
 
     try_files $uri/index.html $uri @app;
 

@@ -1,7 +1,7 @@
 workers 1
 daemonize true
 threads 1, 6
-app_dir = "/home/{{home_user}}/cityasacampus"
+app_dir = "{{base}}/cityasacampus"
 shared_dir = "#{app_dir}/shared"
 rails_env = "production"
 environment rails_env

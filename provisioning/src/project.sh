@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ ! -d "/home/{{home_user}}/cityasacampus/client/node_modules" ]; then
-  cd /home/{{home_user}}/cityasacampus/client
+if [ ! -d "~/cityasacampus/client/node_modules" ]; then
+  cd ~/cityasacampus/client
   sudo npm uninstall --save-dev gulp-sass
   sudo npm install --save-dev gulp-sass@2
   sudo npm install
