@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-URL="https://raw.githubusercontent.com/saxifrage/cityasacampus/deployment/provisioning/src/bootstrap.sh"
+BRANCH=deployment
+URL="https://raw.githubusercontent.com/saxifrage/cityasacampus/$BRANCH/provisioning/src/bootstrap.sh"
 
 _recurse() {
   pass=`cat /dev/urandom | tr -cd 'a-f0-9' | head -c 8`
@@ -18,6 +19,7 @@ _install() {
   sudo apt-get install -y git-core
   git clone https://github.com/saxifrage/cityasacampus.git ~/cityasacampus
   cd ~/cityasacampus/provisioning
+  git checkout $BRANCH
   ./src/install.sh
 }
 
