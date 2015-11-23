@@ -1,12 +1,11 @@
 #!/bin/bash
 
-if [ ! -d "/home/ubuntu/cityasacampus" ]; then
+if [ ! -d "/home/{{home_user}}/cityasacampus" ]; then
   sudo apt-get update -y
 
   sudo apt-get install -y \
     build-essential\
     python-software-properties \
-    git-core \
     curl \
     sqlite3 \
     libsqlite3-dev \
@@ -20,6 +19,4 @@ if [ ! -d "/home/ubuntu/cityasacampus" ]; then
     libffi-dev \
     zlib1g-dev \
     libssl-dev
-
-  git clone https://github.com/saxifrage/cityasacampus.git /home/ubuntu/cityasacampus
 fi
