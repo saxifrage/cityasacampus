@@ -1,9 +1,5 @@
 #!/bin/bash
 
-sudo apt-get update -y &&
-sudo apt-get install -y git-core &&
-git clone https://github.com/saxifrage/cityasacampus.git ~/cityasacampus &&
-cd ~/cityasacampus/provisioning &&
 ./src/system.sh &&
 ./src/node_npm_gulp.sh &&
 ./src/ruby_gem_rake.sh &&
