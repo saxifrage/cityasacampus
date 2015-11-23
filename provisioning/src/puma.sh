@@ -1,15 +1,16 @@
 #!/bin/bash
 
-if [ ! -d "/home/{{home_user}}/cityasacampus/shared" ]; then
-  mkdir /home/{{home_user}}/cityasacampus/shared
-  mkdir /home/{{home_user}}/cityasacampus/shared/pids
-  mkdir /home/{{home_user}}/cityasacampus/shared/sockets
-  mkdir /home/{{home_user}}/cityasacampus/shared/logs
-  mkdir /home/{{home_user}}/cityasacampus/shared/log
+if [ ! -d "~/cityasacampus/shared" ]; then
+  mkdir ~/cityasacampus/shared
+  mkdir ~/cityasacampus/shared/pids
+  mkdir ~/cityasacampus/shared/sockets
+  mkdir ~/cityasacampus/shared/logs
+  mkdir ~/cityasacampus/shared/log
 
-  cp /home/{{home_user}}/cityasacampus/provisioning/src/puma_config /home/{{home_user}}/cityasacampus/config/
-  mv /home/{{home_user}}/cityasacampus/config/puma_config /home/{{home_user}}/cityasacampus/config/puma.rb
-  cd /home/{{home_user}}/cityasacampus
+  cp ~/cityasacampus/provisioning/src/puma_config ~/cityasacampus/config/
+  sed -i -- "s|{{base}}|$(echo ~)|g" ~/cityasacampus/config/puma_config
+  mv ~/cityasacampus/config/puma_config ~/cityasacampus/config/puma.rb
+  cd ~/cityasacampus
 
   sudo bundle clean --force
   sudo pumactl -P shared/pids/puma.pid start

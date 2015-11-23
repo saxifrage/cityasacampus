@@ -1,14 +1,17 @@
 #!/bin/bash
 
-if [ ! -d "/home/{{home_user}}/cityasacampus/client/node_modules" ]; then
-  cd /home/{{home_user}}/cityasacampus/client
+if [ ! -d "~/cityasacampus/client/node_modules" ]; then
+  cd ~/cityasacampus/client
   sudo npm uninstall --save-dev gulp-sass
   sudo npm install --save-dev gulp-sass@2
   sudo npm install
   sudo gulp production
-  
-  sudo bash -c "echo \"export APP_SECRET=$1\" >> /etc/profile"
-  sudo bash -c "echo \"export APP_TOKEN=$2\" >> /etc/profile"
+
+  secret=`cat /dev/urandom | tr -cd 'a-f0-9' | head -c 32`
+  token=`cat /dev/urandom | tr -cd 'a-f0-9' | head -c 32`
+
+  sudo bash -c "echo \"export APP_SECRET=$secret\" >> /etc/profile"
+  sudo bash -c "echo \"export APP_TOKEN=$token\" >> /etc/profile"
   source /etc/profile
 
   bundle install
