@@ -8,11 +8,12 @@ _recurse() {
   echo "You are root. Setting up a caac user with password '$pass' ..."
   useradd -m caac -G sudo
   echo "caac:$pass" | chpasswd
-  curl $URL | sudo -u caac bash
+  curl $URL | sudo -Hu caac bash
 }
 
 _install() {
   echo "Installing as $(whoami) ..."
+  echo "Installing to $(echo ~)/cityasacampus ..."
   sudo apt-get update -y &&
   sudo apt-get install -y git-core &&
   git clone https://github.com/saxifrage/cityasacampus.git ~/cityasacampus &&
