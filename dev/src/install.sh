@@ -1,9 +1,9 @@
 #!/bin/bash
 
-./src/system.sh &&
-./src/node_npm_gulp.sh &&
-./src/ruby_gem_rake.sh &&
-./src/rails.sh &&
-./src/bundler.sh &&
-./src/postgres.sh &&
-./src/project.sh
+./system.sh &&
+./node_npm_gulp.sh &&
+./ruby_gem_rake.sh &&
+./rails.sh &&
+./bundler.sh &&
+./postgres.sh &&
+./project.sh
