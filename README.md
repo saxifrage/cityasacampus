@@ -14,8 +14,8 @@ install https://www.zenhub.io/
 See `dev/README.md` for automated development environment install (Ubuntu is the officially supported distribution). If using Mac or a Linux other than Ubuntu see the following logs: 
 
 ```
-- (Mac: https://github.com/saxifrage/cityasacampus/issues/57)
-- (Fedora: https://github.com/saxifrage/cityasacampus/issues/213)
+- [Mac OS](https://github.com/saxifrage/cityasacampus/issues/57)
+- [Fedora](https://github.com/saxifrage/cityasacampus/issues/213)
 ```
 
 ### Running the app
