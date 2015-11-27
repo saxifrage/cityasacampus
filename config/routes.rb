@@ -2,19 +2,23 @@ Rails.application.routes.draw do
   get 'dashboard/home'
 
   scope '/dashboard' do
-    
+
     root :to => 'application#index'
-    
+
     devise_for :users, :skip => [ :registrations ]
     resources :registrations, only: [:create] do
-      collection do 
+      collection do
         get 'organizer_registration'
       end
     end
     resources :topics
     resources :organizers
     resources :venues
-    resources :opportunities
+    resources :opportunities do
+      collection do
+        match 'bulk-add', action: :bulk_add, via: [:get, :post]
+      end
+    end
     resources :opportunity_instances
   end
 

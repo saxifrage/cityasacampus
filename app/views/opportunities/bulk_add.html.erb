@@ -1,0 +1,89 @@
+<h1 class="page">Dashboard > Bulk Add Opportunities</h1>
+
+<div class="opportunities bulk-add">
+  <%= form_tag({action: :bulk_add}, multipart: true) do %>
+
+  <h2>Step 1: Set the Organizer</h2>
+
+  <%= select_tag(:organizer_id, options_for_select(current_user.organizers.map {|o| [o.name, o.id]})) %>
+
+
+  <h2>Step 2: Download the CSV Template</h2>
+
+  <p><a href="/opportunities.csv">Download the CSV template</a> to see what
+  fields are required and example values showing the expected format. Edit it
+  in Excel to enter your own data. Here are some notes on specific fields:</p>
+
+  <ul>
+    <li><b>program_type</b>&mdash;pick any value for this that makes sense for you</li>
+    <li><b>is_online</b>&mdash;"true" or "false"</li>
+    <li><b>topic</b>&mdash;must be: "<%= @topic_names.join('", "')%>"</li>
+    <li><b>resource_sub_type</b>&mdash;must be: "<%= @sub_type_names.join('", "')%>"</li>
+  </ul>
+
+
+  <h2>Step 3: Upload Your CSV</h2>
+
+  <%= file_field_tag 'csv' %>
+  <%= submit_tag('Upload') %>
+  <% end %>
+
+
+  <style>
+    td.good { background: #CCFFCC; }
+    td.bad { background: #FFCCCC; }
+    h2.disabled { color: #CCC; }
+  </style>
+
+  <% if not @opportunities.present? %>
+  <h2 class="disabled">Step 4: Review Results</h2>
+  <% else  %>
+  <h2>Step 4: Review Results</h2>
+
+  <% if @nbad > 0 %>
+  <h3>We found <%= pluralize(@nerrors, "error") %> in <%= pluralize(@nbad, "record") %>.</h3>
+  <% end %>
+
+  <table class="pure-table pure-table-bordered">
+    <thead>
+      <tr>
+        <th>actions</th>
+        <% @permitted_params.each do |param| %>
+        <th><%= param %></th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @opportunities.each do |opportunity| %>
+        <tr>
+          <% if opportunity.valid? %>
+          <td class="good">
+            <%= link_to "<button>show</button>".html_safe, opportunity %> 
+            <%= link_to "<button>edit</button>".html_safe, edit_opportunity_path(opportunity) %>
+          <% else %>
+          <td class="bad">
+            &#10008;
+          <% end %>
+          </td>
+          <% @permitted_params.each do |param| %>
+          <% if opportunity.errors[param].present? %>
+          <td class="bad">
+            <%= opportunity.send(param) %>
+            <ul>
+              <% opportunity.errors[param].each do |error| %>
+              <li><%= error %></li>
+              <% end %>
+            </ul>
+          <% else %>
+          <td class="good">
+            <%= opportunity.send(param) %>
+          <% end %>
+          </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+</div>

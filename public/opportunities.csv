@@ -1,0 +1,2 @@
+name,description,registration_deadline,starts_at,ends_at,registration_url,program_type,logo_url,is_online,contact_name,contact_email,contact_phone,price_level,min_age,max_age,topic,resource_sub_type
+Marbles,It's marble time!,2020-10-10,2020-10-10,2020-10-10,http://example.com/,Workshop,http://example.com/logo,true,Alice W. Underland,alice@example.com,+1-555-867-5309,10,0,1000,Making,Event
