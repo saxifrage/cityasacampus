@@ -18,7 +18,5 @@ production:
   encoding: utf8
   database: learn_prod
   pool: 5
-  host: localhost
-  port: 5432
   username: <%= ENV["APP_DATABASE_USER"] %>
   password: <%= ENV["APP_DATABASE_PASS"] %>
