@@ -53,6 +53,19 @@ h2.hero__desc{
 	}
 }
 
+.hero input[type="search"]:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.hero input[type="search"]:focus::-moz-placeholder {
+  opacity: 0;
+}
+
+.hero input[type="search"]:focus:-ms-input-placeholder {  
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
 .hero ::-webkit-input-placeholder {
    color: $brand-primary;
 }
