@@ -9,9 +9,21 @@ If you are interesting in setting up City as a Campus for your city, please revi
 ## Github Issue Tracker Extension (Kanban Board)
 install https://www.zenhub.io/
 
-## Development Environment
+## Setting up a Development Environment
 
-See `dev/README.md` for automated development environment install (Ubuntu is the officially supported distribution). If using Mac or a Linux other than Ubuntu see the following logs: 
+Here are our dependencies:
+
+ - Ruby 2.1.4 (for Rails)
+ - Node.js 4.1.1 (for our Gulp-based asset pipeline)
+ - PostgreSQL 9.0+ with `pg_trgm` (for data management)
+
+We maintain a build system for Ubuntu 14.04 that only depends on `git` (`sudo apt-get -y update && sudo apt-get -y install git-core`). You can invoke it like so:
+
+```
+git clone https://github.com/saxifrage/cityasacampus.git cityasacampus && cd cityasacampus/dev/src && ./install.sh
+```
+
+For other operating systems, you may find these install logs helpful:
 
  - [Mac OS](https://github.com/saxifrage/cityasacampus/issues/57)
  - [Fedora](https://github.com/saxifrage/cityasacampus/issues/213)
