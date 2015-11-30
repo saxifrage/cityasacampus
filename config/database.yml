@@ -6,9 +6,7 @@ default: &default
 development:
   <<: *default
   database: learn_dev
-  host: localhost
 
 test:
   <<: *default
   database: learn_test
-  host: localhost
