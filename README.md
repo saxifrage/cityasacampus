@@ -69,7 +69,7 @@ heroku run rake db:schema:load
 heroku run rake db:seed
 ```
 
-If that works, then you should be all set! Visit the app in your browser at https://foo-bar-1234.herokuapp.com/. If you loaded seed data, search for "cattle" to see the app in action.
+If that works, then you should be all set! Visit the app in your browser at https://foo-bar-1234.herokuapp.com/. If you loaded seed data, click on "Explore" to see the app in action.
 
 
 ## License
