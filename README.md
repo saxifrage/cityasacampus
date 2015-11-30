@@ -62,7 +62,7 @@ SECRET_KEY_BASE:          facefeedfacefeedfacefeedfacefeedfacefeedfacefeedfacefe
 $
 ```
 
-If everything looks right, then you're ready to populate the database. Use `db:schema:load` task to create the schema in the database that Heroku has already created for you, and optionally the `db:seed` task to insert some seed data once the schema is loaded. Check [the Rails source](https://github.com/rails/rails/blob/v4.2.1/activerecord/lib/active_record/railties/databases.rake) for a list of available db-related tasks.
+If everything looks right, then you're ready to populate the database. Use the `db:schema:load` task to load our schema into the database that Heroku has already created for you, and optionally the `db:seed` task to insert some seed data once the schema is loaded. Check [the Rails source](https://github.com/rails/rails/blob/v4.2.1/activerecord/lib/active_record/railties/databases.rake) for a full list of available db-related tasks.
 
 ```bash
 heroku run rake db:schema:load
