@@ -10,7 +10,7 @@ var runSeq = require('run-sequence');
 
 var buildLocation = '../public';
 var appLocation = './app';
-var npmLocation = './node_modules';
+var npmLocation = '../node_modules';
 
 var tasks = {
   JS_VENDORS: 'js-vendors',
