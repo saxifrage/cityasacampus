@@ -2,7 +2,10 @@
   "name": "city-as-a-campus",
   "version": "1.0.0",
   "scripts": {
-    "postinstall": "cd ~/client && npm uninstall --save-dev gulp-sass && npm install --save-dev gulp-sass@2 && npm install && npm install -g gulp && gulp production"
+    "postinstall": "gulp --gulpfile client/gulpfile.js production"
+  },
+  "dependencies": {
+    "gulp": "3.8.11"
   },
   "engines": {
     "node": "4.1.1",
