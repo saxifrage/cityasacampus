@@ -17,12 +17,11 @@ See `dev/README.md` for automated development environment install (Ubuntu is the
  - [Fedora](https://github.com/saxifrage/cityasacampus/issues/213)
 
 
-### Running the app
+### Running the App
 
 ```bash
-$ cd client && gulp
-$ <new tab>
-$ rails server
+./node_modules/.bin/gulp &
+bundle exec rails server
 ```
 
 ## Deploying to Heroku
