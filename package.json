@@ -5,7 +5,7 @@
   "main": "client/app/index.js",
   "scripts": {
     "test": "echo \"we'll get to it...\" && exit 1",
-    "postinstall": "gulp --gulpfile client/gulpfile.js production"
+    "postinstall": "gulp production"
   },
   "dependencies": {
 

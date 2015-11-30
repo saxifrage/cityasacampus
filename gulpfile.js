@@ -8,9 +8,9 @@ var cssmin = require('gulp-cssmin');
 var rename = require('gulp-rename');
 var runSeq = require('run-sequence');
 
-var buildLocation = '../public';
-var appLocation = './app';
-var npmLocation = '../node_modules';
+var buildLocation = './public';
+var appLocation = './client';
+var npmLocation = './node_modules';
 
 var tasks = {
   JS_VENDORS: 'js-vendors',
