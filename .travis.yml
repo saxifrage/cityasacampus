@@ -1,11 +1,19 @@
 language: ruby
+addons:
+  postgresql: "9.3"
 branches:
   only:
     - "master"
 before_install:
- - ruby --version
- - node --version
- - npm --version
+  - "ruby --version"
+  - "node --version"
+  - "npm --version"
+before_script:
+  - "sed -e 's/learn_test/learn_test~  username: postgres/' config/database.yml > tmp"
+  - "tr '~' '\\n' < tmp > config/database.yml"
+  - "rm tmp"
+  - "psql -c 'create database learn_test;' -U postgres"
+  - "bundle exec rake db:schema:load"
 notifications:
   email: false
 sudo: false
