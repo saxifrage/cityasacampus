@@ -1,4 +1,7 @@
 language: ruby
+branches:
+  only:
+    - "master"
 before_install:
  - ruby --version
  - node --version
