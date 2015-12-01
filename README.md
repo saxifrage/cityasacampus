@@ -20,7 +20,7 @@ Here are our dependencies:
 We maintain a build system for Ubuntu 14.04 that only depends on `git` (`sudo apt-get -y update && sudo apt-get -y install git-core`). You can invoke it like so:
 
 ```
-git clone https://github.com/saxifrage/cityasacampus.git cityasacampus && cd cityasacampus/dev/src && ./install.sh
+git clone https://github.com/saxifrage/cityasacampus.git && cd cityasacampus/dev/src && ./install.sh
 ```
 
 For other operating systems, you may find these install logs helpful:
