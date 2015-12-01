@@ -1,0 +1,8 @@
+language: ruby
+before_install:
+ - ruby --version
+ - node --version
+ - npm --version
+notifications:
+  email: false
+sudo: false
