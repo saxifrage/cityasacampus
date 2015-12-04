@@ -1,9 +1,7 @@
 default: &default
   adapter: postgresql
   encoding: utf8
-  database: learn
   pool: 5
-  host: localhost
 
 development:
   <<: *default
@@ -12,13 +10,3 @@ development:
 test:
   <<: *default
   database: learn_test
-
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: learn_prod
-  pool: 5
-  host: localhost
-  port: 5432
-  username: <%= ENV["APP_DATABASE_USER"] %>
-  password: <%= ENV["APP_DATABASE_PASS"] %>
