@@ -52,6 +52,9 @@ if (!(Modernizr.borderradius &&
     }).when('/dashboard/organizers/:organizer', {
       controller: 'OrganizersDashboardController',
       templateUrl: 'dashboard/organizers/OrganizersDashboardView.html'
+    }).when('/dashboard/pathways', {
+      controller: 'PathwaysController',
+      templateUrl: 'dashboard/PathwaysView.html'
     }).when('/users/login', {
       controller: 'LoginController',
       templateUrl: 'users/auth/login/LoginView.html'
