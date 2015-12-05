@@ -22,6 +22,7 @@ if (!(Modernizr.borderradius &&
     'caac.users.auth.service',
     'caac.users.register.learners.controller',
     'caac.users.register.organizers.controller',
+    'caac.users.password-reset.controller',
     'ngRoute',
     'ng-token-auth',
     'angular.filter'
@@ -55,6 +56,9 @@ if (!(Modernizr.borderradius &&
     }).when('/users/register/organizers', {
       controller: 'RegisterOrganizersController',
       templateUrl: 'users/auth/register/organizers/RegisterOrganizersView.html'
+    }).when('/users/password/reset', {
+      controller: 'PasswordResetController',
+      templateUrl: 'users/auth/password/PasswordResetView.html'
     }).when('/', {
       controller: 'HomeController',
       templateUrl: 'home/HomeView.html'
