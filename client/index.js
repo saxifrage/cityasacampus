@@ -24,7 +24,9 @@ if (!(Modernizr.borderradius &&
     'angular.filter'
   ]).config(function($authProvider, $routeProvider) {
     $authProvider.configure({
-      apiUrl: '/api/v1'
+      apiUrl: '/api/v1',
+      tokenValidationPath: '/auth/validate_token',
+      storage: 'localStorage'
     });
 
     $routeProvider.when('/explore', {
