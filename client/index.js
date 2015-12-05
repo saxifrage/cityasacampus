@@ -14,13 +14,19 @@ if (!(Modernizr.borderradius &&
   window.location = 'http://www.old-browser.org/en-us/?referer=' + window.location.host;
 } else {
   angular.module('caac', [
+    'caac.dashboard.controller',
     'caac.explore.controller',
     'caac.home.controller',
     'caac.opportunity-instances.controller',
-    'caac.dashboard.controller',
+    'caac.users.login.controller',
     'ngRoute',
+    'ng-token-auth',
     'angular.filter'
-  ]).config(['$routeProvider', function($routeProvider) {
+  ]).config(function($authProvider, $routeProvider) {
+    $authProvider.configure({
+      apiUrl: '/api/v1'
+    });
+
     $routeProvider.when('/explore', {
       controller: 'ExploreController',
       templateUrl: 'explore/ExploreView.html'
@@ -33,11 +39,14 @@ if (!(Modernizr.borderradius &&
     }).when('/dashboard', {
       controller: 'DashboardController',
       templateUrl: 'dashboard/DashboardView.html'
+    }).when('/users/login', {
+      controller: 'LoginController',
+      templateUrl: 'users/auth/LoginView.html'
     }).when('/', {
       controller: 'HomeController',
       templateUrl: 'home/HomeView.html'
     });
-  }]).run(['$log',
+  }).run(['$log',
     function($log) {
       $log.getInstance = function(context) {
         return {

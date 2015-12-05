@@ -1,0 +1,16 @@
+<section class="login text-center">
+    <div class="container">
+        <div class="title">
+            <h1>Login to</h1>
+            <h1>City as a Campus</h1>
+        </div>
+        <form role="form" ng-submit="handleLoginBtnClick()">
+            <input type="email" name="email" ng-model="loginForm.email" required="required" placeholder="Your email" autofocus>
+            <input type="password" name="password" ng-model="loginForm.password" required="required" placeholder="Your password">
+            <p class="error" ng-if="loginForm.error">{{ loginForm.error }}</p>
+            <button type="submit">Login</button>
+        </form>
+        <p><a href="#">Forgot your password?</a></p>
+        <p><a href="#/users/register">Sign up here</a></p>
+    </div>
+</section>
