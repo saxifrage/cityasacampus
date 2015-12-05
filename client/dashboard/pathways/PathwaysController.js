@@ -1,4 +1,4 @@
-angular.module('caac.pathways.controller', [
+angular.module('caac.dashboard.pathways.controller', [
   'caac.shared.navbar.directive',
   'caac.shared.copyright.directive',
   'caac.shared.title.service',

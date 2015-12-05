@@ -17,6 +17,7 @@ if (!(Modernizr.borderradius &&
     'caac.dashboard.controller',
     'caac.dashboard.organizers.chooser.controller',
     'caac.dashboard.organizers.controller',
+    'caac.dashboard.pathways.controller',
     'caac.explore.controller',
     'caac.home.controller',
     'caac.opportunity-instances.controller',
@@ -54,7 +55,7 @@ if (!(Modernizr.borderradius &&
       templateUrl: 'dashboard/organizers/OrganizersDashboardView.html'
     }).when('/dashboard/pathways', {
       controller: 'PathwaysController',
-      templateUrl: 'dashboard/PathwaysView.html'
+      templateUrl: 'dashboard/pathways/PathwaysView.html'
     }).when('/users/login', {
       controller: 'LoginController',
       templateUrl: 'users/auth/login/LoginView.html'
