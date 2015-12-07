@@ -7,16 +7,18 @@
     <ul>
       <li ng-repeat="topic in topics"
           ng-class="{'selected': models.selected === item}"
+          ng-click="topic = topic"
          >
-        {{item.name}}
+        {{topic.name}}
       </li>
     </ul>
   </div>
   <div class="pane">
     <h3>Topic</h3>
     <ul>
-      <li ng-repeat="pathway in topic"
+      <li ng-repeat="pathway in topic.pathways"
           ng-class="{'selected': models.selected === item}"
+          ng-click="pathway = pathway"
          >
         {{item.name}}
       </li>
@@ -24,9 +26,9 @@
   </div>
   <div class="pane">
     <h3>Pathway</h3>
-    <ul dnd-list="pathway" >
-      <li ng-repeat="item in pathway"
-          dnd-draggable="item"
+    <ul dnd-list="pathway">
+      <li ng-repeat="resource in pathway"
+          dnd-draggable="resource"
           dnd-moved="pathway.splice($index, 1)"
           dnd-effect-allowed="move"
          >
@@ -37,8 +39,8 @@
   <div class="pane">
     <h3>Library</h3>
     <ul dnd-list="library" >
-      <li ng-repeat="item in library"
-          dnd-draggable="item"
+      <li ng-repeat="resource in library"
+          dnd-draggable="resource"
           dnd-moved="library.splice($index, 1)"
           dnd-effect-allowed="move"
          >

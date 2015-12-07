@@ -11,9 +11,11 @@ angular.module('caac.dashboard.map.controller', [
     TitleService.set('Map - Dashboard');
     logger.info('loading map interface');
 
-    self.topics = [];
-    self.topic = [];
-    self.pathway = [];
+    self.topics = [{ name: "Cheese"
+                   , pathways: [{ name: "Cheddar"
+                                , resources: []
+                                 }]
+                    }];
     $http.get('opportunity_instances.json').then(function(res){ self.library = res.data.result; });
   }
 ]);
