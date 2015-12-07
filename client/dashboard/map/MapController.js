@@ -1,15 +1,15 @@
-angular.module('caac.dashboard.pathways.controller', [
+angular.module('caac.dashboard.map.controller', [
   'caac.shared.navbar.directive',
   'caac.shared.copyright.directive',
   'caac.shared.title.service',
   'dndLists'
-]).controller('PathwaysController', ['$log', '$scope', '$http', 'TitleService',
+]).controller('MapController', ['$log', '$scope', '$http', 'TitleService',
   function($log, $scope, $http, TitleService) {
     var self = $scope;
-    var logger = $log.getInstance('PathwaysController');
+    var logger = $log.getInstance('MapController');
 
-    TitleService.set('Pathways - Dashboard');
-    logger.info('loading pathways interface');
+    TitleService.set('Map - Dashboard');
+    logger.info('loading map interface');
 
     self.topics = [];
     self.topic = [];
