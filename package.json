@@ -23,6 +23,7 @@
     "masonry-layout": "^3.3.2",
     "moment": "2.10.2",
     "ng-token-auth": "lynndylanhurley/ng-token-auth#v0.0.29-beta1",
+    "angular-drag-and-drop-lists": "marceljuenemann/angular-drag-and-drop-lists#822552b2b6fe28fa7675ec434c769fa96ba5e154",
 
     "gulp": "Build Dependencies",
     "gulp": "==================",

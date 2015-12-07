@@ -14,5 +14,22 @@ angular.module('caac.dashboard.pathways.controller', [
     };
 
     self.construct();
+
+    self.models = {
+        selected: null,
+        lists: {"A": [], "B": []}
+    };
+
+    // Generate initial model
+    for (var i = 1; i <= 3; ++i) {
+        self.models.lists.A.push({label: "Item A" + i});
+        self.models.lists.B.push({label: "Item B" + i});
+    }
+
+    // Model to JSON for demo purpose
+    self.$watch('models', function(model) {
+        self.modelAsJson = angular.toJson(model, true);
+    }, true);
+
   }
 ]);
