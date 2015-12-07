@@ -11,6 +11,9 @@ angular.module('caac.dashboard.pathways.controller', [
     TitleService.set('Pathways - Dashboard');
     logger.info('loading pathways interface');
 
+    self.topics = [];
+    self.topic = [];
+    self.pathway = [];
     $http.get('opportunity_instances.json').then(function(res){ self.library = res.data.result; });
   }
 ]);

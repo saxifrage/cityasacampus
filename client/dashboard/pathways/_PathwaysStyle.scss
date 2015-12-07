@@ -1,7 +1,14 @@
 .pathways {
+  clear: both;
+  margin-left: 10%;
+
   .pane {
-    width: 25%;
+    width: 20%;
     float: left;
+    margin-right: 20px;
+    &:last-child {
+        margin-right: 0;
+    }
 
     li {
         cursor: move;

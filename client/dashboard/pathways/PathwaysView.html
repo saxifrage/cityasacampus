@@ -1,6 +1,39 @@
 <navbar></navbar>
 
 <div class="dashboard pathways">
+  <h1>Organize Your Map</h1>
+  <div class="pane">
+    <h3>All Topics</h3>
+    <ul>
+      <li ng-repeat="topic in topics"
+          ng-class="{'selected': models.selected === item}"
+         >
+        {{item.name}}
+      </li>
+    </ul>
+  </div>
+  <div class="pane">
+    <h3>Topic</h3>
+    <ul>
+      <li ng-repeat="pathway in topic"
+          ng-class="{'selected': models.selected === item}"
+         >
+        {{item.name}}
+      </li>
+    </ul>
+  </div>
+  <div class="pane">
+    <h3>Pathway</h3>
+    <ul dnd-list="pathway" >
+      <li ng-repeat="item in pathway"
+          dnd-draggable="item"
+          dnd-moved="pathway.splice($index, 1)"
+          dnd-effect-allowed="move"
+         >
+        {{item.name}}
+      </li>
+    </ul>
+  </div>
   <div class="pane">
     <h3>Library</h3>
     <ul dnd-list="library" >
@@ -8,8 +41,6 @@
           dnd-draggable="item"
           dnd-moved="library.splice($index, 1)"
           dnd-effect-allowed="move"
-          dnd-selected="models.selected = item"
-          ng-class="{'selected': models.selected === item}"
          >
         {{item.name}}
       </li>
