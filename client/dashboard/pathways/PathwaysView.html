@@ -1,6 +1,20 @@
 <navbar></navbar>
 
 <div class="dashboard pathways">
+  <div class="pane">
+    <h3>Library of Opportunities Instances</h3>
+    <ul dnd-list="library" >
+      <li ng-repeat="item in library"
+          dnd-draggable="item"
+          dnd-moved="library.splice($index, 1)"
+          dnd-effect-allowed="move"
+          dnd-selected="models.selected = item"
+          ng-class="{'selected': models.selected === item}"
+         >
+        {{item.label}}
+      </li>
+    </ul>
+  </div>
   <div ng-repeat="(listName, list) in models.lists" class="pane">
     <h3>List {{listName}}</h3>
     <ul dnd-list="list" >

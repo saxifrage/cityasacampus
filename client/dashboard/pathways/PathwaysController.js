@@ -8,29 +8,13 @@ angular.module('caac.dashboard.pathways.controller', [
     var self = $scope;
     var logger = $log.getInstance('PathwaysController');
 
-    self.construct = function() {
-      TitleService.set('Pathways - Dashboard');
+    TitleService.set('Pathways - Dashboard');
+    logger.info('loading pathways interface');
 
-      logger.info('loading pathways interface');
-    };
-
-    self.construct();
-
-    self.models = {
-        selected: null,
-        lists: {"A": [], "B": []}
-    };
-
-    // Generate initial model
-    for (var i = 1; i <= 3; ++i) {
-        self.models.lists.A.push({label: "Item A" + i});
-        self.models.lists.B.push({label: "Item B" + i});
-    }
-
-    // Model to JSON for demo purpose
-    self.$watch('models', function(model) {
-        self.modelAsJson = angular.toJson(model, true);
-    }, true);
-
+    self.library = [ {label: 'Opportunity'}
+                   , {label: 'Instances'}
+                   , {label: 'Go'}
+                   , {label: 'Here'}
+                    ]
   }
 ]);
