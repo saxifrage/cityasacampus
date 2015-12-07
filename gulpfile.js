@@ -28,7 +28,6 @@ gulp.task(tasks.JS_VENDORS, function() {
   return gulp.src([
       npmLocation + '/angular/angular.min.js',
       npmLocation + '/angular-cookie/angular-cookie.min.js',
-      npmLocation + '/angular-drag-and-drop-lists/angular-drag-and-drop-lists.min.js',
       npmLocation + '/angular-filter/dist/angular-filter.min.js',
       npmLocation + '/angular-route/angular-route.min.js',
       npmLocation + '/angucomplete-alt/dist/angucomplete-alt.min.js',
