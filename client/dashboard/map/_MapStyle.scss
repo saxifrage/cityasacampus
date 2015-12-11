@@ -51,15 +51,25 @@
     &.dnd {
 
       li {
-        background: #fff url("/shared/assets/dnd.svg") no-repeat;
-        background-size: auto 22px;
-        background-position: 5px 10px;
+        background: #fff;
         cursor: move;
         border: 1px solid #ddd;
         border-top-right-radius: 4px;
         border-top-left-radius: 4px;
-        padding: 10px 15px 10px 20px;
+        padding: 10px 15px 8px 5px;
         margin-bottom: -1px;
+        line-height: 24px;
+        .handle {
+            display: block;
+            padding-left: 15px;
+        }
+        &:hover .handle {
+            background: url("/shared/assets/dnd.svg") repeat-y;
+            background-origin: padding-box;
+            background-clip: padding-box;
+            background-size: auto 24px;
+            background-position: 0 1px;
+        }
       }
 
       /**
