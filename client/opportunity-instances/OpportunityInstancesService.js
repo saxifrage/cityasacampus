@@ -27,10 +27,17 @@ angular.module('caac.opportunity-instances.service', [
         if (uid) $location.path('opportunity-instances/' + uid);
       };
 
+      var load = function(callback) {
+        $http.get('opportunity_instances.json').then(function(res) {
+          callback(res.data.result)
+        });
+      };
+
       return {
         selectByUid: selectByUid,
         selectByTerm: selectByTerm,
-        goToOpportunityInstance: goToOpportunityInstance
+        goToOpportunityInstance: goToOpportunityInstance,
+        load: load
       };
     }
   ]);
