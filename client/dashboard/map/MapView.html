@@ -10,7 +10,9 @@
           ng-click="selectTopic(topic)"
          >
         {{topic.name}}
+        <span class="delete" ng-click="deleteTopic(topic)">[x]</span>
       </li>
+      <li><button ng-click="addTopic()">Add a Topic</button></li>
     </ul>
   </div>
   <div class="pane nav">
@@ -21,7 +23,9 @@
           ng-click="selectPathway(pathway)"
          >
         {{pathway.name}}
+        <span class="delete" ng-click="deletePathway(pathway)">[x]</span>
       </li>
+      <li><button ng-click="addPathway()">Add a Pathway</button></li>
     </ul>
   </div>
   <div class="pane dnd">

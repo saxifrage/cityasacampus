@@ -27,12 +27,24 @@
     }
 
     &.nav {
-      h3 {
-      }
       li {
         margin-left: -5px;
         padding: 5px;
         font-size: smaller;
+
+        .delete {
+          display: none;
+          float: right;
+          height: 16px;
+          width: 16px;
+          text-align: center;
+          &:hover {
+            background: red;
+          }
+        }
+        &:hover .delete {
+          display: block;
+        }
       }
     }
 

@@ -12,6 +12,53 @@ angular.module('caac.dashboard.map.controller', [
     TitleService.set('Map - Dashboard');
     logger.info('loading map interface');
 
+
+    // Create
+    // ======
+
+    self.addTopic = function() {
+       alert("Add topic ...");
+    };
+
+    self.addPathway = function() {
+       alert("Add pathway ...");
+    };
+
+
+    // Read
+    // ====
+
+    self.selectTopic = function(topic) {
+      self.currentTopic = topic;
+      self.selectPathway(topic.pathways[0]);
+    };
+
+    self.selectPathway = function(pathway) {
+      self.currentPathway = pathway;
+    };
+
+
+    // Update
+    // ======
+
+    // ???
+
+
+    // Delete
+    // ======
+
+    self.deleteTopic = function(topic) {
+       alert("Delete " + topic.name);
+    };
+
+    self.deletePathway = function(pathway) {
+       alert("Delete " + pathway.name);
+    };
+
+
+    // Initialize
+    // ==========
+
     self.topics = [ { name: "Cheese"
                     , pathways: [{ name: "Cheddar"
                                  , resources: [ {name: "Mild"}
@@ -36,20 +83,10 @@ angular.module('caac.dashboard.map.controller', [
                                  ]
                      }
                    ];
-
-    self.selectPathway = function(pathway) {
-        self.currentPathway = pathway;
-    };
-
-    self.selectTopic = function(topic) {
-        self.currentTopic = topic;
-        self.selectPathway(topic.pathways[0]);
-    };
-
     self.selectTopic(self.topics[0]);
 
     OpportunityInstancesService.load(function(opportunity_instances){
-        self.library = opportunity_instances;
+      self.library = opportunity_instances;
     });
   }
 ]);
