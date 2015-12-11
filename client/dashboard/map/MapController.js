@@ -41,7 +41,13 @@ angular.module('caac.dashboard.map.controller', [
     // Update
     // ======
 
-    // ???
+    self.editTopic = function(topic) {
+       alert("Edit" + topic.name);
+    };
+
+    self.editPathway = function(pathway) {
+       alert("Edit " + pathway.name);
+    };
 
 
     // Delete

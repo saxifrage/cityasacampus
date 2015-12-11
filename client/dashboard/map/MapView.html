@@ -11,6 +11,7 @@
          >
         {{topic.name}}
         <span class="delete" ng-click="deleteTopic(topic)">[x]</span>
+        <span class="edit" ng-click="editTopic(topic)">[/]</span>
       </li>
       <li><button ng-click="addTopic()">Add a Topic</button></li>
     </ul>
@@ -24,6 +25,7 @@
          >
         {{pathway.name}}
         <span class="delete" ng-click="deletePathway(pathway)">[x]</span>
+        <span class="edit" ng-click="editPathway(pathway)">[/]</span>
       </li>
       <li><button ng-click="addPathway()">Add a Pathway</button></li>
     </ul>
