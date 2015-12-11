@@ -13,11 +13,9 @@
     &.dnd { width: 25%; }
 
     ul {
-      min-height: 42px;
       padding-left: 0px;
       li {
         display: block;
-        cursor: pointer;
 
         &.selected {
           background-color: #dff0d8;
@@ -31,6 +29,7 @@
         margin-left: -5px;
         padding: 5px;
         font-size: smaller;
+        cursor: pointer;
 
         span {
           display: none;
@@ -49,58 +48,41 @@
     }
 
     &.dnd {
+      ul {
+        min-height: 44px;
+        position: relative;   // required by angular-drag-and-drop-lists
 
-      li {
-        background: #fff;
-        cursor: move;
-        border: 1px solid #ddd;
-        padding: 10px 15px 8px 5px;
-        margin-bottom: -1px;
-        line-height: 24px;
-        .handle {
+        li {
+          position: relative; // required by angular-drag-and-drop-lists
+          background: #fff;
+          cursor: move;
+          border: 1px solid #ddd;
+          padding: 10px 15px 8px 5px;
+          margin-bottom: -1px;
+          line-height: 24px;
+          .handle {
+              display: block;
+              padding-left: 15px;
+          }
+          &:first-child { border-radius: 4px 4px 0 0; }
+          &:last-child { border-radius: 0 0 4px 4px; }
+          &:hover .handle {
+              background: url("/shared/assets/dnd.svg") repeat-y;
+              background-origin: padding-box;
+              background-clip: padding-box;
+              background-size: auto 24px;
+              background-position: 0 1px;
+          }
+          &.dndDraggingSource {
+            display: none;
+          }
+          &.dndPlaceholder {
             display: block;
-            padding-left: 15px;
+            background-color: #ddd;
+            background-image: none;
+            min-height: 44px;
+          }
         }
-        &:first-child { border-radius: 4px 4px 0 0; }
-        &:last-child { border-radius: 0 0 4px 4px; }
-        &:hover .handle {
-            background: url("/shared/assets/dnd.svg") repeat-y;
-            background-origin: padding-box;
-            background-clip: padding-box;
-            background-size: auto 24px;
-            background-position: 0 1px;
-        }
-      }
-
-      /**
-       * For the correct positioning of the placeholder element, the dnd-list and
-       * it's children must have position: relative
-       */
-      ul[dnd-list],
-      ul[dnd-list] > li {
-        position: relative;
-      }
-
-      /**
-       * The dndDraggingSource class will be applied to
-       * the source element of a drag operation. It makes
-       * sense to hide it to give the user the feeling
-       * that they're actually moving it.
-       */
-      ul[dnd-list] .dndDraggingSource {
-        display: none;
-      }
-
-      /**
-       * An element with .dndPlaceholder class will be
-       * added to the dnd-list while the user is dragging
-       * over it.
-       */
-      ul[dnd-list] .dndPlaceholder {
-        display: block;
-        background-color: #ddd;
-        background-image: none;
-        min-height: 42px;
       }
     }
   }
