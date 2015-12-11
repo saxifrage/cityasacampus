@@ -2,7 +2,7 @@
 
 <div class="dashboard pathways">
   <h1>Organize Your Map</h1>
-  <div class="pane">
+  <div class="pane nav">
     <h3>All Topics</h3>
     <ul>
       <li ng-repeat="topic in topics"
@@ -13,8 +13,8 @@
       </li>
     </ul>
   </div>
-  <div class="pane">
-    <h3>Topic</h3>
+  <div class="pane nav">
+    <h3>Pathways in {{currentTopic.name||'...'}}</h3>
     <ul>
       <li ng-repeat="pathway in currentTopic.pathways"
           ng-class="{'selected': currentPathway === pathway}"
@@ -24,8 +24,8 @@
       </li>
     </ul>
   </div>
-  <div class="pane">
-    <h3>Pathway</h3>
+  <div class="pane dnd">
+    <h3>Resources in {{currentPathway.name||'...'}}</h3>
     <ul dnd-list="currentPathway.resources">
       <li ng-repeat="resource in currentPathway.resources"
           dnd-draggable="resource"
@@ -36,8 +36,8 @@
       </li>
     </ul>
   </div>
-  <div class="pane">
-    <h3>Library</h3>
+  <div class="pane dnd">
+    <h3>Unassigned Resources</h3>
     <ul dnd-list="library" >
       <li ng-repeat="resource in library"
           dnd-draggable="resource"

@@ -37,15 +37,16 @@ angular.module('caac.dashboard.map.controller', [
                      }
                    ];
 
-    self.currentTopic = null;
-    self.selectTopic = function(topic) {
-        self.currentTopic = topic;
-    };
-
-    self.currentPathway = null;
     self.selectPathway = function(pathway) {
         self.currentPathway = pathway;
     };
+
+    self.selectTopic = function(topic) {
+        self.currentTopic = topic;
+        self.selectPathway(topic.pathways[0]);
+    };
+
+    self.selectTopic(self.topics[0]);
 
     OpportunityInstancesService.load(function(opportunity_instances){
         self.library = opportunity_instances;
