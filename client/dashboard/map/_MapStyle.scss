@@ -51,11 +51,13 @@
     &.dnd {
 
       li {
-        background-color: #fff;
+        background: #fff url("/shared/assets/dnd.svg") no-repeat;
+        background-size: auto 22px;
+        background-position: 5px 10px;
         border: 1px solid #ddd;
         border-top-right-radius: 4px;
         border-top-left-radius: 4px;
-        padding: 10px 15px;
+        padding: 10px 15px 10px 20px;
         margin-bottom: -1px;
       }
 
