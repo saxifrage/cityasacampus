@@ -54,6 +54,7 @@
         background: #fff url("/shared/assets/dnd.svg") no-repeat;
         background-size: auto 22px;
         background-position: 5px 10px;
+        cursor: move;
         border: 1px solid #ddd;
         border-top-right-radius: 4px;
         border-top-left-radius: 4px;
@@ -74,7 +75,7 @@
        * The dndDraggingSource class will be applied to
        * the source element of a drag operation. It makes
        * sense to hide it to give the user the feeling
-       * that he's actually moving it.
+       * that they're actually moving it.
        */
       ul[dnd-list] .dndDraggingSource {
         display: none;
@@ -88,18 +89,8 @@
       ul[dnd-list] .dndPlaceholder {
         display: block;
         background-color: #ddd;
+        background-image: none;
         min-height: 42px;
-      }
-
-      /**
-       * The dnd-lists's child elements currently MUST have
-       * position: relative. Otherwise we can not determine
-       * whether the mouse pointer is in the upper or lower
-       * half of the element we are dragging over. In other
-       * browsers we can use event.offsetY for this.
-       */
-      ul[dnd-list] li {
-        cursor: move;
       }
     }
   }
