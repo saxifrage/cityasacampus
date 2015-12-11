@@ -50,6 +50,7 @@
     &.dnd {
       ul {
         min-height: 44px;
+        padding-bottom: 44px;
         position: relative;   // required by angular-drag-and-drop-lists
 
         li {
