@@ -5,7 +5,7 @@ angular.module('caac.organizers.service', [
       var logger = $log.getInstance('RegisterController');
 
       var selectOrganizers = function() {
-        return $http.get('/organizers');
+        return $http.get('/api/v1/organizers/for-current-user.json');
       };
 
       return {

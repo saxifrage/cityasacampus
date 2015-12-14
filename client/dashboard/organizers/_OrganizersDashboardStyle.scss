@@ -1,17 +1,16 @@
 .dashboard {
-  .btn.big {
+  .learners-link, .organizers-link {
     margin: 25px auto auto auto;
     display: block;
     text-align: center;
     width: 25%;
     padding: 25px;
-    white-space: normal;
   }
 }
 
 @media screen and (max-width: 800px) {
   .dashboard {
-    .btn.big {
+    .learners-link, .organizers-link {
       width: 50%;
     }
   }
