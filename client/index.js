@@ -19,6 +19,7 @@ if (!(Modernizr.borderradius &&
     'caac.home.controller',
     'caac.opportunity-instances.controller',
     'caac.users.login.controller',
+    'caac.users.auth.service',
     'ngRoute',
     'ng-token-auth',
     'angular.filter'
@@ -48,8 +49,22 @@ if (!(Modernizr.borderradius &&
       controller: 'HomeController',
       templateUrl: 'home/HomeView.html'
     });
-  }).run(['$log',
-    function($log) {
+  }).run(['$log', '$rootScope', 'AuthService', '$location',
+    function($log, $rootScope, AuthService, $location) {
+
+      //route auth checker
+      $rootScope.$on('$routeChangeStart', function(event, current, previous) {
+        if (current && current.$$route) {
+          if (current.$$route.originalPath.indexOf('dashboard') === -1) return;
+
+          AuthService.isAuthenticated()
+            .catch(function() {
+              event.preventDefault();
+              $location.path('/users/login');
+            });
+        }
+      });
+
       $log.getInstance = function(context) {
         return {
           info: enhanceLogging('INFO', $log.info, context),
