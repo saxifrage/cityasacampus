@@ -11,6 +11,11 @@
 <header role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader" class="header">
     <nav class="navbar">
       <div class="container">
+        <a class="navbar__logout"
+           ng-show="showLogout"
+           nohref
+           ng-click="logout()">Logout</a>
+
         <div class="navbar__brand">
           <a class="navbar-brand" href="#/"><img src="shared/navbar/assets/logo_caac.svg" alt="City as a Campus"></a>
         </div><!--/navbar__brand-->

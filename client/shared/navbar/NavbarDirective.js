@@ -1,11 +1,24 @@
 angular.module('caac.shared.navbar.directive', [
+    'caac.users.auth.service'
   ])
-  .controller('NavbarController', ['$scope', '$location',
-    function($scope, $location) {
+  .controller('NavbarController', ['$scope', '$location', 'AuthService',
+    function($scope, $location, AuthService) {
       var self = $scope;
 
-      var construct = function() {
+      self.showLogout = false;
 
+      var construct = function() {
+        self.showLogoutHandler();
+      };
+
+      self.showLogoutHandler = function() {
+        AuthService.isAuthenticated()
+          .then(function() {
+            self.showLogout = true;
+          })
+          .catch(function() {
+            self.showLogout = false;
+          });
       };
 
       self.setActivePage = function() {};
@@ -13,6 +26,10 @@ angular.module('caac.shared.navbar.directive', [
       self.textSearch = function(term) {
         if (!term) return;
         $location.path('explore/' + term);
+      };
+
+      self.logout = function() {
+        AuthService.logout();
       };
 
       construct();
