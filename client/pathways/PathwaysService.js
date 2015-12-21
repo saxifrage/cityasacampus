@@ -11,8 +11,20 @@ angular.module('caac.pathways.service', [
         return $http.post('/api/v1/pathways.json', {name: name, grid_id: grid.id});
       };
 
+      var edit = function(pathway, newName) {
+        logger.info('attempting to rename pathway "' + pathway.name + '" to "' + newName + '"');
+        return $http.put('/api/v1/pathways/' + pathway.id + '.json', {name: newName});
+      };
+
+      var delete_ = function(pathway) {
+        logger.info('attempting to remove pathway "' + pathway.name + '"');
+        return $http.delete('/api/v1/pathways/' + pathway.id + '.json');
+      };
+
       return {
-        insert: insert
+        insert: insert,
+        delete_: delete_,
+        edit: edit
       };
     }
   ]);

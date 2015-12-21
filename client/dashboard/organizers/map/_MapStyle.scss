@@ -36,11 +36,13 @@
           float: right;
           height: 16px;
           width: 16px;
-          text-align: center;
-          &:hover {
-            background: red;
-          }
+          background-repeat: no-repeat;
+          background-size: contain;
+          &.edit { background-image: url("/shared/assets/edit.svg"); }
+          &.delete { background-image: url("/shared/assets/delete.svg"); }
+          &:hover { background-color: #ffff99; }
         }
+
         &:hover span {
           display: block;
         }

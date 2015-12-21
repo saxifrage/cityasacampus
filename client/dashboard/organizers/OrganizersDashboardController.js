@@ -10,7 +10,7 @@ angular.module('caac.dashboard.organizers.controller', [
     var logger = $log.getInstance('OrganizersDashboardController');
     TitleService.set('Organizers Dashboard');
 
-    self.comingSoon= function() {
+    self.comingSoon = function() {
       alert('Coming soon!');
     };
     self.path = OrganizersService.path;
