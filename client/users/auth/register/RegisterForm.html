@@ -1,0 +1,8 @@
+<form class="form" role="form" ng-submit="submitHandler()">
+    <input type="text" name="name" ng-model="model.name" required="required" placeholder="Your name" autofocus>
+    <input type="email" name="email" ng-class="{ error: model.errors.email }" ng-model="model.email" required="required" placeholder="Your email">
+    <input type="password" name="password" ng-class="{ error: model.errors.password }" ng-model="model.password" required="required" placeholder="Choose a password">
+    <input type="password" name="password_confirmation" ng-class="{ error: model.errors.password_confirmation }" ng-model="model.password_confirmation" required="required" placeholder="Retype that password">
+    <p class="error" ng-repeat="error in model.errors.full_messages">{{ error }}.</p>
+    <button ng-show="showSubmitButton" type="submit">Create My Account</button>
+</form>

@@ -1,0 +1,45 @@
+progress-indicator {
+    $circle-size: 50px;
+    $circle-border-width: 2px;
+    $distance-between-circles: 50px;
+
+    @include span-columns(12);
+    @include rem(margin, 10px 0);
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: inline-block;
+        }
+
+        li:nth-child(even) {
+           @include rem(width, 50px);
+           @include rem(height, $circle-border-width * 2);
+           background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='#{$distance-between-circles}' height='4px'><line x1='0px' y1='#{$circle-border-width}' x2='#{$distance-between-circles}' y2='#{$circle-border-width}' style='stroke:rgb(0,153,255);stroke-width:#{$circle-border-width};' /></svg>");
+        }
+
+        li:nth-child(odd) {
+            background-color: $brand-white;
+            border: $circle-border-width solid $brand-primary;
+            border-radius: 50%;
+            color: $brand-primary;
+            font-weight: 600;
+            @include rem(font-size, 22px);
+            @include rem(line-height, $circle-size - $circle-border-width * 2);
+            @include rem(height, $circle-size);
+            @include rem(width, $circle-size);
+            vertical-align: middle;
+        }
+
+        li:last-child {
+            @include rem(margin-left, -5px);
+        }
+
+        li.complete {
+            background-color: $brand-primary;
+            color: $brand-white;
+        }
+    }
+}

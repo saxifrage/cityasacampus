@@ -17,6 +17,7 @@ var tasks = {
   JS_APP: 'js-app',
   WATCH: 'watch',
   CSS_APP: 'css-app',
+  CSS_VENDORS: 'css-vendors',
   TEMPLATES: 'templates',
   IMAGES: 'images',
   DEFAULT: 'default',
@@ -29,6 +30,7 @@ gulp.task(tasks.JS_VENDORS, function() {
       npmLocation + '/angular-cookie/angular-cookie.min.js',
       npmLocation + '/angular-filter/dist/angular-filter.min.js',
       npmLocation + '/angular-route/angular-route.min.js',
+      npmLocation + '/angucomplete-alt/dist/angucomplete-alt.min.js',
       npmLocation + '/jquery/dist/jquery.min.js',
       npmLocation + '/masonry-layout/dist/masonry.pkgd.min.js',
       npmLocation + '/moment/min/moment.min.js',
@@ -69,6 +71,13 @@ gulp.task(tasks.CSS_APP, function() {
     .pipe(gulp.dest(buildLocation));
 });
 
+gulp.task(tasks.CSS_VENDORS, function() {
+  return gulp.src(npmLocation + '/angucomplete-alt/angucomplete-alt.css')
+    .pipe(cssmin())
+    .pipe(rename('vendors.min.css'))
+    .pipe(gulp.dest(buildLocation));
+});
+
 gulp.task(tasks.TEMPLATES, function() {
   return gulp.src(appLocation + '/**/**.html')
     .pipe(gulp.dest(buildLocation));
@@ -85,7 +94,8 @@ gulp.task(tasks.DEFAULT, function(next) {
       tasks.JS_APP,
       tasks.TEMPLATES,
       tasks.IMAGES,
-      tasks.CSS_APP
+      tasks.CSS_APP,
+      tasks.CSS_VENDORS
     ],
     tasks.WATCH,
     next);
@@ -97,7 +107,8 @@ gulp.task(tasks.PRODUCTION, function(next) {
       tasks.JS_APP,
       tasks.TEMPLATES,
       tasks.IMAGES,
-      tasks.CSS_APP
+      tasks.CSS_APP,
+      tasks.CSS_VENDORS
     ],
     next);
 });

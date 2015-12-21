@@ -4,7 +4,7 @@
             <h1>Login to</h1>
             <h1>City as a Campus</h1>
         </div>
-        <form role="form" ng-submit="handleLoginBtnClick()">
+        <form class="form" role="form" ng-submit="handleLoginBtnClick()">
             <input type="email" name="email" ng-model="loginForm.email" required="required" placeholder="Your email" autofocus>
             <input type="password" name="password" ng-model="loginForm.password" required="required" placeholder="Your password">
             <p class="error" ng-if="loginForm.error">{{ loginForm.error }}</p>

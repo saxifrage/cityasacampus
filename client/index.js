@@ -20,6 +20,8 @@ if (!(Modernizr.borderradius &&
     'caac.opportunity-instances.controller',
     'caac.users.login.controller',
     'caac.users.auth.service',
+    'caac.users.register.learners.controller',
+    'caac.users.register.organizers.controller',
     'ngRoute',
     'ng-token-auth',
     'angular.filter'
@@ -44,7 +46,15 @@ if (!(Modernizr.borderradius &&
       templateUrl: 'dashboard/DashboardView.html'
     }).when('/users/login', {
       controller: 'LoginController',
-      templateUrl: 'users/auth/LoginView.html'
+      templateUrl: 'users/auth/login/LoginView.html'
+    }).when('/users/register', {
+      templateUrl: 'users/auth/register/RegisterView.html'
+    }).when('/users/register/learners', {
+      controller: 'RegisterLearnersController',
+      templateUrl: 'users/auth/register/learners/RegisterLearnersView.html'
+    }).when('/users/register/organizers', {
+      controller: 'RegisterOrganizersController',
+      templateUrl: 'users/auth/register/organizers/RegisterOrganizersView.html'
     }).when('/', {
       controller: 'HomeController',
       templateUrl: 'home/HomeView.html'
