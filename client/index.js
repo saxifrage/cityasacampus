@@ -1,16 +1,16 @@
 if (!(Modernizr.borderradius &&
-    Modernizr.backgroundsize &&
-    Modernizr.boxshadow &&
-    Modernizr.csstransforms &&
-    Modernizr.fontface &&
-    Modernizr.hsla &&
-    Modernizr.hashchange &&
-    Modernizr.input &&
-    Modernizr.opacity &&
-    Modernizr.rgba &&
-    Modernizr.svg &&
-    Modernizr.svgclippaths &&
-    Modernizr.sessionstorage)) {
+  Modernizr.backgroundsize &&
+  Modernizr.boxshadow &&
+  Modernizr.csstransforms &&
+  Modernizr.fontface &&
+  Modernizr.hsla &&
+  Modernizr.hashchange &&
+  Modernizr.input &&
+  Modernizr.opacity &&
+  Modernizr.rgba &&
+  Modernizr.svg &&
+  Modernizr.svgclippaths &&
+  Modernizr.sessionstorage)) {
   window.location = 'http://www.old-browser.org/en-us/?referer=' + window.location.host;
 } else {
   angular.module('caac', [
@@ -22,14 +22,15 @@ if (!(Modernizr.borderradius &&
     'caac.users.auth.service',
     'caac.users.register.learners.controller',
     'caac.users.register.organizers.controller',
-    'caac.users.password-reset.controller',
+    'caac.users.password.controller',
     'ngRoute',
     'ng-token-auth',
     'angular.filter'
-  ]).config(function($authProvider, $routeProvider) {
+  ]).config(function ($authProvider, $routeProvider) {
     $authProvider.configure({
       apiUrl: '/api/v1',
       tokenValidationPath: '/auth/validate_token',
+      passwordResetSuccessUrl: window.location.host + '/#/users/password/reset?allow_reset=yes',
       storage: 'localStorage'
     });
 
@@ -57,29 +58,29 @@ if (!(Modernizr.borderradius &&
       controller: 'RegisterOrganizersController',
       templateUrl: 'users/auth/register/organizers/RegisterOrganizersView.html'
     }).when('/users/password/reset', {
-      controller: 'PasswordResetController',
-      templateUrl: 'users/auth/password/PasswordResetView.html'
+      controller: 'PasswordController',
+      templateUrl: 'users/auth/password/PasswordView.html'
     }).when('/', {
       controller: 'HomeController',
       templateUrl: 'home/HomeView.html'
     });
   }).run(['$log', '$rootScope', 'AuthService', '$location',
-    function($log, $rootScope, AuthService, $location) {
+    function ($log, $rootScope, AuthService, $location) {
 
       //route auth checker
-      $rootScope.$on('$routeChangeStart', function(event, current, previous) {
+      $rootScope.$on('$routeChangeStart', function (event, current, previous) {
         if (current && current.$$route) {
           if (current.$$route.originalPath.indexOf('dashboard') === -1) return;
 
           AuthService.isAuthenticated()
-            .catch(function() {
+            .catch(function () {
               event.preventDefault();
               $location.path('/users/login');
             });
         }
       });
 
-      $log.getInstance = function(context) {
+      $log.getInstance = function (context) {
         return {
           info: enhanceLogging('INFO', $log.info, context),
           warn: enhanceLogging('WARN', $log.warn, context),
@@ -89,7 +90,7 @@ if (!(Modernizr.borderradius &&
       };
 
       function enhanceLogging(type, loggingFunc, context) {
-        return function() {
+        return function () {
           if (['localhost', '127.0.0.1'].indexOf(window.document.location.hostname) > -1) {
             var modifiedArguments = [].slice.call(arguments);
             modifiedArguments[0] = ['[' + type + '] ' + moment().format('YYYY-MM-DD HH:mm:ss') + ' - ' + context + ' - '] + modifiedArguments[0];
