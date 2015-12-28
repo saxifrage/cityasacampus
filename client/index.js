@@ -15,6 +15,8 @@ if (!(Modernizr.borderradius &&
 } else {
   angular.module('caac', [
     'caac.dashboard.controller',
+    'caac.dashboard.organizers.chooser.controller',
+    'caac.dashboard.organizers.controller',
     'caac.explore.controller',
     'caac.home.controller',
     'caac.opportunity-instances.controller',
@@ -44,6 +46,12 @@ if (!(Modernizr.borderradius &&
     }).when('/dashboard', {
       controller: 'DashboardController',
       templateUrl: 'dashboard/DashboardView.html'
+    }).when('/dashboard/organizers', {
+      controller: 'OrganizersDashboardChooserController',
+      templateUrl: 'dashboard/organizers/OrganizersDashboardChooserView.html'
+    }).when('/dashboard/organizers/:organizer', {
+      controller: 'OrganizersDashboardController',
+      templateUrl: 'dashboard/organizers/OrganizersDashboardView.html'
     }).when('/users/login', {
       controller: 'LoginController',
       templateUrl: 'users/auth/login/LoginView.html'
