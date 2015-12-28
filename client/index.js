@@ -17,7 +17,7 @@ if (!(Modernizr.borderradius &&
     'caac.dashboard.controller',
     'caac.dashboard.organizers.chooser.controller',
     'caac.dashboard.organizers.controller',
-    'caac.dashboard.map.controller',
+    'caac.dashboard.organizers.map.controller',
     'caac.explore.controller',
     'caac.home.controller',
     'caac.opportunity-instances.controller',
@@ -53,9 +53,9 @@ if (!(Modernizr.borderradius &&
     }).when('/dashboard/organizers/:organizer', {
       controller: 'OrganizersDashboardController',
       templateUrl: 'dashboard/organizers/OrganizersDashboardView.html'
-    }).when('/dashboard/map', {
+    }).when('/dashboard/organizers/:organizer/map', {
       controller: 'MapController',
-      templateUrl: 'dashboard/map/MapView.html'
+      templateUrl: 'dashboard/organizers/map/MapView.html'
     }).when('/users/login', {
       controller: 'LoginController',
       templateUrl: 'users/auth/login/LoginView.html'

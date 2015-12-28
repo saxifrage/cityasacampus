@@ -3,6 +3,11 @@ angular.module('caac.opportunity-instances.service', [
   .factory('OpportunityInstancesService', ['$log', '$http', '$location',
     function($log, $http, $location) {
       var logger = $log.getInstance('OpportunitiesService');
+
+      var selectAll = function() {
+        return $http.get('opportunity_instances.json');
+      };
+
       var selectByTerm = function(term, page) {
         term = term || '*';
 
@@ -27,17 +32,23 @@ angular.module('caac.opportunity-instances.service', [
         if (uid) $location.path('opportunity-instances/' + uid);
       };
 
-      var load = function(callback) {
-        $http.get('opportunity_instances.json').then(function(res) {
-          callback(res.data.result)
-        });
+      var assignOrReorder = function(node) {
+        console.log(node);
+        $http.put('/nodes/' + node.id + '.json')
+      };
+
+      var unassign = function(node) {
+        console.log(node);
+        $http.put('/nodes/' + node.id + '.json')
       };
 
       return {
+        selectAll: selectAll,
         selectByUid: selectByUid,
         selectByTerm: selectByTerm,
         goToOpportunityInstance: goToOpportunityInstance,
-        load: load
+        assignOrReorder: assignOrReorder,
+        unassign: unassign
       };
     }
   ]);
