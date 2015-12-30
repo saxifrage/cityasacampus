@@ -5,13 +5,13 @@
   <div class="pane nav">
     <h3>All Grids</h3>
     <ul>
-      <li ng-repeat="grid in grids"
+      <li ng-repeat="grid in grids | orderBy:'name'"
           ng-class="{'selected': currentGrid === grid }"
           ng-click="selectGrid(grid)"
          >
         {{grid.name}}
-        <span class="delete" ng-click="deleteGrid(grid)">[x]</span>
-        <span class="edit" ng-click="editGrid(grid)">[/]</span>
+        <span class="delete" ng-click="deleteGrid(grid)"></span>
+        <span class="edit" ng-click="editGrid(grid)"></span>
       </li>
       <li><button ng-click="insertGrid()">Add a Grid</button></li>
     </ul>
@@ -19,13 +19,13 @@
   <div class="pane nav">
     <h3>Pathways in {{currentGrid.name||'...'}}</h3>
     <ul>
-      <li ng-repeat="pathway in currentGrid.pathways"
+      <li ng-repeat="pathway in currentGrid.pathways | orderBy:'name'"
           ng-class="{'selected': currentPathway === pathway}"
           ng-click="selectPathway(pathway)"
          >
         {{pathway.name}}
-        <span class="delete" ng-click="deletePathway(pathway)">[x]</span>
-        <span class="edit" ng-click="editPathway(pathway)">[/]</span>
+        <span class="delete" ng-click="deletePathway(pathway)"></span>
+        <span class="edit" ng-click="editPathway(pathway)"></span>
       </li>
       <li><button ng-click="insertPathway(currentGrid)">Add a Pathway</button></li>
     </ul>

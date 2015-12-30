@@ -15,8 +15,20 @@ angular.module('caac.grids.service', [
         return $http.post('/api/v1/grids.json', {name: name, organizer_id: organizer_id});
       };
 
+      var edit = function(grid, newName) {
+        logger.info('attempting to rename grid "' + grid.name + '" to "' + newName + '"');
+        return $http.put('/api/v1/grids/' + grid.id + '.json', {name: newName});
+      };
+
+      var delete_ = function(grid) {
+        logger.info('attempting to remove grid "' + grid.name + '"');
+        return $http.delete('/api/v1/grids/' + grid.id + '.json');
+      };
+
       return {
         insert: insert,
+        edit: edit,
+        delete_: delete_,
         selectAll: selectAll
       };
     }

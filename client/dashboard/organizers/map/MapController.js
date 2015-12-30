@@ -56,11 +56,17 @@ angular.module('caac.dashboard.organizers.map.controller', [
     // ======
 
     self.editGrid = function(grid) {
-       alert("Edit" + grid.name);
+      var name = prompt("Okay! Let's edit '" + grid.name + "'. What should its new name be?");
+      GridsService.edit(grid, name).then(function(res) {
+        grid.name = name;
+      });
     };
 
     self.editPathway = function(pathway) {
-       alert("Edit " + pathway.name);
+      var name = prompt("Okay! Let's edit '" + pathway.name + "'. What should its new name be?");
+      PathwaysService.edit(pathway, name).then(function(res) {
+        pathway.name = name;
+      });
     };
 
 
@@ -68,11 +74,23 @@ angular.module('caac.dashboard.organizers.map.controller', [
     // ======
 
     self.deleteGrid = function(grid) {
-       alert("Delete " + grid.name);
+      if (confirm("Really delete grid '" + grid.name + "'?")) {
+        GridsService.delete_(grid).then(function(res) {
+          var i = self.grids.indexOf(grid);
+          self.grids.splice(i, 1);
+          self.selectGrid(self.grids[i-1]);
+        });
+      }
     };
 
     self.deletePathway = function(pathway) {
-       alert("Delete " + pathway.name);
+      if (confirm("Really delete pathway '" + pathway.name + "'?")) {
+        PathwaysService.delete_(pathway).then(function(res) {
+          var i = self.currentGrid.pathways.indexOf(pathway);
+          self.currentGrid.pathways.splice(i, 1);
+          self.selectPathway(self.currentGrid.pathways[i-1]);
+        });
+      }
     };
 
 
