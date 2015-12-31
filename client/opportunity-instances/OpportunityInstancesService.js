@@ -8,6 +8,10 @@ angular.module('caac.opportunity-instances.service', [
         return $http.get('opportunity_instances.json');
       };
 
+      var selectForOrganizer = function(organizerId) {
+        return $http.get('/api/v1/opportunity_instances.json?organizer_id='+organizerId);
+      };
+
       var selectByTerm = function(term, page) {
         term = term || '*';
 
@@ -34,16 +38,17 @@ angular.module('caac.opportunity-instances.service', [
 
       var assignOrReorder = function(node) {
         console.log(node);
-        $http.put('/nodes/' + node.id + '.json')
+        $http.put('/api/v1/nodes/' + node.id + '.json')
       };
 
       var unassign = function(node) {
         console.log(node);
-        $http.put('/nodes/' + node.id + '.json')
+        $http.put('/api/v1/nodes/' + node.id + '.json')
       };
 
       return {
         selectAll: selectAll,
+        selectForOrganizer: selectForOrganizer,
         selectByUid: selectByUid,
         selectByTerm: selectByTerm,
         goToOpportunityInstance: goToOpportunityInstance,

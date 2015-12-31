@@ -4,8 +4,8 @@ angular.module('caac.grids.service', [
     function($log, $http) {
       var logger = $log.getInstance('GridsService');
 
-      var selectAll = function(organizer_id) {
-        return $http.get('/api/v1/grids.json?organizer_id='+organizer_id);
+      var selectForOrganizer = function(organizerId) {
+        return $http.get('/api/v1/grids.json?organizer_id='+organizerId);
       };
 
       var insert = function(organizer_id, name) {
@@ -29,7 +29,7 @@ angular.module('caac.grids.service', [
         insert: insert,
         edit: edit,
         delete_: delete_,
-        selectAll: selectAll
+        selectForOrganizer: selectForOrganizer
       };
     }
   ]);

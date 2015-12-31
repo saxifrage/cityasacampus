@@ -5,7 +5,7 @@ class OpportunitySerializer < ActiveModel::Serializer
   attributes :badge_class_id, :min_age, :max_age
   attributes :registration_deadline, :registration_url, :created,
     :changed, :ends, :starts
-  attributes :after_this, :before_this, :resource_type, :resource_sub_type
+  attributes :resource_type, :resource_sub_type
   #has_one :topic
 
   def uid
@@ -34,14 +34,6 @@ class OpportunitySerializer < ActiveModel::Serializer
 
   def starts
     object.starts_at
-  end
-
-  def after_this
-    object.after_this.id unless object.after_this.nil?
-  end
-
-  def before_this
-    object.before_this.id unless object.before_this.nil?
   end
 
   def resource_type

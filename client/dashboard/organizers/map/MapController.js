@@ -4,13 +4,13 @@ angular.module('caac.dashboard.organizers.map.controller', [
   'caac.shared.title.service',
   'caac.grids.service',
   'caac.pathways.service',
-  'caac.opportunity-instances.service',
+  'caac.opportunities.service',
   'caac.organizers.service',
   'dndLists'
 ]).controller('MapController', ['$log', '$scope', 'TitleService', 'GridsService',
-    'PathwaysService', 'OpportunityInstancesService', 'OrganizersService',
+    'PathwaysService', 'OpportunitiesService', 'OrganizersService',
   function($log, $scope, TitleService, GridsService, PathwaysService,
-      OpportunityInstancesService, OrganizersService) {
+      OpportunitiesService, OrganizersService) {
     var self = $scope;
     var logger = $log.getInstance('MapController');
     var organizerId = OrganizersService.organizerId();
@@ -98,26 +98,27 @@ angular.module('caac.dashboard.organizers.map.controller', [
     // ==========
 
     self.assignOrReorderNode = function(node) {
-        OpportunityInstancesService.assignOrReorder(node);
+        OpportunitiesService.assignOrReorder(node);
     };
 
     self.unassignNode = function(node) {
-        OpportunityInstancesService.unassign(node);
+        OpportunitiesService.unassign(node);
     };
 
 
     // Initialize
     // ==========
 
-    GridsService.selectAll(organizerId).then(function(res) {
+    GridsService.selectForOrganizer(organizerId).then(function(res) {
       self.grids = res.data.grids;
       if (self.grids.length) {
           self.selectGrid(self.grids[0]);
       }
     });
 
-    OpportunityInstancesService.selectAll().then(function(res) {
-      self.unassigned = res.data.result;
+    OpportunitiesService.selectForOrganizer(organizerId).then(function(res) {
+      self.unassigned = res.data.opportunities;
+      console.log(self.unassigned);
     });
   }
 ]);
