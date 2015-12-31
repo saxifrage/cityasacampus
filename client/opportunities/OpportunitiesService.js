@@ -9,12 +9,10 @@ angular.module('caac.opportunities.service', [
       };
 
       var assignOrReorder = function(node) {
-        console.log(node);
         $http.put('/api/v1/nodes/' + node.id + '.json')
       };
 
       var unassign = function(node) {
-        console.log(node);
         $http.put('/api/v1/nodes/' + node.id + '.json')
       };
 

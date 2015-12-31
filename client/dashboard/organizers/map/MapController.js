@@ -118,7 +118,6 @@ angular.module('caac.dashboard.organizers.map.controller', [
 
     OpportunitiesService.selectForOrganizer(organizerId).then(function(res) {
       self.unassigned = res.data.opportunities;
-      console.log(self.unassigned);
     });
   }
 ]);
