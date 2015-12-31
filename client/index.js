@@ -30,7 +30,7 @@ if (!(Modernizr.borderradius &&
     $authProvider.configure({
       apiUrl: '/api/v1',
       tokenValidationPath: '/auth/validate_token',
-      passwordResetSuccessUrl: window.location.host + '/#/users/password/reset?allow_reset=yes',
+      // passwordResetSuccessUrl: window.location.host + '/#/users/password/reset?allow_reset=yes',
       storage: 'localStorage'
     });
 
