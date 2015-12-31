@@ -2,62 +2,27 @@ class Api::NodesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_node, only: [:show, :edit, :update, :destroy]
 
-  # GET /nodes
-  # GET /nodes.json
-  def index
-    @nodes = Node.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @nodes }
-    end
-  end
-
-  # GET /nodes/1
-  # GET /nodes/1.json
-  def show
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @node }
-    end
-  end
-
-  # GET /nodes/new
-  def new
-    @node = Node.new
-  end
-
-  # GET /nodes/1/edit
-  def edit
-  end
-
   # POST /nodes
   # POST /nodes.json
   def create
-    @node = Node.new(node_params)
 
-    respond_to do |format|
-      if @node.save
-        format.html { redirect_to @node, notice: 'Node was successfully created.' }
-        format.json { render json: @node, status: :created }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @node.errors, status: :unprocessable_entity }
-      end
+    opportunity = Opportunity.find_by_id(node_params[:opportunity_id])!
+    if not current_user.organizers.include? opportunity.organizer
+      return render :plain => '{"error":"you don\'t have permission to edit this node"}', :status => 403
     end
-  end
 
-  # PATCH/PUT /nodes/1
-  # PATCH/PUT /nodes/1.json
-  def update
+    pathway = Pathway.find_by_id(node_params[:pathway_id])!
+  
+    begin
+      node = Node.where(opportunity_id: opportunity.id, pathway_id: pathway.id).take!
+      node.position = node_params[:position]
+    rescue
+      node = Node.new(node_params)
+    end
+    node.save
+
     respond_to do |format|
-      if @node.update(node_params)
-        format.html { redirect_to @node, notice: 'Node was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @node.errors, status: :unprocessable_entity }
-      end
+      format.json { head :no_content }
     end
   end
 

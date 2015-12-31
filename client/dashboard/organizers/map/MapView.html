@@ -32,7 +32,7 @@
   </div>
   <div class="pane dnd">
     <h3>Nodes in {{currentPathway.name||'...'}}</h3>
-    <ul dnd-list="currentPathway.nodes" dnd-drop="assignOrReorderNode(item)">
+    <ul dnd-list="currentPathway.nodes" dnd-drop="assignOrReorderNode(item, index)">
       <li ng-repeat="node in currentPathway.nodes"
           dnd-draggable="node"
           dnd-moved="currentPathway.nodes.splice($index, 1)"

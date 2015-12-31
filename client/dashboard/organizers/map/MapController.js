@@ -97,8 +97,8 @@ angular.module('caac.dashboard.organizers.map.controller', [
     // Assignment
     // ==========
 
-    self.assignOrReorderNode = function(node) {
-        OpportunitiesService.assignOrReorder(node);
+    self.assignOrReorderNode = function(node, newIndex) {
+        OpportunitiesService.assignOrReorder(node.id, self.currentPathway.id, newIndex);
     };
 
     self.unassignNode = function(node) {
