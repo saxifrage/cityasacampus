@@ -16,6 +16,11 @@
            nohref
            ng-click="logout()">Logout</a>
 
+        <a class="navbar__login"
+           ng-show="!showLogout"
+           nohref
+           ng-click="login()">Login</a>
+
         <div class="navbar__brand">
           <a class="navbar-brand" href="#/"><img src="shared/navbar/assets/logo_caac.svg" alt="City as a Campus"></a>
         </div><!--/navbar__brand-->
