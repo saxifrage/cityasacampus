@@ -9,10 +9,13 @@ class ApplicationController < ActionController::Base
     if signed_in?
       render 'dashboard/index'
     else
-      #TODO: need to subclass devise controller in order
-      #to default the `dashboard/` route to this...
       redirect_to '/dashboard/users/sign_in'
     end
+  end
+
+  def not_found
+    # Simply reloads Angular SPA at homepage
+    redirect_to '/'
   end
 
   def configure_permitted_parameters

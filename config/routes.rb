@@ -44,4 +44,6 @@ Rails.application.routes.draw do
       get '/organizers/for-current-user.json', to: 'organizers#for_current_user'
     end
   end
+
+  get '*unmatched_route', to: 'application#not_found'
 end

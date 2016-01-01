@@ -34,39 +34,53 @@ if (!(Modernizr.borderradius &&
       storage: 'localStorage'
     });
 
-    $routeProvider.when('/explore', {
-      controller: 'ExploreController',
-      templateUrl: 'explore/ExploreView.html'
-    }).when('/explore/:term', {
-      controller: 'ExploreController',
-      templateUrl: 'explore/ExploreView.html'
-    }).when('/opportunity-instances/:uid', {
-      controller: 'OpportunityInstancesController',
-      templateUrl: 'opportunity-instances/OpportunityInstancesView.html'
-    }).when('/dashboard', {
-      controller: 'DashboardController',
-      templateUrl: 'dashboard/DashboardView.html'
-    }).when('/dashboard/organizers', {
-      controller: 'OrganizersDashboardChooserController',
-      templateUrl: 'dashboard/organizers/OrganizersDashboardChooserView.html'
-    }).when('/dashboard/organizers/:organizer', {
-      controller: 'OrganizersDashboardController',
-      templateUrl: 'dashboard/organizers/OrganizersDashboardView.html'
-    }).when('/users/login', {
-      controller: 'LoginController',
-      templateUrl: 'users/auth/login/LoginView.html'
-    }).when('/users/register', {
-      templateUrl: 'users/auth/register/RegisterView.html'
-    }).when('/users/register/learners', {
-      controller: 'RegisterLearnersController',
-      templateUrl: 'users/auth/register/learners/RegisterLearnersView.html'
-    }).when('/users/register/organizers', {
-      controller: 'RegisterOrganizersController',
-      templateUrl: 'users/auth/register/organizers/RegisterOrganizersView.html'
-    }).when('/', {
-      controller: 'HomeController',
-      templateUrl: 'home/HomeView.html'
-    });
+    $routeProvider
+      .when('/explore', {
+        controller: 'ExploreController',
+        templateUrl: 'explore/ExploreView.html'
+      })
+      .when('/explore/:term', {
+        controller: 'ExploreController',
+        templateUrl: 'explore/ExploreView.html'
+      })
+      .when('/opportunity-instances/:uid', {
+        controller: 'OpportunityInstancesController',
+        templateUrl: 'opportunity-instances/OpportunityInstancesView.html'
+      })
+      .when('/dashboard', {
+        controller: 'DashboardController',
+        templateUrl: 'dashboard/DashboardView.html'
+      })
+      .when('/dashboard/organizers', {
+        controller: 'OrganizersDashboardChooserController',
+        templateUrl: 'dashboard/organizers/OrganizersDashboardChooserView.html'
+      })
+      .when('/dashboard/organizers/:organizer', {
+        controller: 'OrganizersDashboardController',
+        templateUrl: 'dashboard/organizers/OrganizersDashboardView.html'
+      })
+      .when('/users/login', {
+        controller: 'LoginController',
+        templateUrl: 'users/auth/login/LoginView.html'
+      })
+      .when('/users/register', {
+        templateUrl: 'users/auth/register/RegisterView.html'
+      })
+      .when('/users/register/learners', {
+        controller: 'RegisterLearnersController',
+        templateUrl: 'users/auth/register/learners/RegisterLearnersView.html'
+      })
+      .when('/users/register/organizers', {
+        controller: 'RegisterOrganizersController',
+        templateUrl: 'users/auth/register/organizers/RegisterOrganizersView.html'
+      })
+      .when('/', {
+        controller: 'HomeController',
+        templateUrl: 'home/HomeView.html'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
   }).run(['$log', '$rootScope', 'AuthService', '$location',
     function($log, $rootScope, AuthService, $location) {
 
