@@ -93,8 +93,8 @@
   }
 }
 
-/* Logout Button */
-.navbar__logout {
+/* Logout/Login Buttons */
+.navbar__logout, .navbar__login {
   float: right;
   margin-right: 7px;
   cursor: pointer;

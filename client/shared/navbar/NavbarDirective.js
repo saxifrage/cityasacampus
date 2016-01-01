@@ -32,6 +32,10 @@ angular.module('caac.shared.navbar.directive', [
         AuthService.logout();
       };
 
+      self.login = function() {
+        $location.path('users/login');
+      };
+
       construct();
     }
   ])
