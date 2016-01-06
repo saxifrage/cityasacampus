@@ -23,7 +23,7 @@ angular.module('caac.users.auth.service', [])
             $location.path('/');
           });
       };
- 
+
       //returns promise where `then` callback means
       //the user is authenticated and `error` callback
       //means they are not.
@@ -31,10 +31,15 @@ angular.module('caac.users.auth.service', [])
         return $auth.validateUser();
       };
 
+      var requestPasswordReset = function(passwordResetPayload) {
+        return $auth.requestPasswordReset(passwordResetPayload);
+      };
+
       return {
         attemptLogin: attemptLogin,
         attemptRegistration: attemptRegistration,
         attemptUpdate: attemptUpdate,
+        requestPasswordReset: requestPasswordReset,
         logout: logout,
         isAuthenticated: isAuthenticated,
       };
