@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Grids</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grids.each do |grid| %>
+      <tr>
+        <td><%= link_to 'Show', grid %></td>
+        <td><%= link_to 'Edit', edit_grid_path(grid) %></td>
+        <td><%= link_to 'Destroy', grid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Grid', new_grid_path %>

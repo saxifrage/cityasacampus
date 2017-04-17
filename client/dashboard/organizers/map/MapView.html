@@ -1,0 +1,59 @@
+<navbar></navbar>
+
+<div class="dashboard pathways">
+  <h1>Organize Your Map</h1>
+  <div class="pane nav">
+    <h3>All Grids</h3>
+    <ul>
+      <li ng-repeat="grid in grids | orderBy:'name'"
+          ng-class="{'selected': currentGrid === grid }"
+          ng-click="selectGrid(grid)"
+         >
+        {{grid.name}}
+        <span class="delete" ng-click="deleteGrid(grid)"></span>
+        <span class="edit" ng-click="editGrid(grid)"></span>
+      </li>
+      <li><button ng-click="insertGrid()">Add a Grid</button></li>
+    </ul>
+  </div>
+  <div class="pane nav">
+    <h3>Pathways in {{currentGrid.name||'...'}}</h3>
+    <ul>
+      <li ng-repeat="pathway in currentGrid.pathways | orderBy:'name'"
+          ng-class="{'selected': currentPathway === pathway}"
+          ng-click="selectPathway(pathway)"
+         >
+        {{pathway.name}}
+        <span class="delete" ng-click="deletePathway(pathway)"></span>
+        <span class="edit" ng-click="editPathway(pathway)"></span>
+      </li>
+      <li><button ng-click="insertPathway(currentGrid)">Add a Pathway</button></li>
+    </ul>
+  </div>
+  <div class="pane dnd">
+    <h3>Nodes in {{currentPathway.name||'...'}}</h3>
+    <ul dnd-list="currentPathway.nodes" dnd-drop="assignOrReorderNode(item)">
+      <li ng-repeat="node in currentPathway.nodes"
+          dnd-draggable="node"
+          dnd-moved="currentPathway.nodes.splice($index, 1)"
+          dnd-effect-allowed="move"
+         >
+        <span class="handle">{{node.name}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="pane dnd">
+    <h3>Unassigned</h3>
+    <ul dnd-list="unassigned" dnd-drop="unassignNode(item)">
+      <li ng-repeat="node in unassigned"
+          dnd-draggable="node"
+          dnd-moved="unassigned.splice($index, 1)"
+          dnd-effect-allowed="move"
+         >
+        <span class="handle">{{node.name}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<copyright></copyright>

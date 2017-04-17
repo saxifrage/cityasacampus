@@ -42,6 +42,10 @@ Rails.application.routes.draw do
       mount_devise_token_auth_for 'User', at: 'auth'
 
       get '/organizers/for-current-user.json', to: 'organizers#for_current_user'
+
+      resources :grids
+      resources :pathways
+      resources :nodes
     end
   end
 end

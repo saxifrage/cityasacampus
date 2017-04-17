@@ -1,0 +1,92 @@
+.pathways {
+  clear: both;
+  margin-left: 10%;
+
+  .pane {
+    float: left;
+    margin-right: 20px;
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &.nav { width: 15%; }
+    &.dnd { width: 25%; }
+
+    ul {
+      padding-left: 0px;
+      li {
+        display: block;
+
+        &.selected {
+          background-color: #dff0d8;
+          color: #3c763d;
+        }
+      }
+    }
+
+    &.nav {
+      li {
+        margin-left: -5px;
+        padding: 5px;
+        font-size: smaller;
+        cursor: pointer;
+
+        span {
+          display: none;
+          float: right;
+          height: 16px;
+          width: 16px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          &.edit { background-image: url("/shared/assets/edit.svg"); }
+          &.delete { background-image: url("/shared/assets/delete.svg"); }
+          &:hover { background-color: #ffff99; }
+        }
+
+        &:hover span {
+          display: block;
+        }
+      }
+    }
+
+    &.dnd {
+      ul {
+        min-height: 44px;
+        padding-bottom: 44px;
+        position: relative;   // required by angular-drag-and-drop-lists
+
+        li {
+          position: relative; // required by angular-drag-and-drop-lists
+          background: #fff;
+          cursor: move;
+          border: 1px solid #ddd;
+          padding: 10px 15px 8px 5px;
+          margin-bottom: -1px;
+          line-height: 24px;
+          .handle {
+              display: block;
+              padding-left: 15px;
+          }
+          &:first-child { border-radius: 4px 4px 0 0; }
+          &:last-child { border-radius: 0 0 4px 4px; }
+          &:hover .handle {
+              background: url("/shared/assets/dnd.svg") repeat-y;
+              background-origin: padding-box;
+              background-clip: padding-box;
+              background-size: auto 24px;
+              background-position: 0 1px;
+          }
+          &.dndDraggingSource {
+            display: none;
+          }
+          &.dndPlaceholder {
+            display: block;
+            background-color: #ddd;
+            background-image: none;
+            min-height: 44px;
+          }
+        }
+      }
+    }
+  }
+}
